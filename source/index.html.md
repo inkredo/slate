@@ -3,12 +3,9 @@ title: API Reference
 
 language_tabs: # must be one of https://git.io/vQNgJ
   - shell
-  - ruby
-  - python
-  - javascript
 
 toc_footers:
-  - <a href='#'>Sign Up for a Developer Key</a>
+  - <a href='https://beta.inkredo.in/auto/signup'>Sign Up for a Developer Key</a>
   - <a href='https://github.com/lord/slate'>Documentation Powered by Slate</a>
 
 includes:
@@ -19,221 +16,426 @@ search: true
 
 # Introduction
 
-Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.
-
-We have language bindings in Shell, Ruby, Python, and JavaScript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
-
-This example API documentation page was created with [Slate](https://github.com/lord/slate). Feel free to edit it and use it as a base for your own API's documentation.
+Welcome to the Inkredo API!
+You must be a premium customer to use the api
 
 # Authentication
 
-> To authorize, use this code:
+Inkredo uses API keys to allow access to the API. You can register a new Inkerdo API key at our [main webapp](https://beta.inkredo.in).
+After completing the KYC process and subscribing to our services, you can to to the settings page and obtain the keys from the api section
 
-```ruby
-require 'kittn'
+Inkredo expects for the API key to be included in all API requests to the server in a header that looks like the following:
 
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-```
+`access-id: iidd`
 
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-```
-
-```shell
-# With shell, you can just pass the correct header with each request
-curl "api_endpoint_here"
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-```
-
-> Make sure to replace `meowmeowmeow` with your API key.
-
-Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our [developer portal](http://example.com/developers).
-
-Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:
-
-`Authorization: meowmeowmeow`
+`access-key: kkeeyy`
 
 <aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
+You must replace <code>iidd</code> and <code>kkeeyy</code> with your personal access-key and access-id.
 </aside>
 
-# Kittens
+# Bank statement analysis
 
-## Get All Kittens
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get()
-```
+## Create borrower
 
 ```shell
-curl "http://example.com/api/kittens"
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-let kittens = api.kittens.get();
+curl --request POST \
+  --url https://beta.inkredo.in/api/v0/dashboard/create_borrower/ \
+  --header 'Content-Type: application/json' \
+  --header 'access-id: iidd' \
+  --header 'access-key: kkeeyy' \
+  --data '{"name":"Ram Yadav"}'
 ```
 
 > The above command returns JSON structured like this:
 
 ```json
-[
-  {
-    "id": 1,
-    "name": "Fluffums",
-    "breed": "calico",
-    "fluffiness": 6,
-    "cuteness": 7
-  },
-  {
-    "id": 2,
-    "name": "Max",
-    "breed": "unknown",
-    "fluffiness": 5,
-    "cuteness": 10
-  }
-]
+{
+    "success": true,
+    "message": "Borrower created successfully",
+    "borrowerId": "5bb36bc3e38eb85f7207461d"
+}
 ```
 
-This endpoint retrieves all kittens.
+This endpoint creates a new borrower. You need to save this borrowerId for later use.
 
 ### HTTP Request
 
-`GET http://example.com/api/kittens`
+`POST https://beta.inkredo.in/api/v0/dashboard/create_borrower`
 
-### Query Parameters
+### Headers
+Name | Value
+---|---
+Content-Type | application/json
+access-id | iidd
+access-key | kkeeyy
 
-Parameter | Default | Description
+
+### Body
+
+Parameter | Required | Description
 --------- | ------- | -----------
-include_cats | false | If set to true, the result will also include cats.
-available | true | If set to false, the result will include kittens that have already been adopted.
+name | true | Name of the borrower
 
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
-</aside>
 
-## Get a Specific Kitten
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get(2)
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get(2)
-```
+## Supported banks
 
 ```shell
-curl "http://example.com/api/kittens/2"
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-let max = api.kittens.get(2);
+curl --request GET \
+  --url https://beta.inkredo.in/api/v0/parser/supported_banks \
+  --header 'Content-Type: application/json' \
+  --header 'access-id: iidd' \
+  --header 'access-key: kkeeyy'
 ```
 
 > The above command returns JSON structured like this:
 
 ```json
 {
-  "id": 2,
-  "name": "Max",
-  "breed": "unknown",
-  "fluffiness": 5,
-  "cuteness": 10
-}
+    "banks": [
+        {
+            "code": "HDFC",
+            "inputs": {
+                "csv": true,
+                "pdf": true,
+                "xls": true,
+                "xlsx": true
+            },
+            "name": "HDFC Bank"
+        },
+        {
+            "code": "ICICI",
+            "inputs": {
+                "csv": false,
+                "pdf": true,
+                "xls": false,
+                "xlsx": false
+            },
+            "name": "ICICI Bank"
+        },
+    ]
+}       
 ```
 
-This endpoint retrieves a specific kitten.
-
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
+This endpoint retrieves a list of all banks with information on the file type currently supported.
 
 ### HTTP Request
 
-`GET http://example.com/kittens/<ID>`
+`GET https://beta.inkredo.in/api/v0/parser/supported_banks`
 
-### URL Parameters
+### Headers
+Name | Value
+---|---
+Content-Type | application/json
+access-id | iidd
+access-key | kkeeyy
 
-Parameter | Description
---------- | -----------
-ID | The ID of the kitten to retrieve
 
-## Delete a Specific Kitten
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.delete(2)
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.delete(2)
-```
-
-```shell
-curl "http://example.com/api/kittens/2"
-  -X DELETE
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-let max = api.kittens.delete(2);
-```
+## Parser
 
 > The above command returns JSON structured like this:
 
 ```json
 {
-  "id": 2,
-  "deleted" : ":("
+  "data": {
+    "meta": {
+      "speed": {
+        "external": {
+          "analysis": 1210,
+          "parsing": 21680,
+          "statementFetch": 1460
+        },
+        "internal": {
+          "analysis": 16.157966,
+          "convertToExcel": 4196.096221,
+          "convertToStaticReport": 117.315543
+        }
+      }
+    },
+    "allTransactions": [
+      {
+        "balanceAmount": 1000,
+        "category": [
+          "Transfer",
+          "Debit"
+        ],
+        "date": "02/01/17",
+        "depositAmount": 0,
+        "particular": "NEFT D",
+        "reference": "N00217088",
+        "type": "DEBIT",
+        "withdrawalAmount": 5000
+      },
+      {
+        "balanceAmount": 8141.11,
+        "category": [
+          "Transfer",
+          "Earning"
+        ],
+        "date": "02/01/17",
+        "depositAmount": 313,
+        "particular": "NEFT CR-",
+        "reference": "0P17010247110093",
+        "type": "CREDIT",
+        "withdrawalAmount": 0
+      }
+    ],
+    "summary": {
+      "credit": {
+        "amount": 5510.10,
+        "count": 221
+      },
+      "debit": {
+        "amount": 55651.28,
+        "count": 203
+      },
+      "defaults": {
+        "amount": 4201.28,
+        "count": 4
+      }
+    },
+    "topCredits": [
+      {
+        "amount": 60000,
+        "date": "08 Feb 17",
+        "particular": "NEFT XXX",
+        "balanceAmount": 63131,
+        "category": [
+          "Transfer",
+          "Credit"
+        ]
+      },
+      {
+        "amount": 50000,
+        "date": "08 Mar 17",
+        "particular": "IMPS-YYY",
+        "balanceAmount": 53785,
+        "category": [
+          "Transfer",
+          "Earning"
+        ]
+      }
+    ],
+    "topDebits": [
+      {
+        "amount": 26104,
+        "date": "08 Mar 17",
+        "particular": "IB BILLPAY ",
+        "balanceAmount": 27681,
+        "category": [
+          "Payment"
+        ]
+      },
+      {
+        "amount": 17662,
+        "date": "25 Mar 17",
+        "particular": "NFXXX/MAKEMYTRIP",
+        "balanceAmount": 4185,
+        "category": [
+          "Travel"
+        ]
+      }
+    ],
+    "recurringCredits": {
+      "data": [
+        {
+          "summary": "ani technologies",
+          "balanceAmount": 8141.11,
+          "date": "02/01/17",
+          "particular": "NEFT CR-XXX-ANI TECHNOLOGIES PRIVATE LIMITED-XXX",
+          "amount": 313
+        },
+        {
+          "summary": "ani technologies",
+          "balanceAmount": 16911.11,
+          "date": "03/01/17",
+          "particular": "NEFT CR-XXX-ANI TECHNOLOGIES PRIVATE LIMITED-XXX",
+          "amount": 9280
+        }
+      ],
+      "lastTransactionDate": "29/06/17",
+      "uniqueOccurrences": 9,
+      "duration": 6
+    },
+    "recurringDebits": {
+      "data": [
+        {
+          "summary": "irctc_new",
+          "balanceAmount": 20594.19,
+          "date": "12/01/17",
+          "particular": "XXX/IRCTC_NEW",
+          "amount": 620
+        },
+        {
+          "summary": "irctc_new",
+          "balanceAmount": 20582.69,
+          "date": "12/01/17",
+          "particular": "XXX/IRCTC_NEW",
+          "amount": 11.5
+        }
+      ],
+      "lastTransactionDate": "29/06/17",
+      "uniqueOccurrences": 23,
+      "duration": 6
+    },
+    "runningLoans": {
+      "loansByName": {
+        "1834": {
+          "color": "#ec8b63",
+          "name": "BAJAJ FINEMI",
+          "numberOfInstallments": 3,
+          "totalAmountPaid": 5502,
+          "numberOfDefaults": 0
+        },
+        "4500": {
+          "color": "#008fba",
+          "name": "BAJAJFINEMI",
+          "numberOfInstallments": 4,
+          "totalAmountPaid": 18000,
+          "numberOfDefaults": 1
+        },
+        "14400": {
+          "color": "#3944a0",
+          "name": "ACH ",
+          "numberOfInstallments": 5,
+          "totalAmountPaid": 72000,
+          "numberOfDefaults": 1
+        }
+      },
+      "loansByMonth": [
+        {
+          "14400": 14400,
+          "month": "17/01"
+        },
+        {
+          "14400": 14400,
+          "month": "17/02"
+        },
+        {
+          "4500": 4500,
+          "14400": 14400,
+          "month": "17/03"
+        },
+        {
+          "1834": 1834,
+          "4500": 4500,
+          "14400": 14400,
+          "month": "17/04"
+        }
+      ],
+      "allLoanTransactions": [
+        {
+          "date": "23/06/17",
+          "loanAmount": 14400,
+          "balanceAmount": 1080.2,
+          "particular": "ACH D- AUFINANCIERS-XXX",
+          "type": "DEBIT"
+        },
+        {
+          "date": "05/06/17",
+          "loanAmount": 4500,
+          "balanceAmount": 755.22,
+          "particular": "BAJAJ FINEMI-BF-XXX",
+          "type": "DEBIT"
+        },
+        {
+          "date": "02/06/17",
+          "loanAmount": 1834,
+          "balanceAmount": 1783.22,
+          "particular": "BAJAJ FINEMI-BF-X",
+          "type": "DEBIT"
+        }
+      ]
+    },
+    "defaults": {
+      "summary": {
+        "amount": 5000,
+        "count": 2
+      },
+      "allDefaults": [
+        {
+          "balanceAmount": 131.32,
+          "date": "08/02/17",
+          "defaultAmount": 2500,
+          "particular": "CC XX AUTOPAY SI-TAD",
+          "category": [
+            "Payment",
+            "Credit Card"
+          ]
+        },
+        {
+          "balanceAmount": 250,
+          "date": "08/03/17",
+          "defaultAmount": 2500,
+          "particular": "CC XX AUTOPAY SI-TAD",
+          "category": [
+            "Payment",
+            "Credit Card"
+          ]
+        }
+      ]
+    },
+    "monthlyAverageBalance": [
+      {
+        "average": 10553,
+        "endDate": 31,
+        "monthKey": "17/01",
+        "startDate": 2
+      },
+      {
+        "average": 10463,
+        "change": {
+          "amount": -90,
+          "percent": "-0.85"
+        },
+        "endDate": 28,
+        "monthKey": "17/02",
+        "startDate": 1
+      }
+    ],
+    "mode": "full"
+  },
+  "success": true,
+  "message": "Statement parsed"
 }
 ```
-
-This endpoint deletes a specific kitten.
+This endpoint parsers and analysis a bank statement
 
 ### HTTP Request
 
-`DELETE http://example.com/kittens/<ID>`
+`POST https://beta.inkredo.in/api/v0/parser/`
 
-### URL Parameters
+### Headers
+Name | Value
+---|---
+Content-Type | application/x-www-form-urlencoded
+access-id | iidd
+access-key | kkeeyy
 
-Parameter | Description
---------- | -----------
-ID | The ID of the kitten to delete
+
+
+### Body
+Parameter | Required | Description
+--------- | ------- | -----------
+bank | true | bank code obtained from supported banks api above
+statement | true | bank statement file to be analysed
+borrowerId | true | id of the borrower created earlier
+
+## Reanalyse bank statement
+`POST https://beta.inkredo.in/api/v0/parser/reanalyse/`
+
+### Body
+`{"borrowerId":"5bb20ba98b583b0b9cf1e13b"}`
+
+### Headers
+Name | Value
+---|---
+Content-Type | application/json
+access-id | iidd
+access-key | kkeeyy
+
+### Response
+same as the parser api
+
+
 
