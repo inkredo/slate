@@ -4283,4 +4283,52 @@ access-key | kkeeyy
 same as the parser api
 
 
+## Generate excel report link
+
+```shell
+curl -X POST \
+  https://beta.inkredo.in/api/v0/parser/excel/ \
+  -H 'Content-Type: application/json' \
+  -H 'access-id: iidd' \
+  -H 'access-key: kkeeyy' \
+  -d '{
+	"borrowerId":"5c6a5cbe8e4b510b60e7633a"
+}'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+    "success": true,
+    "message": "Download link generated successfully",
+    "downloadLink": "https://inkredo-reports.amazonaws.com/reprot.xlsx"
+}
+```
+
+This endpoint provides a link to download the report in excel format
+
+### HTTP Request
+
+`POST https://beta.inkredo.in/api/v0/parser/excel`
+
+### Headers
+Name | Value
+---|---
+Content-Type | application/json
+access-id | iidd
+access-key | kkeeyy
+
+
+### Body
+
+Parameter | Required | Description
+--------- | ------- | -----------
+borrowerId | true | borrower ID
+
+<aside class="notice">
+The <code>downloadLink</code> will expire after 10 minutes
+</aside>
+
+
 
