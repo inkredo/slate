@@ -4306,7 +4306,7 @@ curl -X POST \
 }
 ```
 
-This endpoint provides a link to download the report in excel format
+This endpoint provides a link to download the report in excel format. To download the excel file, you can visit the link returned in <code>downloadLink</code> of the response body.
 
 ### HTTP Request
 
