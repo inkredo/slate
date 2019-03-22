@@ -4331,4 +4331,52 @@ The <code>downloadLink</code> will expire after 10 minutes
 </aside>
 
 
+## Extract PII
+
+```shell
+curl -X POST \
+  https://beta.inkredo.in/api/v0/extract_pii/ \
+  -H 'Content-Type: multipart/form-data' \
+  -H 'access-id: iidd' \
+  -H 'access-key: kkeeyy' \
+  -F 'pdf=@/path/to/file.pdf'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+    "success": true,
+    "data": {
+        "account_number": "111111111111111111",
+        "ifsc": "IFSC0123456",
+        "statement_period": {
+            "from": "01/04/2018",
+            "to": "30/04/2018"
+        }
+    },
+}
+```
+
+This endpoint is for extracting PII from a bank statement. PII includes information like client's account number, IFSC, etc.
+
+### HTTP Request
+
+`POST https://beta.inkredo.in/api/v0/extract_pii`
+
+### Headers
+Name | Value
+---|---
+Content-Type | multipart/form-data
+access-id | iidd
+access-key | kkeeyy
+
+
+### Body
+
+Parameter | Required | Description
+--------- | ------- | -----------
+pdf | true | PDF file object
+
+
 
