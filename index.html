@@ -242,6 +242,9 @@
                   <li>
                     <a href="#generate-excel-report-link" class="toc-h2 toc-link" data-title="Generate excel report link">Generate excel report link</a>
                   </li>
+                  <li>
+                    <a href="#extract-pii" class="toc-h2 toc-link" data-title="Extract PII">Extract PII</a>
+                  </li>
               </ul>
           </li>
           <li>
@@ -4626,6 +4629,65 @@ You must replace <code>iidd</code> and <code>kkeeyy</code> with your personal ac
 <aside class="notice">
 The <code>downloadLink</code> will expire after 10 minutes
 </aside>
+<h2 id='extract-pii'>Extract PII</h2><pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>
+  https://beta.inkredo.in/api/v0/extract_pii/ <span class="se">\</span>
+  -H <span class="s1">'Content-Type: multipart/form-data'</span> <span class="se">\</span>
+  -H <span class="s1">'access-id: iidd'</span> <span class="se">\</span>
+  -H <span class="s1">'access-key: kkeeyy'</span> <span class="se">\</span>
+  -F <span class="s1">'pdf=@/path/to/file.pdf'</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"account_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"111111111111111111"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"ifsc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"IFSC0123456"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"statement_period"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"from"</span><span class="p">:</span><span class="w"> </span><span class="s2">"01/04/2018"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"to"</span><span class="p">:</span><span class="w"> </span><span class="s2">"30/04/2018"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint is for extracting PII from a bank statement. PII includes information like client&#39;s account number, IFSC, etc.</p>
+<h3 id='http-request-5'>HTTP Request</h3>
+<p><code>POST https://beta.inkredo.in/api/v0/extract_pii</code></p>
+<h3 id='headers-6'>Headers</h3>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Content-Type</td>
+<td>multipart/form-data</td>
+</tr>
+<tr>
+<td>access-id</td>
+<td>iidd</td>
+</tr>
+<tr>
+<td>access-key</td>
+<td>kkeeyy</td>
+</tr>
+</tbody></table>
+<h3 id='body-5'>Body</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>pdf</td>
+<td>true</td>
+<td>PDF file object</td>
+</tr>
+</tbody></table>
 <h1 id='errors'>Errors</h1>
 <p>The Inkredo API uses the following error codes:</p>
 
