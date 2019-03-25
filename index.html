@@ -268,18 +268,18 @@ After completing the KYC process and subscribing to our services, you can go to 
 
 <p>Inkredo expects the API key to be included in all API requests to the server in a header that looks like the following:</p>
 
-<p><code>access-id: iidd</code></p>
+<p><code>access-id: your_access_id</code></p>
 
-<p><code>access-key: kkeeyy</code></p>
+<p><code>access-key: your_access_key</code></p>
 
 <aside class="notice">
-You must replace <code>iidd</code> and <code>kkeeyy</code> with your personal access-key and access-id.
+You must replace <code>your_access_id</code> and <code>your_access_key</code> with your personal access-key and access-id.
 </aside>
 <h1 id='bank-statement-analysis'>Bank statement analysis</h1><h2 id='create-borrower'>Create borrower</h2><pre class="highlight shell tab-shell"><code>curl --request POST <span class="se">\</span>
   --url https://beta.inkredo.in/api/v0/dashboard/create_borrower/ <span class="se">\</span>
   --header <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
-  --header <span class="s1">'access-id: iidd'</span> <span class="se">\</span>
-  --header <span class="s1">'access-key: kkeeyy'</span> <span class="se">\</span>
+  --header <span class="s1">'access-id: your_access_id'</span> <span class="se">\</span>
+  --header <span class="s1">'access-key: your_access_key'</span> <span class="se">\</span>
   --data <span class="s1">'{"name":"Ram GANDHI"}'</span>
 </code></pre>
 <blockquote>
@@ -307,11 +307,11 @@ You must replace <code>iidd</code> and <code>kkeeyy</code> with your personal ac
 </tr>
 <tr>
 <td>access-id</td>
-<td>iidd</td>
+<td>your_access_id</td>
 </tr>
 <tr>
 <td>access-key</td>
-<td>kkeeyy</td>
+<td>your_access_key</td>
 </tr>
 </tbody></table>
 <h3 id='body'>Body</h3>
@@ -331,8 +331,8 @@ You must replace <code>iidd</code> and <code>kkeeyy</code> with your personal ac
 <h2 id='supported-banks'>Supported banks</h2><pre class="highlight shell tab-shell"><code>curl --request GET <span class="se">\</span>
   --url https://beta.inkredo.in/api/v0/parser/supported_banks <span class="se">\</span>
   --header <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
-  --header <span class="s1">'access-id: iidd'</span> <span class="se">\</span>
-  --header <span class="s1">'access-key: kkeeyy'</span>
+  --header <span class="s1">'access-id: your_access_id'</span> <span class="se">\</span>
+  --header <span class="s1">'access-key: your_access_key'</span>
 </code></pre>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -378,11 +378,11 @@ You must replace <code>iidd</code> and <code>kkeeyy</code> with your personal ac
 </tr>
 <tr>
 <td>access-id</td>
-<td>iidd</td>
+<td>your_access_id</td>
 </tr>
 <tr>
 <td>access-key</td>
-<td>kkeeyy</td>
+<td>your_access_key</td>
 </tr>
 </tbody></table>
 <h2 id='parser'>Parser</h2>
@@ -4513,11 +4513,11 @@ You must replace <code>iidd</code> and <code>kkeeyy</code> with your personal ac
 </tr>
 <tr>
 <td>access-id</td>
-<td>iidd</td>
+<td>your_access_id</td>
 </tr>
 <tr>
 <td>access-key</td>
-<td>kkeeyy</td>
+<td>your_access_key</td>
 </tr>
 </tbody></table>
 <h3 id='body-2'>Body</h3>
@@ -4566,11 +4566,11 @@ You must replace <code>iidd</code> and <code>kkeeyy</code> with your personal ac
 </tr>
 <tr>
 <td>access-id</td>
-<td>iidd</td>
+<td>your_access_id</td>
 </tr>
 <tr>
 <td>access-key</td>
-<td>kkeeyy</td>
+<td>your_access_key</td>
 </tr>
 </tbody></table>
 <h3 id='response'>Response</h3>
@@ -4578,8 +4578,8 @@ You must replace <code>iidd</code> and <code>kkeeyy</code> with your personal ac
 <h2 id='generate-excel-report-link'>Generate excel report link</h2><pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>
   https://beta.inkredo.in/api/v0/parser/excel/ <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
-  -H <span class="s1">'access-id: iidd'</span> <span class="se">\</span>
-  -H <span class="s1">'access-key: kkeeyy'</span> <span class="se">\</span>
+  -H <span class="s1">'access-id: your_access_id'</span> <span class="se">\</span>
+  -H <span class="s1">'access-key: your_access_key'</span> <span class="se">\</span>
   -d <span class="s1">'{
     "borrowerId":"5c6a5cbe8e4b510b60e7633a"
 }'</span>
@@ -4609,11 +4609,11 @@ You must replace <code>iidd</code> and <code>kkeeyy</code> with your personal ac
 </tr>
 <tr>
 <td>access-id</td>
-<td>iidd</td>
+<td>your_access_id</td>
 </tr>
 <tr>
 <td>access-key</td>
-<td>kkeeyy</td>
+<td>your_access_key</td>
 </tr>
 </tbody></table>
 <h3 id='body-4'>Body</h3>
@@ -4637,8 +4637,8 @@ The <code>downloadLink</code> will expire after 10 minutes
 <h2 id='extract-pii'>Extract PII</h2><pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>
   https://beta.inkredo.in/api/v0/extract_pii/ <span class="se">\</span>
   -H <span class="s1">'Content-Type: multipart/form-data'</span> <span class="se">\</span>
-  -H <span class="s1">'access-id: iidd'</span> <span class="se">\</span>
-  -H <span class="s1">'access-key: kkeeyy'</span> <span class="se">\</span>
+  -H <span class="s1">'access-id: your_access_id'</span> <span class="se">\</span>
+  -H <span class="s1">'access-key: your_access_key'</span> <span class="se">\</span>
   -F <span class="s1">'pdf=@/path/to/file.pdf'</span>
 </code></pre>
 <blockquote>
@@ -4672,11 +4672,11 @@ The <code>downloadLink</code> will expire after 10 minutes
 </tr>
 <tr>
 <td>access-id</td>
-<td>iidd</td>
+<td>your_access_id</td>
 </tr>
 <tr>
 <td>access-key</td>
-<td>kkeeyy</td>
+<td>your_access_key</td>
 </tr>
 </tbody></table>
 <h3 id='body-5'>Body</h3>
