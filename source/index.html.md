@@ -4265,6 +4265,7 @@ Parameter | Required | Description
 bank | true | bank code obtained from supported banks api above
 statement | true | bank statement file to be analysed
 borrowerId | true | id of the borrower created earlier
+pdfPassword | false | password of the pdf
 
 ## Reanalyse bank statement
 `POST https://beta.inkredo.in/api/v0/parser/reanalyse/`
