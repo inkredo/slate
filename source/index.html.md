@@ -26,12 +26,12 @@ After completing the KYC process and subscribing to our services, you can go to 
 
 Inkredo expects the API key to be included in all API requests to the server in a header that looks like the following:
 
-`access-id: iidd`
+`access-id: your_access_id`
 
-`access-key: kkeeyy`
+`access-key: your_access_key`
 
 <aside class="notice">
-You must replace <code>iidd</code> and <code>kkeeyy</code> with your personal access-key and access-id.
+You must replace <code>your_access_id</code> and <code>your_access_key</code> with your personal access-key and access-id.
 </aside>
 
 # Bank statement analysis
@@ -42,8 +42,8 @@ You must replace <code>iidd</code> and <code>kkeeyy</code> with your personal ac
 curl --request POST \
   --url https://beta.inkredo.in/api/v0/dashboard/create_borrower/ \
   --header 'Content-Type: application/json' \
-  --header 'access-id: iidd' \
-  --header 'access-key: kkeeyy' \
+  --header 'access-id: your_access_id' \
+  --header 'access-key: your_access_key' \
   --data '{"name":"Ram GANDHI"}'
 ```
 
@@ -67,8 +67,8 @@ This endpoint creates a new borrower. You need to save this borrowerId for later
 Name | Value
 ---|---
 Content-Type | application/json
-access-id | iidd
-access-key | kkeeyy
+access-id | your_access_id
+access-key | your_access_key
 
 
 ### Body
@@ -84,8 +84,8 @@ name | true | Name of the borrower
 curl --request GET \
   --url https://beta.inkredo.in/api/v0/parser/supported_banks \
   --header 'Content-Type: application/json' \
-  --header 'access-id: iidd' \
-  --header 'access-key: kkeeyy'
+  --header 'access-id: your_access_id' \
+  --header 'access-key: your_access_key'
 ```
 
 > The above command returns JSON structured like this:
@@ -127,8 +127,8 @@ This endpoint retrieves a list of all banks with information on the file type cu
 Name | Value
 ---|---
 Content-Type | application/json
-access-id | iidd
-access-key | kkeeyy
+access-id | your_access_id
+access-key | your_access_key
 
 
 ## Parser
@@ -4254,8 +4254,8 @@ This endpoint parsers and analysis a bank statement
 Name | Value
 ---|---
 Content-Type | application/x-www-form-urlencoded
-access-id | iidd
-access-key | kkeeyy
+access-id | your_access_id
+access-key | your_access_key
 
 
 
@@ -4277,8 +4277,8 @@ pdfPassword | false | password of the pdf
 Name | Value
 ---|---
 Content-Type | application/json
-access-id | iidd
-access-key | kkeeyy
+access-id | your_access_id
+access-key | your_access_key
 
 ### Response
 same as the parser api
@@ -4290,8 +4290,8 @@ same as the parser api
 curl -X POST \
   https://beta.inkredo.in/api/v0/parser/excel/ \
   -H 'Content-Type: application/json' \
-  -H 'access-id: iidd' \
-  -H 'access-key: kkeeyy' \
+  -H 'access-id: your_access_id' \
+  -H 'access-key: your_access_key' \
   -d '{
 	"borrowerId":"5c6a5cbe8e4b510b60e7633a"
 }'
@@ -4317,8 +4317,8 @@ This endpoint provides a link to download the report in excel format. To downloa
 Name | Value
 ---|---
 Content-Type | application/json
-access-id | iidd
-access-key | kkeeyy
+access-id | your_access_id
+access-key | your_access_key
 
 
 ### Body
@@ -4338,8 +4338,8 @@ The <code>downloadLink</code> will expire after 10 minutes
 curl -X POST \
   https://beta.inkredo.in/api/v0/extract_pii/ \
   -H 'Content-Type: multipart/form-data' \
-  -H 'access-id: iidd' \
-  -H 'access-key: kkeeyy' \
+  -H 'access-id: your_access_id' \
+  -H 'access-key: your_access_key' \
   -F 'pdf=@/path/to/file.pdf'
 ```
 
@@ -4369,8 +4369,8 @@ This endpoint is for extracting PII from a bank statement. PII includes informat
 Name | Value
 ---|---
 Content-Type | multipart/form-data
-access-id | iidd
-access-key | kkeeyy
+access-id | your_access_id
+access-key | your_access_key
 
 
 ### Body
