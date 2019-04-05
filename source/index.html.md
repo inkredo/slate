@@ -4351,6 +4351,7 @@ curl -X POST \
     "data": {
         "account_number": "111111111111111111",
         "ifsc": "IFSC0123456",
+        "pan": "ABCD1234F",
         "statement_period": {
             "from": "01/04/2018",
             "to": "30/04/2018"
