@@ -104,8 +104,8 @@ curl --request GET \
         },
         {
             "code": "ICICI",
-            "name": "ICICI Bank",
-            "inputs": {
+            "displayName": "ICICI Bank",
+            "support": {
                 "csv": false,
                 "excel": false,
                 "pdf": true
