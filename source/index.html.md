@@ -95,23 +95,21 @@ curl --request GET \
     "banks": [
         {
             "code": "HDFC",
-            "inputs": {
+            "displayName": "HDFC Bank",
+            "support": {
                 "csv": true,
-                "pdf": true,
-                "xls": true,
-                "xlsx": true
-            },
-            "name": "HDFC Bank"
+                "excel": true,
+                "pdf": true
+            }
         },
         {
             "code": "ICICI",
+            "name": "ICICI Bank",
             "inputs": {
                 "csv": false,
-                "pdf": true,
-                "xls": false,
-                "xlsx": false
-            },
-            "name": "ICICI Bank"
+                "excel": false,
+                "pdf": true
+            }
         },
     ]
 }       
