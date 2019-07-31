@@ -5,7 +5,7 @@ language_tabs: # must be one of https://git.io/vQNgJ
   - shell
 
 toc_footers:
-  - <a href='https://beta.inkredo.in/auth/signup'>Sign Up for a Developer Key</a>
+  - <a href='<URL>/auth/signup'>Sign Up for a Developer Key</a>
   - <a href='https://github.com/lord/slate'>Documentation Powered by Slate</a>
 
 includes:
@@ -21,7 +21,7 @@ You must be a premium customer to use the api
 
 # Authentication
 
-Inkredo uses API keys to allow access to the API. You can register a new Inkerdo API key at our [main webapp](https://beta.inkredo.in).
+Inkredo uses API keys to allow access to the API. You can register a new Inkerdo API key at our [main webapp](<URL>).
 After completing the KYC process and subscribing to our services, you can go to the settings page and obtain the keys from the api section
 
 Inkredo expects the API key to be included in all API requests to the server in a header that looks like the following:
@@ -40,7 +40,7 @@ You must replace <code>your_access_id</code> and <code>your_access_key</code> wi
 
 ```shell
 curl --request POST \
-  --url https://beta.inkredo.in/api/v0/dashboard/create_borrower/ \
+  --url <URL>/api/v0/dashboard/create_borrower/ \
   --header 'Content-Type: application/json' \
   --header 'access-id: your_access_id' \
   --header 'access-key: your_access_key' \
@@ -61,7 +61,7 @@ This endpoint creates a new borrower. You need to save this borrowerId for later
 
 ### HTTP Request
 
-`POST https://beta.inkredo.in/api/v0/dashboard/create_borrower`
+`POST <URL>/api/v0/dashboard/create_borrower`
 
 ### Headers
 Name | Value
@@ -82,7 +82,7 @@ name | true | Name of the borrower
 
 ```shell
 curl --request GET \
-  --url https://beta.inkredo.in/api/v0/parser/supported_banks \
+  --url <URL>/api/v0/parser/supported_banks \
   --header 'Content-Type: application/json' \
   --header 'access-id: your_access_id' \
   --header 'access-key: your_access_key'
@@ -119,7 +119,7 @@ This endpoint retrieves a list of all banks with information on the file type cu
 
 ### HTTP Request
 
-`GET https://beta.inkredo.in/api/v0/parser/supported_banks`
+`GET <URL>/api/v0/parser/supported_banks`
 
 ### Headers
 Name | Value
@@ -4246,7 +4246,7 @@ This endpoint parsers and analysis a bank statement
 
 ### HTTP Request
 
-`POST https://beta.inkredo.in/api/v0/parser/`
+`POST <URL>/api/v0/parser/`
 
 ### Headers
 Name | Value
@@ -8453,7 +8453,7 @@ This endpoint parsers and analysis a bank statement.
 
 ### HTTP Request
 
-`POST https://beta.inkredo.in/api/v1/parser/`
+`POST <URL>/api/v1/parser/`
 
 ### Headers
 Name | Value
@@ -8473,7 +8473,7 @@ borrowerId | true | id of the borrower created earlier
 pdfPassword | false | password of the pdf
 
 ## Reanalyse bank statement
-`POST https://beta.inkredo.in/api/v0/parser/reanalyse/`
+`POST <URL>/api/v0/parser/reanalyse/`
 
 ### Body
 `{"borrowerId":"5bb20ba98b583b0b9cf1e13b"}`
@@ -8493,7 +8493,7 @@ same as the parser api
 
 ```shell
 curl -X POST \
-  https://beta.inkredo.in/api/v0/parser/excel/ \
+  <URL>/api/v0/parser/excel/ \
   -H 'Content-Type: application/json' \
   -H 'access-id: your_access_id' \
   -H 'access-key: your_access_key' \
@@ -8516,7 +8516,7 @@ This endpoint provides a link to download the report in excel format. To downloa
 
 ### HTTP Request
 
-`POST https://beta.inkredo.in/api/v0/parser/excel`
+`POST <URL>/api/v0/parser/excel`
 
 ### Headers
 Name | Value
@@ -8541,7 +8541,7 @@ The <code>downloadLink</code> will expire after 10 minutes
 
 ```shell
 curl -X POST \
-  https://beta.inkredo.in/api/v0/extract_pii/ \
+  <URL>/api/v0/extract_pii/ \
   -H 'Content-Type: multipart/form-data' \
   -H 'access-id: your_access_id' \
   -H 'access-key: your_access_key' \
@@ -8576,7 +8576,7 @@ This endpoint is for extracting PII from a bank statement. PII includes informat
 
 ### HTTP Request
 
-`POST https://beta.inkredo.in/api/v0/extract_pii`
+`POST <URL>/api/v0/extract_pii`
 
 ### Headers
 Name | Value
