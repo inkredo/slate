@@ -255,7 +255,7 @@
           </li>
       </ul>
         <ul class="toc-footer">
-            <li><a href='https://beta.inkredo.in/auth/signup'>Sign Up for a Developer Key</a></li>
+            <li><a href='<URL>/auth/signup'>Sign Up for a Developer Key</a></li>
             <li><a href='https://github.com/lord/slate'>Documentation Powered by Slate</a></li>
         </ul>
     </div>
@@ -266,7 +266,7 @@
 <p>Welcome to the Inkredo API!
 You must be a premium customer to use the api</p>
 <h1 id='authentication'>Authentication</h1>
-<p>Inkredo uses API keys to allow access to the API. You can register a new Inkerdo API key at our <a href="https://beta.inkredo.in">main webapp</a>.
+<p>Inkredo uses API keys to allow access to the API. You can register a new Inkerdo API key at our <a href="URL">main webapp</a>.
 After completing the KYC process and subscribing to our services, you can go to the settings page and obtain the keys from the api section</p>
 
 <p>Inkredo expects the API key to be included in all API requests to the server in a header that looks like the following:</p>
@@ -279,7 +279,7 @@ After completing the KYC process and subscribing to our services, you can go to 
 You must replace <code>your_access_id</code> and <code>your_access_key</code> with your personal access-key and access-id.
 </aside>
 <h1 id='bank-statement-analysis'>Bank statement analysis</h1><h2 id='create-borrower'>Create borrower</h2><pre class="highlight shell tab-shell"><code>curl --request POST <span class="se">\</span>
-  --url https://beta.inkredo.in/api/v0/dashboard/create_borrower/ <span class="se">\</span>
+  --url &lt;URL&gt;/api/v0/dashboard/create_borrower/ <span class="se">\</span>
   --header <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   --header <span class="s1">'access-id: your_access_id'</span> <span class="se">\</span>
   --header <span class="s1">'access-key: your_access_key'</span> <span class="se">\</span>
@@ -296,7 +296,7 @@ You must replace <code>your_access_id</code> and <code>your_access_key</code> wi
 </span></code></pre>
 <p>This endpoint creates a new borrower. You need to save this borrowerId for later use.</p>
 <h3 id='http-request'>HTTP Request</h3>
-<p><code>POST https://beta.inkredo.in/api/v0/dashboard/create_borrower</code></p>
+<p><code>POST &lt;URL&gt;/api/v0/dashboard/create_borrower</code></p>
 <h3 id='headers'>Headers</h3>
 <table><thead>
 <tr>
@@ -332,7 +332,7 @@ You must replace <code>your_access_id</code> and <code>your_access_key</code> wi
 </tr>
 </tbody></table>
 <h2 id='supported-banks'>Supported banks</h2><pre class="highlight shell tab-shell"><code>curl --request GET <span class="se">\</span>
-  --url https://beta.inkredo.in/api/v0/parser/supported_banks <span class="se">\</span>
+  --url &lt;URL&gt;/api/v0/parser/supported_banks <span class="se">\</span>
   --header <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   --header <span class="s1">'access-id: your_access_id'</span> <span class="se">\</span>
   --header <span class="s1">'access-key: your_access_key'</span>
@@ -365,7 +365,7 @@ You must replace <code>your_access_id</code> and <code>your_access_key</code> wi
 </span></code></pre>
 <p>This endpoint retrieves a list of all banks with information on the file type currently supported.</p>
 <h3 id='http-request-2'>HTTP Request</h3>
-<p><code>GET https://beta.inkredo.in/api/v0/parser/supported_banks</code></p>
+<p><code>GET &lt;URL&gt;/api/v0/parser/supported_banks</code></p>
 <h3 id='headers-2'>Headers</h3>
 <table><thead>
 <tr>
@@ -4500,7 +4500,7 @@ You must replace <code>your_access_id</code> and <code>your_access_key</code> wi
 </span></code></pre>
 <p>This endpoint parsers and analysis a bank statement</p>
 <h3 id='http-request-3'>HTTP Request</h3>
-<p><code>POST https://beta.inkredo.in/api/v0/parser/</code></p>
+<p><code>POST &lt;URL&gt;/api/v0/parser/</code></p>
 <h3 id='headers-3'>Headers</h3>
 <table><thead>
 <tr>
@@ -8735,7 +8735,7 @@ You must replace <code>your_access_id</code> and <code>your_access_key</code> wi
   of an <code>errorTransactions</code> object.
 </aside></p>
 <h3 id='http-request-4'>HTTP Request</h3>
-<p><code>POST https://beta.inkredo.in/api/v1/parser/</code></p>
+<p><code>POST &lt;URL&gt;/api/v1/parser/</code></p>
 <h3 id='headers-4'>Headers</h3>
 <table><thead>
 <tr>
@@ -8786,7 +8786,7 @@ You must replace <code>your_access_id</code> and <code>your_access_key</code> wi
 </tr>
 </tbody></table>
 <h2 id='reanalyse-bank-statement'>Reanalyse bank statement</h2>
-<p><code>POST https://beta.inkredo.in/api/v0/parser/reanalyse/</code></p>
+<p><code>POST &lt;URL&gt;/api/v0/parser/reanalyse/</code></p>
 <h3 id='body-4'>Body</h3>
 <p><code>{&quot;borrowerId&quot;:&quot;5bb20ba98b583b0b9cf1e13b&quot;}</code></p>
 <h3 id='headers-5'>Headers</h3>
@@ -8812,7 +8812,7 @@ You must replace <code>your_access_id</code> and <code>your_access_key</code> wi
 <h3 id='response'>Response</h3>
 <p>same as the parser api</p>
 <h2 id='generate-excel-report-link'>Generate excel report link</h2><pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>
-  https://beta.inkredo.in/api/v0/parser/excel/ <span class="se">\</span>
+  &lt;URL&gt;/api/v0/parser/excel/ <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'access-id: your_access_id'</span> <span class="se">\</span>
   -H <span class="s1">'access-key: your_access_key'</span> <span class="se">\</span>
@@ -8831,7 +8831,7 @@ You must replace <code>your_access_id</code> and <code>your_access_key</code> wi
 </span></code></pre>
 <p>This endpoint provides a link to download the report in excel format. To download the excel file, you can visit the link returned in <code>downloadLink</code> of the response body.</p>
 <h3 id='http-request-5'>HTTP Request</h3>
-<p><code>POST https://beta.inkredo.in/api/v0/parser/excel</code></p>
+<p><code>POST &lt;URL&gt;/api/v0/parser/excel</code></p>
 <h3 id='headers-6'>Headers</h3>
 <table><thead>
 <tr>
@@ -8871,7 +8871,7 @@ You must replace <code>your_access_id</code> and <code>your_access_key</code> wi
 The <code>downloadLink</code> will expire after 10 minutes
 </aside>
 <h2 id='extract-pii'>Extract PII</h2><pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>
-  https://beta.inkredo.in/api/v0/extract_pii/ <span class="se">\</span>
+  &lt;URL&gt;/api/v0/extract_pii/ <span class="se">\</span>
   -H <span class="s1">'Content-Type: multipart/form-data'</span> <span class="se">\</span>
   -H <span class="s1">'access-id: your_access_id'</span> <span class="se">\</span>
   -H <span class="s1">'access-key: your_access_key'</span> <span class="se">\</span>
@@ -8885,6 +8885,13 @@ The <code>downloadLink</code> will expire after 10 minutes
     </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="s2">"account_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"111111111111111111"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"ifsc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"IFSC0123456"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"metadata"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"author"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Virender"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"creation_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"25 Nov 2016 16:25:54 +0530"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"creator"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Adobe Acrobat 11.0.10"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"modification_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"25 Nov 2016 16:31:37 +0530"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"producer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GPL Ghostscript 9.06"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
         </span><span class="s2">"pan"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ABCD1234F"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"statement_period"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
             </span><span class="s2">"from"</span><span class="p">:</span><span class="w"> </span><span class="s2">"01/04/2018"</span><span class="p">,</span><span class="w">
@@ -8895,7 +8902,7 @@ The <code>downloadLink</code> will expire after 10 minutes
 </span></code></pre>
 <p>This endpoint is for extracting PII from a bank statement. PII includes information like client&#39;s account number, IFSC, etc.</p>
 <h3 id='http-request-6'>HTTP Request</h3>
-<p><code>POST https://beta.inkredo.in/api/v0/extract_pii</code></p>
+<p><code>POST &lt;URL&gt;/api/v0/extract_pii</code></p>
 <h3 id='headers-7'>Headers</h3>
 <table><thead>
 <tr>
