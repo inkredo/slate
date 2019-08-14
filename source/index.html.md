@@ -8563,12 +8563,13 @@ curl -X POST \
             "modification_date": "25 Nov 2016 16:31:37 +0530",
             "producer": "GPL Ghostscript 9.06"
         },
+        "name": "Mohammad Lee",
         "pan": "ABCD1234F",
         "statement_period": {
             "from": "01/04/2018",
             "to": "30/04/2018"
         }
-    },
+    }
 }
 ```
 
