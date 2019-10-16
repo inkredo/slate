@@ -21,7 +21,7 @@ You must be a premium customer to use the api
 
 # Authentication
 
-Inkredo uses API keys to allow access to the API. You can register a new Inkerdo API key at our [main webapp](<URL>).
+Inkredo uses API keys to allow access to the API. You can register a new Inkerdo API key at our [main webapp](https://www.inkredo.in/settings/api).
 After completing the KYC process and subscribing to our services, you can go to the settings page and obtain the keys from the api section
 
 Inkredo expects the API key to be included in all API requests to the server in a header that looks like the following:
