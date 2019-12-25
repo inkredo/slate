@@ -4251,7 +4251,7 @@ This endpoint parsers and analysis a bank statement
 ### Headers
 Name | Value
 ---|---
-Content-Type | application/x-www-form-urlencoded
+Content-Type | multipart/form-data
 access-id | your_access_id
 access-key | your_access_key
 
@@ -8458,7 +8458,7 @@ This endpoint parsers and analysis a bank statement.
 ### Headers
 Name | Value
 ---|---
-Content-Type | application/x-www-form-urlencoded
+Content-Type | multipart/form-data
 access-id | your_access_id
 access-key | your_access_key
 
