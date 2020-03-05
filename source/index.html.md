@@ -134,7 +134,7 @@ access-key | your_access_key
 > The above command returns JSON structured like this:
 
 ```json
-        {
+{
     "data": {
         "meta": {
             "speed": {
@@ -20488,6 +20488,7 @@ pdfPassword | false | password of the pdf
 ## Parser v3
 
 > The above command returns JSON structured like this:
+
 ```json
 {
     "data": {
@@ -35324,7 +35325,7 @@ pdfPassword | false | password of the pdf
 `POST <URL>/api/v3/parser/reanalyse/`
 
 ### Body
-`{"borrowerId":"5bb20ba98b583b0b9cf1e13b"}`
+`{"borrowerId":"borrower id"}`
 
 ### Headers
 Name | Value
@@ -35336,11 +35337,14836 @@ access-key | your_access_key
 ### Response
 same as the parser api
 
-## Edit party name
-`POST <URL>/api/v3/parser/partyHunter/${borrowerId}`
 
-### Body
-`{"partyHunter": [{"accountNumber":"XXXXXXXX2069","transactionId":"ck73edmhp00k3nqv29ox3df11","partyName":"abc" }]}`
+## Edit party name
+
+```shell
+curl -X POST \
+  <URL>/api/v3/parser/partyHunter/${borrowerId} \
+  -H 'Content-Type: application/json' \
+  -H 'access-id: your_access_id' \
+  -H 'access-key: your_access_key' \
+  -d '{
+    "partyHunter": [
+        {
+            "accountNumber": "account number",
+            "transactionId": "transaction id",
+            "partyName": "new party name"
+        }
+    ]
+}'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+    "success": true,
+    "message": "Party hunter updated successfully",
+    "data": {
+        "50100092822251": {
+            "meta": {
+                "speed": {
+                    "external": {},
+                    "internal": {
+                        "analysis": 10.728964
+                    }
+                }
+            },
+            "allTransactions": [
+                {
+                    "balanceAmount": 7828.11,
+                    "category": [
+                        "Transfer",
+                        "Debit"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Debit"
+                        ],
+                        "id": 190200
+                    },
+                    "date": "02/01/17",
+                    "party": "idib000s208 sanjay rathi",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "NEFT DR-IDIB000S208-SANJAY RATHI-NETBANK, MUM-N002170226538872",
+                    "reference": "N002170226538872",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 5000,
+                    "transactionId": "ck77gabp90000v2v2gkmmgpwk"
+                },
+                {
+                    "balanceAmount": 8141.11,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "02/01/17",
+                    "party": "ani technologies private",
+                    "depositAmount": 313,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-0P17010247110093",
+                    "reference": "0P17010247110093",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabp90001v2v2feae7yoy"
+                },
+                {
+                    "balanceAmount": 7631.11,
+                    "category": [
+                        "Travel",
+                        "Gas Station"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Travel",
+                            "Gas Station"
+                        ],
+                        "id": 200100
+                    },
+                    "date": "03/01/17",
+                    "party": "bansal petro",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "POS 436303XXXXXX1688 BANSAL PETRO POS DEBIT",
+                    "reference": "0000700309958077",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 510,
+                    "transactionId": "ck77gabp90002v2v266hsdmyj"
+                },
+                {
+                    "balanceAmount": 16911.11,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "03/01/17",
+                    "party": "ani technologies private",
+                    "depositAmount": 9280,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-0P17010348417669",
+                    "reference": "0P17010348417669",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabp90003v2v2fqd54gqs"
+                },
+                {
+                    "balanceAmount": 13911.11,
+                    "category": [
+                        "Shops"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Shops"
+                        ],
+                        "id": 180000
+                    },
+                    "date": "03/01/17",
+                    "party": "paytm mobile sol",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "POS 436303XXXXXX1688 PAYTM MOBILE SOL POS DEBIT",
+                    "reference": "0000700314344623",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 3000,
+                    "transactionId": "ck77gabpa0004v2v20m3ica5r"
+                },
+                {
+                    "balanceAmount": 10911.11,
+                    "category": [
+                        "Transfer",
+                        "Debit"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Debit"
+                        ],
+                        "id": 190200
+                    },
+                    "date": "04/01/17",
+                    "party": "idib000s208 sanjay rathi",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "NEFT DR-IDIB000S208-SANJAY RATHI-NETBANK, MUM-N004170228047394",
+                    "reference": "N004170228047394",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 3000,
+                    "transactionId": "ck77gabpa0005v2v27684he6y"
+                },
+                {
+                    "balanceAmount": 6411.11,
+                    "category": [
+                        "Uncategorized"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Uncategorized"
+                        ],
+                        "id": 0
+                    },
+                    "date": "05/01/17",
+                    "party": "bajafinemi bf",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "BAJAFINEMI-BF-1189499-93735",
+                    "reference": "000000000000000",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 4500,
+                    "transactionId": "ck77gabpa0006v2v2288d1czs"
+                },
+                {
+                    "balanceAmount": 11290.11,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "05/01/17",
+                    "party": "ani technologies private",
+                    "depositAmount": 4879,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-0P17010549892717",
+                    "reference": "0P17010549892717",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpa0007v2v29b5sa08g"
+                },
+                {
+                    "balanceAmount": 16473.11,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "05/01/17",
+                    "party": "ani technologies private",
+                    "depositAmount": 5183,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-0P17010550345082",
+                    "reference": "0P17010550345082",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpa0008v2v25swg612t"
+                },
+                {
+                    "balanceAmount": 14073.11,
+                    "category": [
+                        "Payment",
+                        "Cheque"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Payment",
+                            "Cheque"
+                        ],
+                        "id": 160200
+                    },
+                    "date": "06/01/17",
+                    "party": "micr cts mohilidy",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "CHQ PAID-MICR CTS-NO-MOHILIDY",
+                    "reference": "0000000000000031",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 2400,
+                    "transactionId": "ck77gabpa0009v2v2d3y5fiiy"
+                },
+                {
+                    "balanceAmount": 13833.11,
+                    "category": [
+                        "Food and Beverages",
+                        "Bar"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Food and Beverages",
+                            "Bar"
+                        ],
+                        "id": 130100
+                    },
+                    "date": "06/01/17",
+                    "party": "discovery wines",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "POS 436303XXXXXX1688 DISCOVERY WINES POSDEBIT",
+                    "reference": "0000000000007642",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 240,
+                    "transactionId": "ck77gabpa000av2v2b3y7gjkt"
+                },
+                {
+                    "balanceAmount": 14512.11,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "06/01/17",
+                    "party": "ani technologies private",
+                    "depositAmount": 679,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-0P17010651453793",
+                    "reference": "0P17010651453793",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpa000bv2v2fy6236ih"
+                },
+                {
+                    "balanceAmount": 9512.11,
+                    "category": [
+                        "Payment",
+                        "Cheque"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Payment",
+                            "Cheque"
+                        ],
+                        "id": 160200
+                    },
+                    "date": "07/01/17",
+                    "party": "krishna communicati",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "CHQ PAID-MICR CTS-NO-KRISHNA COMMUNICATI",
+                    "reference": "0000000000000030",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 5000,
+                    "transactionId": "ck77gabpa000cv2v2hdfrex4f"
+                },
+                {
+                    "balanceAmount": 9509.23,
+                    "category": [
+                        "Bank Fees"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Bank Fees"
+                        ],
+                        "id": 100000
+                    },
+                    "date": "07/01/17",
+                    "party": "chgs incl st &",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CHGS INCL ST & CESS 311216",
+                    "reference": "000000000000000",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 2.88,
+                    "transactionId": "ck77gabpa000dv2v246q78fe7"
+                },
+                {
+                    "balanceAmount": 9494.57,
+                    "category": [
+                        "Travel",
+                        "Gas Station"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Travel",
+                            "Gas Station"
+                        ],
+                        "id": 200100
+                    },
+                    "date": "07/01/17",
+                    "party": "fuel surchg 436303******1688",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "FUEL SURCHG 436303******1688 DT 03/01/17",
+                    "reference": "000000000000000",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 14.66,
+                    "transactionId": "ck77gabpa000ev2v2fd3p8dg6"
+                },
+                {
+                    "balanceAmount": 14465.57,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "07/01/17",
+                    "party": "ani technologies private",
+                    "depositAmount": 4971,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-0P17010752406198",
+                    "reference": "0P17010752406198",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpa000fv2v2ckiaacsw"
+                },
+                {
+                    "balanceAmount": 3212.13,
+                    "category": [
+                        "Payment"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Payment"
+                        ],
+                        "id": 160000
+                    },
+                    "date": "07/01/17",
+                    "party": "489377xxxxxx2616",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "IB BILLPAY DR-HDFCVE-489377XXXXXX2616",
+                    "reference": "000000000000000",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 11253.44,
+                    "transactionId": "ck77gabpa000gv2v2eh67a1r8"
+                },
+                {
+                    "balanceAmount": 3215.95,
+                    "category": [
+                        "Shops",
+                        "Refund"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Shops",
+                            "Refund"
+                        ],
+                        "id": 180100
+                    },
+                    "date": "09/01/17",
+                    "party": "436303******1688",
+                    "depositAmount": 3.82,
+                    "isAutoDebit": false,
+                    "particular": "CRV POS 436303******1688 POS 2",
+                    "reference": "000000000000000",
+                    "type": "REVERSAL",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpa000hv2v2ffzobv5r"
+                },
+                {
+                    "balanceAmount": 3213.07,
+                    "category": [
+                        "Bank Fees"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Bank Fees"
+                        ],
+                        "id": 100000
+                    },
+                    "date": "09/01/17",
+                    "party": "chgs incl st &",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CHGS INCL ST & CESS 020117",
+                    "reference": "000000000000000",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 2.88,
+                    "transactionId": "ck77gabpa000iv2v29gmmc0rx"
+                },
+                {
+                    "balanceAmount": 8213.07,
+                    "category": [
+                        "Transfer",
+                        "Credit"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Credit"
+                        ],
+                        "id": 190100
+                    },
+                    "date": "09/01/17",
+                    "party": "919818921636",
+                    "depositAmount": 5000,
+                    "isAutoDebit": false,
+                    "particular": "IMPS-P2A-700916126141-919818921636-170610419",
+                    "reference": "0000700916126141",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpa000jv2v2hgz895hq"
+                },
+                {
+                    "balanceAmount": 13213.07,
+                    "category": [
+                        "Transfer",
+                        "Credit"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Credit"
+                        ],
+                        "id": 190100
+                    },
+                    "date": "09/01/17",
+                    "party": "919818921636",
+                    "depositAmount": 5000,
+                    "isAutoDebit": false,
+                    "particular": "IMPS-P2A-700916127733-919818921636-170611002",
+                    "reference": "0000700916127733",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpa000kv2v24xvz5chj"
+                },
+                {
+                    "balanceAmount": 18213.07,
+                    "category": [
+                        "Transfer",
+                        "Credit"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Credit"
+                        ],
+                        "id": 190100
+                    },
+                    "date": "09/01/17",
+                    "party": "919818921636",
+                    "depositAmount": 5000,
+                    "isAutoDebit": false,
+                    "particular": "IMPS-P2A-700916127801-919818921636-170611051",
+                    "reference": "0000700916127801",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpa000lv2v20vll7su2"
+                },
+                {
+                    "balanceAmount": 23213.07,
+                    "category": [
+                        "Transfer",
+                        "Credit"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Credit"
+                        ],
+                        "id": 190100
+                    },
+                    "date": "09/01/17",
+                    "party": "919818921636",
+                    "depositAmount": 5000,
+                    "isAutoDebit": false,
+                    "particular": "IMPS-P2A-700916127867-919818921636-170611054",
+                    "reference": "0000700916127867",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpa000mv2v25syj26ox"
+                },
+                {
+                    "balanceAmount": 7213.07,
+                    "category": [
+                        "Transfer",
+                        "Debit"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Debit"
+                        ],
+                        "id": 190200
+                    },
+                    "date": "09/01/17",
+                    "party": "idib000s208 sanjay rathi",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "NEFT DR-IDIB000S208-SANJAY RATHI-NETBANK, MUM-N009170230731858",
+                    "reference": "N009170230731858",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 16000,
+                    "transactionId": "ck77gabpa000nv2v29jk0dh9o"
+                },
+                {
+                    "balanceAmount": 7210.19,
+                    "category": [
+                        "Bank Fees"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Bank Fees"
+                        ],
+                        "id": 100000
+                    },
+                    "date": "09/01/17",
+                    "party": "chgs incl st &",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CHGS INCL ST & CESS 040117",
+                    "reference": "000000000000000",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 2.88,
+                    "transactionId": "ck77gabpa000ov2v28dxb6il0"
+                },
+                {
+                    "balanceAmount": 13292.19,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "09/01/17",
+                    "party": "ani technologies private",
+                    "depositAmount": 6082,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-0P17010953765743",
+                    "reference": "0P17010953765743",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpa000pv2v28pcd3vsg"
+                },
+                {
+                    "balanceAmount": 8292.19,
+                    "category": [
+                        "Transfer",
+                        "Debit"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Debit"
+                        ],
+                        "id": 190200
+                    },
+                    "date": "10/01/17",
+                    "party": "idib000s208 sanjay rathi",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "NEFT DR-IDIB000S208-SANJAY RATHI-NETBANK, MUM-N010170231151679",
+                    "reference": "N010170231151679",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 5000,
+                    "transactionId": "ck77gabpa000qv2v22hko0wbp"
+                },
+                {
+                    "balanceAmount": 13354.19,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "10/01/17",
+                    "party": "ani technologies private",
+                    "depositAmount": 5062,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-0P17011054754055",
+                    "reference": "0P17011054754055",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpa000rv2v23epvews1"
+                },
+                {
+                    "balanceAmount": 18354.19,
+                    "category": [
+                        "Transfer",
+                        "Credit"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Credit"
+                        ],
+                        "id": 190100
+                    },
+                    "date": "11/01/17",
+                    "party": "918059358308",
+                    "depositAmount": 5000,
+                    "isAutoDebit": false,
+                    "particular": "IMPS-P2A-701116840113-918059358308-P2BOTP_CE04B362E1FAB303",
+                    "reference": "0000701116840113",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpa000sv2v2e3w8c3nx"
+                },
+                {
+                    "balanceAmount": 21214.19,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "11/01/17",
+                    "party": "ani technologies private",
+                    "depositAmount": 2860,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-0P17011155755279",
+                    "reference": "0P17011155755279",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpa000tv2v27jyz19j9"
+                },
+                {
+                    "balanceAmount": 20594.19,
+                    "category": [
+                        "Travel",
+                        "Train"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Travel",
+                            "Train"
+                        ],
+                        "id": 200200
+                    },
+                    "date": "12/01/17",
+                    "party": "irctc_new",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "100000709755560/IRCTC_NEW",
+                    "reference": "0000170122275920",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 620,
+                    "transactionId": "ck77gabpa000uv2v2c3fjerrg"
+                },
+                {
+                    "balanceAmount": 20582.69,
+                    "category": [
+                        "Travel",
+                        "Train"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Travel",
+                            "Train"
+                        ],
+                        "id": 200200
+                    },
+                    "date": "12/01/17",
+                    "party": "irctc_new",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "100000709755560/IRCTC_NEW",
+                    "reference": "0000170122275920",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 11.5,
+                    "transactionId": "ck77gabpa000vv2v214o6b7vg"
+                },
+                {
+                    "balanceAmount": 20092.69,
+                    "category": [
+                        "Travel",
+                        "Train"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Travel",
+                            "Train"
+                        ],
+                        "id": 200200
+                    },
+                    "date": "12/01/17",
+                    "party": "irctc_new",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "100000709796984/IRCTC_NEW",
+                    "reference": "0000170122284741",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 490,
+                    "transactionId": "ck77gabpa000wv2v24adoeulw"
+                },
+                {
+                    "balanceAmount": 20081.19,
+                    "category": [
+                        "Travel",
+                        "Train"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Travel",
+                            "Train"
+                        ],
+                        "id": 200200
+                    },
+                    "date": "12/01/17",
+                    "party": "irctc_new",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "100000709796984/IRCTC_NEW",
+                    "reference": "0000170122284741",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 11.5,
+                    "transactionId": "ck77gabpa000xv2v2gw6x8fw1"
+                },
+                {
+                    "balanceAmount": 16081.19,
+                    "category": [
+                        "Transfer",
+                        "Debit"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Debit"
+                        ],
+                        "id": 190200
+                    },
+                    "date": "12/01/17",
+                    "party": "idib000s208 sanjay rathi",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "NEFT DR-IDIB000S208-SANJAY RATHI-NETBANK, MUM-N012170232384757",
+                    "reference": "N012170232384757",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 4000,
+                    "transactionId": "ck77gabpa000yv2v25u6p6a0w"
+                },
+                {
+                    "balanceAmount": 17202.19,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "12/01/17",
+                    "party": "ani technologies private",
+                    "depositAmount": 1121,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-0P17011256672733",
+                    "reference": "0P17011256672733",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpb000zv2v25ibs8j2b"
+                },
+                {
+                    "balanceAmount": 17196.44,
+                    "category": [
+                        "Bank Fees"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Bank Fees"
+                        ],
+                        "id": 100000
+                    },
+                    "date": "13/01/17",
+                    "party": "chgs incl st &",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CHGS INCL ST & CESS 090117",
+                    "reference": "000000000000000",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 5.75,
+                    "transactionId": "ck77gabpb0010v2v2669b2r24"
+                },
+                {
+                    "balanceAmount": 19906.44,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "13/01/17",
+                    "party": "ani technologies private",
+                    "depositAmount": 2710,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-0P17011357916127",
+                    "reference": "0P17011357916127",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpb0011v2v28uqf3did"
+                },
+                {
+                    "balanceAmount": 21406.44,
+                    "category": [
+                        "Transfer",
+                        "Credit"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Credit"
+                        ],
+                        "id": 190100
+                    },
+                    "date": "15/01/17",
+                    "party": "918059358308",
+                    "depositAmount": 1500,
+                    "isAutoDebit": false,
+                    "particular": "IMPS-P2A-701510625973-918059358308-P2BOTP_8D573CD2C375E3AE",
+                    "reference": "0000701510625973",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpb0012v2v26golcsml"
+                },
+                {
+                    "balanceAmount": 17008.44,
+                    "category": [
+                        "Shops"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Shops"
+                        ],
+                        "id": 180000
+                    },
+                    "date": "15/01/17",
+                    "party": "kumar automobile",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "POS 436303XXXXXX1688 KUMAR AUTOMOBILE POS DEBIT",
+                    "reference": "0000701516036751",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 4398,
+                    "transactionId": "ck77gabpb0013v2v23l9m3953"
+                },
+                {
+                    "balanceAmount": 15860.44,
+                    "category": [
+                        "Service",
+                        "Internet"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Service",
+                            "Internet"
+                        ],
+                        "id": 170200
+                    },
+                    "date": "16/01/17",
+                    "party": "nextraworld",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "POS 436303XXXXXX1688 NEXTRAWORLD POS DEBIT",
+                    "reference": "0000701600032954",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 1148,
+                    "transactionId": "ck77gabpb0014v2v27cxqbtoh"
+                },
+                {
+                    "balanceAmount": 10860.44,
+                    "category": [
+                        "Transfer",
+                        "Debit"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Debit"
+                        ],
+                        "id": 190200
+                    },
+                    "date": "16/01/17",
+                    "party": "idib000s208 sanjay rathi",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "NEFT DR-IDIB000S208-SANJAY RATHI-NETBANK, MUM-N016170233524951",
+                    "reference": "N016170233524951",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 5000,
+                    "transactionId": "ck77gabpb0015v2v2eh0v0q4p"
+                },
+                {
+                    "balanceAmount": 10857.56,
+                    "category": [
+                        "Bank Fees"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Bank Fees"
+                        ],
+                        "id": 100000
+                    },
+                    "date": "16/01/17",
+                    "party": "chgs incl st &",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CHGS INCL ST & CESS 100117",
+                    "reference": "000000000000000",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 2.88,
+                    "transactionId": "ck77gabpb0016v2v270qzc38a"
+                },
+                {
+                    "balanceAmount": 10854.68,
+                    "category": [
+                        "Bank Fees"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Bank Fees"
+                        ],
+                        "id": 100000
+                    },
+                    "date": "16/01/17",
+                    "party": "chgs incl st &",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CHGS INCL ST & CESS 120117",
+                    "reference": "000000000000000",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 2.88,
+                    "transactionId": "ck77gabpb0017v2v290vce9b0"
+                },
+                {
+                    "balanceAmount": 13854.68,
+                    "category": [
+                        "Transfer",
+                        "Credit"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Credit"
+                        ],
+                        "id": 190100
+                    },
+                    "date": "16/01/17",
+                    "party": "918901059606",
+                    "depositAmount": 3000,
+                    "isAutoDebit": false,
+                    "particular": "IMPS-P2A-701617915637-918901059606-174295482",
+                    "reference": "0000701617915637",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpb0018v2v2d7cu58sn"
+                },
+                {
+                    "balanceAmount": 15841.68,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "16/01/17",
+                    "party": "ani technologies private",
+                    "depositAmount": 1987,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-0P17011658971179",
+                    "reference": "0P17011658971179",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpb0019v2v20qpiak02"
+                },
+                {
+                    "balanceAmount": 21165.68,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "16/01/17",
+                    "party": "ani technologies private",
+                    "depositAmount": 5324,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-0P17011659129732",
+                    "reference": "0P17011659129732",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpb001av2v2e5259svd"
+                },
+                {
+                    "balanceAmount": 16165.68,
+                    "category": [
+                        "Transfer",
+                        "Debit"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Debit"
+                        ],
+                        "id": 190200
+                    },
+                    "date": "17/01/17",
+                    "party": "idib000s208 sanjay rathi",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "NEFT DR-IDIB000S208-SANJAY RATHI-NETBANK, MUM-N017170234021814",
+                    "reference": "N017170234021814",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 5000,
+                    "transactionId": "ck77gabpb001bv2v2dqld3uta"
+                },
+                {
+                    "balanceAmount": 15612.68,
+                    "category": [
+                        "Shops"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Shops"
+                        ],
+                        "id": 180000
+                    },
+                    "date": "17/01/17",
+                    "party": "instakart.",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "POS 436303XXXXXX1688 INSTAKART. POS DEBIT",
+                    "reference": "0000000000000589",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 553,
+                    "transactionId": "ck77gabpb001cv2v26ruy58ig"
+                },
+                {
+                    "balanceAmount": 8612.68,
+                    "category": [
+                        "Shops"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Shops"
+                        ],
+                        "id": 180000
+                    },
+                    "date": "17/01/17",
+                    "party": "one97 communicat",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "POS 436303XXXXXX1688 ONE97 COMMUNICAT POS DEBIT",
+                    "reference": "0000701711798465",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 7000,
+                    "transactionId": "ck77gabpb001dv2v21on8ab93"
+                },
+                {
+                    "balanceAmount": 12377.68,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "17/01/17",
+                    "party": "ani technologies private",
+                    "depositAmount": 3765,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-0P17011760024020",
+                    "reference": "0P17011760024020",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpb001ev2v27ph6d8c4"
+                },
+                {
+                    "balanceAmount": 10378.68,
+                    "category": [
+                        "Shops"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Shops"
+                        ],
+                        "id": 180000
+                    },
+                    "date": "17/01/17",
+                    "party": "big bazaar",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "POS 436303XXXXXX1688 BIG BAZAAR . POS DEBIT",
+                    "reference": "0000000000008928",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 1999,
+                    "transactionId": "ck77gabpb001fv2v20gi65xpd"
+                },
+                {
+                    "balanceAmount": 9878.68,
+                    "category": [
+                        "Travel",
+                        "Gas Station"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Travel",
+                            "Gas Station"
+                        ],
+                        "id": 200100
+                    },
+                    "date": "19/01/17",
+                    "party": "bp",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "POS 436303XXXXXX1688 BP 38 POS DEBIT",
+                    "reference": "0000000000038174",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 500,
+                    "transactionId": "ck77gabpb001gv2v2dprjdan2"
+                },
+                {
+                    "balanceAmount": 9212.68,
+                    "category": [
+                        "Food and Beverages",
+                        "Restaurant"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Food and Beverages",
+                            "Restaurant"
+                        ],
+                        "id": 130200
+                    },
+                    "date": "19/01/17",
+                    "party": "shri ram restaur",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "POS 436303XXXXXX1688 SHRI RAM RESTAUR POS DEBIT",
+                    "reference": "0000701909131223",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 666,
+                    "transactionId": "ck77gabpb001hv2v2g9jbakpw"
+                },
+                {
+                    "balanceAmount": 4212.68,
+                    "category": [
+                        "Cash Advance",
+                        "ATM"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Cash Advance",
+                            "ATM"
+                        ],
+                        "id": 110300
+                    },
+                    "date": "19/01/17",
+                    "party": "eaw",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "EAW-436303XXXXXX1688-BECN1262-GURGAON",
+                    "reference": "0000000000003607",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 5000,
+                    "transactionId": "ck77gabpb001iv2v2apiv2txi"
+                },
+                {
+                    "balanceAmount": 7994.68,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "19/01/17",
+                    "party": "ani technologies private",
+                    "depositAmount": 3782,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-0P17011962047989",
+                    "reference": "0P17011962047989",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpb001jv2v2frj6e9c0"
+                },
+                {
+                    "balanceAmount": 7991.8,
+                    "category": [
+                        "Bank Fees"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Bank Fees"
+                        ],
+                        "id": 100000
+                    },
+                    "date": "20/01/17",
+                    "party": "chgs incl st &",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CHGS INCL ST & CESS 160117",
+                    "reference": "000000000000000",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 2.88,
+                    "transactionId": "ck77gabpb001kv2v27uoh60iy"
+                },
+                {
+                    "balanceAmount": 7974.55,
+                    "category": [
+                        "Bank Fees"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Bank Fees"
+                        ],
+                        "id": 100000
+                    },
+                    "date": "20/01/17",
+                    "party": "inst alert inc st &",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "INST-ALERT CHG INC ST & EC OCT-DEC2016",
+                    "reference": "000000000000000",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 17.25,
+                    "transactionId": "ck77gabpb001lv2v26qqx6r41"
+                },
+                {
+                    "balanceAmount": 9368.55,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "20/01/17",
+                    "party": "ani technologies private",
+                    "depositAmount": 1394,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-0P17012062777614",
+                    "reference": "0P17012062777614",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpb001mv2v26bo140t4"
+                },
+                {
+                    "balanceAmount": 6948.55,
+                    "category": [
+                        "Travel",
+                        "Train"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Travel",
+                            "Train"
+                        ],
+                        "id": 200200
+                    },
+                    "date": "20/01/17",
+                    "party": "irctc_new",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "100000720121379/IRCTC_NEW",
+                    "reference": "0000170208300969",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 2420,
+                    "transactionId": "ck77gabpb001nv2v2e9nq59gy"
+                },
+                {
+                    "balanceAmount": 6937.05,
+                    "category": [
+                        "Travel",
+                        "Train"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Travel",
+                            "Train"
+                        ],
+                        "id": 200200
+                    },
+                    "date": "20/01/17",
+                    "party": "irctc_new",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "100000720121379/IRCTC_NEW",
+                    "reference": "0000170208300969",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 11.5,
+                    "transactionId": "ck77gabpb001ov2v2046k5uvi"
+                },
+                {
+                    "balanceAmount": 6938.05,
+                    "category": [
+                        "Transfer",
+                        "Credit"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Credit"
+                        ],
+                        "id": 190100
+                    },
+                    "date": "20/01/17",
+                    "party": "remname",
+                    "depositAmount": 1,
+                    "isAutoDebit": false,
+                    "particular": "IMPS-702020819020-REMNAME-HDFC-XXXXXXXX2760-20011764810668",
+                    "reference": "0000702020819020",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpb001pv2v2gtyw9z5e"
+                },
+                {
+                    "balanceAmount": 1298.05,
+                    "category": [
+                        "Community",
+                        "Education"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Community",
+                            "Education"
+                        ],
+                        "id": 120100
+                    },
+                    "date": "21/01/17",
+                    "party": "micr sd adarsh",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "CHQ PAID-MICR CTS-NO-SD ADARSH VIDYALAYA",
+                    "reference": "0000000000000032",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 5640,
+                    "transactionId": "ck77gabpb001qv2v2gg16857v"
+                },
+                {
+                    "balanceAmount": 2708.05,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "21/01/17",
+                    "party": "ani technologies private",
+                    "depositAmount": 1410,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-0P17012163449269",
+                    "reference": "0P17012163449269",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpb001rv2v2631dg26f"
+                },
+                {
+                    "balanceAmount": 7708.05,
+                    "category": [
+                        "Transfer",
+                        "Credit"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Credit"
+                        ],
+                        "id": 190100
+                    },
+                    "date": "22/01/17",
+                    "party": "rahul",
+                    "depositAmount": 5000,
+                    "isAutoDebit": false,
+                    "particular": "IMPS-702215406549-RAHUL-HDFC-XXXXXXXX9798-177233421",
+                    "reference": "0000702215406549",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpb001sv2v2hplsbwlt"
+                },
+                {
+                    "balanceAmount": 12708.05,
+                    "category": [
+                        "Transfer",
+                        "Credit"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Credit"
+                        ],
+                        "id": 190100
+                    },
+                    "date": "22/01/17",
+                    "party": "rahul",
+                    "depositAmount": 5000,
+                    "isAutoDebit": false,
+                    "particular": "IMPS-702217552343-RAHUL-HDFC-XXXXXXXX9798-177258964",
+                    "reference": "0000702217552343",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpb001tv2v2c7r649im"
+                },
+                {
+                    "balanceAmount": 14708.05,
+                    "category": [
+                        "Transfer",
+                        "Credit"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Credit"
+                        ],
+                        "id": 190100
+                    },
+                    "date": "22/01/17",
+                    "party": "rahul",
+                    "depositAmount": 2000,
+                    "isAutoDebit": false,
+                    "particular": "IMPS-702218626937-RAHUL-HDFC-XXXXXXXX9798-177276456",
+                    "reference": "0000702218626937",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpb001uv2v2ecdkhoh1"
+                },
+                {
+                    "balanceAmount": 14705.17,
+                    "category": [
+                        "Bank Fees"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Bank Fees"
+                        ],
+                        "id": 100000
+                    },
+                    "date": "23/01/17",
+                    "party": "chgs incl st &",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CHGS INCL ST & CESS 170117",
+                    "reference": "000000000000000",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 2.88,
+                    "transactionId": "ck77gabpb001vv2v202hm9rgc"
+                },
+                {
+                    "balanceAmount": 305.17,
+                    "category": [
+                        "Payment",
+                        "Loan"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Payment",
+                            "Loan"
+                        ],
+                        "id": 160400
+                    },
+                    "date": "23/01/17",
+                    "party": "aufinanciersindialtd lvptu04016",
+                    "depositAmount": 0,
+                    "isAutoDebit": true,
+                    "particular": "ACH D- AUFINANCIERSINDIALTD-LVPTU04016-1",
+                    "reference": "0000002000733023",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 14400,
+                    "transactionId": "ck77gabpb001wv2v2byvbd2vs"
+                },
+                {
+                    "balanceAmount": 4292.17,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "23/01/17",
+                    "party": "ani technologies private",
+                    "depositAmount": 3987,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-0P17012365118320",
+                    "reference": "0P17012365118320",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpb001xv2v224z92zgl"
+                },
+                {
+                    "balanceAmount": 4763.17,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "24/01/17",
+                    "party": "ani technologies private",
+                    "depositAmount": 471,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-0P17012467457083",
+                    "reference": "0P17012467457083",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpb001yv2v25450a3i8"
+                },
+                {
+                    "balanceAmount": 2263.17,
+                    "category": [
+                        "Transfer",
+                        "Debit"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Debit"
+                        ],
+                        "id": 190200
+                    },
+                    "date": "25/01/17",
+                    "party": "vidya devi",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "NEFT DR-STBP0001117-VIDYA DEVI-NETBANK,MUM-N025170237107852",
+                    "reference": "N025170237107852",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 2500,
+                    "transactionId": "ck77gabpc001zv2v2gan67az4"
+                },
+                {
+                    "balanceAmount": 3413.17,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "25/01/17",
+                    "party": "rahul yadav",
+                    "depositAmount": 1150,
+                    "isAutoDebit": false,
+                    "particular": "IMPS-702512381887-RAHUL YADAV-HDFC-XXXXXXXXSDRR-P2BOTP_43BB489633E49D0E",
+                    "reference": "0000702512381887",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpc0020v2v217avbfva"
+                },
+                {
+                    "balanceAmount": 413.17,
+                    "category": [
+                        "Transfer",
+                        "Debit"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Debit"
+                        ],
+                        "id": 190200
+                    },
+                    "date": "25/01/17",
+                    "party": "idib000s208 sanjay rathi",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "NEFT DR-IDIB000S208-SANJAY RATHI-NETBANK, MUM-N025170237139856",
+                    "reference": "N025170237139856",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 3000,
+                    "transactionId": "ck77gabpc0021v2v2e7i601dz"
+                },
+                {
+                    "balanceAmount": 3584.17,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "25/01/17",
+                    "party": "ani technologies private",
+                    "depositAmount": 3171,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-0P17012568474845",
+                    "reference": "0P17012568474845",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpc0022v2v24g5zfw55"
+                },
+                {
+                    "balanceAmount": 584.17,
+                    "category": [
+                        "Cash Advance",
+                        "ATM"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Cash Advance",
+                            "ATM"
+                        ],
+                        "id": 110300
+                    },
+                    "date": "27/01/17",
+                    "party": "n2895001",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "NWD-436303XXXXXX1688-N2895001-GURGAON",
+                    "reference": "0000000000008235",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 3000,
+                    "transactionId": "ck77gabpc0023v2v23qecf9fm"
+                },
+                {
+                    "balanceAmount": 587.92,
+                    "category": [
+                        "Travel",
+                        "Gas Station"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Travel",
+                            "Gas Station"
+                        ],
+                        "id": 200100
+                    },
+                    "date": "27/01/17",
+                    "party": "436303******1688 bp",
+                    "depositAmount": 3.75,
+                    "isAutoDebit": false,
+                    "particular": "POS REF 436303******1688-01/21 BP 38",
+                    "reference": "000000000000000",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpc0024v2v24el2dfsq"
+                },
+                {
+                    "balanceAmount": 893.92,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "27/01/17",
+                    "party": "ani technologies private",
+                    "depositAmount": 306,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-0P17012769758573",
+                    "reference": "0P17012769758573",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpc0025v2v28x400bcy"
+                },
+                {
+                    "balanceAmount": 1639.92,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "27/01/17",
+                    "party": "ani technologies private",
+                    "depositAmount": 746,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-0P17012769758565",
+                    "reference": "0P17012769758565",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpc0026v2v2hu3c2z90"
+                },
+                {
+                    "balanceAmount": 4039.92,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "28/01/17",
+                    "party": "rahul yadav",
+                    "depositAmount": 2400,
+                    "isAutoDebit": false,
+                    "particular": "IMPS-702813953625-RAHUL YADAV-HDFC-XXXXXXXXSDRR-P2BOTP_F9F64FDC23B62AD5",
+                    "reference": "0000702813953625",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpc0027v2v26qfx46a9"
+                },
+                {
+                    "balanceAmount": 4034.16,
+                    "category": [
+                        "Bank Fees"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Bank Fees"
+                        ],
+                        "id": 100000
+                    },
+                    "date": "30/01/17",
+                    "party": "chgs incl st &",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CHGS INCL ST & CESS 250117",
+                    "reference": "000000000000000",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 5.76,
+                    "transactionId": "ck77gabpc0028v2v23908ewpa"
+                },
+                {
+                    "balanceAmount": 8456.16,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "30/01/17",
+                    "party": "ani technologies private",
+                    "depositAmount": 4422,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-0P17013071005087",
+                    "reference": "0P17013071005087",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpc0029v2v24iah8kax"
+                },
+                {
+                    "balanceAmount": 8730.16,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "30/01/17",
+                    "party": "ani technologies private",
+                    "depositAmount": 274,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-0P17013071005071",
+                    "reference": "0P17013071005071",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpc002av2v270vgeh5g"
+                },
+                {
+                    "balanceAmount": 9321.16,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "30/01/17",
+                    "party": "ani technologies private",
+                    "depositAmount": 591,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-0P17013071179918",
+                    "reference": "0P17013071179918",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpc002bv2v25mdg5e1z"
+                },
+                {
+                    "balanceAmount": 9948.16,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "30/01/17",
+                    "party": "ani technologies private",
+                    "depositAmount": 627,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-0P17013071179923",
+                    "reference": "0P17013071179923",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpc002cv2v2eucg1met"
+                },
+                {
+                    "balanceAmount": 9193.16,
+                    "category": [
+                        "Travel",
+                        "Train"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Travel",
+                            "Train"
+                        ],
+                        "id": 200200
+                    },
+                    "date": "31/01/17",
+                    "party": "irctc_new",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "100000729819722/IRCTC_NEW",
+                    "reference": "0000170315437688",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 755,
+                    "transactionId": "ck77gabpc002dv2v2afs6es22"
+                },
+                {
+                    "balanceAmount": 9181.66,
+                    "category": [
+                        "Travel",
+                        "Train"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Travel",
+                            "Train"
+                        ],
+                        "id": 200200
+                    },
+                    "date": "31/01/17",
+                    "party": "irctc_new",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "100000729819722/IRCTC_NEW",
+                    "reference": "0000170315437688",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 11.5,
+                    "transactionId": "ck77gabpc002ev2v21sfy63os"
+                },
+                {
+                    "balanceAmount": 13165.66,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "31/01/17",
+                    "party": "ani technologies private",
+                    "depositAmount": 3984,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-0P17013172396852",
+                    "reference": "0P17013172396852",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpc002fv2v2fg4q9qrq"
+                },
+                {
+                    "balanceAmount": 14180.66,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "31/01/17",
+                    "party": "ani technologies private",
+                    "depositAmount": 1015,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-0P17013172396856",
+                    "reference": "0P17013172396856",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpc002gv2v25esv153g"
+                },
+                {
+                    "balanceAmount": 16180.66,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "01/02/17",
+                    "party": "rahul yadav",
+                    "depositAmount": 2000,
+                    "isAutoDebit": false,
+                    "particular": "IMPS-703210347342-RAHUL YADAV-HDFC-XXXXXXXXSDRR-P2BOTP_11FE4082C2B201EE",
+                    "reference": "0000703210347342",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpc002hv2v2he9hc7hu"
+                },
+                {
+                    "balanceAmount": 6180.66,
+                    "category": [
+                        "Transfer",
+                        "Debit"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Debit"
+                        ],
+                        "id": 190200
+                    },
+                    "date": "01/02/17",
+                    "party": "sanjay rathi",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "IMPS-703211108906-SANJAY RATHI-IDIB-XXXXXX2713-LOAD",
+                    "reference": "0000703211108906",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 10000,
+                    "transactionId": "ck77gabpc002iv2v2agdcc106"
+                },
+                {
+                    "balanceAmount": 8320.66,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "01/02/17",
+                    "party": "ani technologies private",
+                    "depositAmount": 2140,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-0P17020173659913",
+                    "reference": "0P17020173659913",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpc002jv2v235ym2p9p"
+                },
+                {
+                    "balanceAmount": 8408.66,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "01/02/17",
+                    "party": "ani technologies private",
+                    "depositAmount": 88,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-0P17020173659920",
+                    "reference": "0P17020173659920",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpc002kv2v2aelia7bm"
+                },
+                {
+                    "balanceAmount": 9409.66,
+                    "category": [
+                        "Transfer",
+                        "Credit"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Credit"
+                        ],
+                        "id": 190100
+                    },
+                    "date": "02/02/17",
+                    "party": "manoj",
+                    "depositAmount": 1001,
+                    "isAutoDebit": false,
+                    "particular": "IMPS-703310984800-MANOJ-HDFC-XXXXXXXX9798-182861739",
+                    "reference": "0000703310984800",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpc002lv2v2fjva5glv"
+                },
+                {
+                    "balanceAmount": 7575.66,
+                    "category": [
+                        "Uncategorized"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Uncategorized"
+                        ],
+                        "id": 0
+                    },
+                    "date": "02/02/17",
+                    "party": "bajafinemi bf",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "BAJAFINEMI-BF-1189499-245524",
+                    "reference": "000000000000000",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 1834,
+                    "transactionId": "ck77gabpc002mv2v2eq00dc52"
+                },
+                {
+                    "balanceAmount": 2575.66,
+                    "category": [
+                        "Transfer",
+                        "Debit"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Debit"
+                        ],
+                        "id": 190200
+                    },
+                    "date": "02/02/17",
+                    "party": "sanjay rathi",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "IMPS-703312102642-SANJAY RATHI-IDIB-XXXXXX2713-LOAD",
+                    "reference": "0000703312102642",
+                    "type": "REVERSAL",
+                    "withdrawalAmount": 5000,
+                    "transactionId": "ck77gabpc002nv2v2gs7d5ndd"
+                },
+                {
+                    "balanceAmount": 7575.66,
+                    "category": [
+                        "Transfer",
+                        "Refund"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Refund"
+                        ],
+                        "id": 190300
+                    },
+                    "date": "02/02/17",
+                    "party": "sanjay rathi",
+                    "depositAmount": 5000,
+                    "isAutoDebit": false,
+                    "particular": "REV--IMPS-703312102642-SANJAY RATHI-IDIB-XXXXXX2713-LOAD",
+                    "reference": "0000703312102642",
+                    "type": "REVERSAL",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpc002ov2v2gidefown"
+                },
+                {
+                    "balanceAmount": 5575.66,
+                    "category": [
+                        "Cash Advance",
+                        "ATM"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Cash Advance",
+                            "ATM"
+                        ],
+                        "id": 110300
+                    },
+                    "date": "02/02/17",
+                    "party": "s1cn3496",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "NWD-436303XXXXXX1688-S1CN3496-GURGAON",
+                    "reference": "0000703316004064",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 2000,
+                    "transactionId": "ck77gabpc002pv2v29yf75xhu"
+                },
+                {
+                    "balanceAmount": 6392.66,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "02/02/17",
+                    "party": "ani technologies private",
+                    "depositAmount": 817,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-0P17020274903533",
+                    "reference": "0P17020274903533",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpc002qv2v2fix52fby"
+                },
+                {
+                    "balanceAmount": 6799.66,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "02/02/17",
+                    "party": "ani technologies private",
+                    "depositAmount": 407,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-0P17020274903537",
+                    "reference": "0P17020274903537",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpc002rv2v279vy1v0o"
+                },
+                {
+                    "balanceAmount": 6822.66,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "03/02/17",
+                    "party": "ani technologies private",
+                    "depositAmount": 23,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-0P17020376369318",
+                    "reference": "0P17020376369318",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpc002sv2v2grno9k5t"
+                },
+                {
+                    "balanceAmount": 10429.66,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "03/02/17",
+                    "party": "ani technologies private",
+                    "depositAmount": 3607,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-0P17020376369315",
+                    "reference": "0P17020376369315",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpc002tv2v2a2ks6h14"
+                },
+                {
+                    "balanceAmount": 9429.66,
+                    "category": [
+                        "Transfer",
+                        "Debit"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Debit"
+                        ],
+                        "id": 190200
+                    },
+                    "date": "04/02/17",
+                    "party": "vidya devi",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "NEFT DR-STBP0001117-VIDYA DEVI-NETBANK,MUM-N035170242040146",
+                    "reference": "N035170242040146",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 1000,
+                    "transactionId": "ck77gabpc002uv2v295pvfxja"
+                },
+                {
+                    "balanceAmount": 10029.66,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "04/02/17",
+                    "party": "rahul yadav",
+                    "depositAmount": 600,
+                    "isAutoDebit": false,
+                    "particular": "IMPS-703513939703-RAHUL YADAV-HDFC-XXXXXXXXSDRR-P2BOTP_202838D0E3A54F9A",
+                    "reference": "0000703513939703",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpc002vv2v2bxgqdnm7"
+                },
+                {
+                    "balanceAmount": 13078.66,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "04/02/17",
+                    "party": "ani technologies private",
+                    "depositAmount": 3049,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-0P17020477394166",
+                    "reference": "0P17020477394166",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpc002wv2v2a40i4pkb"
+                },
+                {
+                    "balanceAmount": 13248.66,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "04/02/17",
+                    "party": "ani technologies private",
+                    "depositAmount": 170,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-0P17020477394168",
+                    "reference": "0P17020477394168",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpc002xv2v21zbr63b8"
+                },
+                {
+                    "balanceAmount": 8748.66,
+                    "category": [
+                        "Uncategorized"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Uncategorized"
+                        ],
+                        "id": 0
+                    },
+                    "date": "06/02/17",
+                    "party": "bajafinemi bf",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "BAJAFINEMI-BF-1189499-213821",
+                    "reference": "000000000000000",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 4500,
+                    "transactionId": "ck77gabpc002yv2v27bkr3m9g"
+                },
+                {
+                    "balanceAmount": 748.66,
+                    "category": [
+                        "Transfer",
+                        "Debit"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Debit"
+                        ],
+                        "id": 190200
+                    },
+                    "date": "06/02/17",
+                    "party": "idib000s208 sanjay rathi",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "NEFT DR-IDIB000S208-SANJAY RATHI-NETBANK, MUM-N037170242706549",
+                    "reference": "N037170242706549",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 8000,
+                    "transactionId": "ck77gabpd002zv2v2czkdhwbd"
+                },
+                {
+                    "balanceAmount": 6957.66,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "06/02/17",
+                    "party": "ani technologies private",
+                    "depositAmount": 6209,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-0P17020678300541",
+                    "reference": "0P17020678300541",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpd0030v2v2av0b8bkf"
+                },
+                {
+                    "balanceAmount": 7084.66,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "06/02/17",
+                    "party": "ani technologies private",
+                    "depositAmount": 127,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-0P17020678300569",
+                    "reference": "0P17020678300569",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpd0031v2v27hox8ita"
+                },
+                {
+                    "balanceAmount": 7116.66,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "07/02/17",
+                    "party": "ani technologies private",
+                    "depositAmount": 32,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-0P17020779415144",
+                    "reference": "0P17020779415144",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpd0032v2v2g0kke01e"
+                },
+                {
+                    "balanceAmount": 7131.32,
+                    "category": [
+                        "Shops",
+                        "Refund"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Shops",
+                            "Refund"
+                        ],
+                        "id": 180100
+                    },
+                    "date": "07/02/17",
+                    "party": "436303******1688",
+                    "depositAmount": 14.66,
+                    "isAutoDebit": false,
+                    "particular": "CRV POS 436303******1688 DEBIT CARD SURC",
+                    "reference": "000000000000000",
+                    "type": "REVERSAL",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpd0033v2v2hpri9fmj"
+                },
+                {
+                    "balanceAmount": -7455.82,
+                    "category": [
+                        "Payment",
+                        "Credit Card"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Payment",
+                            "Credit Card"
+                        ],
+                        "id": 160300
+                    },
+                    "date": "08/02/17",
+                    "party": null,
+                    "depositAmount": 0,
+                    "isAutoDebit": true,
+                    "particular": "CC 000489377XXXXXX2616 AUTOPAY SI-TAD",
+                    "reference": "0000000060701808",
+                    "type": "DEFAULT",
+                    "withdrawalAmount": 14587.14,
+                    "transactionId": "ck77gabpd0034v2v2g8on3bgx"
+                },
+                {
+                    "balanceAmount": 7131.32,
+                    "category": [
+                        "Payment",
+                        "Credit Card"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Payment",
+                            "Credit Card"
+                        ],
+                        "id": 160300
+                    },
+                    "date": "08/02/17",
+                    "party": null,
+                    "depositAmount": 14587.14,
+                    "isAutoDebit": true,
+                    "particular": "CC 000489377XXXXXX2616 AUTOPAY SI-TAD",
+                    "reference": "0000000060701809",
+                    "type": "DEFAULT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpd0035v2v21n342gn5"
+                },
+                {
+                    "balanceAmount": 5131.32,
+                    "category": [
+                        "Travel",
+                        "Taxi"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Travel",
+                            "Taxi"
+                        ],
+                        "id": 200300
+                    },
+                    "date": "08/02/17",
+                    "party": "ola store,",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "POS 436303XXXXXX1688 OLA STORE, POS DEBIT",
+                    "reference": "0000000000005533",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 2000,
+                    "transactionId": "ck77gabpd0036v2v276ye5h6y"
+                },
+                {
+                    "balanceAmount": -3425.82,
+                    "category": [
+                        "Payment",
+                        "Credit Card"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Payment",
+                            "Credit Card"
+                        ],
+                        "id": 160300
+                    },
+                    "date": "08/02/17",
+                    "party": null,
+                    "depositAmount": 0,
+                    "isAutoDebit": true,
+                    "particular": "CC 000489377XXXXXX2616 AUTOPAY SI-TAD",
+                    "reference": "0000000060731502",
+                    "type": "DEFAULT",
+                    "withdrawalAmount": 8557.14,
+                    "transactionId": "ck77gabpd0037v2v25uwi1nuw"
+                },
+                {
+                    "balanceAmount": 5131.32,
+                    "category": [
+                        "Payment",
+                        "Credit Card"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Payment",
+                            "Credit Card"
+                        ],
+                        "id": 160300
+                    },
+                    "date": "08/02/17",
+                    "party": null,
+                    "depositAmount": 8557.14,
+                    "isAutoDebit": true,
+                    "particular": "CC 000489377XXXXXX2616 AUTOPAY SI-TAD",
+                    "reference": "0000000060731503",
+                    "type": "DEFAULT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpd0038v2v22y7g0dy7"
+                },
+                {
+                    "balanceAmount": 3131.32,
+                    "category": [
+                        "Transfer",
+                        "Debit"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Debit"
+                        ],
+                        "id": 190200
+                    },
+                    "date": "08/02/17",
+                    "party": "vidya devi",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "IMPS-703914329495-VIDYA DEVI-STBP-XXXXXXX1761-PERSONAL",
+                    "reference": "0000703914329495",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 2000,
+                    "transactionId": "ck77gabpd0039v2v2004hej53"
+                },
+                {
+                    "balanceAmount": 63131.32,
+                    "category": [
+                        "Transfer",
+                        "Credit"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Credit"
+                        ],
+                        "id": 190100
+                    },
+                    "date": "08/02/17",
+                    "party": "daya nand rahul",
+                    "depositAmount": 60000,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CR-UCBA0001910-DAYA NAND-RAHUL YADAV-SAA90378310",
+                    "reference": "00000SAA90378310",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpd003av2v21ve50sqp"
+                },
+                {
+                    "balanceAmount": 48544.18,
+                    "category": [
+                        "Payment"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Payment"
+                        ],
+                        "id": 160000
+                    },
+                    "date": "08/02/17",
+                    "party": "489377xxxxxx2616",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "IB BILLPAY DR-HDFCVE-489377XXXXXX2616",
+                    "reference": "000000000000000",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 14587.14,
+                    "transactionId": "ck77gabpd003bv2v20f8ehbd1"
+                },
+                {
+                    "balanceAmount": 35244.18,
+                    "category": [
+                        "Transfer",
+                        "Debit"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Debit"
+                        ],
+                        "id": 190200
+                    },
+                    "date": "08/02/17",
+                    "party": "pawan kumar",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "NEFT DR-UTIB0000007-PAWAN KUMAR-NETBANK,MUM-N039170244398826",
+                    "reference": "N039170244398826",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 13300,
+                    "transactionId": "ck77gabpd003cv2v24od6fcwk"
+                },
+                {
+                    "balanceAmount": 36679.18,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "08/02/17",
+                    "party": "ani technologies private",
+                    "depositAmount": 1435,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-0P17020880671847",
+                    "reference": "0P17020880671847",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpd003dv2v2655tdioa"
+                },
+                {
+                    "balanceAmount": 27679.18,
+                    "category": [
+                        "Transfer",
+                        "Debit"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Debit"
+                        ],
+                        "id": 190200
+                    },
+                    "date": "09/02/17",
+                    "party": "idib000s208 sanjay rathi",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "NEFT DR-IDIB000S208-SANJAY RATHI-NETBANK, MUM-N040170244633960",
+                    "reference": "N040170244633960",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 9000,
+                    "transactionId": "ck77gabpd003ev2v254ut10bm"
+                },
+                {
+                    "balanceAmount": 28378.18,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "09/02/17",
+                    "party": "ani technologies private",
+                    "depositAmount": 699,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-0P17020981670464",
+                    "reference": "0P17020981670464",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpd003fv2v2c31c2ppc"
+                },
+                {
+                    "balanceAmount": 23378.18,
+                    "category": [
+                        "Shops"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Shops"
+                        ],
+                        "id": 180000
+                    },
+                    "date": "09/02/17",
+                    "party": "paytm app",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "POS 436303XXXXXX1688 PAYTM APP POS DEBIT",
+                    "reference": "0000704000147373",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 5000,
+                    "transactionId": "ck77gabpd003gv2v2bkn86bsg"
+                },
+                {
+                    "balanceAmount": 18378.18,
+                    "category": [
+                        "Cash Advance",
+                        "ATM"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Cash Advance",
+                            "ATM"
+                        ],
+                        "id": 110300
+                    },
+                    "date": "10/02/17",
+                    "party": "eaw",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "EAW-436303XXXXXX1688-BECN1262-GURGAON",
+                    "reference": "0000000000000052",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 5000,
+                    "transactionId": "ck77gabpd003hv2v21ard6pwi"
+                },
+                {
+                    "balanceAmount": 18956.18,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "10/02/17",
+                    "party": "ani technologies private",
+                    "depositAmount": 578,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-0P17021082649270",
+                    "reference": "0P17021082649270",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpd003iv2v2dwg03vr5"
+                },
+                {
+                    "balanceAmount": 16796.18,
+                    "category": [
+                        "Shops",
+                        "Apparel"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Shops",
+                            "Apparel"
+                        ],
+                        "id": 180200
+                    },
+                    "date": "10/02/17",
+                    "party": "pehnawa siyarams",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "POS 436303XXXXXX1688 PEHNAWA SIYARAMS POS DEBIT",
+                    "reference": "0000000000000289",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 2160,
+                    "transactionId": "ck77gabpd003jv2v2591ofchb"
+                },
+                {
+                    "balanceAmount": 14296.18,
+                    "category": [
+                        "Shops"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Shops"
+                        ],
+                        "id": 180000
+                    },
+                    "date": "11/02/17",
+                    "party": "paytm app",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "POS 436303XXXXXX1688 PAYTM APP POS DEBIT",
+                    "reference": "0000704200120284",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 2500,
+                    "transactionId": "ck77gabpd003kv2v29ccqd3y9"
+                },
+                {
+                    "balanceAmount": 14293.3,
+                    "category": [
+                        "Bank Fees"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Bank Fees"
+                        ],
+                        "id": 100000
+                    },
+                    "date": "13/02/17",
+                    "party": "chgs incl st &",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CHGS INCL ST & CESS 040217",
+                    "reference": "000000000000000",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 2.88,
+                    "transactionId": "ck77gabpd003lv2v29pxvc931"
+                },
+                {
+                    "balanceAmount": 14290.42,
+                    "category": [
+                        "Bank Fees"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Bank Fees"
+                        ],
+                        "id": 100000
+                    },
+                    "date": "13/02/17",
+                    "party": "chgs incl st &",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CHGS INCL ST & CESS 060217",
+                    "reference": "000000000000000",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 2.88,
+                    "transactionId": "ck77gabpd003mv2v2e75z0r1y"
+                },
+                {
+                    "balanceAmount": 14284.67,
+                    "category": [
+                        "Bank Fees"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Bank Fees"
+                        ],
+                        "id": 100000
+                    },
+                    "date": "13/02/17",
+                    "party": "chgs incl st &",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CHGS INCL ST & CESS 080217",
+                    "reference": "000000000000000",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 5.75,
+                    "transactionId": "ck77gabpd003nv2v2b9fb8ik2"
+                },
+                {
+                    "balanceAmount": 14281.79,
+                    "category": [
+                        "Bank Fees"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Bank Fees"
+                        ],
+                        "id": 100000
+                    },
+                    "date": "13/02/17",
+                    "party": "chgs incl st &",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CHGS INCL ST & CESS 090217",
+                    "reference": "000000000000000",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 2.88,
+                    "transactionId": "ck77gabpd003ov2v2f0mc18ww"
+                },
+                {
+                    "balanceAmount": 14836.79,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "14/02/17",
+                    "party": "ani technologies private",
+                    "depositAmount": 555,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-N044170000402513",
+                    "reference": "N044170000402513",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpd003pv2v2gk3u548l"
+                },
+                {
+                    "balanceAmount": 17826.79,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "14/02/17",
+                    "party": "ani technologies private",
+                    "depositAmount": 2990,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-N044170000446617",
+                    "reference": "N044170000446617",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpd003qv2v2bcnw802l"
+                },
+                {
+                    "balanceAmount": 19326.79,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "14/02/17",
+                    "party": "rahul yadav",
+                    "depositAmount": 1500,
+                    "isAutoDebit": false,
+                    "particular": "IMPS-704516103892-RAHUL YADAV-HDFC-XXXXXXXXSDRR-P2BOTP_1EEC6DE4EA94A580",
+                    "reference": "0000704516103892",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpd003rv2v273sgcm11"
+                },
+                {
+                    "balanceAmount": 9326.79,
+                    "category": [
+                        "Transfer",
+                        "Debit"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Debit"
+                        ],
+                        "id": 190200
+                    },
+                    "date": "15/02/17",
+                    "party": "sanjay rathi",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "IMPS-704612304375-SANJAY RATHI-IDIB-XXXXXX2713-LOAD",
+                    "reference": "0000704612304375",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 10000,
+                    "transactionId": "ck77gabpd003sv2v20ad236vm"
+                },
+                {
+                    "balanceAmount": 10202.79,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "15/02/17",
+                    "party": "ani technologies private",
+                    "depositAmount": 876,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-N046170000935460",
+                    "reference": "N046170000935460",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpd003tv2v22g8jdl4o"
+                },
+                {
+                    "balanceAmount": 9202.79,
+                    "category": [
+                        "Shops"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Shops"
+                        ],
+                        "id": 180000
+                    },
+                    "date": "15/02/17",
+                    "party": "paytm app",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "POS 436303XXXXXX1688 PAYTM APP POS DEBIT",
+                    "reference": "0000704660212737",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 1000,
+                    "transactionId": "ck77gabpd003uv2v219kj93ru"
+                },
+                {
+                    "balanceAmount": 8054.79,
+                    "category": [
+                        "Service",
+                        "Internet"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Service",
+                            "Internet"
+                        ],
+                        "id": 170200
+                    },
+                    "date": "16/02/17",
+                    "party": "nextraworld_payt",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "POS 436303XXXXXX1688 NEXTRAWORLD_PAYT POS DEBIT",
+                    "reference": "0000704703514223",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 1148,
+                    "transactionId": "ck77gabpd003vv2v23kim7v5c"
+                },
+                {
+                    "balanceAmount": 2054.79,
+                    "category": [
+                        "Transfer",
+                        "Debit"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Debit"
+                        ],
+                        "id": 190200
+                    },
+                    "date": "16/02/17",
+                    "party": "idib000s208 sanjay rathi",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "NEFT DR-IDIB000S208-SANJAY RATHI-NETBANK, MUM-N047170247654360",
+                    "reference": "N047170247654360",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 6000,
+                    "transactionId": "ck77gabpd003wv2v2fjyv7a98"
+                },
+                {
+                    "balanceAmount": 2049.04,
+                    "category": [
+                        "Transfer",
+                        "Debit"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Debit"
+                        ],
+                        "id": 190200
+                    },
+                    "date": "16/02/17",
+                    "party": "703211108906#01",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "IMPS P2P 575 703211108906#01/02/ 040217",
+                    "reference": "0000000000000006",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 5.75,
+                    "transactionId": "ck77gabpd003xv2v2f93508uz"
+                },
+                {
+                    "balanceAmount": 4533.04,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "16/02/17",
+                    "party": "ani technologies private",
+                    "depositAmount": 2484,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-N047170001131925",
+                    "reference": "N047170001131925",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpe003yv2v26opyd8v8"
+                },
+                {
+                    "balanceAmount": 5533.04,
+                    "category": [
+                        "Cash Advance",
+                        "Credit"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Cash Advance",
+                            "Credit"
+                        ],
+                        "id": 110100
+                    },
+                    "date": "16/02/17",
+                    "party": null,
+                    "depositAmount": 1000,
+                    "isAutoDebit": false,
+                    "particular": "DEBIT CARD CASH BACK",
+                    "reference": "000000000000000",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpe003zv2v2bh498jhy"
+                },
+                {
+                    "balanceAmount": 5527.29,
+                    "category": [
+                        "Transfer",
+                        "Debit"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Debit"
+                        ],
+                        "id": 190200
+                    },
+                    "date": "17/02/17",
+                    "party": "703914329495#08",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "IMPS P2P 575 703914329495#08/02/ 100217",
+                    "reference": "0000000000000005",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 5.75,
+                    "transactionId": "ck77gabpe0040v2v2bfca0czh"
+                },
+                {
+                    "balanceAmount": 7792.29,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "17/02/17",
+                    "party": "ani technologies private",
+                    "depositAmount": 2265,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-N048170001352611",
+                    "reference": "N048170001352611",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpe0041v2v2hf0v0fau"
+                },
+                {
+                    "balanceAmount": 7789.41,
+                    "category": [
+                        "Bank Fees"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Bank Fees"
+                        ],
+                        "id": 100000
+                    },
+                    "date": "18/02/17",
+                    "party": "chgs incl st &",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CHGS INCL ST & CESS 160217",
+                    "reference": "000000000000000",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 2.88,
+                    "transactionId": "ck77gabpe0042v2v2g4kw06bm"
+                },
+                {
+                    "balanceAmount": 10877.41,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "18/02/17",
+                    "party": "ani technologies private",
+                    "depositAmount": 3088,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-N049170001633323",
+                    "reference": "N049170001633323",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpe0043v2v26oq45s7m"
+                },
+                {
+                    "balanceAmount": 15877.41,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "18/02/17",
+                    "party": "rahul yadav",
+                    "depositAmount": 5000,
+                    "isAutoDebit": false,
+                    "particular": "IMPS-704917253763-RAHUL YADAV-HDFC-XXXXXXXXSDRR-P2BOTP_092071DFDAB1898A",
+                    "reference": "0000704917253763",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpe0044v2v2dfda091m"
+                },
+                {
+                    "balanceAmount": 13877.41,
+                    "category": [
+                        "Shops"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Shops"
+                        ],
+                        "id": 180000
+                    },
+                    "date": "18/02/17",
+                    "party": "paytm app",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "POS 436303XXXXXX1688 PAYTM APP POS DEBIT",
+                    "reference": "0000704900139441",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 2000,
+                    "transactionId": "ck77gabpe0045v2v2hat3a2o0"
+                },
+                {
+                    "balanceAmount": 13152.41,
+                    "category": [
+                        "Travel",
+                        "Train"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Travel",
+                            "Train"
+                        ],
+                        "id": 200200
+                    },
+                    "date": "19/02/17",
+                    "party": "irctc_new",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "100000749518828/IRCTC_NEW",
+                    "reference": "0000170509418920",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 725,
+                    "transactionId": "ck77gabpe0046v2v22d997h83"
+                },
+                {
+                    "balanceAmount": 13140.91,
+                    "category": [
+                        "Travel",
+                        "Train"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Travel",
+                            "Train"
+                        ],
+                        "id": 200200
+                    },
+                    "date": "19/02/17",
+                    "party": "irctc_new",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "100000749518828/IRCTC_NEW",
+                    "reference": "0000170509418920",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 11.5,
+                    "transactionId": "ck77gabpe0047v2v26tpgexxy"
+                },
+                {
+                    "balanceAmount": 15140.91,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "19/02/17",
+                    "party": "rahul yadav",
+                    "depositAmount": 2000,
+                    "isAutoDebit": false,
+                    "particular": "IMPS-705018591043-RAHUL YADAV-HDFC-XXXXXXXXSDRR-P2BOTP_BD7686E308B2E0C0",
+                    "reference": "0000705018591043",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpe0048v2v2bmreaapl"
+                },
+                {
+                    "balanceAmount": 5140.91,
+                    "category": [
+                        "Transfer",
+                        "Debit"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Debit"
+                        ],
+                        "id": 190200
+                    },
+                    "date": "20/02/17",
+                    "party": "idib000s208 sanjay rathi",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "NEFT DR-IDIB000S208-SANJAY RATHI-NETBANK, MUM-N051170248779164",
+                    "reference": "N051170248779164",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 10000,
+                    "transactionId": "ck77gabpe0049v2v2ftn62rjv"
+                },
+                {
+                    "balanceAmount": 5135.16,
+                    "category": [
+                        "Transfer",
+                        "Debit"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Debit"
+                        ],
+                        "id": 190200
+                    },
+                    "date": "20/02/17",
+                    "party": "704612304375#15",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "IMPS P2P 575 704612304375#15/02/ 160217",
+                    "reference": "0000000000000005",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 5.75,
+                    "transactionId": "ck77gabpe004av2v2dnb70tjs"
+                },
+                {
+                    "balanceAmount": 8743.16,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "20/02/17",
+                    "party": "ani technologies private",
+                    "depositAmount": 3608,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-N051170001860911",
+                    "reference": "N051170001860911",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpe004bv2v2crpd5q1l"
+                },
+                {
+                    "balanceAmount": 9408.16,
+                    "category": [
+                        "Travel",
+                        "Refund"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Travel",
+                            "Refund"
+                        ],
+                        "id": 200400
+                    },
+                    "date": "20/02/17",
+                    "party": "irctc_cris",
+                    "depositAmount": 665,
+                    "isAutoDebit": false,
+                    "particular": "IRCTC_CRIS REF-19/02/17-100000749518828",
+                    "reference": "000000000000000",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpe004cv2v23q0nau0r"
+                },
+                {
+                    "balanceAmount": 10508.16,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "21/02/17",
+                    "party": "rahul yadav",
+                    "depositAmount": 1100,
+                    "isAutoDebit": false,
+                    "particular": "IMPS-705212990528-RAHUL YADAV-HDFC-XXXXXXXXSDRR-P2BOTP_0A6BEE7A46343725",
+                    "reference": "0000705212990528",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpe004dv2v2gxvogfeq"
+                },
+                {
+                    "balanceAmount": 5508.16,
+                    "category": [
+                        "Transfer",
+                        "Debit"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Debit"
+                        ],
+                        "id": 190200
+                    },
+                    "date": "21/02/17",
+                    "party": "idib000s208 sanjay rathi",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "NEFT DR-IDIB000S208-SANJAY RATHI-NETBANK, MUM-N052170249321805",
+                    "reference": "N052170249321805",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 5000,
+                    "transactionId": "ck77gabpe004ev2v2g8n6hcg6"
+                },
+                {
+                    "balanceAmount": 3423.16,
+                    "category": [
+                        "Travel",
+                        "Train"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Travel",
+                            "Train"
+                        ],
+                        "id": 200200
+                    },
+                    "date": "21/02/17",
+                    "party": "irctc_new",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "100000752067007/IRCTC_NEW",
+                    "reference": "0000170520871074",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 2085,
+                    "transactionId": "ck77gabpe004fv2v29lso8run"
+                },
+                {
+                    "balanceAmount": 3411.66,
+                    "category": [
+                        "Travel",
+                        "Train"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Travel",
+                            "Train"
+                        ],
+                        "id": 200200
+                    },
+                    "date": "21/02/17",
+                    "party": "irctc_new",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "100000752067007/IRCTC_NEW",
+                    "reference": "0000170520871074",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 11.5,
+                    "transactionId": "ck77gabpe004gv2v22gchbnlh"
+                },
+                {
+                    "balanceAmount": 2411.66,
+                    "category": [
+                        "Cash Advance",
+                        "Debit"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Cash Advance",
+                            "Debit"
+                        ],
+                        "id": 110200
+                    },
+                    "date": "21/02/17",
+                    "party": "disprency replenishment",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "CASH IN DISPRENCY DR - 05722990000065 -CHEST CASH REPLENISHMENT A/C - GUR",
+                    "reference": "000000000000000",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 1000,
+                    "transactionId": "ck77gabpe004hv2v26rqr0vfi"
+                },
+                {
+                    "balanceAmount": 2508.66,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "21/02/17",
+                    "party": "ani technologies private",
+                    "depositAmount": 97,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-N052170002042538",
+                    "reference": "N052170002042538",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpe004iv2v2bx9tfh30"
+                },
+                {
+                    "balanceAmount": 3508.66,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "22/02/17",
+                    "party": "rahul yadav",
+                    "depositAmount": 1000,
+                    "isAutoDebit": false,
+                    "particular": "IMPS-705310622105-RAHUL YADAV-HDFC-XXXXXXXXSDRR-P2BOTP_E224D0841D3D6458",
+                    "reference": "0000705310622105",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpe004jv2v2dm4t9f2i"
+                },
+                {
+                    "balanceAmount": 3505.78,
+                    "category": [
+                        "Bank Fees"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Bank Fees"
+                        ],
+                        "id": 100000
+                    },
+                    "date": "22/02/17",
+                    "party": "chgs incl st &",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CHGS INCL ST & CESS 200217",
+                    "reference": "000000000000000",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 2.88,
+                    "transactionId": "ck77gabpe004kv2v266ze0v7n"
+                },
+                {
+                    "balanceAmount": 8505.78,
+                    "category": [
+                        "Transfer",
+                        "Credit"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Credit"
+                        ],
+                        "id": 190100
+                    },
+                    "date": "22/02/17",
+                    "party": "rahul",
+                    "depositAmount": 5000,
+                    "isAutoDebit": false,
+                    "particular": "IMPS-705319767305-RAHUL-HDFC-XXXXXXXX9798-194745835",
+                    "reference": "0000705319767305",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpe004lv2v22feq065v"
+                },
+                {
+                    "balanceAmount": 13505.78,
+                    "category": [
+                        "Transfer",
+                        "Credit"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Credit"
+                        ],
+                        "id": 190100
+                    },
+                    "date": "22/02/17",
+                    "party": "rahul",
+                    "depositAmount": 5000,
+                    "isAutoDebit": false,
+                    "particular": "IMPS-705319792110-RAHUL-HDFC-XXXXXXXX9798-194755705",
+                    "reference": "0000705319792110",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpe004mv2v2cf5619c1"
+                },
+                {
+                    "balanceAmount": 15005.78,
+                    "category": [
+                        "Transfer",
+                        "Credit"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Credit"
+                        ],
+                        "id": 190100
+                    },
+                    "date": "22/02/17",
+                    "party": "rahul",
+                    "depositAmount": 1500,
+                    "isAutoDebit": false,
+                    "particular": "IMPS-705319796972-RAHUL-HDFC-XXXXXXXX9798-194757501",
+                    "reference": "0000705319796972",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpe004nv2v20cayb2cd"
+                },
+                {
+                    "balanceAmount": 15002.9,
+                    "category": [
+                        "Bank Fees"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Bank Fees"
+                        ],
+                        "id": 100000
+                    },
+                    "date": "23/02/17",
+                    "party": "chgs incl st &",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CHGS INCL ST & CESS 210217",
+                    "reference": "000000000000000",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 2.88,
+                    "transactionId": "ck77gabpe004ov2v23dw11yps"
+                },
+                {
+                    "balanceAmount": 602.9,
+                    "category": [
+                        "Payment",
+                        "Loan"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Payment",
+                            "Loan"
+                        ],
+                        "id": 160400
+                    },
+                    "date": "23/02/17",
+                    "party": "aufinanciersindialtd lvptu04016",
+                    "depositAmount": 0,
+                    "isAutoDebit": true,
+                    "particular": "ACH D- AUFINANCIERSINDIALTD-LVPTU04016-1",
+                    "reference": "0000002000536054",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 14400,
+                    "transactionId": "ck77gabpe004pv2v2eu0u9hoi"
+                },
+                {
+                    "balanceAmount": 1452.9,
+                    "category": [
+                        "Transfer",
+                        "Credit"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Credit"
+                        ],
+                        "id": 190100
+                    },
+                    "date": "24/02/17",
+                    "party": "mr yudhveer",
+                    "depositAmount": 850,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CR-SBBJ0010593-MR YUDHVEER S O SHPARTAP SINGH-RAHUL YADAV-SBBJ517055027488",
+                    "reference": "SBBJ517055027488",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpe004qv2v288a2hari"
+                },
+                {
+                    "balanceAmount": 2933.9,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "24/02/17",
+                    "party": "ani technologies private",
+                    "depositAmount": 1481,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-N055170002725273",
+                    "reference": "N055170002725273",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpe004rv2v20hgt8gcm"
+                },
+                {
+                    "balanceAmount": 1683.9,
+                    "category": [
+                        "Travel",
+                        "Train"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Travel",
+                            "Train"
+                        ],
+                        "id": 200200
+                    },
+                    "date": "24/02/17",
+                    "party": "irctc_new",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "100000755864005/IRCTC_NEW",
+                    "reference": "0000170553168849",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 1250,
+                    "transactionId": "ck77gabpe004sv2v25lasc4rw"
+                },
+                {
+                    "balanceAmount": 1672.4,
+                    "category": [
+                        "Travel",
+                        "Train"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Travel",
+                            "Train"
+                        ],
+                        "id": 200200
+                    },
+                    "date": "24/02/17",
+                    "party": "irctc_new",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "100000755864005/IRCTC_NEW",
+                    "reference": "0000170553168849",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 11.5,
+                    "transactionId": "ck77gabpe004tv2v24j700jq4"
+                },
+                {
+                    "balanceAmount": 2422.4,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "25/02/17",
+                    "party": "rahul yadav",
+                    "depositAmount": 750,
+                    "isAutoDebit": false,
+                    "particular": "IMPS-705612457299-RAHUL YADAV-HDFC-XXXXXXXXSDRR-P2BOTP_9F674950862E3DF8",
+                    "reference": "0000705612457299",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpe004uv2v2dax3bpn8"
+                },
+                {
+                    "balanceAmount": 422.4,
+                    "category": [
+                        "Cash Advance",
+                        "ATM"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Cash Advance",
+                            "ATM"
+                        ],
+                        "id": 110300
+                    },
+                    "date": "27/02/17",
+                    "party": "s1cn5684",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "NWD-436303XXXXXX1688-S1CN5684-GURGAON",
+                    "reference": "0000705811000452",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 2000,
+                    "transactionId": "ck77gabpe004vv2v283b88rko"
+                },
+                {
+                    "balanceAmount": 2.4,
+                    "category": [
+                        "Food and Beverages",
+                        "Restaurant"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Food and Beverages",
+                            "Restaurant"
+                        ],
+                        "id": 130200
+                    },
+                    "date": "27/02/17",
+                    "party": "pepper food",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "POS 436303XXXXXX1688 PEPPER FOOD POS DEBIT",
+                    "reference": "0000705814055501",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 420,
+                    "transactionId": "ck77gabpe004wv2v285gnb4l1"
+                },
+                {
+                    "balanceAmount": 1531.4,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "27/02/17",
+                    "party": "ani technologies private",
+                    "depositAmount": 1529,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-N058170002987907",
+                    "reference": "N058170002987907",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpe004xv2v29cnz95wl"
+                },
+                {
+                    "balanceAmount": 1651.4,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "27/02/17",
+                    "party": "ani technologies private",
+                    "depositAmount": 120,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-N058170003031193",
+                    "reference": "N058170003031193",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpe004yv2v2cssl92lz"
+                },
+                {
+                    "balanceAmount": 51.4,
+                    "category": [
+                        "Shops"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Shops"
+                        ],
+                        "id": 180000
+                    },
+                    "date": "28/02/17",
+                    "party": "paytm",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "POS 436303XXXXXX1688 PAYTM POS DEBIT",
+                    "reference": "0000705960062285",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 1600,
+                    "transactionId": "ck77gabpf004zv2v277e841b2"
+                },
+                {
+                    "balanceAmount": 308.4,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "28/02/17",
+                    "party": "ani technologies private",
+                    "depositAmount": 257,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-N059170003431347",
+                    "reference": "N059170003431347",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpf0050v2v261n24368"
+                },
+                {
+                    "balanceAmount": 2142.4,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "01/03/17",
+                    "party": "rahul yadav",
+                    "depositAmount": 1834,
+                    "isAutoDebit": false,
+                    "particular": "IMPS-706016466199-RAHUL YADAV-HDFC-XXXXXXXXSDRR-P2BOTP_342D080799EC6DBE",
+                    "reference": "0000706016466199",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpf0051v2v2gcal31pq"
+                },
+                {
+                    "balanceAmount": 3167.4,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "01/03/17",
+                    "party": "ani technologies private",
+                    "depositAmount": 1025,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-N060170003968976",
+                    "reference": "N060170003968976",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpf0052v2v25zdn0yar"
+                },
+                {
+                    "balanceAmount": 2727.4,
+                    "category": [
+                        "Food and Beverages",
+                        "Bar"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Food and Beverages",
+                            "Bar"
+                        ],
+                        "id": 130100
+                    },
+                    "date": "01/03/17",
+                    "party": "kuldeep wines",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "POS 436303XXXXXX1688 KULDEEP WINES POS DEBIT",
+                    "reference": "0000000000008978",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 440,
+                    "transactionId": "ck77gabpf0053v2v2crhm1asx"
+                },
+                {
+                    "balanceAmount": 893.4,
+                    "category": [
+                        "Uncategorized"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Uncategorized"
+                        ],
+                        "id": 0
+                    },
+                    "date": "02/03/17",
+                    "party": "bajafinemi bf",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "BAJAFINEMI-BF-1189499-55452",
+                    "reference": "000000000000000",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 1834,
+                    "transactionId": "ck77gabpf0054v2v28d0c1ync"
+                },
+                {
+                    "balanceAmount": 2078.4,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "02/03/17",
+                    "party": "ani technologies private",
+                    "depositAmount": 1185,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-N061170004278791",
+                    "reference": "N061170004278791",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpf0055v2v27kdi9b6d"
+                },
+                {
+                    "balanceAmount": 2555.4,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "03/03/17",
+                    "party": "ani technologies rahul",
+                    "depositAmount": 477,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES-RAHUL YADAV-N062170004643473",
+                    "reference": "N062170004643473",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpf0056v2v2fr5i0nky"
+                },
+                {
+                    "balanceAmount": 4591.4,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "04/03/17",
+                    "party": "ani technologies rahul",
+                    "depositAmount": 2036,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES-RAHUL YADAV-N063170004911967",
+                    "reference": "N063170004911967",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpf0057v2v2fm9mchsc"
+                },
+                {
+                    "balanceAmount": 4001.4,
+                    "category": [
+                        "Travel",
+                        "Train"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Travel",
+                            "Train"
+                        ],
+                        "id": 200200
+                    },
+                    "date": "05/03/17",
+                    "party": "irctc_new",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "100000764874585/IRCTC_NEW",
+                    "reference": "0000170649806955",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 590,
+                    "transactionId": "ck77gabpf0058v2v26icr45xq"
+                },
+                {
+                    "balanceAmount": 3989.9,
+                    "category": [
+                        "Travel",
+                        "Train"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Travel",
+                            "Train"
+                        ],
+                        "id": 200200
+                    },
+                    "date": "05/03/17",
+                    "party": "irctc_new",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "100000764874585/IRCTC_NEW",
+                    "reference": "0000170649806955",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 11.5,
+                    "transactionId": "ck77gabpf0059v2v2a44icwdt"
+                },
+                {
+                    "balanceAmount": 3889.9,
+                    "category": [
+                        "Travel",
+                        "Taxi"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Travel",
+                            "Taxi"
+                        ],
+                        "id": 200300
+                    },
+                    "date": "05/03/17",
+                    "party": "payuolacabscom",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "6039491118/PAYUOLACABSCOM",
+                    "reference": "0000170640155334",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 100,
+                    "transactionId": "ck77gabpf005av2v20mcvbybr"
+                },
+                {
+                    "balanceAmount": -610.1,
+                    "category": [
+                        "Payment",
+                        "Loan"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Payment",
+                            "Loan"
+                        ],
+                        "id": 160400
+                    },
+                    "date": "06/03/17",
+                    "party": "bajajfinemi bf",
+                    "depositAmount": 0,
+                    "isAutoDebit": true,
+                    "particular": "BAJAJFINEMI-BF-1189499-55990",
+                    "reference": "000000000000000",
+                    "type": "DEFAULT",
+                    "withdrawalAmount": 4500,
+                    "transactionId": "ck77gabpf005bv2v2229c03lw"
+                },
+                {
+                    "balanceAmount": 3889.9,
+                    "category": [
+                        "Payment",
+                        "Loan"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Payment",
+                            "Loan"
+                        ],
+                        "id": 160400
+                    },
+                    "date": "06/03/17",
+                    "party": "bajajfinemi bf",
+                    "depositAmount": 4500,
+                    "isAutoDebit": true,
+                    "particular": "BAJAJFINEMI-BF-1189499-55990",
+                    "reference": "000000000000000",
+                    "type": "DEFAULT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpf005cv2v2fgl3cpdc"
+                },
+                {
+                    "balanceAmount": 4984.9,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "06/03/17",
+                    "party": "ani technologies rahul",
+                    "depositAmount": 1095,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES-RAHUL YADAV-N065170005187593",
+                    "reference": "N065170005187593",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpf005dv2v246hlbvcr"
+                },
+                {
+                    "balanceAmount": 6132.9,
+                    "category": [
+                        "Transfer",
+                        "Credit"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Credit"
+                        ],
+                        "id": 190100
+                    },
+                    "date": "07/03/17",
+                    "party": "eko india financial",
+                    "depositAmount": 1148,
+                    "isAutoDebit": false,
+                    "particular": "IMPS-706610238568-EKO INDIA FINANCIAL-HDFC-XXXXXXXXXXX6981-9818921636",
+                    "reference": "0000706610238568",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpf005ev2v281gdbzaj"
+                },
+                {
+                    "balanceAmount": 4984.9,
+                    "category": [
+                        "Service",
+                        "Internet"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Service",
+                            "Internet"
+                        ],
+                        "id": 170200
+                    },
+                    "date": "07/03/17",
+                    "party": "nextraworld",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "POS 436303XXXXXX1688 NEXTRAWORLD POS DEBIT",
+                    "reference": "0000706660044688",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 1148,
+                    "transactionId": "ck77gabpf005fv2v28hry7nvo"
+                },
+                {
+                    "balanceAmount": 6284.9,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "07/03/17",
+                    "party": "ani technologies rahul",
+                    "depositAmount": 1300,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES-RAHUL YADAV-N066170005496230",
+                    "reference": "N066170005496230",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpf005gv2v2facygkib"
+                },
+                {
+                    "balanceAmount": 1784.9,
+                    "category": [
+                        "Payment",
+                        "Loan"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Payment",
+                            "Loan"
+                        ],
+                        "id": 160400
+                    },
+                    "date": "07/03/17",
+                    "party": "bajajfinemi bf",
+                    "depositAmount": 0,
+                    "isAutoDebit": true,
+                    "particular": "BAJAJFINEMI-BF-1189499-7230",
+                    "reference": "000000000000000",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 4500,
+                    "transactionId": "ck77gabpf005hv2v20m7683me"
+                },
+                {
+                    "balanceAmount": 3784.9,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "07/03/17",
+                    "party": "krishna communicatio",
+                    "depositAmount": 2000,
+                    "isAutoDebit": false,
+                    "particular": "IMPS-706618944660-KRISHNA COMMUNICATIO-HDFC--PERSONAL",
+                    "reference": "0000706618944660",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpf005iv2v2fh3l25gc"
+                },
+                {
+                    "balanceAmount": 53784.9,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "08/03/17",
+                    "party": "krishna communicatio",
+                    "depositAmount": 50000,
+                    "isAutoDebit": false,
+                    "particular": "IMPS-706712269452-KRISHNA COMMUNICATIO-HDFC--PERSONAL",
+                    "reference": "0000706712269452",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpf005jv2v2emsx0ak2"
+                },
+                {
+                    "balanceAmount": 27681.09,
+                    "category": [
+                        "Payment"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Payment"
+                        ],
+                        "id": 160000
+                    },
+                    "date": "08/03/17",
+                    "party": "489377xxxxxx2616",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "IB BILLPAY DR-HDFCVE-489377XXXXXX2616",
+                    "reference": "000000000000000",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 26103.81,
+                    "transactionId": "ck77gabpf005kv2v2e3kmbbf6"
+                },
+                {
+                    "balanceAmount": 28211.09,
+                    "category": [
+                        "Travel",
+                        "Refund"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Travel",
+                            "Refund"
+                        ],
+                        "id": 200400
+                    },
+                    "date": "08/03/17",
+                    "party": "irctc_cris",
+                    "depositAmount": 530,
+                    "isAutoDebit": false,
+                    "particular": "IRCTC_CRIS REF-05/03/17-100000764874585",
+                    "reference": "000000000000000",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpf005lv2v291ei7fun"
+                },
+                {
+                    "balanceAmount": 28325.09,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "08/03/17",
+                    "party": "ani technologies rahul",
+                    "depositAmount": 114,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES-RAHUL YADAV-N067170005930884",
+                    "reference": "N067170005930884",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpf005mv2v20q6nczwa"
+                },
+                {
+                    "balanceAmount": 27629.59,
+                    "category": [
+                        "Service",
+                        "Telecom"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Service",
+                            "Telecom"
+                        ],
+                        "id": 170500
+                    },
+                    "date": "09/03/17",
+                    "party": "dcsiideacell",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "POS 436303XXXXXX1688 DCSIIDEACELL POS DEBIT",
+                    "reference": "0000H15174733639",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 695.5,
+                    "transactionId": "ck77gabpf005nv2v2ayt33m3g"
+                },
+                {
+                    "balanceAmount": 29212.59,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "09/03/17",
+                    "party": "ani technologies rahul",
+                    "depositAmount": 1583,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES-RAHUL YADAV-N068170006204725",
+                    "reference": "N068170006204725",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpf005ov2v2a3iif7gd"
+                },
+                {
+                    "balanceAmount": 19212.59,
+                    "category": [
+                        "Cash Advance",
+                        "ATM"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Cash Advance",
+                            "ATM"
+                        ],
+                        "id": 110300
+                    },
+                    "date": "10/03/17",
+                    "party": "stch9855",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "NWD-436303XXXXXX1688-STCH9855-GURGAON",
+                    "reference": "0000706915005122",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 10000,
+                    "transactionId": "ck77gabpf005pv2v27w7p2f6m"
+                },
+                {
+                    "balanceAmount": 9212.59,
+                    "category": [
+                        "Cash Advance",
+                        "ATM"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Cash Advance",
+                            "ATM"
+                        ],
+                        "id": 110300
+                    },
+                    "date": "10/03/17",
+                    "party": "stch9855",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "NWD-436303XXXXXX1688-STCH9855-GURGAON",
+                    "reference": "0000706915005123",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 10000,
+                    "transactionId": "ck77gabpf005qv2v2exl6ecla"
+                },
+                {
+                    "balanceAmount": 9521.59,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "10/03/17",
+                    "party": "ani technologies rahul",
+                    "depositAmount": 309,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES-RAHUL YADAV-N069170006480256",
+                    "reference": "N069170006480256",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpf005rv2v21g8g56fw"
+                },
+                {
+                    "balanceAmount": 10461.59,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "13/03/17",
+                    "party": "ani technologies rahul",
+                    "depositAmount": 940,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES-RAHUL YADAV-N072170006758240",
+                    "reference": "N072170006758240",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpf005sv2v2f59q5xon"
+                },
+                {
+                    "balanceAmount": 9671.59,
+                    "category": [
+                        "Travel",
+                        "Train"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Travel",
+                            "Train"
+                        ],
+                        "id": 200200
+                    },
+                    "date": "15/03/17",
+                    "party": "irctc_new",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "100000776202346/IRCTC_NEW",
+                    "reference": "0000170747253241",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 790,
+                    "transactionId": "ck77gabpf005tv2v2ckj03uak"
+                },
+                {
+                    "balanceAmount": 9660.09,
+                    "category": [
+                        "Travel",
+                        "Train"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Travel",
+                            "Train"
+                        ],
+                        "id": 200200
+                    },
+                    "date": "15/03/17",
+                    "party": "irctc_new",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "100000776202346/IRCTC_NEW",
+                    "reference": "0000170747253241",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 11.5,
+                    "transactionId": "ck77gabpf005uv2v28zvp65vd"
+                },
+                {
+                    "balanceAmount": 9661.28,
+                    "category": [
+                        "Transfer",
+                        "Credit"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Credit"
+                        ],
+                        "id": 190100
+                    },
+                    "date": "15/03/17",
+                    "party": "paytm",
+                    "depositAmount": 1.19,
+                    "isAutoDebit": false,
+                    "particular": "IMPS-707415751621-PAYTM-HDFC-XXXXXXXX0190-1489571141304_GOLDENGATE_2859903",
+                    "reference": "0000707415751621",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpf005vv2v2dxu62bfz"
+                },
+                {
+                    "balanceAmount": 10116.28,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "15/03/17",
+                    "party": "ani technologies rahul",
+                    "depositAmount": 455,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES-RAHUL YADAV-N074170007277910",
+                    "reference": "N074170007277910",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpf005wv2v2ejnfdxto"
+                },
+                {
+                    "balanceAmount": 6116.28,
+                    "category": [
+                        "Transfer",
+                        "Debit"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Debit"
+                        ],
+                        "id": 190200
+                    },
+                    "date": "16/03/17",
+                    "party": "sanjay rathi",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "IMPS-707512148089-SANJAY RATHI-IDIB-XXXXXX2713-LOAD",
+                    "reference": "0000707512148089",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 4000,
+                    "transactionId": "ck77gabpf005xv2v25su362h0"
+                },
+                {
+                    "balanceAmount": 7263.28,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "16/03/17",
+                    "party": "ani technologies rahul",
+                    "depositAmount": 1147,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES-RAHUL YADAV-N075170007518924",
+                    "reference": "N075170007518924",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpf005yv2v2d59l9sgf"
+                },
+                {
+                    "balanceAmount": 8924.28,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "17/03/17",
+                    "party": "ani technologies rahul",
+                    "depositAmount": 1661,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES-RAHUL YADAV-N076170007711587",
+                    "reference": "N076170007711587",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpf005zv2v2dxlt9g55"
+                },
+                {
+                    "balanceAmount": 8325.28,
+                    "category": [
+                        "Travel",
+                        "Taxi"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Travel",
+                            "Taxi"
+                        ],
+                        "id": 200300
+                    },
+                    "date": "18/03/17",
+                    "party": "payuolacabscom",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "6050512581/PAYUOLACABSCOM",
+                    "reference": "0000170779606807",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 599,
+                    "transactionId": "ck77gabpg0060v2v292sv1e5q"
+                },
+                {
+                    "balanceAmount": 8789.28,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "18/03/17",
+                    "party": "ani technologies rahul",
+                    "depositAmount": 464,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES-RAHUL YADAV-N077170008066325",
+                    "reference": "N077170008066325",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpg0061v2v27uca199w"
+                },
+                {
+                    "balanceAmount": 10463.28,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "20/03/17",
+                    "party": "ani technologies rahul",
+                    "depositAmount": 1674,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES-RAHUL YADAV-N079170008299710",
+                    "reference": "N079170008299710",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpg0062v2v28xb513fo"
+                },
+                {
+                    "balanceAmount": 10860.28,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "21/03/17",
+                    "party": "ani technologies rahul",
+                    "depositAmount": 397,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES-RAHUL YADAV-N080170008529414",
+                    "reference": "N080170008529414",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpg0063v2v2af3h28lc"
+                },
+                {
+                    "balanceAmount": 9861.28,
+                    "category": [
+                        "Travel",
+                        "Taxi"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Travel",
+                            "Taxi"
+                        ],
+                        "id": 200300
+                    },
+                    "date": "21/03/17",
+                    "party": "payuolacabscom",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "6053647722/PAYUOLACABSCOM",
+                    "reference": "0000170802118563",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 999,
+                    "transactionId": "ck77gabpg0064v2v27yhafe08"
+                },
+                {
+                    "balanceAmount": 9855.53,
+                    "category": [
+                        "Transfer",
+                        "Debit"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Debit"
+                        ],
+                        "id": 190200
+                    },
+                    "date": "22/03/17",
+                    "party": "707512148089#16",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "IMPS P2P 575 707512148089#16/03/ 180317",
+                    "reference": "0000000000000009",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 5.75,
+                    "transactionId": "ck77gabpg0065v2v20hum3zxs"
+                },
+                {
+                    "balanceAmount": 11967.53,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "22/03/17",
+                    "party": "ani technologies rahul",
+                    "depositAmount": 2112,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES-RAHUL YADAV-N081170008741519",
+                    "reference": "N081170008741519",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpg0066v2v27p078u13"
+                },
+                {
+                    "balanceAmount": 14967.53,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "22/03/17",
+                    "party": "krishna communicatio",
+                    "depositAmount": 3000,
+                    "isAutoDebit": false,
+                    "particular": "IMPS-708118187617-KRISHNA COMMUNICATIO-HDFC--PERSONAL",
+                    "reference": "0000708118187617",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpg0067v2v24e34d04m"
+                },
+                {
+                    "balanceAmount": 14368.53,
+                    "category": [
+                        "Travel",
+                        "Taxi"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Travel",
+                            "Taxi"
+                        ],
+                        "id": 200300
+                    },
+                    "date": "22/03/17",
+                    "party": "payuolacabscom",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "6054447191/PAYUOLACABSCOM",
+                    "reference": "0000170812763942",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 599,
+                    "transactionId": "ck77gabpg0068v2v20v6c3q1m"
+                },
+                {
+                    "balanceAmount": 14868.53,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "22/03/17",
+                    "party": "krishna communicatio",
+                    "depositAmount": 500,
+                    "isAutoDebit": false,
+                    "particular": "IMPS-708121236527-KRISHNA COMMUNICATIO-HDFC--PERSONAL",
+                    "reference": "0000708121236527",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpg0069v2v2cqgb0vib"
+                },
+                {
+                    "balanceAmount": 14006.03,
+                    "category": [
+                        "Bank Fees"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Bank Fees"
+                        ],
+                        "id": 100000
+                    },
+                    "date": "23/03/17",
+                    "party": null,
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "DEBIT CARD ANNUAL FEE-MAR-2017 200317",
+                    "reference": "000000000000000",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 862.5,
+                    "transactionId": "ck77gabpg006av2v252629zui"
+                },
+                {
+                    "balanceAmount": -393.97,
+                    "category": [
+                        "Payment",
+                        "Loan"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Payment",
+                            "Loan"
+                        ],
+                        "id": 160400
+                    },
+                    "date": "23/03/17",
+                    "party": "aufinanciersindialtd lvptu04016",
+                    "depositAmount": 0,
+                    "isAutoDebit": true,
+                    "particular": "ACH D- AUFINANCIERSINDIALTD-LVPTU04016-1",
+                    "reference": "0000002000400082",
+                    "type": "DEFAULT",
+                    "withdrawalAmount": 14400,
+                    "transactionId": "ck77gabpg006bv2v29bss53hk"
+                },
+                {
+                    "balanceAmount": 14006.03,
+                    "category": [
+                        "Payment",
+                        "Loan"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Payment",
+                            "Loan"
+                        ],
+                        "id": 160400
+                    },
+                    "date": "23/03/17",
+                    "party": "aufinanciersindialtd lvptu04016",
+                    "depositAmount": 14400,
+                    "isAutoDebit": true,
+                    "particular": "ACH D- AUFINANCIERSINDIALTD-LVPTU04016-1",
+                    "reference": "0000002000400082",
+                    "type": "DEFAULT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpg006cv2v230rcbm1i"
+                },
+                {
+                    "balanceAmount": 15006.03,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "23/03/17",
+                    "party": "krishna communicatio",
+                    "depositAmount": 1000,
+                    "isAutoDebit": false,
+                    "particular": "IMPS-708216437458-KRISHNA COMMUNICATIO-HDFC--PERONAL",
+                    "reference": "0000708216437458",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpg006dv2v2c17j6ub1"
+                },
+                {
+                    "balanceAmount": 16128.03,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "23/03/17",
+                    "party": "ani technologies rahul",
+                    "depositAmount": 1122,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES-RAHUL YADAV-N082170009030583",
+                    "reference": "N082170009030583",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpg006ev2v24q9fhfre"
+                },
+                {
+                    "balanceAmount": 16847.03,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "24/03/17",
+                    "party": "ani technologies rahul",
+                    "depositAmount": 719,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES-RAHUL YADAV-N083170009304348",
+                    "reference": "N083170009304348",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpg006fv2v2hg4q7wh5"
+                },
+                {
+                    "balanceAmount": 21847.03,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "25/03/17",
+                    "party": "krishna communicatio",
+                    "depositAmount": 5000,
+                    "isAutoDebit": false,
+                    "particular": "IMPS-708411917680-KRISHNA COMMUNICATIO-HDFC--",
+                    "reference": "0000708411917680",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpg006gv2v2h2fi6flj"
+                },
+                {
+                    "balanceAmount": 4185.03,
+                    "category": [
+                        "Travel"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Travel"
+                        ],
+                        "id": 200000
+                    },
+                    "date": "25/03/17",
+                    "party": "makemytrip",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "NF2291297394804P3/MAKEMYTRIP COM",
+                    "reference": "0000170844470865",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 17662,
+                    "transactionId": "ck77gabpg006hv2v2dlbv3ipu"
+                },
+                {
+                    "balanceAmount": 7512.03,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "27/03/17",
+                    "party": "ani technologies rahul",
+                    "depositAmount": 3327,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES-RAHUL YADAV-N086170009666108",
+                    "reference": "N086170009666108",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpg006iv2v20ljq75ns"
+                },
+                {
+                    "balanceAmount": 12521.03,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "28/03/17",
+                    "party": "ani technologies rahul",
+                    "depositAmount": 5009,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES-RAHUL YADAV-N087170010038439",
+                    "reference": "N087170010038439",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpg006jv2v2dgh01b8s"
+                },
+                {
+                    "balanceAmount": 13483.03,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "29/03/17",
+                    "party": "ani technologies rahul",
+                    "depositAmount": 962,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES-RAHUL YADAV-N088170010250782",
+                    "reference": "N088170010250782",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpg006kv2v2ftrhc7wy"
+                },
+                {
+                    "balanceAmount": 12884.03,
+                    "category": [
+                        "Travel",
+                        "Taxi"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Travel",
+                            "Taxi"
+                        ],
+                        "id": 200300
+                    },
+                    "date": "29/03/17",
+                    "party": "payuolacabscom",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "6062339690/PAYUOLACABSCOM",
+                    "reference": "0000170887680935",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 599,
+                    "transactionId": "ck77gabpg006lv2v2hkl9f7p8"
+                },
+                {
+                    "balanceAmount": 12481.53,
+                    "category": [
+                        "Bank Fees"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Bank Fees"
+                        ],
+                        "id": 100000
+                    },
+                    "date": "30/03/17",
+                    "party": "return charges",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "ACH DR RETURN CHARGES 230317",
+                    "reference": "0000200000000000",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 402.5,
+                    "transactionId": "ck77gabpg006mv2v2h6b50c6r"
+                },
+                {
+                    "balanceAmount": 14082.53,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "30/03/17",
+                    "party": "ani technologies rahul",
+                    "depositAmount": 1601,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES-RAHUL YADAV-N089170010476856",
+                    "reference": "N089170010476856",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpg006nv2v248sd1wi5"
+                },
+                {
+                    "balanceAmount": 9082.53,
+                    "category": [
+                        "Shops"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Shops"
+                        ],
+                        "id": 180000
+                    },
+                    "date": "31/03/17",
+                    "party": "paytm mobile sol",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "POS 436303XXXXXX1688 PAYTM MOBILE SOL POS DEBIT",
+                    "reference": "0000709012460280",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 5000,
+                    "transactionId": "ck77gabpg006ov2v24ve95edh"
+                },
+                {
+                    "balanceAmount": 4082.53,
+                    "category": [
+                        "Shops"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Shops"
+                        ],
+                        "id": 180000
+                    },
+                    "date": "31/03/17",
+                    "party": "paytm mobile sol",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "POS 436303XXXXXX1688 PAYTM MOBILE SOL POS DEBIT",
+                    "reference": "0000709012462084",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 5000,
+                    "transactionId": "ck77gabpg006pv2v224cr6zm8"
+                },
+                {
+                    "balanceAmount": 4520.53,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "31/03/17",
+                    "party": "ani technologies private",
+                    "depositAmount": 438,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-N090170010839288",
+                    "reference": "N090170010839288",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpg006qv2v25fq86hqa"
+                },
+                {
+                    "balanceAmount": 4622.53,
+                    "category": [
+                        "Interest",
+                        "Earned"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Interest",
+                            "Earned"
+                        ],
+                        "id": 150100
+                    },
+                    "date": "01/04/17",
+                    "party": "interest capitalised",
+                    "depositAmount": 102,
+                    "isAutoDebit": false,
+                    "particular": "CREDIT INTEREST CAPITALISED",
+                    "reference": "000000000000000",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpg006rv2v2d2tcdgio"
+                },
+                {
+                    "balanceAmount": 6456.53,
+                    "category": [
+                        "Transfer",
+                        "Credit"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Credit"
+                        ],
+                        "id": 190100
+                    },
+                    "date": "01/04/17",
+                    "party": "rahul",
+                    "depositAmount": 1834,
+                    "isAutoDebit": false,
+                    "particular": "IMPS-709110487656-RAHUL-HDFC-XXXXXXXXSDRR-P2BOTP_7EAC16F6125DC763",
+                    "reference": "0000709110487656",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpg006sv2v29jnn555r"
+                },
+                {
+                    "balanceAmount": 5925.53,
+                    "category": [
+                        "Shops"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Shops"
+                        ],
+                        "id": 180000
+                    },
+                    "date": "01/04/17",
+                    "party": "instakart.",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "POS 436303XXXXXX1688 INSTAKART. POS DEBIT",
+                    "reference": "0000000000000358",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 531,
+                    "transactionId": "ck77gabpg006tv2v299vm9p6p"
+                },
+                {
+                    "balanceAmount": 4091.53,
+                    "category": [
+                        "Payment",
+                        "Loan"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Payment",
+                            "Loan"
+                        ],
+                        "id": 160400
+                    },
+                    "date": "03/04/17",
+                    "party": "bajaj finemi",
+                    "depositAmount": 0,
+                    "isAutoDebit": true,
+                    "particular": "BAJAJ FINEMI-BF-1189499-51163",
+                    "reference": "000000000000000",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 1834,
+                    "transactionId": "ck77gabpg006uv2v26622ajkq"
+                },
+                {
+                    "balanceAmount": 4092.53,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "03/04/17",
+                    "party": "rahul",
+                    "depositAmount": 1,
+                    "isAutoDebit": false,
+                    "particular": "IMPS-709315771723-RAHUL-HDFC-XXXXXXXX3511-G",
+                    "reference": "0000709315771723",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpg006vv2v20vbick6g"
+                },
+                {
+                    "balanceAmount": 6092.53,
+                    "category": [
+                        "Transfer",
+                        "Credit"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Credit"
+                        ],
+                        "id": 190100
+                    },
+                    "date": "03/04/17",
+                    "party": "rahul",
+                    "depositAmount": 2000,
+                    "isAutoDebit": false,
+                    "particular": "IMPS-709315773865-RAHUL-HDFC-XXXXXXXX3511-RAHUL YADAV",
+                    "reference": "0000709315773865",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpg006wv2v2e1pl7cn0"
+                },
+                {
+                    "balanceAmount": 7962.53,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "04/04/17",
+                    "party": "ani technologies private",
+                    "depositAmount": 1870,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-N093170011561294",
+                    "reference": "N093170011561294",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpg006xv2v29qribqns"
+                },
+                {
+                    "balanceAmount": 12962.53,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "04/04/17",
+                    "party": "rahul yadav",
+                    "depositAmount": 5000,
+                    "isAutoDebit": false,
+                    "particular": "IMPS-709412070538-RAHUL YADAV-HDFC-XXXXXXXXSDRR-P2BOTP_78FBF92351D1395C",
+                    "reference": "0000709412070538",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpg006yv2v21og1d52d"
+                },
+                {
+                    "balanceAmount": 14056.53,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "04/04/17",
+                    "party": "ani technologies private",
+                    "depositAmount": 1094,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-N094170011763314",
+                    "reference": "N094170011763314",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpg006zv2v224r9cthz"
+                },
+                {
+                    "balanceAmount": 12056.53,
+                    "category": [
+                        "Shops"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Shops"
+                        ],
+                        "id": 180000
+                    },
+                    "date": "04/04/17",
+                    "party": "paytm mobile sol",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "POS 436303XXXXXX1688 PAYTM MOBILE SOL POS DEBIT",
+                    "reference": "0000709410293791",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 2000,
+                    "transactionId": "ck77gabpg0070v2v270byghjv"
+                },
+                {
+                    "balanceAmount": 12698.8,
+                    "category": [
+                        "Transfer",
+                        "Credit"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Credit"
+                        ],
+                        "id": 190100
+                    },
+                    "date": "05/04/17",
+                    "party": "uber india systems",
+                    "depositAmount": 642.27,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CR-DEUT0784BBY-UBER INDIA SYSTEMS PLTD-RAHUL YADAV-170405047GN02782",
+                    "reference": "170405047GN02782",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpg0071v2v20wdfayw9"
+                },
+                {
+                    "balanceAmount": 8198.8,
+                    "category": [
+                        "Payment",
+                        "Loan"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Payment",
+                            "Loan"
+                        ],
+                        "id": 160400
+                    },
+                    "date": "05/04/17",
+                    "party": "bajaj finemi",
+                    "depositAmount": 0,
+                    "isAutoDebit": true,
+                    "particular": "BAJAJ FINEMI-BF-1189499-43484",
+                    "reference": "000000000000000",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 4500,
+                    "transactionId": "ck77gabpg0072v2v270nnax91"
+                },
+                {
+                    "balanceAmount": 8868.8,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "06/04/17",
+                    "party": "ani technologies private",
+                    "depositAmount": 670,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-N095170012088917",
+                    "reference": "N095170012088917",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpg0073v2v2416sfbsu"
+                },
+                {
+                    "balanceAmount": 8668.8,
+                    "category": [
+                        "Travel",
+                        "Taxi"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Travel",
+                            "Taxi"
+                        ],
+                        "id": 200300
+                    },
+                    "date": "07/04/17",
+                    "party": "payuolacabscom",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "6079185444/PAYUOLACABSCOM",
+                    "reference": "0000170975084255",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 200,
+                    "transactionId": "ck77gabph0074v2v254yz0ojl"
+                },
+                {
+                    "balanceAmount": 9904.8,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "07/04/17",
+                    "party": "ani technologies private",
+                    "depositAmount": 1236,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-N097170012630056",
+                    "reference": "N097170012630056",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabph0075v2v2d4bz5uy3"
+                },
+                {
+                    "balanceAmount": 1266.19,
+                    "category": [
+                        "Payment"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Payment"
+                        ],
+                        "id": 160000
+                    },
+                    "date": "07/04/17",
+                    "party": "489377xxxxxx2616",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "IB BILLPAY DR-HDFCVE-489377XXXXXX2616",
+                    "reference": "000000000000000",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 8638.61,
+                    "transactionId": "ck77gabph0076v2v239j805g7"
+                },
+                {
+                    "balanceAmount": 2466.19,
+                    "category": [
+                        "Transfer",
+                        "Credit"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Credit"
+                        ],
+                        "id": 190100
+                    },
+                    "date": "09/04/17",
+                    "party": "manoj",
+                    "depositAmount": 1200,
+                    "isAutoDebit": false,
+                    "particular": "IMPS-709910104818-MANOJ-HDFC-XXXXXXXX9798-222416045",
+                    "reference": "0000709910104818",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabph0077v2v27g4t0k9f"
+                },
+                {
+                    "balanceAmount": 1318.19,
+                    "category": [
+                        "Uncategorized"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Uncategorized"
+                        ],
+                        "id": 0
+                    },
+                    "date": "09/04/17",
+                    "party": "ccapaytmcom",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "106209842001/CCAPAYTMCOM",
+                    "reference": "0000170996497315",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 1148,
+                    "transactionId": "ck77gabph0078v2v20n1i9ptn"
+                },
+                {
+                    "balanceAmount": 618.97,
+                    "category": [
+                        "Service",
+                        "Telecom"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Service",
+                            "Telecom"
+                        ],
+                        "id": 170500
+                    },
+                    "date": "10/04/17",
+                    "party": "dcsiideacell",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "POS 436303XXXXXX1688 DCSIIDEACELL POS DEBIT",
+                    "reference": "0000I15277215350",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 699.22,
+                    "transactionId": "ck77gabph0079v2v2dvf2f1xy"
+                },
+                {
+                    "balanceAmount": 318.97,
+                    "category": [
+                        "Travel",
+                        "Taxi"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Travel",
+                            "Taxi"
+                        ],
+                        "id": 200300
+                    },
+                    "date": "10/04/17",
+                    "party": "payuolacabscom",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "6085805830/PAYUOLACABSCOM",
+                    "reference": "0000171007861936",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 300,
+                    "transactionId": "ck77gabph007av2v293fj6p11"
+                },
+                {
+                    "balanceAmount": 4616.97,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "11/04/17",
+                    "party": "ani technologies private",
+                    "depositAmount": 4298,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-N100170013198880",
+                    "reference": "N100170013198880",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabph007bv2v22orw364u"
+                },
+                {
+                    "balanceAmount": 7497.97,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "12/04/17",
+                    "party": "ani technologies private",
+                    "depositAmount": 2881,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-N101170013492727",
+                    "reference": "N101170013492727",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabph007cv2v25qza1ksm"
+                },
+                {
+                    "balanceAmount": 9607.54,
+                    "category": [
+                        "Transfer",
+                        "Credit"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Credit"
+                        ],
+                        "id": 190100
+                    },
+                    "date": "12/04/17",
+                    "party": "uber india systems",
+                    "depositAmount": 2109.57,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CR-DEUT0784BBY-UBER INDIA SYSTEMS PLTD-RAHUL YADAV-170412051GN07679",
+                    "reference": "170412051GN07679",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabph007dv2v2c1t94vdc"
+                },
+                {
+                    "balanceAmount": 10528.54,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "12/04/17",
+                    "party": "ani technologies private",
+                    "depositAmount": 921,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-N102170013604373",
+                    "reference": "N102170013604373",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabph007ev2v21ixndxaa"
+                },
+                {
+                    "balanceAmount": 10128.54,
+                    "category": [
+                        "Travel",
+                        "Taxi"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Travel",
+                            "Taxi"
+                        ],
+                        "id": 200300
+                    },
+                    "date": "12/04/17",
+                    "party": "payuolacabscom",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "6089601712/PAYUOLACABSCOM",
+                    "reference": "0000171029429851",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 400,
+                    "transactionId": "ck77gabph007fv2v2e5jchem7"
+                },
+                {
+                    "balanceAmount": 14365.54,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "13/04/17",
+                    "party": "ani technologies private",
+                    "depositAmount": 4237,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-N103170013889475",
+                    "reference": "N103170013889475",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabph007gv2v2av029llx"
+                },
+                {
+                    "balanceAmount": 14165.54,
+                    "category": [
+                        "Travel",
+                        "Taxi"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Travel",
+                            "Taxi"
+                        ],
+                        "id": 200300
+                    },
+                    "date": "14/04/17",
+                    "party": "payuolacabscom",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "6091924718/PAYUOLACABSCOM",
+                    "reference": "0000171040323385",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 200,
+                    "transactionId": "ck77gabph007hv2v20zjc06c4"
+                },
+                {
+                    "balanceAmount": 16484.54,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "15/04/17",
+                    "party": "ani technologies private",
+                    "depositAmount": 2319,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-N105170014237139",
+                    "reference": "N105170014237139",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabph007iv2v2dgjqg2bh"
+                },
+                {
+                    "balanceAmount": 17203.54,
+                    "category": [
+                        "Transfer",
+                        "Credit"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Credit"
+                        ],
+                        "id": 190100
+                    },
+                    "date": "15/04/17",
+                    "party": "rahul yadav",
+                    "depositAmount": 719,
+                    "isAutoDebit": false,
+                    "particular": "IMPS-710516051132-RAHUL YADAV-HDFC-XXXXXXXX0602-FT170415161034251315",
+                    "reference": "0000710516051132",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabph007jv2v27f9j97ay"
+                },
+                {
+                    "balanceAmount": 17802.54,
+                    "category": [
+                        "Transfer",
+                        "Credit"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Credit"
+                        ],
+                        "id": 190100
+                    },
+                    "date": "15/04/17",
+                    "party": "rahul yadav",
+                    "depositAmount": 599,
+                    "isAutoDebit": false,
+                    "particular": "IMPS-710516050756-RAHUL YADAV-HDFC-XXXXXXXX0602-FT170415161034219799",
+                    "reference": "0000710516050756",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabph007kv2v2ahtagy2j"
+                },
+                {
+                    "balanceAmount": 16722.54,
+                    "category": [
+                        "Travel",
+                        "Train"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Travel",
+                            "Train"
+                        ],
+                        "id": 200200
+                    },
+                    "date": "17/04/17",
+                    "party": "irctc_new",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "100000809967866/IRCTC_NEW",
+                    "reference": "0000171072496254",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 1080,
+                    "transactionId": "ck77gabph007lv2v26nmwhzel"
+                },
+                {
+                    "balanceAmount": 16711.04,
+                    "category": [
+                        "Travel",
+                        "Train"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Travel",
+                            "Train"
+                        ],
+                        "id": 200200
+                    },
+                    "date": "17/04/17",
+                    "party": "irctc_new",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "100000809967866/IRCTC_NEW",
+                    "reference": "0000171072496254",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 11.5,
+                    "transactionId": "ck77gabph007mv2v27pda2688"
+                },
+                {
+                    "balanceAmount": 14934.04,
+                    "category": [
+                        "Shops"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Shops"
+                        ],
+                        "id": 180000
+                    },
+                    "date": "17/04/17",
+                    "party": "instakart.",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "POS 436303XXXXXX1688 INSTAKART. POS DEBIT",
+                    "reference": "0000000000000249",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 1777,
+                    "transactionId": "ck77gabph007nv2v2er2pannp"
+                },
+                {
+                    "balanceAmount": 15134.04,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "17/04/17",
+                    "party": "ani technologies private",
+                    "depositAmount": 200,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-N107170014489007",
+                    "reference": "N107170014489007",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabph007ov2v20djl86ha"
+                },
+                {
+                    "balanceAmount": 16429.04,
+                    "category": [
+                        "Transfer",
+                        "Credit"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Credit"
+                        ],
+                        "id": 190100
+                    },
+                    "date": "17/04/17",
+                    "party": "rahul yadav",
+                    "depositAmount": 1295,
+                    "isAutoDebit": false,
+                    "particular": "IMPS-710718442061-RAHUL YADAV-HDFC-XXXXXXXX0602-FT170417185409831875",
+                    "reference": "0000710718442061",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabph007pv2v2aisn30am"
+                },
+                {
+                    "balanceAmount": 6699.04,
+                    "category": [
+                        "Payment",
+                        "Cheque"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Payment",
+                            "Cheque"
+                        ],
+                        "id": 160200
+                    },
+                    "date": "18/04/17",
+                    "party": "micr cts s adarsh",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "CHQ PAID-MICR CTS-NO-S D ADARSH",
+                    "reference": "0000000000000033",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 9730,
+                    "transactionId": "ck77gabph007qv2v2596ughep"
+                },
+                {
+                    "balanceAmount": 6482.04,
+                    "category": [
+                        "Travel",
+                        "Gas Station"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Travel",
+                            "Gas Station"
+                        ],
+                        "id": 200100
+                    },
+                    "date": "18/04/17",
+                    "party": "hcg,.",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "POS 436303XXXXXX1688 HCG,. POS DEBIT",
+                    "reference": "0000000000002276",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 217,
+                    "transactionId": "ck77gabph007rv2v20o717hh8"
+                },
+                {
+                    "balanceAmount": 6493.54,
+                    "category": [
+                        "Travel",
+                        "Refund"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Travel",
+                            "Refund"
+                        ],
+                        "id": 200400
+                    },
+                    "date": "18/04/17",
+                    "party": "irctc_cris",
+                    "depositAmount": 11.5,
+                    "isAutoDebit": false,
+                    "particular": "IRCTC_CRIS REF-17/04/17-100000809967866",
+                    "reference": "000000000000000",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabph007sv2v249so150g"
+                },
+                {
+                    "balanceAmount": 7573.54,
+                    "category": [
+                        "Travel",
+                        "Refund"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Travel",
+                            "Refund"
+                        ],
+                        "id": 200400
+                    },
+                    "date": "18/04/17",
+                    "party": "irctc_cris",
+                    "depositAmount": 1080,
+                    "isAutoDebit": false,
+                    "particular": "IRCTC_CRIS REF-17/04/17-100000809967866",
+                    "reference": "000000000000000",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabph007tv2v20mhe0438"
+                },
+                {
+                    "balanceAmount": 12073.54,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "19/04/17",
+                    "party": "rahul yadav",
+                    "depositAmount": 4500,
+                    "isAutoDebit": false,
+                    "particular": "IMPS-710912309393-RAHUL YADAV-HDFC-XXXXXXXXSDRR-P2BOTP_71133AC497365F33",
+                    "reference": "0000710912309393",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabph007uv2v2315rba21"
+                },
+                {
+                    "balanceAmount": 12113.54,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "19/04/17",
+                    "party": "ani technologies private",
+                    "depositAmount": 40,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-N109170014962855",
+                    "reference": "N109170014962855",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabph007vv2v2032lhq9m"
+                },
+                {
+                    "balanceAmount": 22113.54,
+                    "category": [
+                        "Payment",
+                        "Credit"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Payment",
+                            "Credit"
+                        ],
+                        "id": 160800
+                    },
+                    "date": "20/04/17",
+                    "party": "krishna communicatio",
+                    "depositAmount": 10000,
+                    "isAutoDebit": false,
+                    "particular": "IMPS-711016847331-KRISHNA COMMUNICATIO-HDFC--EMI",
+                    "reference": "0000711016847331",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabph007wv2v2havu8wtr"
+                },
+                {
+                    "balanceAmount": 12639.46,
+                    "category": [
+                        "Payment"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Payment"
+                        ],
+                        "id": 160000
+                    },
+                    "date": "20/04/17",
+                    "party": "489377xxxxxx2616",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "IB BILLPAY DR-HDFCVE-489377XXXXXX2616",
+                    "reference": "000000000000000",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 9474.08,
+                    "transactionId": "ck77gabph007xv2v2e0x5dllo"
+                },
+                {
+                    "balanceAmount": 14104.46,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "21/04/17",
+                    "party": "ani technologies private",
+                    "depositAmount": 1465,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-N111170015372393",
+                    "reference": "N111170015372393",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabph007yv2v2fnmt6i4n"
+                },
+                {
+                    "balanceAmount": 15104.46,
+                    "category": [
+                        "Payment",
+                        "Credit"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Payment",
+                            "Credit"
+                        ],
+                        "id": 160800
+                    },
+                    "date": "22/04/17",
+                    "party": "krishna communicatio",
+                    "depositAmount": 1000,
+                    "isAutoDebit": false,
+                    "particular": "IMPS-711220586245-KRISHNA COMMUNICATIO-HDFC--EMI",
+                    "reference": "0000711220586245",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabph007zv2v250idddx4"
+                },
+                {
+                    "balanceAmount": 17130.46,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "24/04/17",
+                    "party": "ani technologies private",
+                    "depositAmount": 2026,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-N114170015728706",
+                    "reference": "N114170015728706",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabph0080v2v22mhx9umk"
+                },
+                {
+                    "balanceAmount": 2730.46,
+                    "category": [
+                        "Payment",
+                        "Loan"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Payment",
+                            "Loan"
+                        ],
+                        "id": 160400
+                    },
+                    "date": "24/04/17",
+                    "party": "aufinanciersindialtd lvptu04016",
+                    "depositAmount": 0,
+                    "isAutoDebit": true,
+                    "particular": "ACH D- AUFINANCIERSINDIALTD-LVPTU04016-1",
+                    "reference": "0000002000706114",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 14400,
+                    "transactionId": "ck77gabph0081v2v21xqbhrh4"
+                },
+                {
+                    "balanceAmount": 4171.46,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "25/04/17",
+                    "party": "ani technologies private",
+                    "depositAmount": 1441,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-N115170015929032",
+                    "reference": "N115170015929032",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabph0082v2v2gj6zbvpy"
+                },
+                {
+                    "balanceAmount": 4383.46,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "26/04/17",
+                    "party": "ani technologies private",
+                    "depositAmount": 212,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-N116170016143033",
+                    "reference": "N116170016143033",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabph0083v2v2gvjsdtol"
+                },
+                {
+                    "balanceAmount": 2383.46,
+                    "category": [
+                        "Cash Advance",
+                        "ATM"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Cash Advance",
+                            "ATM"
+                        ],
+                        "id": 110300
+                    },
+                    "date": "27/04/17",
+                    "party": "eaw",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "EAW-436303XXXXXX1688-BECN1262-GURGAON",
+                    "reference": "0000000000004530",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 2000,
+                    "transactionId": "ck77gabph0084v2v24g178s31"
+                },
+                {
+                    "balanceAmount": 2934.46,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "27/04/17",
+                    "party": "ani technologies private",
+                    "depositAmount": 551,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-N117170016341484",
+                    "reference": "N117170016341484",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabph0085v2v2ge90c609"
+                },
+                {
+                    "balanceAmount": 25934.46,
+                    "category": [
+                        "Cash Advance",
+                        "Credit"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Cash Advance",
+                            "Credit"
+                        ],
+                        "id": 110100
+                    },
+                    "date": "28/04/17",
+                    "party": "sohna",
+                    "depositAmount": 23000,
+                    "isAutoDebit": false,
+                    "particular": "CASH DEP SOHNA",
+                    "reference": "000000000000000",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabph0086v2v2ctry9wh1"
+                },
+                {
+                    "balanceAmount": 15934.46,
+                    "category": [
+                        "Cash Advance",
+                        "ATM"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Cash Advance",
+                            "ATM"
+                        ],
+                        "id": 110300
+                    },
+                    "date": "28/04/17",
+                    "party": "eaw",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "EAW-436303XXXXXX1688-BECN1262-GURGAON",
+                    "reference": "0000000000004652",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 10000,
+                    "transactionId": "ck77gabph0087v2v2hobd8579"
+                },
+                {
+                    "balanceAmount": 5934.46,
+                    "category": [
+                        "Cash Advance",
+                        "ATM"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Cash Advance",
+                            "ATM"
+                        ],
+                        "id": 110300
+                    },
+                    "date": "28/04/17",
+                    "party": "eaw",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "EAW-436303XXXXXX1688-BECN1262-GURGAON",
+                    "reference": "0000000000004653",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 10000,
+                    "transactionId": "ck77gabph0088v2v2bity2w95"
+                },
+                {
+                    "balanceAmount": 2934.46,
+                    "category": [
+                        "Cash Advance",
+                        "ATM"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Cash Advance",
+                            "ATM"
+                        ],
+                        "id": 110300
+                    },
+                    "date": "28/04/17",
+                    "party": "eaw",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "EAW-436303XXXXXX1688-BECN1262-GURGAON",
+                    "reference": "0000000000004654",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 3000,
+                    "transactionId": "ck77gabpi0089v2v28925fox8"
+                },
+                {
+                    "balanceAmount": 4644.46,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "28/04/17",
+                    "party": "ani technologies private",
+                    "depositAmount": 1710,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-N118170016541587",
+                    "reference": "N118170016541587",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpi008av2v2gnn0cyfn"
+                },
+                {
+                    "balanceAmount": 3824.46,
+                    "category": [
+                        "Travel",
+                        "Train"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Travel",
+                            "Train"
+                        ],
+                        "id": 200200
+                    },
+                    "date": "29/04/17",
+                    "party": "irctc_new",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "100000823590011/IRCTC_NEW",
+                    "reference": "0000171191034518",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 820,
+                    "transactionId": "ck77gabpi008bv2v242yn3vej"
+                },
+                {
+                    "balanceAmount": 3812.96,
+                    "category": [
+                        "Travel",
+                        "Train"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Travel",
+                            "Train"
+                        ],
+                        "id": 200200
+                    },
+                    "date": "29/04/17",
+                    "party": "irctc_new",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "100000823590011/IRCTC_NEW",
+                    "reference": "0000171191034518",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 11.5,
+                    "transactionId": "ck77gabpi008cv2v23cwd2d0o"
+                },
+                {
+                    "balanceAmount": 3789.96,
+                    "category": [
+                        "Bank Fees"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Bank Fees"
+                        ],
+                        "id": 100000
+                    },
+                    "date": "29/04/17",
+                    "party": "cash(1txn)28",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "FEE-ATM CASH(1TXN)28/04/17",
+                    "reference": "000000000000000",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 23,
+                    "transactionId": "ck77gabpi008dv2v28eo03862"
+                },
+                {
+                    "balanceAmount": 4394.96,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "29/04/17",
+                    "party": "ani technologies private",
+                    "depositAmount": 605,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-N119170017004301",
+                    "reference": "N119170017004301",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpi008ev2v284dc6t2r"
+                },
+                {
+                    "balanceAmount": 4094.96,
+                    "category": [
+                        "Travel",
+                        "Taxi"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Travel",
+                            "Taxi"
+                        ],
+                        "id": 200300
+                    },
+                    "date": "29/04/17",
+                    "party": "payuolacabscom",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "6121693326/PAYUOLACABSCOM",
+                    "reference": "0000171191572160",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 300,
+                    "transactionId": "ck77gabpi008fv2v2h84c9393"
+                },
+                {
+                    "balanceAmount": 6594.96,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "01/05/17",
+                    "party": "rahul yadav",
+                    "depositAmount": 2500,
+                    "isAutoDebit": false,
+                    "particular": "IMPS-712118580993-RAHUL YADAV-HDFC-XXXXXXXXSDRR-P2BOTP_A04B319DD1D5F971",
+                    "reference": "0000712118580993",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpi008gv2v289ab0fcw"
+                },
+                {
+                    "balanceAmount": 4760.96,
+                    "category": [
+                        "Payment",
+                        "Loan"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Payment",
+                            "Loan"
+                        ],
+                        "id": 160400
+                    },
+                    "date": "02/05/17",
+                    "party": "bajaj finemi",
+                    "depositAmount": 0,
+                    "isAutoDebit": true,
+                    "particular": "BAJAJ FINEMI-BF-1189499-49939",
+                    "reference": "000000000000000",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 1834,
+                    "transactionId": "ck77gabpi008hv2v29mk6draj"
+                },
+                {
+                    "balanceAmount": 8106.96,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "02/05/17",
+                    "party": "ani technologies private",
+                    "depositAmount": 3346,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-N122170017532001",
+                    "reference": "N122170017532001",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpi008iv2v2c5t5c9uc"
+                },
+                {
+                    "balanceAmount": 7934.46,
+                    "category": [
+                        "Cash Advance",
+                        "Debit"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Cash Advance",
+                            "Debit"
+                        ],
+                        "id": 110200
+                    },
+                    "date": "02/05/17",
+                    "party": "inc st &",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "3RD PARTY CASH TXN INC ST & EC 280417",
+                    "reference": "000000000000000",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 172.5,
+                    "transactionId": "ck77gabpi008jv2v2arsc84w5"
+                },
+                {
+                    "balanceAmount": 9676.46,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "03/05/17",
+                    "party": "ani technologies private",
+                    "depositAmount": 1742,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-N123170017768306",
+                    "reference": "N123170017768306",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpi008kv2v2e5sh7ud1"
+                },
+                {
+                    "balanceAmount": 8676.46,
+                    "category": [
+                        "Shops"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Shops"
+                        ],
+                        "id": 180000
+                    },
+                    "date": "03/05/17",
+                    "party": "one97 communicat",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "POS 436303XXXXXX1688 ONE97 COMMUNICAT POS DEBIT",
+                    "reference": "0000712313059548",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 1000,
+                    "transactionId": "ck77gabpi008lv2v22wcb04ck"
+                },
+                {
+                    "balanceAmount": 10473.46,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "04/05/17",
+                    "party": "ani technologies private",
+                    "depositAmount": 1797,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-N124170018202778",
+                    "reference": "N124170018202778",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpi008mv2v24w8xet1d"
+                },
+                {
+                    "balanceAmount": 5973.46,
+                    "category": [
+                        "Payment",
+                        "Loan"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Payment",
+                            "Loan"
+                        ],
+                        "id": 160400
+                    },
+                    "date": "05/05/17",
+                    "party": "bajaj finemi",
+                    "depositAmount": 0,
+                    "isAutoDebit": true,
+                    "particular": "BAJAJ FINEMI-BF-1189499-35828",
+                    "reference": "000000000000000",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 4500,
+                    "transactionId": "ck77gabpi008nv2v2g7mwa5an"
+                },
+                {
+                    "balanceAmount": 7228.46,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "05/05/17",
+                    "party": "ani technologies private",
+                    "depositAmount": 1255,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-N125170018450032",
+                    "reference": "N125170018450032",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpi008ov2v26nrdbkb1"
+                },
+                {
+                    "balanceAmount": 7211.21,
+                    "category": [
+                        "Bank Fees"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Bank Fees"
+                        ],
+                        "id": 100000
+                    },
+                    "date": "06/05/17",
+                    "party": "inst alert inc st &",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "INST-ALERT CHG INC ST & EC JAN-MAR2017",
+                    "reference": "000000000000000",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 17.25,
+                    "transactionId": "ck77gabpi008pv2v213omg1i7"
+                },
+                {
+                    "balanceAmount": 7139.21,
+                    "category": [
+                        "Travel",
+                        "Taxi"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Travel",
+                            "Taxi"
+                        ],
+                        "id": 200300
+                    },
+                    "date": "06/05/17",
+                    "party": "payuolacabscom",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "6135370620/PAYUOLACABSCOM",
+                    "reference": "0000171266746863",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 72,
+                    "transactionId": "ck77gabpi008qv2v23s3zhiml"
+                },
+                {
+                    "balanceAmount": 7921.21,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "06/05/17",
+                    "party": "ani technologies private",
+                    "depositAmount": 782,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-N126170018743743",
+                    "reference": "N126170018743743",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpi008rv2v215qb2c3p"
+                },
+                {
+                    "balanceAmount": 3815.21,
+                    "category": [
+                        "Travel"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Travel"
+                        ],
+                        "id": 200000
+                    },
+                    "date": "06/05/17",
+                    "party": "makemytrip",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "NF22911100534896P01/MAKEMYTRIP COM",
+                    "reference": "0000171267051715",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 4106,
+                    "transactionId": "ck77gabpi008sv2v2hebh48cs"
+                },
+                {
+                    "balanceAmount": 6815.21,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "06/05/17",
+                    "party": "rahul yadav",
+                    "depositAmount": 3000,
+                    "isAutoDebit": false,
+                    "particular": "IMPS-712621949007-RAHUL YADAV-HDFC-XXXXXXXXSDRR-P2BOTP_E489EB9E69EE6BD0",
+                    "reference": "0000712621949007",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpi008tv2v272yrdfpm"
+                },
+                {
+                    "balanceAmount": 6128.09,
+                    "category": [
+                        "Service",
+                        "Movies"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Service",
+                            "Movies"
+                        ],
+                        "id": 170400
+                    },
+                    "date": "07/05/17",
+                    "party": "techbookmyshow",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "325609046/TECHBOOKMYSHOW",
+                    "reference": "0000171277364694",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 687.12,
+                    "transactionId": "ck77gabpi008uv2v2gxfxghpa"
+                },
+                {
+                    "balanceAmount": 5599.19,
+                    "category": [
+                        "Service",
+                        "Movies"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Service",
+                            "Movies"
+                        ],
+                        "id": 170400
+                    },
+                    "date": "08/05/17",
+                    "party": "techbookmyshow",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "325878499/TECHBOOKMYSHOW",
+                    "reference": "0000171288025836",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 528.9,
+                    "transactionId": "ck77gabpi008vv2v23t3o9hwv"
+                },
+                {
+                    "balanceAmount": 5399.19,
+                    "category": [
+                        "Travel",
+                        "Taxi"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Travel",
+                            "Taxi"
+                        ],
+                        "id": 200300
+                    },
+                    "date": "08/05/17",
+                    "party": "payuolacabscom",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "6138910074/PAYUOLACABSCOM",
+                    "reference": "0000171288074273",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 200,
+                    "transactionId": "ck77gabpi008wv2v2d0657cxn"
+                },
+                {
+                    "balanceAmount": 8465.19,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "08/05/17",
+                    "party": "ani technologies private",
+                    "depositAmount": 3066,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-N128170019015812",
+                    "reference": "N128170019015812",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpi008xv2v20iu1bmq9"
+                },
+                {
+                    "balanceAmount": 7860.98,
+                    "category": [
+                        "Service",
+                        "Telecom"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Service",
+                            "Telecom"
+                        ],
+                        "id": 170500
+                    },
+                    "date": "09/05/17",
+                    "party": "dcsiideacell",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "POS 436303XXXXXX1688 DCSIIDEACELL POS DEBIT",
+                    "reference": "0000I15351267188",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 604.21,
+                    "transactionId": "ck77gabpi008yv2v20d232rq8"
+                },
+                {
+                    "balanceAmount": 6712.98,
+                    "category": [
+                        "Uncategorized"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Uncategorized"
+                        ],
+                        "id": 0
+                    },
+                    "date": "09/05/17",
+                    "party": "ccapaytmcom",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "106223166638/CCAPAYTMCOM",
+                    "reference": "0000171298745337",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 1148,
+                    "transactionId": "ck77gabpi008zv2v28iibb642"
+                },
+                {
+                    "balanceAmount": 712.98,
+                    "category": [
+                        "Transfer",
+                        "Debit"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Debit"
+                        ],
+                        "id": 190200
+                    },
+                    "date": "09/05/17",
+                    "party": "krishna communication",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "IMPS-712912173445-KRISHNA COMMUNICATION-ANDB-XXXXXXXXXXX0520-PEROSNAL",
+                    "reference": "0000712912173445",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 6000,
+                    "transactionId": "ck77gabpi0090v2v2gxdugvag"
+                },
+                {
+                    "balanceAmount": 2478.98,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "09/05/17",
+                    "party": "ani technologies private",
+                    "depositAmount": 1766,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-N129170019319625",
+                    "reference": "N129170019319625",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpi0091v2v27nugaupd"
+                },
+                {
+                    "balanceAmount": 3626.98,
+                    "category": [
+                        "Transfer",
+                        "Credit"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Credit"
+                        ],
+                        "id": 190100
+                    },
+                    "date": "09/05/17",
+                    "party": "rahul",
+                    "depositAmount": 1148,
+                    "isAutoDebit": false,
+                    "particular": "IMPS-712916379383-RAHUL-HDFC--.",
+                    "reference": "0000712916379383",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpi0092v2v284v5frga"
+                },
+                {
+                    "balanceAmount": 4926.98,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "09/05/17",
+                    "party": "rahul yadav",
+                    "depositAmount": 1300,
+                    "isAutoDebit": false,
+                    "particular": "IMPS-712916466815-RAHUL YADAV-HDFC-XXXXXXXXSDRR-P2BOTP_C03DF926607D3A44",
+                    "reference": "0000712916466815",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpi0093v2v24jlh7kzu"
+                },
+                {
+                    "balanceAmount": 1626.98,
+                    "category": [
+                        "Transfer",
+                        "Debit"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Debit"
+                        ],
+                        "id": 190200
+                    },
+                    "date": "09/05/17",
+                    "party": "krishna communication",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "IMPS-712916138399-KRISHNA COMMUNICATION-ANDB-XXXXXXXXXXX0520-PERSONAL",
+                    "reference": "0000712916138399",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 3300,
+                    "transactionId": "ck77gabpi0094v2v23c377v0a"
+                },
+                {
+                    "balanceAmount": 3550.98,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "10/05/17",
+                    "party": "ani technologies private",
+                    "depositAmount": 1924,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-N130170019515029",
+                    "reference": "N130170019515029",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpi0095v2v2hkifdhfo"
+                },
+                {
+                    "balanceAmount": 2745.98,
+                    "category": [
+                        "Travel",
+                        "Train"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Travel",
+                            "Train"
+                        ],
+                        "id": 200200
+                    },
+                    "date": "11/05/17",
+                    "party": "irctc_new",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "100000836234812/IRCTC_NEW",
+                    "reference": "0000171310248529",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 805,
+                    "transactionId": "ck77gabpi0096v2v28n1c4s9y"
+                },
+                {
+                    "balanceAmount": 2734.48,
+                    "category": [
+                        "Travel",
+                        "Train"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Travel",
+                            "Train"
+                        ],
+                        "id": 200200
+                    },
+                    "date": "11/05/17",
+                    "party": "irctc_new",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "100000836234812/IRCTC_NEW",
+                    "reference": "0000171310248529",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 11.5,
+                    "transactionId": "ck77gabpi0097v2v2fh0g39wd"
+                },
+                {
+                    "balanceAmount": 4537.48,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "11/05/17",
+                    "party": "ani technologies private",
+                    "depositAmount": 1803,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-N131170019670871",
+                    "reference": "N131170019670871",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpi0098v2v2edmf5sn0"
+                },
+                {
+                    "balanceAmount": 5941.48,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "12/05/17",
+                    "party": "ani technologies private",
+                    "depositAmount": 1404,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-N132170019927217",
+                    "reference": "N132170019927217",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpi0099v2v2f6vt276g"
+                },
+                {
+                    "balanceAmount": 7062.48,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "15/05/17",
+                    "party": "ani technologies private",
+                    "depositAmount": 1121,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-N135170020354823",
+                    "reference": "N135170020354823",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpi009av2v23liohyoy"
+                },
+                {
+                    "balanceAmount": 6862.48,
+                    "category": [
+                        "Travel",
+                        "Taxi"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Travel",
+                            "Taxi"
+                        ],
+                        "id": 200300
+                    },
+                    "date": "16/05/17",
+                    "party": "payuolacabscom",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "6156317854/PAYUOLACABSCOM",
+                    "reference": "0000171363934984",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 200,
+                    "transactionId": "ck77gabpi009bv2v29f4sggcs"
+                },
+                {
+                    "balanceAmount": 4862.48,
+                    "category": [
+                        "Cash Advance",
+                        "ATM"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Cash Advance",
+                            "ATM"
+                        ],
+                        "id": 110300
+                    },
+                    "date": "16/05/17",
+                    "party": "s1ande05",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "ATW-436303XXXXXX1688-S1ANDE05-GURGAON",
+                    "reference": "0000000000007639",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 2000,
+                    "transactionId": "ck77gabpi009cv2v2aj2ego8n"
+                },
+                {
+                    "balanceAmount": 4057.48,
+                    "category": [
+                        "Travel",
+                        "Train"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Travel",
+                            "Train"
+                        ],
+                        "id": 200200
+                    },
+                    "date": "17/05/17",
+                    "party": "irctc_new",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "100000843023118/IRCTC_NEW",
+                    "reference": "0000171374373146",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 805,
+                    "transactionId": "ck77gabpj009dv2v2cq16eaca"
+                },
+                {
+                    "balanceAmount": 4045.98,
+                    "category": [
+                        "Travel",
+                        "Train"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Travel",
+                            "Train"
+                        ],
+                        "id": 200200
+                    },
+                    "date": "17/05/17",
+                    "party": "irctc_new",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "100000843023118/IRCTC_NEW",
+                    "reference": "0000171374373146",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 11.5,
+                    "transactionId": "ck77gabpj009ev2v25zc0bm4m"
+                },
+                {
+                    "balanceAmount": 6145.98,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "17/05/17",
+                    "party": "ani technologies private",
+                    "depositAmount": 2100,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-N137170020771801",
+                    "reference": "N137170020771801",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpj009fv2v2cszxe0y1"
+                },
+                {
+                    "balanceAmount": 7545.98,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "17/05/17",
+                    "party": "rahul yadav",
+                    "depositAmount": 1400,
+                    "isAutoDebit": false,
+                    "particular": "IMPS-713717039402-RAHUL YADAV-HDFC-XXXXXXXXSDRR-P2BOTP_6A2BA42B5D1A6DB1",
+                    "reference": "0000713717039402",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpj009gv2v27dn526q4"
+                },
+                {
+                    "balanceAmount": 8143.98,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "18/05/17",
+                    "party": "ani technologies private",
+                    "depositAmount": 598,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-N138170020989411",
+                    "reference": "N138170020989411",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpj009hv2v231568oim"
+                },
+                {
+                    "balanceAmount": 8888.98,
+                    "category": [
+                        "Travel",
+                        "Refund"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Travel",
+                            "Refund"
+                        ],
+                        "id": 200400
+                    },
+                    "date": "18/05/17",
+                    "party": "irctc_cris",
+                    "depositAmount": 745,
+                    "isAutoDebit": false,
+                    "particular": "IRCTC_CRIS REF-17/05/17-100000843023118",
+                    "reference": "000000000000000",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpj009iv2v20icgeik6"
+                },
+                {
+                    "balanceAmount": 5128.98,
+                    "category": [
+                        "Community",
+                        "Education"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Community",
+                            "Education"
+                        ],
+                        "id": 120100
+                    },
+                    "date": "19/05/17",
+                    "party": "micr sd adarsh",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "CHQ PAID-MICR CTS-NO-SD ADARSH VIDYALAYA",
+                    "reference": "0000000000000034",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 3760,
+                    "transactionId": "ck77gabpj009jv2v27ec72nv3"
+                },
+                {
+                    "balanceAmount": 2913.98,
+                    "category": [
+                        "Travel",
+                        "Train"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Travel",
+                            "Train"
+                        ],
+                        "id": 200200
+                    },
+                    "date": "19/05/17",
+                    "party": "irctc_new",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "100000845851579/IRCTC_NEW",
+                    "reference": "0000171395715862",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 2215,
+                    "transactionId": "ck77gabpj009kv2v27yi164c3"
+                },
+                {
+                    "balanceAmount": 2902.48,
+                    "category": [
+                        "Travel",
+                        "Train"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Travel",
+                            "Train"
+                        ],
+                        "id": 200200
+                    },
+                    "date": "19/05/17",
+                    "party": "irctc_new",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "100000845851579/IRCTC_NEW",
+                    "reference": "0000171395715862",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 11.5,
+                    "transactionId": "ck77gabpj009lv2v2227i6xn2"
+                },
+                {
+                    "balanceAmount": 3790.48,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "19/05/17",
+                    "party": "ani technologies private",
+                    "depositAmount": 888,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-N139170021208598",
+                    "reference": "N139170021208598",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpj009mv2v2bk3wady1"
+                },
+                {
+                    "balanceAmount": 3590.48,
+                    "category": [
+                        "Travel",
+                        "Taxi"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Travel",
+                            "Taxi"
+                        ],
+                        "id": 200300
+                    },
+                    "date": "20/05/17",
+                    "party": "payuolacabscom",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "6164860348/PAYUOLACABSCOM",
+                    "reference": "0000171406316712",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 200,
+                    "transactionId": "ck77gabpj009nv2v24gvoalwy"
+                },
+                {
+                    "balanceAmount": 5549.48,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "20/05/17",
+                    "party": "ani technologies private",
+                    "depositAmount": 1959,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-N140170021426663",
+                    "reference": "N140170021426663",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpj009ov2v2hlhn1f4h"
+                },
+                {
+                    "balanceAmount": 3549.48,
+                    "category": [
+                        "Cash Advance",
+                        "ATM"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Cash Advance",
+                            "ATM"
+                        ],
+                        "id": 110300
+                    },
+                    "date": "20/05/17",
+                    "party": "s1cn3496",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "NWD-436303XXXXXX1688-S1CN3496-GURGAON",
+                    "reference": "0000714018002019",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 2000,
+                    "transactionId": "ck77gabpj009pv2v27mm943fv"
+                },
+                {
+                    "balanceAmount": 2719.48,
+                    "category": [
+                        "Travel",
+                        "Train"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Travel",
+                            "Train"
+                        ],
+                        "id": 200200
+                    },
+                    "date": "22/05/17",
+                    "party": "irctc_new",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "100000848921380/IRCTC_NEW",
+                    "reference": "0000171427617056",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 830,
+                    "transactionId": "ck77gabpj009qv2v2820o4jsc"
+                },
+                {
+                    "balanceAmount": 2707.98,
+                    "category": [
+                        "Travel",
+                        "Train"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Travel",
+                            "Train"
+                        ],
+                        "id": 200200
+                    },
+                    "date": "22/05/17",
+                    "party": "irctc_new",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "100000848921380/IRCTC_NEW",
+                    "reference": "0000171427617056",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 11.5,
+                    "transactionId": "ck77gabpj009rv2v20z9fdt43"
+                },
+                {
+                    "balanceAmount": 7707.98,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "22/05/17",
+                    "party": "rahul",
+                    "depositAmount": 5000,
+                    "isAutoDebit": false,
+                    "particular": "IMPS-714214815889-RAHUL-HDFC-XXXXXXXX9798-254105286",
+                    "reference": "0000714214815889",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpj009sv2v2ehbn88md"
+                },
+                {
+                    "balanceAmount": 7957.98,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "22/05/17",
+                    "party": "rahul",
+                    "depositAmount": 250,
+                    "isAutoDebit": false,
+                    "particular": "IMPS-714214819619-RAHUL-HDFC-XXXXXXXX9798-254106800",
+                    "reference": "0000714214819619",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpj009tv2v28hk5fi8d"
+                },
+                {
+                    "balanceAmount": 8051.98,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "22/05/17",
+                    "party": "ani technologies private",
+                    "depositAmount": 94,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-N142170021578803",
+                    "reference": "N142170021578803",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpj009uv2v212ykhd03"
+                },
+                {
+                    "balanceAmount": 7051.98,
+                    "category": [
+                        "Shops"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Shops"
+                        ],
+                        "id": 180000
+                    },
+                    "date": "22/05/17",
+                    "party": "tolls llp",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "POS 436303XXXXXX1688 DEP TOLLS LLP POS DEBIT",
+                    "reference": "0000714210553098",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 1000,
+                    "transactionId": "ck77gabpj009vv2v21uo29872"
+                },
+                {
+                    "balanceAmount": 12051.98,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "23/05/17",
+                    "party": "rahul",
+                    "depositAmount": 5000,
+                    "isAutoDebit": false,
+                    "particular": "IMPS-714309052193-RAHUL-HDFC-XXXXXXXX9798-254636381",
+                    "reference": "0000714309052193",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpj009wv2v2cbe5cx98"
+                },
+                {
+                    "balanceAmount": 15051.98,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "23/05/17",
+                    "party": "rahul",
+                    "depositAmount": 3000,
+                    "isAutoDebit": false,
+                    "particular": "IMPS-714309053205-RAHUL-HDFC-XXXXXXXX9798-254636886",
+                    "reference": "0000714309053205",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpj009xv2v2cwnd0j2o"
+                },
+                {
+                    "balanceAmount": 16051.98,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "23/05/17",
+                    "party": "rahul",
+                    "depositAmount": 1000,
+                    "isAutoDebit": false,
+                    "particular": "IMPS-714309105747-RAHUL-HDFC-XXXXXXXX9798-254665502",
+                    "reference": "0000714309105747",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpj009yv2v2aw67cn36"
+                },
+                {
+                    "balanceAmount": 15261.98,
+                    "category": [
+                        "Travel",
+                        "Train"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Travel",
+                            "Train"
+                        ],
+                        "id": 200200
+                    },
+                    "date": "23/05/17",
+                    "party": "irctc_new",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "100000849785885/IRCTC_NEW",
+                    "reference": "0000171438291889",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 790,
+                    "transactionId": "ck77gabpj009zv2v285918u8f"
+                },
+                {
+                    "balanceAmount": 15250.48,
+                    "category": [
+                        "Travel",
+                        "Train"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Travel",
+                            "Train"
+                        ],
+                        "id": 200200
+                    },
+                    "date": "23/05/17",
+                    "party": "irctc_new",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "100000849785885/IRCTC_NEW",
+                    "reference": "0000171438291889",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 11.5,
+                    "transactionId": "ck77gabpj00a0v2v25wd09v36"
+                },
+                {
+                    "balanceAmount": 15244.73,
+                    "category": [
+                        "Transfer",
+                        "Debit"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Debit"
+                        ],
+                        "id": 190200
+                    },
+                    "date": "23/05/17",
+                    "party": "712912173445#09",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "IMPS P2P 575 712912173445#09/05/ 150517",
+                    "reference": "0000000000000005",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 5.75,
+                    "transactionId": "ck77gabpj00a1v2v2c2vt21sy"
+                },
+                {
+                    "balanceAmount": 15238.98,
+                    "category": [
+                        "Transfer",
+                        "Debit"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Debit"
+                        ],
+                        "id": 190200
+                    },
+                    "date": "23/05/17",
+                    "party": "712916138399#09",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "IMPS P2P 575 712916138399#09/05/ 150517",
+                    "reference": "0000000000000009",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 5.75,
+                    "transactionId": "ck77gabpj00a2v2v2g1w27xv3"
+                },
+                {
+                    "balanceAmount": 16213.98,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "23/05/17",
+                    "party": "ani technologies private",
+                    "depositAmount": 975,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-N143170021833935",
+                    "reference": "N143170021833935",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpj00a3v2v25bsqai6x"
+                },
+                {
+                    "balanceAmount": 1813.98,
+                    "category": [
+                        "Payment",
+                        "Loan"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Payment",
+                            "Loan"
+                        ],
+                        "id": 160400
+                    },
+                    "date": "23/05/17",
+                    "party": "aufinanciers lvptu04016",
+                    "depositAmount": 0,
+                    "isAutoDebit": true,
+                    "particular": "ACH D- AUFINANCIERS-LVPTU04016-170458917",
+                    "reference": "0000002000481143",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 14400,
+                    "transactionId": "ck77gabpj00a4v2v2b25ydj3h"
+                },
+                {
+                    "balanceAmount": 2640.98,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "24/05/17",
+                    "party": "ani technologies private",
+                    "depositAmount": 827,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-N144170022153559",
+                    "reference": "N144170022153559",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpj00a5v2v2d1i6hofn"
+                },
+                {
+                    "balanceAmount": 3230.98,
+                    "category": [
+                        "Travel",
+                        "Refund"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Travel",
+                            "Refund"
+                        ],
+                        "id": 200400
+                    },
+                    "date": "24/05/17",
+                    "party": "irctc_cris",
+                    "depositAmount": 590,
+                    "isAutoDebit": false,
+                    "particular": "IRCTC_CRIS REF-22/05/17-100000848921380",
+                    "reference": "000000000000000",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpj00a6v2v2grks5fdm"
+                },
+                {
+                    "balanceAmount": 5067.98,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "25/05/17",
+                    "party": "ani technologies private",
+                    "depositAmount": 1837,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-N145170022304061",
+                    "reference": "N145170022304061",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpj00a7v2v24l4f5vf2"
+                },
+                {
+                    "balanceAmount": 6769.98,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "26/05/17",
+                    "party": "ani technologies private",
+                    "depositAmount": 1702,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-N146170022530805",
+                    "reference": "N146170022530805",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpj00a8v2v24f11ecrw"
+                },
+                {
+                    "balanceAmount": 7499.98,
+                    "category": [
+                        "Travel",
+                        "Refund"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Travel",
+                            "Refund"
+                        ],
+                        "id": 200400
+                    },
+                    "date": "26/05/17",
+                    "party": "irctc_cris",
+                    "depositAmount": 730,
+                    "isAutoDebit": false,
+                    "particular": "IRCTC_CRIS REF-23/05/17-100000849785885",
+                    "reference": "000000000000000",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpj00a9v2v2eh4c52qe"
+                },
+                {
+                    "balanceAmount": 5499.98,
+                    "category": [
+                        "Shops"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Shops"
+                        ],
+                        "id": 180000
+                    },
+                    "date": "26/05/17",
+                    "party": "one97 communicat",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "POS 436303XXXXXX1688 ONE97 COMMUNICAT POS DEBIT",
+                    "reference": "0000714612086746",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 2000,
+                    "transactionId": "ck77gabpj00aav2v2btcs1t00"
+                },
+                {
+                    "balanceAmount": 499.98,
+                    "category": [
+                        "Transfer",
+                        "Debit"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Debit"
+                        ],
+                        "id": 190200
+                    },
+                    "date": "29/05/17",
+                    "party": "idib000s208 sanjay rathi",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "NEFT DR-IDIB000S208-SANJAY RATHI-NETBANK, MUM-N149170301039889",
+                    "reference": "N149170301039889",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 5000,
+                    "transactionId": "ck77gabpn00abv2v2234y8q09"
+                },
+                {
+                    "balanceAmount": 3038.98,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "29/05/17",
+                    "party": "ani technologies private",
+                    "depositAmount": 2539,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-N149170022869237",
+                    "reference": "N149170022869237",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpn00acv2v2gjej05bl"
+                },
+                {
+                    "balanceAmount": 8038.98,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "29/05/17",
+                    "party": "rahul yadav",
+                    "depositAmount": 5000,
+                    "isAutoDebit": false,
+                    "particular": "IMPS-714914233305-RAHUL YADAV-HDFC-XXXXXXXXSDRR-P2BOTP_B06C7F9EE0CC9F0A",
+                    "reference": "0000714914233305",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpn00adv2v26bre6p4o"
+                },
+                {
+                    "balanceAmount": 6890.98,
+                    "category": [
+                        "Service",
+                        "Internet"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Service",
+                            "Internet"
+                        ],
+                        "id": 170200
+                    },
+                    "date": "29/05/17",
+                    "party": "nextraworld_payt",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "POS 436303XXXXXX1688 NEXTRAWORLD_PAYT POS DEBIT",
+                    "reference": "0000714909878851",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 1148,
+                    "transactionId": "ck77gabpn00aev2v2em1w84aw"
+                },
+                {
+                    "balanceAmount": 3890.98,
+                    "category": [
+                        "Transfer",
+                        "Debit"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Debit"
+                        ],
+                        "id": 190200
+                    },
+                    "date": "30/05/17",
+                    "party": "idib000s208 sanjay rathi",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "NEFT DR-IDIB000S208-SANJAY RATHI-NETBANK, MUM-N150170302195450",
+                    "reference": "N150170302195450",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 3000,
+                    "transactionId": "ck77gabpn00afv2v26wzt6n5f"
+                },
+                {
+                    "balanceAmount": 4040.98,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "31/05/17",
+                    "party": "rahul yadav",
+                    "depositAmount": 150,
+                    "isAutoDebit": false,
+                    "particular": "IMPS-715113846314-RAHUL YADAV-HDFC-XXXXXXXXSDRR-P2BOTP_855ABAA195C84CEA",
+                    "reference": "0000715113846314",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpn00agv2v2087rdkxm"
+                },
+                {
+                    "balanceAmount": 4610.98,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "31/05/17",
+                    "party": "rahul yadav",
+                    "depositAmount": 570,
+                    "isAutoDebit": false,
+                    "particular": "IMPS-715113853929-RAHUL YADAV-HDFC-XXXXXXXXSDRR-P2BOTP_20E4CABC2E2E4A93",
+                    "reference": "0000715113853929",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpn00ahv2v2c13lc2tq"
+                },
+                {
+                    "balanceAmount": 4727.98,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "31/05/17",
+                    "party": "ani technologies private",
+                    "depositAmount": 117,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-N151170023335468",
+                    "reference": "N151170023335468",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpn00aiv2v2d5m261oc"
+                },
+                {
+                    "balanceAmount": 3427.98,
+                    "category": [
+                        "Shops"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Shops"
+                        ],
+                        "id": 180000
+                    },
+                    "date": "31/05/17",
+                    "party": "paytm mobile sol",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "POS 436303XXXXXX1688 PAYTM MOBILE SOL POS DEBIT",
+                    "reference": "0000715112857076",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 1300,
+                    "transactionId": "ck77gabpn00ajv2v282d22myi"
+                },
+                {
+                    "balanceAmount": 3622.98,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "01/06/17",
+                    "party": "ani technologies private",
+                    "depositAmount": 195,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-N152170023871007",
+                    "reference": "N152170023871007",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpn00akv2v2c951aivn"
+                },
+                {
+                    "balanceAmount": 3620.1,
+                    "category": [
+                        "Bank Fees"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Bank Fees"
+                        ],
+                        "id": 100000
+                    },
+                    "date": "01/06/17",
+                    "party": "chgs incl st &",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CHGS INCL ST & CESS 290517",
+                    "reference": "000000000000000",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 2.88,
+                    "transactionId": "ck77gabpo00alv2v2d0beh2oc"
+                },
+                {
+                    "balanceAmount": 3617.22,
+                    "category": [
+                        "Bank Fees"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Bank Fees"
+                        ],
+                        "id": 100000
+                    },
+                    "date": "01/06/17",
+                    "party": "chgs incl st &",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CHGS INCL ST & CESS 300517",
+                    "reference": "000000000000000",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 2.88,
+                    "transactionId": "ck77gabpo00amv2v2408vcnvx"
+                },
+                {
+                    "balanceAmount": 1783.22,
+                    "category": [
+                        "Payment",
+                        "Loan"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Payment",
+                            "Loan"
+                        ],
+                        "id": 160400
+                    },
+                    "date": "02/06/17",
+                    "party": "bajaj finemi",
+                    "depositAmount": 0,
+                    "isAutoDebit": true,
+                    "particular": "BAJAJ FINEMI-BF-1189499-216580",
+                    "reference": "000000000000000",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 1834,
+                    "transactionId": "ck77gabpo00anv2v26o4f2vj3"
+                },
+                {
+                    "balanceAmount": 1871.22,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "02/06/17",
+                    "party": "ani technologies private",
+                    "depositAmount": 88,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-N153170024130727",
+                    "reference": "N153170024130727",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpo00aov2v2b1hw35zb"
+                },
+                {
+                    "balanceAmount": 3255.22,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "03/06/17",
+                    "party": "ani technologies private",
+                    "depositAmount": 1384,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-N154170024388264",
+                    "reference": "N154170024388264",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpo00apv2v2edtd83vo"
+                },
+                {
+                    "balanceAmount": 5255.22,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "05/06/17",
+                    "party": "rahul yadav",
+                    "depositAmount": 2000,
+                    "isAutoDebit": false,
+                    "particular": "IMPS-715609959811-RAHUL YADAV-HDFC-XXXXXXXXSDRR-P2BOTP_C3140B82EFA55F16",
+                    "reference": "0000715609959811",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpo00aqv2v2f691fniq"
+                },
+                {
+                    "balanceAmount": 755.22,
+                    "category": [
+                        "Payment",
+                        "Loan"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Payment",
+                            "Loan"
+                        ],
+                        "id": 160400
+                    },
+                    "date": "05/06/17",
+                    "party": "bajaj finemi",
+                    "depositAmount": 0,
+                    "isAutoDebit": true,
+                    "particular": "BAJAJ FINEMI-BF-1189499-80864",
+                    "reference": "000000000000000",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 4500,
+                    "transactionId": "ck77gabpo00arv2v242xd3t9e"
+                },
+                {
+                    "balanceAmount": 1763.22,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "06/06/17",
+                    "party": "ani technologies private",
+                    "depositAmount": 1008,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-N157170025107064",
+                    "reference": "N157170025107064",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpo00asv2v26ubg8yv1"
+                },
+                {
+                    "balanceAmount": 6763.22,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "06/06/17",
+                    "party": "rahul yadav",
+                    "depositAmount": 5000,
+                    "isAutoDebit": false,
+                    "particular": "IMPS-715719065544-RAHUL YADAV-HDFC-XXXXXXXXSDRR-P2BOTP_DCFF26126D09C545",
+                    "reference": "0000715719065544",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpo00atv2v27f1nfyz2"
+                },
+                {
+                    "balanceAmount": 7430.22,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "07/06/17",
+                    "party": "ani technologies private",
+                    "depositAmount": 667,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-N158170025429739",
+                    "reference": "N158170025429739",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpo00auv2v236f36zhs"
+                },
+                {
+                    "balanceAmount": 1819.18,
+                    "category": [
+                        "Payment"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Payment"
+                        ],
+                        "id": 160000
+                    },
+                    "date": "07/06/17",
+                    "party": "489377xxxxxx2616",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "IB BILLPAY DR-HDFCVE-489377XXXXXX2616",
+                    "reference": "000000000000000",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 5611.04,
+                    "transactionId": "ck77gabpo00avv2v2bm5f69bv"
+                },
+                {
+                    "balanceAmount": 3327.18,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "08/06/17",
+                    "party": "ani technologies private",
+                    "depositAmount": 1508,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-N159170025918718",
+                    "reference": "N159170025918718",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpo00awv2v2b73d40y1"
+                },
+                {
+                    "balanceAmount": 1327.18,
+                    "category": [
+                        "Cash Advance",
+                        "ATM"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Cash Advance",
+                            "ATM"
+                        ],
+                        "id": 110300
+                    },
+                    "date": "08/06/17",
+                    "party": "eaw",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "EAW-436303XXXXXX1688-BECN1262-GURGAON",
+                    "reference": "0000000000005624",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 2000,
+                    "transactionId": "ck77gabpo00axv2v2cx1j1fwr"
+                },
+                {
+                    "balanceAmount": 740.23,
+                    "category": [
+                        "Service",
+                        "Telecom"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Service",
+                            "Telecom"
+                        ],
+                        "id": 170500
+                    },
+                    "date": "09/06/17",
+                    "party": "dcsiideacell",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "POS 436303XXXXXX1688 DCSIIDEACELL POS DEBIT",
+                    "reference": "0000J15418874142",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 586.95,
+                    "transactionId": "ck77gabpo00ayv2v2cc3x6dym"
+                },
+                {
+                    "balanceAmount": 4623.23,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "12/06/17",
+                    "party": "ani technologies private",
+                    "depositAmount": 3883,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-N163170026582541",
+                    "reference": "N163170026582541",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpo00azv2v29ue08w6e"
+                },
+                {
+                    "balanceAmount": 4423.23,
+                    "category": [
+                        "Travel",
+                        "Taxi"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Travel",
+                            "Taxi"
+                        ],
+                        "id": 200300
+                    },
+                    "date": "13/06/17",
+                    "party": "payuolacabscom",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "6212894082/PAYUOLACABSCOM",
+                    "reference": "0000171643154353",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 200,
+                    "transactionId": "ck77gabpo00b0v2v2153z52ec"
+                },
+                {
+                    "balanceAmount": 7437.23,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "13/06/17",
+                    "party": "ani technologies private",
+                    "depositAmount": 3014,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-N164170026890830",
+                    "reference": "N164170026890830",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpo00b1v2v2gvt27k5y"
+                },
+                {
+                    "balanceAmount": 6837.23,
+                    "category": [
+                        "Shops"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Shops"
+                        ],
+                        "id": 180000
+                    },
+                    "date": "14/06/17",
+                    "party": "golden leaf well",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "POS 436303XXXXXX1688 GOLDEN LEAF WELL POS DEBIT",
+                    "reference": "0000716507302605",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 600,
+                    "transactionId": "ck77gabpo00b2v2v23aalbgsd"
+                },
+                {
+                    "balanceAmount": 8071.23,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "14/06/17",
+                    "party": "ani technologies private",
+                    "depositAmount": 1234,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-N165170027220545",
+                    "reference": "N165170027220545",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpo00b3v2v26tlv2nh2"
+                },
+                {
+                    "balanceAmount": 6071.23,
+                    "category": [
+                        "Transfer",
+                        "Debit"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Debit"
+                        ],
+                        "id": 190200
+                    },
+                    "date": "15/06/17",
+                    "party": "vidya devi",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "NEFT DR-STBP0001117-VIDYA DEVI-NETBANK,MUM-N166170313506800",
+                    "reference": "N166170313506800",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 2000,
+                    "transactionId": "ck77gabpo00b4v2v2g2du24r6"
+                },
+                {
+                    "balanceAmount": 8254.23,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "15/06/17",
+                    "party": "ani technologies private",
+                    "depositAmount": 2183,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-N166170027443753",
+                    "reference": "N166170027443753",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpp00b5v2v2d3wt1x9q"
+                },
+                {
+                    "balanceAmount": 10177.23,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "16/06/17",
+                    "party": "ani technologies private",
+                    "depositAmount": 1923,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-N167170027661493",
+                    "reference": "N167170027661493",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpp00b6v2v26bnx9rfb"
+                },
+                {
+                    "balanceAmount": 5177.23,
+                    "category": [
+                        "Transfer",
+                        "Debit"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Debit"
+                        ],
+                        "id": 190200
+                    },
+                    "date": "16/06/17",
+                    "party": "idib000s208 sanjay rathi",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "NEFT DR-IDIB000S208-SANJAY RATHI-NETBANK, MUM-N167170314437615",
+                    "reference": "N167170314437615",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 5000,
+                    "transactionId": "ck77gabpp00b7v2v2c8rba790"
+                },
+                {
+                    "balanceAmount": 6786.23,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "17/06/17",
+                    "party": "ani technologies private",
+                    "depositAmount": 1609,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-N168170027906691",
+                    "reference": "N168170027906691",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpp00b8v2v24dixdjhp"
+                },
+                {
+                    "balanceAmount": 1786.23,
+                    "category": [
+                        "Transfer",
+                        "Debit"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Debit"
+                        ],
+                        "id": 190200
+                    },
+                    "date": "17/06/17",
+                    "party": "idib000s208 sanjay rathi",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "NEFT DR-IDIB000S208-SANJAY RATHI-NETBANK, MUM-N168170314791724",
+                    "reference": "N168170314791724",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 5000,
+                    "transactionId": "ck77gabpp00b9v2v2bim6at10"
+                },
+                {
+                    "balanceAmount": 686.23,
+                    "category": [
+                        "Travel",
+                        "Train"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Travel",
+                            "Train"
+                        ],
+                        "id": 200200
+                    },
+                    "date": "17/06/17",
+                    "party": "irctc_new",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "100000878441519/IRCTC_NEW",
+                    "reference": "0000171686104009",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 1100,
+                    "transactionId": "ck77gabpp00bav2v24e36brml"
+                },
+                {
+                    "balanceAmount": 674.73,
+                    "category": [
+                        "Travel",
+                        "Train"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Travel",
+                            "Train"
+                        ],
+                        "id": 200200
+                    },
+                    "date": "17/06/17",
+                    "party": "irctc_new",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "100000878441519/IRCTC_NEW",
+                    "reference": "0000171686104009",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 11.5,
+                    "transactionId": "ck77gabpp00bbv2v2gtvi42gz"
+                },
+                {
+                    "balanceAmount": 2674.73,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "17/06/17",
+                    "party": "rahul",
+                    "depositAmount": 2000,
+                    "isAutoDebit": false,
+                    "particular": "IMPS-716819288520-RAHUL-HDFC-XXXXXXXX9798-274769970",
+                    "reference": "0000716819288520",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpp00bcv2v2av8zgegk"
+                },
+                {
+                    "balanceAmount": 2174.73,
+                    "category": [
+                        "Travel",
+                        "Train"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Travel",
+                            "Train"
+                        ],
+                        "id": 200200
+                    },
+                    "date": "18/06/17",
+                    "party": "irctc_new",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "100000879294446/IRCTC_NEW",
+                    "reference": "0000171696370413",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 500,
+                    "transactionId": "ck77gabpp00bdv2v28k6x1ysp"
+                },
+                {
+                    "balanceAmount": 2163.23,
+                    "category": [
+                        "Travel",
+                        "Train"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Travel",
+                            "Train"
+                        ],
+                        "id": 200200
+                    },
+                    "date": "18/06/17",
+                    "party": "irctc_new",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "100000879294446/IRCTC_NEW",
+                    "reference": "0000171696370413",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 11.5,
+                    "transactionId": "ck77gabpp00bev2v26j5842gn"
+                },
+                {
+                    "balanceAmount": 1693.23,
+                    "category": [
+                        "Travel",
+                        "Train"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Travel",
+                            "Train"
+                        ],
+                        "id": 200200
+                    },
+                    "date": "19/06/17",
+                    "party": "irctc_new",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "100000880077617/IRCTC_NEW",
+                    "reference": "0000171706867739",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 470,
+                    "transactionId": "ck77gabpp00bfv2v21uv7e4g4"
+                },
+                {
+                    "balanceAmount": 1681.73,
+                    "category": [
+                        "Travel",
+                        "Train"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Travel",
+                            "Train"
+                        ],
+                        "id": 200200
+                    },
+                    "date": "19/06/17",
+                    "party": "irctc_new",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "100000880077617/IRCTC_NEW",
+                    "reference": "0000171706867739",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 11.5,
+                    "transactionId": "ck77gabpp00bgv2v23g162qpa"
+                },
+                {
+                    "balanceAmount": 1211.73,
+                    "category": [
+                        "Travel",
+                        "Train"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Travel",
+                            "Train"
+                        ],
+                        "id": 200200
+                    },
+                    "date": "19/06/17",
+                    "party": "irctc_new",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "100000880120515/IRCTC_NEW",
+                    "reference": "0000171706885407",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 470,
+                    "transactionId": "ck77gabpp00bhv2v2a2hb4mnz"
+                },
+                {
+                    "balanceAmount": 1200.23,
+                    "category": [
+                        "Travel",
+                        "Train"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Travel",
+                            "Train"
+                        ],
+                        "id": 200200
+                    },
+                    "date": "19/06/17",
+                    "party": "irctc_new",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "100000880120515/IRCTC_NEW",
+                    "reference": "0000171706885407",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 11.5,
+                    "transactionId": "ck77gabpp00biv2v22crfe4ix"
+                },
+                {
+                    "balanceAmount": 2646.23,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "19/06/17",
+                    "party": "ani technologies private",
+                    "depositAmount": 1446,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-N170170028204596",
+                    "reference": "N170170028204596",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpp00bjv2v2549o1djp"
+                },
+                {
+                    "balanceAmount": 2046.23,
+                    "category": [
+                        "Shops"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Shops"
+                        ],
+                        "id": 180000
+                    },
+                    "date": "19/06/17",
+                    "party": "paytm mobile sol",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "POS 436303XXXXXX1688 PAYTM MOBILE SOL POS DEBIT",
+                    "reference": "0000717012317079",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 600,
+                    "transactionId": "ck77gabpp00bkv2v2h98t3p1f"
+                },
+                {
+                    "balanceAmount": 3301.23,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "20/06/17",
+                    "party": "ani technologies private",
+                    "depositAmount": 1255,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-N171170028446509",
+                    "reference": "N171170028446509",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpp00blv2v2hmlodplj"
+                },
+                {
+                    "balanceAmount": 3393.84,
+                    "category": [
+                        "Transfer",
+                        "Credit"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Credit"
+                        ],
+                        "id": 190100
+                    },
+                    "date": "21/06/17",
+                    "party": "uber india systems",
+                    "depositAmount": 92.61,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CR-DEUT0784BBY-UBER INDIA SYSTEMS PLTD-RAHUL YADAV-170621041GN01848",
+                    "reference": "170621041GN01848",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpp00bmv2v23jrze0nk"
+                },
+                {
+                    "balanceAmount": 3390.96,
+                    "category": [
+                        "Bank Fees"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Bank Fees"
+                        ],
+                        "id": 100000
+                    },
+                    "date": "21/06/17",
+                    "party": "chgs incl st &",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CHGS INCL ST & CESS 150617",
+                    "reference": "000000000000000",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 2.88,
+                    "transactionId": "ck77gabpp00bnv2v2fdry6fzk"
+                },
+                {
+                    "balanceAmount": 3906.96,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "22/06/17",
+                    "party": "ani technologies private",
+                    "depositAmount": 516,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-N173170028774012",
+                    "reference": "N173170028774012",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpp00bov2v2gnrzh34b"
+                },
+                {
+                    "balanceAmount": 3904.08,
+                    "category": [
+                        "Bank Fees"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Bank Fees"
+                        ],
+                        "id": 100000
+                    },
+                    "date": "22/06/17",
+                    "party": "chgs incl st &",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CHGS INCL ST & CESS 160617",
+                    "reference": "000000000000000",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 2.88,
+                    "transactionId": "ck77gabpp00bpv2v21afkeogf"
+                },
+                {
+                    "balanceAmount": 8904.08,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "22/06/17",
+                    "party": "rahul",
+                    "depositAmount": 5000,
+                    "isAutoDebit": false,
+                    "particular": "IMPS-717320066251-RAHUL-HDFC-XXXXXXXX9798-278944222",
+                    "reference": "0000717320066251",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpp00bqv2v2g9qx61ju"
+                },
+                {
+                    "balanceAmount": 13904.08,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "22/06/17",
+                    "party": "rahul",
+                    "depositAmount": 5000,
+                    "isAutoDebit": false,
+                    "particular": "IMPS-717321073527-RAHUL-HDFC-XXXXXXXX9798-278948544",
+                    "reference": "0000717321073527",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpp00brv2v2e43o25is"
+                },
+                {
+                    "balanceAmount": 14904.08,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "22/06/17",
+                    "party": "rahul",
+                    "depositAmount": 1000,
+                    "isAutoDebit": false,
+                    "particular": "IMPS-717321074412-RAHUL-HDFC-XXXXXXXX9798-278948945",
+                    "reference": "0000717321074412",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpp00bsv2v2bfpj7j8f"
+                },
+                {
+                    "balanceAmount": 14901.2,
+                    "category": [
+                        "Bank Fees"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Bank Fees"
+                        ],
+                        "id": 100000
+                    },
+                    "date": "23/06/17",
+                    "party": "chgs incl st &",
+                    "depositAmount": 0,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CHGS INCL ST & CESS 170617",
+                    "reference": "000000000000000",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 2.88,
+                    "transactionId": "ck77gabpp00btv2v275pthcw5"
+                },
+                {
+                    "balanceAmount": 15480.2,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "23/06/17",
+                    "party": "ani technologies private",
+                    "depositAmount": 579,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-N174170029139269",
+                    "reference": "N174170029139269",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpp00buv2v2byg98qi9"
+                },
+                {
+                    "balanceAmount": 1080.2,
+                    "category": [
+                        "Payment",
+                        "Loan"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Payment",
+                            "Loan"
+                        ],
+                        "id": 160400
+                    },
+                    "date": "23/06/17",
+                    "party": "aufinanciers",
+                    "depositAmount": 0,
+                    "isAutoDebit": true,
+                    "particular": "ACH D- AUFINANCIERS-9001020101524623",
+                    "reference": "0000002002176174",
+                    "type": "DEBIT",
+                    "withdrawalAmount": 14400,
+                    "transactionId": "ck77gabpp00bvv2v2b5io7epd"
+                },
+                {
+                    "balanceAmount": 3458.2,
+                    "category": [
+                        "Transfer",
+                        "Credit"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Credit"
+                        ],
+                        "id": 190100
+                    },
+                    "date": "24/06/17",
+                    "party": "ani technologies pri",
+                    "depositAmount": 2378,
+                    "isAutoDebit": false,
+                    "particular": "IMPS-717514788772-ANI TECHNOLOGIES PRI-HDFC-XXXXXXXXXXX0554-OLA155367947-2017-06-24-PAYMENT",
+                    "reference": "0000717514788772",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpp00bwv2v21x0xbw0g"
+                },
+                {
+                    "balanceAmount": 3903.2,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "27/06/17",
+                    "party": "ani technologies private",
+                    "depositAmount": 445,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-N178170029357228",
+                    "reference": "N178170029357228",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpp00bxv2v21tv74lc6"
+                },
+                {
+                    "balanceAmount": 6182.2,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "28/06/17",
+                    "party": "ani technologies private",
+                    "depositAmount": 2279,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-N179170029675270",
+                    "reference": "N179170029675270",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpp00byv2v25bfmd7c1"
+                },
+                {
+                    "balanceAmount": 7347.2,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ],
+                    "pandora_category": {
+                        "hierarchy": [
+                            "Transfer",
+                            "Earning"
+                        ],
+                        "id": 190400
+                    },
+                    "date": "29/06/17",
+                    "party": "ani technologies private",
+                    "depositAmount": 1165,
+                    "isAutoDebit": false,
+                    "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-N180170029954935",
+                    "reference": "N180170029954935",
+                    "type": "CREDIT",
+                    "withdrawalAmount": 0,
+                    "transactionId": "ck77gabpp00bzv2v28ohjc9ff"
+                }
+            ],
+            "summary": {
+                "credit": {
+                    "amount": 546058.89,
+                    "count": 218
+                },
+                "debit": {
+                    "amount": 551558.2800000001,
+                    "count": 202
+                },
+                "defaults": {
+                    "amount": 42044.28,
+                    "count": 4
+                }
+            },
+            "topCredits": [
+                {
+                    "amount": 60000,
+                    "date": "08 Feb 17",
+                    "particular": "NEFT CR-UCBA0001910-DAYA NAND-RAHUL YADAV-SAA90378310",
+                    "balanceAmount": 63131,
+                    "category": [
+                        "Transfer",
+                        "Credit"
+                    ]
+                },
+                {
+                    "amount": 50000,
+                    "date": "08 Mar 17",
+                    "particular": "IMPS-706712269452-KRISHNA COMMUNICATIO-HDFC--PERSONAL",
+                    "balanceAmount": 53785,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ]
+                },
+                {
+                    "amount": 23000,
+                    "date": "28 Apr 17",
+                    "particular": "CASH DEP SOHNA",
+                    "balanceAmount": 25934,
+                    "category": [
+                        "Cash Advance",
+                        "Credit"
+                    ]
+                },
+                {
+                    "amount": 10000,
+                    "date": "20 Apr 17",
+                    "particular": "IMPS-711016847331-KRISHNA COMMUNICATIO-HDFC--EMI",
+                    "balanceAmount": 22114,
+                    "category": [
+                        "Payment",
+                        "Credit"
+                    ]
+                },
+                {
+                    "amount": 9280,
+                    "date": "03 Jan 17",
+                    "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-0P17010348417669",
+                    "balanceAmount": 16911,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ]
+                },
+                {
+                    "amount": 6209,
+                    "date": "06 Feb 17",
+                    "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-0P17020678300541",
+                    "balanceAmount": 6958,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ]
+                },
+                {
+                    "amount": 6082,
+                    "date": "09 Jan 17",
+                    "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-0P17010953765743",
+                    "balanceAmount": 13292,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ]
+                },
+                {
+                    "amount": 5324,
+                    "date": "16 Jan 17",
+                    "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-0P17011659129732",
+                    "balanceAmount": 21166,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ]
+                },
+                {
+                    "amount": 5183,
+                    "date": "05 Jan 17",
+                    "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-0P17010550345082",
+                    "balanceAmount": 16473,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ]
+                },
+                {
+                    "amount": 5062,
+                    "date": "10 Jan 17",
+                    "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-0P17011054754055",
+                    "balanceAmount": 13354,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ]
+                },
+                {
+                    "amount": 5009,
+                    "date": "28 Mar 17",
+                    "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES-RAHUL YADAV-N087170010038439",
+                    "balanceAmount": 12521,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ]
+                },
+                {
+                    "amount": 5000,
+                    "date": "22 Jun 17",
+                    "particular": "IMPS-717321073527-RAHUL-HDFC-XXXXXXXX9798-278948544",
+                    "balanceAmount": 13904,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ]
+                },
+                {
+                    "amount": 5000,
+                    "date": "22 Jun 17",
+                    "particular": "IMPS-717320066251-RAHUL-HDFC-XXXXXXXX9798-278944222",
+                    "balanceAmount": 8904,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ]
+                },
+                {
+                    "amount": 5000,
+                    "date": "06 Jun 17",
+                    "particular": "IMPS-715719065544-RAHUL YADAV-HDFC-XXXXXXXXSDRR-P2BOTP_DCFF26126D09C545",
+                    "balanceAmount": 6763,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ]
+                },
+                {
+                    "amount": 5000,
+                    "date": "29 May 17",
+                    "particular": "IMPS-714914233305-RAHUL YADAV-HDFC-XXXXXXXXSDRR-P2BOTP_B06C7F9EE0CC9F0A",
+                    "balanceAmount": 8039,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ]
+                },
+                {
+                    "amount": 5000,
+                    "date": "23 May 17",
+                    "particular": "IMPS-714309052193-RAHUL-HDFC-XXXXXXXX9798-254636381",
+                    "balanceAmount": 12052,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ]
+                },
+                {
+                    "amount": 5000,
+                    "date": "22 May 17",
+                    "particular": "IMPS-714214815889-RAHUL-HDFC-XXXXXXXX9798-254105286",
+                    "balanceAmount": 7708,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ]
+                },
+                {
+                    "amount": 5000,
+                    "date": "04 Apr 17",
+                    "particular": "IMPS-709412070538-RAHUL YADAV-HDFC-XXXXXXXXSDRR-P2BOTP_78FBF92351D1395C",
+                    "balanceAmount": 12963,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ]
+                },
+                {
+                    "amount": 5000,
+                    "date": "25 Mar 17",
+                    "particular": "IMPS-708411917680-KRISHNA COMMUNICATIO-HDFC--",
+                    "balanceAmount": 21847,
+                    "category": [
+                        "Transfer",
+                        "Earning"
+                    ]
+                },
+                {
+                    "amount": 5000,
+                    "date": "22 Feb 17",
+                    "particular": "IMPS-705319792110-RAHUL-HDFC-XXXXXXXX9798-194755705",
+                    "balanceAmount": 13506,
+                    "category": [
+                        "Transfer",
+                        "Credit"
+                    ]
+                }
+            ],
+            "topDebits": [
+                {
+                    "amount": 26104,
+                    "date": "08 Mar 17",
+                    "particular": "IB BILLPAY DR-HDFCVE-489377XXXXXX2616",
+                    "balanceAmount": 27681,
+                    "category": [
+                        "Payment"
+                    ]
+                },
+                {
+                    "amount": 17662,
+                    "date": "25 Mar 17",
+                    "particular": "NF2291297394804P3/MAKEMYTRIP COM",
+                    "balanceAmount": 4185,
+                    "category": [
+                        "Travel"
+                    ]
+                },
+                {
+                    "amount": 16000,
+                    "date": "09 Jan 17",
+                    "particular": "NEFT DR-IDIB000S208-SANJAY RATHI-NETBANK, MUM-N009170230731858",
+                    "balanceAmount": 7213,
+                    "category": [
+                        "Transfer",
+                        "Debit"
+                    ]
+                },
+                {
+                    "amount": 14587,
+                    "date": "08 Feb 17",
+                    "particular": "IB BILLPAY DR-HDFCVE-489377XXXXXX2616",
+                    "balanceAmount": 48544,
+                    "category": [
+                        "Payment"
+                    ]
+                },
+                {
+                    "amount": 14400,
+                    "date": "23 Jun 17",
+                    "particular": "ACH D- AUFINANCIERS-9001020101524623",
+                    "balanceAmount": 1080,
+                    "category": [
+                        "Payment",
+                        "Loan"
+                    ]
+                },
+                {
+                    "amount": 14400,
+                    "date": "23 May 17",
+                    "particular": "ACH D- AUFINANCIERS-LVPTU04016-170458917",
+                    "balanceAmount": 1814,
+                    "category": [
+                        "Payment",
+                        "Loan"
+                    ]
+                },
+                {
+                    "amount": 14400,
+                    "date": "24 Apr 17",
+                    "particular": "ACH D- AUFINANCIERSINDIALTD-LVPTU04016-1",
+                    "balanceAmount": 2730,
+                    "category": [
+                        "Payment",
+                        "Loan"
+                    ]
+                },
+                {
+                    "amount": 14400,
+                    "date": "23 Feb 17",
+                    "particular": "ACH D- AUFINANCIERSINDIALTD-LVPTU04016-1",
+                    "balanceAmount": 603,
+                    "category": [
+                        "Payment",
+                        "Loan"
+                    ]
+                },
+                {
+                    "amount": 14400,
+                    "date": "23 Jan 17",
+                    "particular": "ACH D- AUFINANCIERSINDIALTD-LVPTU04016-1",
+                    "balanceAmount": 305,
+                    "category": [
+                        "Payment",
+                        "Loan"
+                    ]
+                },
+                {
+                    "amount": 13300,
+                    "date": "08 Feb 17",
+                    "particular": "NEFT DR-UTIB0000007-PAWAN KUMAR-NETBANK,MUM-N039170244398826",
+                    "balanceAmount": 35244,
+                    "category": [
+                        "Transfer",
+                        "Debit"
+                    ]
+                },
+                {
+                    "amount": 11253,
+                    "date": "07 Jan 17",
+                    "particular": "IB BILLPAY DR-HDFCVE-489377XXXXXX2616",
+                    "balanceAmount": 3212,
+                    "category": [
+                        "Payment"
+                    ]
+                },
+                {
+                    "amount": 10000,
+                    "date": "28 Apr 17",
+                    "particular": "EAW-436303XXXXXX1688-BECN1262-GURGAON",
+                    "balanceAmount": 5934,
+                    "category": [
+                        "Cash Advance",
+                        "ATM"
+                    ]
+                },
+                {
+                    "amount": 10000,
+                    "date": "28 Apr 17",
+                    "particular": "EAW-436303XXXXXX1688-BECN1262-GURGAON",
+                    "balanceAmount": 15934,
+                    "category": [
+                        "Cash Advance",
+                        "ATM"
+                    ]
+                },
+                {
+                    "amount": 10000,
+                    "date": "10 Mar 17",
+                    "particular": "NWD-436303XXXXXX1688-STCH9855-GURGAON",
+                    "balanceAmount": 9213,
+                    "category": [
+                        "Cash Advance",
+                        "ATM"
+                    ]
+                },
+                {
+                    "amount": 10000,
+                    "date": "10 Mar 17",
+                    "particular": "NWD-436303XXXXXX1688-STCH9855-GURGAON",
+                    "balanceAmount": 19213,
+                    "category": [
+                        "Cash Advance",
+                        "ATM"
+                    ]
+                },
+                {
+                    "amount": 10000,
+                    "date": "20 Feb 17",
+                    "particular": "NEFT DR-IDIB000S208-SANJAY RATHI-NETBANK, MUM-N051170248779164",
+                    "balanceAmount": 5141,
+                    "category": [
+                        "Transfer",
+                        "Debit"
+                    ]
+                },
+                {
+                    "amount": 10000,
+                    "date": "15 Feb 17",
+                    "particular": "IMPS-704612304375-SANJAY RATHI-IDIB-XXXXXX2713-LOAD",
+                    "balanceAmount": 9327,
+                    "category": [
+                        "Transfer",
+                        "Debit"
+                    ]
+                },
+                {
+                    "amount": 10000,
+                    "date": "01 Feb 17",
+                    "particular": "IMPS-703211108906-SANJAY RATHI-IDIB-XXXXXX2713-LOAD",
+                    "balanceAmount": 6181,
+                    "category": [
+                        "Transfer",
+                        "Debit"
+                    ]
+                },
+                {
+                    "amount": 9730,
+                    "date": "18 Apr 17",
+                    "particular": "CHQ PAID-MICR CTS-NO-S D ADARSH",
+                    "balanceAmount": 6699,
+                    "category": [
+                        "Payment",
+                        "Cheque"
+                    ]
+                },
+                {
+                    "amount": 9474,
+                    "date": "20 Apr 17",
+                    "particular": "IB BILLPAY DR-HDFCVE-489377XXXXXX2616",
+                    "balanceAmount": 12639,
+                    "category": [
+                        "Payment"
+                    ]
+                }
+            ],
+            "monthlyRecurringDebits": {
+                "months": [
+                    "17/06",
+                    "17/05",
+                    "17/04",
+                    "17/03",
+                    "17/02",
+                    "17/01"
+                ],
+                "data": [
+                    {
+                        "summary": "idib000s208 sanjay rathi",
+                        "count": 17,
+                        "amount": 102000,
+                        "monthlyTransactions": {
+                            "17/01": {
+                                "month": "17/01",
+                                "amount": 46000,
+                                "count": 8,
+                                "transactions": [
+                                    {
+                                        "particular": "NEFT DR-IDIB000S208-SANJAY RATHI-NETBANK, MUM-N002170226538872",
+                                        "date": "02/01/17",
+                                        "amount": 5000,
+                                        "balanceAmount": 7828.11
+                                    },
+                                    {
+                                        "particular": "NEFT DR-IDIB000S208-SANJAY RATHI-NETBANK, MUM-N004170228047394",
+                                        "date": "04/01/17",
+                                        "amount": 3000,
+                                        "balanceAmount": 10911.11
+                                    },
+                                    {
+                                        "particular": "NEFT DR-IDIB000S208-SANJAY RATHI-NETBANK, MUM-N009170230731858",
+                                        "date": "09/01/17",
+                                        "amount": 16000,
+                                        "balanceAmount": 7213.07
+                                    },
+                                    {
+                                        "particular": "NEFT DR-IDIB000S208-SANJAY RATHI-NETBANK, MUM-N010170231151679",
+                                        "date": "10/01/17",
+                                        "amount": 5000,
+                                        "balanceAmount": 8292.19
+                                    },
+                                    {
+                                        "particular": "NEFT DR-IDIB000S208-SANJAY RATHI-NETBANK, MUM-N012170232384757",
+                                        "date": "12/01/17",
+                                        "amount": 4000,
+                                        "balanceAmount": 16081.19
+                                    },
+                                    {
+                                        "particular": "NEFT DR-IDIB000S208-SANJAY RATHI-NETBANK, MUM-N016170233524951",
+                                        "date": "16/01/17",
+                                        "amount": 5000,
+                                        "balanceAmount": 10860.44
+                                    },
+                                    {
+                                        "particular": "NEFT DR-IDIB000S208-SANJAY RATHI-NETBANK, MUM-N017170234021814",
+                                        "date": "17/01/17",
+                                        "amount": 5000,
+                                        "balanceAmount": 16165.68
+                                    },
+                                    {
+                                        "particular": "NEFT DR-IDIB000S208-SANJAY RATHI-NETBANK, MUM-N025170237139856",
+                                        "date": "25/01/17",
+                                        "amount": 3000,
+                                        "balanceAmount": 413.17
+                                    }
+                                ]
+                            },
+                            "17/02": {
+                                "month": "17/02",
+                                "amount": 38000,
+                                "count": 5,
+                                "transactions": [
+                                    {
+                                        "particular": "NEFT DR-IDIB000S208-SANJAY RATHI-NETBANK, MUM-N037170242706549",
+                                        "date": "06/02/17",
+                                        "amount": 8000,
+                                        "balanceAmount": 748.66
+                                    },
+                                    {
+                                        "particular": "NEFT DR-IDIB000S208-SANJAY RATHI-NETBANK, MUM-N040170244633960",
+                                        "date": "09/02/17",
+                                        "amount": 9000,
+                                        "balanceAmount": 27679.18
+                                    },
+                                    {
+                                        "particular": "NEFT DR-IDIB000S208-SANJAY RATHI-NETBANK, MUM-N047170247654360",
+                                        "date": "16/02/17",
+                                        "amount": 6000,
+                                        "balanceAmount": 2054.79
+                                    },
+                                    {
+                                        "particular": "NEFT DR-IDIB000S208-SANJAY RATHI-NETBANK, MUM-N051170248779164",
+                                        "date": "20/02/17",
+                                        "amount": 10000,
+                                        "balanceAmount": 5140.91
+                                    },
+                                    {
+                                        "particular": "NEFT DR-IDIB000S208-SANJAY RATHI-NETBANK, MUM-N052170249321805",
+                                        "date": "21/02/17",
+                                        "amount": 5000,
+                                        "balanceAmount": 5508.16
+                                    }
+                                ]
+                            },
+                            "17/05": {
+                                "month": "17/05",
+                                "amount": 8000,
+                                "count": 2,
+                                "transactions": [
+                                    {
+                                        "particular": "NEFT DR-IDIB000S208-SANJAY RATHI-NETBANK, MUM-N149170301039889",
+                                        "date": "29/05/17",
+                                        "amount": 5000,
+                                        "balanceAmount": 499.98
+                                    },
+                                    {
+                                        "particular": "NEFT DR-IDIB000S208-SANJAY RATHI-NETBANK, MUM-N150170302195450",
+                                        "date": "30/05/17",
+                                        "amount": 3000,
+                                        "balanceAmount": 3890.98
+                                    }
+                                ]
+                            },
+                            "17/06": {
+                                "month": "17/06",
+                                "amount": 10000,
+                                "count": 2,
+                                "transactions": [
+                                    {
+                                        "particular": "NEFT DR-IDIB000S208-SANJAY RATHI-NETBANK, MUM-N167170314437615",
+                                        "date": "16/06/17",
+                                        "amount": 5000,
+                                        "balanceAmount": 5177.23
+                                    },
+                                    {
+                                        "particular": "NEFT DR-IDIB000S208-SANJAY RATHI-NETBANK, MUM-N168170314791724",
+                                        "date": "17/06/17",
+                                        "amount": 5000,
+                                        "balanceAmount": 1786.23
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "summary": "489377xxxxxx2616",
+                        "count": 6,
+                        "amount": 75668.12,
+                        "monthlyTransactions": {
+                            "17/01": {
+                                "month": "17/01",
+                                "amount": 11253.44,
+                                "count": 1,
+                                "transactions": [
+                                    {
+                                        "particular": "IB BILLPAY DR-HDFCVE-489377XXXXXX2616",
+                                        "date": "07/01/17",
+                                        "amount": 11253.44,
+                                        "balanceAmount": 3212.13
+                                    }
+                                ]
+                            },
+                            "17/02": {
+                                "month": "17/02",
+                                "amount": 14587.14,
+                                "count": 1,
+                                "transactions": [
+                                    {
+                                        "particular": "IB BILLPAY DR-HDFCVE-489377XXXXXX2616",
+                                        "date": "08/02/17",
+                                        "amount": 14587.14,
+                                        "balanceAmount": 48544.18
+                                    }
+                                ]
+                            },
+                            "17/03": {
+                                "month": "17/03",
+                                "amount": 26103.81,
+                                "count": 1,
+                                "transactions": [
+                                    {
+                                        "particular": "IB BILLPAY DR-HDFCVE-489377XXXXXX2616",
+                                        "date": "08/03/17",
+                                        "amount": 26103.81,
+                                        "balanceAmount": 27681.09
+                                    }
+                                ]
+                            },
+                            "17/04": {
+                                "month": "17/04",
+                                "amount": 18112.690000000002,
+                                "count": 2,
+                                "transactions": [
+                                    {
+                                        "particular": "IB BILLPAY DR-HDFCVE-489377XXXXXX2616",
+                                        "date": "07/04/17",
+                                        "amount": 8638.61,
+                                        "balanceAmount": 1266.19
+                                    },
+                                    {
+                                        "particular": "IB BILLPAY DR-HDFCVE-489377XXXXXX2616",
+                                        "date": "20/04/17",
+                                        "amount": 9474.08,
+                                        "balanceAmount": 12639.46
+                                    }
+                                ]
+                            },
+                            "17/06": {
+                                "month": "17/06",
+                                "amount": 5611.04,
+                                "count": 1,
+                                "transactions": [
+                                    {
+                                        "particular": "IB BILLPAY DR-HDFCVE-489377XXXXXX2616",
+                                        "date": "07/06/17",
+                                        "amount": 5611.04,
+                                        "balanceAmount": 1819.18
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "summary": "aufinanciersindialtd lvptu04016",
+                        "count": 3,
+                        "amount": 43200,
+                        "monthlyTransactions": {
+                            "17/01": {
+                                "month": "17/01",
+                                "amount": 14400,
+                                "count": 1,
+                                "transactions": [
+                                    {
+                                        "particular": "ACH D- AUFINANCIERSINDIALTD-LVPTU04016-1",
+                                        "date": "23/01/17",
+                                        "amount": 14400,
+                                        "balanceAmount": 305.17
+                                    }
+                                ]
+                            },
+                            "17/02": {
+                                "month": "17/02",
+                                "amount": 14400,
+                                "count": 1,
+                                "transactions": [
+                                    {
+                                        "particular": "ACH D- AUFINANCIERSINDIALTD-LVPTU04016-1",
+                                        "date": "23/02/17",
+                                        "amount": 14400,
+                                        "balanceAmount": 602.9
+                                    }
+                                ]
+                            },
+                            "17/04": {
+                                "month": "17/04",
+                                "amount": 14400,
+                                "count": 1,
+                                "transactions": [
+                                    {
+                                        "particular": "ACH D- AUFINANCIERSINDIALTD-LVPTU04016-1",
+                                        "date": "24/04/17",
+                                        "amount": 14400,
+                                        "balanceAmount": 2730.46
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "summary": "eaw",
+                        "count": 7,
+                        "amount": 37000,
+                        "monthlyTransactions": {
+                            "17/01": {
+                                "month": "17/01",
+                                "amount": 5000,
+                                "count": 1,
+                                "transactions": [
+                                    {
+                                        "particular": "EAW-436303XXXXXX1688-BECN1262-GURGAON",
+                                        "date": "19/01/17",
+                                        "amount": 5000,
+                                        "balanceAmount": 4212.68
+                                    }
+                                ]
+                            },
+                            "17/02": {
+                                "month": "17/02",
+                                "amount": 5000,
+                                "count": 1,
+                                "transactions": [
+                                    {
+                                        "particular": "EAW-436303XXXXXX1688-BECN1262-GURGAON",
+                                        "date": "10/02/17",
+                                        "amount": 5000,
+                                        "balanceAmount": 18378.18
+                                    }
+                                ]
+                            },
+                            "17/04": {
+                                "month": "17/04",
+                                "amount": 25000,
+                                "count": 4,
+                                "transactions": [
+                                    {
+                                        "particular": "EAW-436303XXXXXX1688-BECN1262-GURGAON",
+                                        "date": "27/04/17",
+                                        "amount": 2000,
+                                        "balanceAmount": 2383.46
+                                    },
+                                    {
+                                        "particular": "EAW-436303XXXXXX1688-BECN1262-GURGAON",
+                                        "date": "28/04/17",
+                                        "amount": 10000,
+                                        "balanceAmount": 15934.46
+                                    },
+                                    {
+                                        "particular": "EAW-436303XXXXXX1688-BECN1262-GURGAON",
+                                        "date": "28/04/17",
+                                        "amount": 10000,
+                                        "balanceAmount": 5934.46
+                                    },
+                                    {
+                                        "particular": "EAW-436303XXXXXX1688-BECN1262-GURGAON",
+                                        "date": "28/04/17",
+                                        "amount": 3000,
+                                        "balanceAmount": 2934.46
+                                    }
+                                ]
+                            },
+                            "17/06": {
+                                "month": "17/06",
+                                "amount": 2000,
+                                "count": 1,
+                                "transactions": [
+                                    {
+                                        "particular": "EAW-436303XXXXXX1688-BECN1262-GURGAON",
+                                        "date": "08/06/17",
+                                        "amount": 2000,
+                                        "balanceAmount": 1327.18
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "summary": "sanjay rathi",
+                        "count": 3,
+                        "amount": 24000,
+                        "monthlyTransactions": {
+                            "17/02": {
+                                "month": "17/02",
+                                "amount": 20000,
+                                "count": 2,
+                                "transactions": [
+                                    {
+                                        "particular": "IMPS-703211108906-SANJAY RATHI-IDIB-XXXXXX2713-LOAD",
+                                        "date": "01/02/17",
+                                        "amount": 10000,
+                                        "balanceAmount": 6180.66
+                                    },
+                                    {
+                                        "particular": "IMPS-704612304375-SANJAY RATHI-IDIB-XXXXXX2713-LOAD",
+                                        "date": "15/02/17",
+                                        "amount": 10000,
+                                        "balanceAmount": 9326.79
+                                    }
+                                ]
+                            },
+                            "17/03": {
+                                "month": "17/03",
+                                "amount": 4000,
+                                "count": 1,
+                                "transactions": [
+                                    {
+                                        "particular": "IMPS-707512148089-SANJAY RATHI-IDIB-XXXXXX2713-LOAD",
+                                        "date": "16/03/17",
+                                        "amount": 4000,
+                                        "balanceAmount": 6116.28
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "summary": "makemytrip",
+                        "count": 2,
+                        "amount": 21768,
+                        "monthlyTransactions": {
+                            "17/03": {
+                                "month": "17/03",
+                                "amount": 17662,
+                                "count": 1,
+                                "transactions": [
+                                    {
+                                        "particular": "NF2291297394804P3/MAKEMYTRIP COM",
+                                        "date": "25/03/17",
+                                        "amount": 17662,
+                                        "balanceAmount": 4185.03
+                                    }
+                                ]
+                            },
+                            "17/05": {
+                                "month": "17/05",
+                                "amount": 4106,
+                                "count": 1,
+                                "transactions": [
+                                    {
+                                        "particular": "NF22911100534896P01/MAKEMYTRIP COM",
+                                        "date": "06/05/17",
+                                        "amount": 4106,
+                                        "balanceAmount": 3815.21
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "summary": "stch9855",
+                        "count": 2,
+                        "amount": 20000,
+                        "monthlyTransactions": {
+                            "17/03": {
+                                "month": "17/03",
+                                "amount": 20000,
+                                "count": 2,
+                                "transactions": [
+                                    {
+                                        "particular": "NWD-436303XXXXXX1688-STCH9855-GURGAON",
+                                        "date": "10/03/17",
+                                        "amount": 10000,
+                                        "balanceAmount": 19212.59
+                                    },
+                                    {
+                                        "particular": "NWD-436303XXXXXX1688-STCH9855-GURGAON",
+                                        "date": "10/03/17",
+                                        "amount": 10000,
+                                        "balanceAmount": 9212.59
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "summary": "irctc_new",
+                        "count": 40,
+                        "amount": 19840,
+                        "monthlyTransactions": {
+                            "17/01": {
+                                "month": "17/01",
+                                "amount": 4331,
+                                "count": 8,
+                                "transactions": [
+                                    {
+                                        "particular": "100000709755560/IRCTC_NEW",
+                                        "date": "12/01/17",
+                                        "amount": 620,
+                                        "balanceAmount": 20594.19
+                                    },
+                                    {
+                                        "particular": "100000709755560/IRCTC_NEW",
+                                        "date": "12/01/17",
+                                        "amount": 11.5,
+                                        "balanceAmount": 20582.69
+                                    },
+                                    {
+                                        "particular": "100000709796984/IRCTC_NEW",
+                                        "date": "12/01/17",
+                                        "amount": 490,
+                                        "balanceAmount": 20092.69
+                                    },
+                                    {
+                                        "particular": "100000709796984/IRCTC_NEW",
+                                        "date": "12/01/17",
+                                        "amount": 11.5,
+                                        "balanceAmount": 20081.19
+                                    },
+                                    {
+                                        "particular": "100000720121379/IRCTC_NEW",
+                                        "date": "20/01/17",
+                                        "amount": 2420,
+                                        "balanceAmount": 6948.55
+                                    },
+                                    {
+                                        "particular": "100000720121379/IRCTC_NEW",
+                                        "date": "20/01/17",
+                                        "amount": 11.5,
+                                        "balanceAmount": 6937.05
+                                    },
+                                    {
+                                        "particular": "100000729819722/IRCTC_NEW",
+                                        "date": "31/01/17",
+                                        "amount": 755,
+                                        "balanceAmount": 9193.16
+                                    },
+                                    {
+                                        "particular": "100000729819722/IRCTC_NEW",
+                                        "date": "31/01/17",
+                                        "amount": 11.5,
+                                        "balanceAmount": 9181.66
+                                    }
+                                ]
+                            },
+                            "17/02": {
+                                "month": "17/02",
+                                "amount": 4094.5,
+                                "count": 6,
+                                "transactions": [
+                                    {
+                                        "particular": "100000749518828/IRCTC_NEW",
+                                        "date": "19/02/17",
+                                        "amount": 725,
+                                        "balanceAmount": 13152.41
+                                    },
+                                    {
+                                        "particular": "100000749518828/IRCTC_NEW",
+                                        "date": "19/02/17",
+                                        "amount": 11.5,
+                                        "balanceAmount": 13140.91
+                                    },
+                                    {
+                                        "particular": "100000752067007/IRCTC_NEW",
+                                        "date": "21/02/17",
+                                        "amount": 2085,
+                                        "balanceAmount": 3423.16
+                                    },
+                                    {
+                                        "particular": "100000752067007/IRCTC_NEW",
+                                        "date": "21/02/17",
+                                        "amount": 11.5,
+                                        "balanceAmount": 3411.66
+                                    },
+                                    {
+                                        "particular": "100000755864005/IRCTC_NEW",
+                                        "date": "24/02/17",
+                                        "amount": 1250,
+                                        "balanceAmount": 1683.9
+                                    },
+                                    {
+                                        "particular": "100000755864005/IRCTC_NEW",
+                                        "date": "24/02/17",
+                                        "amount": 11.5,
+                                        "balanceAmount": 1672.4
+                                    }
+                                ]
+                            },
+                            "17/03": {
+                                "month": "17/03",
+                                "amount": 1403,
+                                "count": 4,
+                                "transactions": [
+                                    {
+                                        "particular": "100000764874585/IRCTC_NEW",
+                                        "date": "05/03/17",
+                                        "amount": 590,
+                                        "balanceAmount": 4001.4
+                                    },
+                                    {
+                                        "particular": "100000764874585/IRCTC_NEW",
+                                        "date": "05/03/17",
+                                        "amount": 11.5,
+                                        "balanceAmount": 3989.9
+                                    },
+                                    {
+                                        "particular": "100000776202346/IRCTC_NEW",
+                                        "date": "15/03/17",
+                                        "amount": 790,
+                                        "balanceAmount": 9671.59
+                                    },
+                                    {
+                                        "particular": "100000776202346/IRCTC_NEW",
+                                        "date": "15/03/17",
+                                        "amount": 11.5,
+                                        "balanceAmount": 9660.09
+                                    }
+                                ]
+                            },
+                            "17/04": {
+                                "month": "17/04",
+                                "amount": 1923,
+                                "count": 4,
+                                "transactions": [
+                                    {
+                                        "particular": "100000809967866/IRCTC_NEW",
+                                        "date": "17/04/17",
+                                        "amount": 1080,
+                                        "balanceAmount": 16722.54
+                                    },
+                                    {
+                                        "particular": "100000809967866/IRCTC_NEW",
+                                        "date": "17/04/17",
+                                        "amount": 11.5,
+                                        "balanceAmount": 16711.04
+                                    },
+                                    {
+                                        "particular": "100000823590011/IRCTC_NEW",
+                                        "date": "29/04/17",
+                                        "amount": 820,
+                                        "balanceAmount": 3824.46
+                                    },
+                                    {
+                                        "particular": "100000823590011/IRCTC_NEW",
+                                        "date": "29/04/17",
+                                        "amount": 11.5,
+                                        "balanceAmount": 3812.96
+                                    }
+                                ]
+                            },
+                            "17/05": {
+                                "month": "17/05",
+                                "amount": 5502.5,
+                                "count": 10,
+                                "transactions": [
+                                    {
+                                        "particular": "100000836234812/IRCTC_NEW",
+                                        "date": "11/05/17",
+                                        "amount": 805,
+                                        "balanceAmount": 2745.98
+                                    },
+                                    {
+                                        "particular": "100000836234812/IRCTC_NEW",
+                                        "date": "11/05/17",
+                                        "amount": 11.5,
+                                        "balanceAmount": 2734.48
+                                    },
+                                    {
+                                        "particular": "100000843023118/IRCTC_NEW",
+                                        "date": "17/05/17",
+                                        "amount": 805,
+                                        "balanceAmount": 4057.48
+                                    },
+                                    {
+                                        "particular": "100000843023118/IRCTC_NEW",
+                                        "date": "17/05/17",
+                                        "amount": 11.5,
+                                        "balanceAmount": 4045.98
+                                    },
+                                    {
+                                        "particular": "100000845851579/IRCTC_NEW",
+                                        "date": "19/05/17",
+                                        "amount": 2215,
+                                        "balanceAmount": 2913.98
+                                    },
+                                    {
+                                        "particular": "100000845851579/IRCTC_NEW",
+                                        "date": "19/05/17",
+                                        "amount": 11.5,
+                                        "balanceAmount": 2902.48
+                                    },
+                                    {
+                                        "particular": "100000848921380/IRCTC_NEW",
+                                        "date": "22/05/17",
+                                        "amount": 830,
+                                        "balanceAmount": 2719.48
+                                    },
+                                    {
+                                        "particular": "100000848921380/IRCTC_NEW",
+                                        "date": "22/05/17",
+                                        "amount": 11.5,
+                                        "balanceAmount": 2707.98
+                                    },
+                                    {
+                                        "particular": "100000849785885/IRCTC_NEW",
+                                        "date": "23/05/17",
+                                        "amount": 790,
+                                        "balanceAmount": 15261.98
+                                    },
+                                    {
+                                        "particular": "100000849785885/IRCTC_NEW",
+                                        "date": "23/05/17",
+                                        "amount": 11.5,
+                                        "balanceAmount": 15250.48
+                                    }
+                                ]
+                            },
+                            "17/06": {
+                                "month": "17/06",
+                                "amount": 2586,
+                                "count": 8,
+                                "transactions": [
+                                    {
+                                        "particular": "100000878441519/IRCTC_NEW",
+                                        "date": "17/06/17",
+                                        "amount": 1100,
+                                        "balanceAmount": 686.23
+                                    },
+                                    {
+                                        "particular": "100000878441519/IRCTC_NEW",
+                                        "date": "17/06/17",
+                                        "amount": 11.5,
+                                        "balanceAmount": 674.73
+                                    },
+                                    {
+                                        "particular": "100000879294446/IRCTC_NEW",
+                                        "date": "18/06/17",
+                                        "amount": 500,
+                                        "balanceAmount": 2174.73
+                                    },
+                                    {
+                                        "particular": "100000879294446/IRCTC_NEW",
+                                        "date": "18/06/17",
+                                        "amount": 11.5,
+                                        "balanceAmount": 2163.23
+                                    },
+                                    {
+                                        "particular": "100000880077617/IRCTC_NEW",
+                                        "date": "19/06/17",
+                                        "amount": 470,
+                                        "balanceAmount": 1693.23
+                                    },
+                                    {
+                                        "particular": "100000880077617/IRCTC_NEW",
+                                        "date": "19/06/17",
+                                        "amount": 11.5,
+                                        "balanceAmount": 1681.73
+                                    },
+                                    {
+                                        "particular": "100000880120515/IRCTC_NEW",
+                                        "date": "19/06/17",
+                                        "amount": 470,
+                                        "balanceAmount": 1211.73
+                                    },
+                                    {
+                                        "particular": "100000880120515/IRCTC_NEW",
+                                        "date": "19/06/17",
+                                        "amount": 11.5,
+                                        "balanceAmount": 1200.23
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "summary": "bajaj finemi",
+                        "count": 6,
+                        "amount": 19002,
+                        "monthlyTransactions": {
+                            "17/04": {
+                                "month": "17/04",
+                                "amount": 6334,
+                                "count": 2,
+                                "transactions": [
+                                    {
+                                        "particular": "BAJAJ FINEMI-BF-1189499-51163",
+                                        "date": "03/04/17",
+                                        "amount": 1834,
+                                        "balanceAmount": 4091.53
+                                    },
+                                    {
+                                        "particular": "BAJAJ FINEMI-BF-1189499-43484",
+                                        "date": "05/04/17",
+                                        "amount": 4500,
+                                        "balanceAmount": 8198.8
+                                    }
+                                ]
+                            },
+                            "17/05": {
+                                "month": "17/05",
+                                "amount": 6334,
+                                "count": 2,
+                                "transactions": [
+                                    {
+                                        "particular": "BAJAJ FINEMI-BF-1189499-49939",
+                                        "date": "02/05/17",
+                                        "amount": 1834,
+                                        "balanceAmount": 4760.96
+                                    },
+                                    {
+                                        "particular": "BAJAJ FINEMI-BF-1189499-35828",
+                                        "date": "05/05/17",
+                                        "amount": 4500,
+                                        "balanceAmount": 5973.46
+                                    }
+                                ]
+                            },
+                            "17/06": {
+                                "month": "17/06",
+                                "amount": 6334,
+                                "count": 2,
+                                "transactions": [
+                                    {
+                                        "particular": "BAJAJ FINEMI-BF-1189499-216580",
+                                        "date": "02/06/17",
+                                        "amount": 1834,
+                                        "balanceAmount": 1783.22
+                                    },
+                                    {
+                                        "particular": "BAJAJ FINEMI-BF-1189499-80864",
+                                        "date": "05/06/17",
+                                        "amount": 4500,
+                                        "balanceAmount": 755.22
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "summary": "paytm mobile sol",
+                        "count": 6,
+                        "amount": 16900,
+                        "monthlyTransactions": {
+                            "17/01": {
+                                "month": "17/01",
+                                "amount": 3000,
+                                "count": 1,
+                                "transactions": [
+                                    {
+                                        "particular": "POS 436303XXXXXX1688 PAYTM MOBILE SOL POS DEBIT",
+                                        "date": "03/01/17",
+                                        "amount": 3000,
+                                        "balanceAmount": 13911.11
+                                    }
+                                ]
+                            },
+                            "17/03": {
+                                "month": "17/03",
+                                "amount": 10000,
+                                "count": 2,
+                                "transactions": [
+                                    {
+                                        "particular": "POS 436303XXXXXX1688 PAYTM MOBILE SOL POS DEBIT",
+                                        "date": "31/03/17",
+                                        "amount": 5000,
+                                        "balanceAmount": 9082.53
+                                    },
+                                    {
+                                        "particular": "POS 436303XXXXXX1688 PAYTM MOBILE SOL POS DEBIT",
+                                        "date": "31/03/17",
+                                        "amount": 5000,
+                                        "balanceAmount": 4082.53
+                                    }
+                                ]
+                            },
+                            "17/04": {
+                                "month": "17/04",
+                                "amount": 2000,
+                                "count": 1,
+                                "transactions": [
+                                    {
+                                        "particular": "POS 436303XXXXXX1688 PAYTM MOBILE SOL POS DEBIT",
+                                        "date": "04/04/17",
+                                        "amount": 2000,
+                                        "balanceAmount": 12056.53
+                                    }
+                                ]
+                            },
+                            "17/05": {
+                                "month": "17/05",
+                                "amount": 1300,
+                                "count": 1,
+                                "transactions": [
+                                    {
+                                        "particular": "POS 436303XXXXXX1688 PAYTM MOBILE SOL POS DEBIT",
+                                        "date": "31/05/17",
+                                        "amount": 1300,
+                                        "balanceAmount": 3427.98
+                                    }
+                                ]
+                            },
+                            "17/06": {
+                                "month": "17/06",
+                                "amount": 600,
+                                "count": 1,
+                                "transactions": [
+                                    {
+                                        "particular": "POS 436303XXXXXX1688 PAYTM MOBILE SOL POS DEBIT",
+                                        "date": "19/06/17",
+                                        "amount": 600,
+                                        "balanceAmount": 2046.23
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "summary": "aufinanciers lvptu04016",
+                        "count": 1,
+                        "amount": 14400,
+                        "monthlyTransactions": {
+                            "17/05": {
+                                "month": "17/05",
+                                "amount": 14400,
+                                "count": 1,
+                                "transactions": [
+                                    {
+                                        "particular": "ACH D- AUFINANCIERS-LVPTU04016-170458917",
+                                        "date": "23/05/17",
+                                        "amount": 14400,
+                                        "balanceAmount": 1813.98
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "summary": "aufinanciers",
+                        "count": 1,
+                        "amount": 14400,
+                        "monthlyTransactions": {
+                            "17/06": {
+                                "month": "17/06",
+                                "amount": 14400,
+                                "count": 1,
+                                "transactions": [
+                                    {
+                                        "particular": "ACH D- AUFINANCIERS-9001020101524623",
+                                        "date": "23/06/17",
+                                        "amount": 14400,
+                                        "balanceAmount": 1080.2
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "summary": "pawan kumar",
+                        "count": 1,
+                        "amount": 13300,
+                        "monthlyTransactions": {
+                            "17/02": {
+                                "month": "17/02",
+                                "amount": 13300,
+                                "count": 1,
+                                "transactions": [
+                                    {
+                                        "particular": "NEFT DR-UTIB0000007-PAWAN KUMAR-NETBANK,MUM-N039170244398826",
+                                        "date": "08/02/17",
+                                        "amount": 13300,
+                                        "balanceAmount": 35244.18
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "summary": "bajafinemi bf",
+                        "count": 4,
+                        "amount": 12668,
+                        "monthlyTransactions": {
+                            "17/01": {
+                                "month": "17/01",
+                                "amount": 4500,
+                                "count": 1,
+                                "transactions": [
+                                    {
+                                        "particular": "BAJAFINEMI-BF-1189499-93735",
+                                        "date": "05/01/17",
+                                        "amount": 4500,
+                                        "balanceAmount": 6411.11
+                                    }
+                                ]
+                            },
+                            "17/02": {
+                                "month": "17/02",
+                                "amount": 6334,
+                                "count": 2,
+                                "transactions": [
+                                    {
+                                        "particular": "BAJAFINEMI-BF-1189499-245524",
+                                        "date": "02/02/17",
+                                        "amount": 1834,
+                                        "balanceAmount": 7575.66
+                                    },
+                                    {
+                                        "particular": "BAJAFINEMI-BF-1189499-213821",
+                                        "date": "06/02/17",
+                                        "amount": 4500,
+                                        "balanceAmount": 8748.66
+                                    }
+                                ]
+                            },
+                            "17/03": {
+                                "month": "17/03",
+                                "amount": 1834,
+                                "count": 1,
+                                "transactions": [
+                                    {
+                                        "particular": "BAJAFINEMI-BF-1189499-55452",
+                                        "date": "02/03/17",
+                                        "amount": 1834,
+                                        "balanceAmount": 893.4
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "summary": "paytm app",
+                        "count": 4,
+                        "amount": 10500,
+                        "monthlyTransactions": {
+                            "17/02": {
+                                "month": "17/02",
+                                "amount": 10500,
+                                "count": 4,
+                                "transactions": [
+                                    {
+                                        "particular": "POS 436303XXXXXX1688 PAYTM APP POS DEBIT",
+                                        "date": "09/02/17",
+                                        "amount": 5000,
+                                        "balanceAmount": 23378.18
+                                    },
+                                    {
+                                        "particular": "POS 436303XXXXXX1688 PAYTM APP POS DEBIT",
+                                        "date": "11/02/17",
+                                        "amount": 2500,
+                                        "balanceAmount": 14296.18
+                                    },
+                                    {
+                                        "particular": "POS 436303XXXXXX1688 PAYTM APP POS DEBIT",
+                                        "date": "15/02/17",
+                                        "amount": 1000,
+                                        "balanceAmount": 9202.79
+                                    },
+                                    {
+                                        "particular": "POS 436303XXXXXX1688 PAYTM APP POS DEBIT",
+                                        "date": "18/02/17",
+                                        "amount": 2000,
+                                        "balanceAmount": 13877.41
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "summary": "one97 communicat",
+                        "count": 3,
+                        "amount": 10000,
+                        "monthlyTransactions": {
+                            "17/01": {
+                                "month": "17/01",
+                                "amount": 7000,
+                                "count": 1,
+                                "transactions": [
+                                    {
+                                        "particular": "POS 436303XXXXXX1688 ONE97 COMMUNICAT POS DEBIT",
+                                        "date": "17/01/17",
+                                        "amount": 7000,
+                                        "balanceAmount": 8612.68
+                                    }
+                                ]
+                            },
+                            "17/05": {
+                                "month": "17/05",
+                                "amount": 3000,
+                                "count": 2,
+                                "transactions": [
+                                    {
+                                        "particular": "POS 436303XXXXXX1688 ONE97 COMMUNICAT POS DEBIT",
+                                        "date": "03/05/17",
+                                        "amount": 1000,
+                                        "balanceAmount": 8676.46
+                                    },
+                                    {
+                                        "particular": "POS 436303XXXXXX1688 ONE97 COMMUNICAT POS DEBIT",
+                                        "date": "26/05/17",
+                                        "amount": 2000,
+                                        "balanceAmount": 5499.98
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "summary": "micr cts s adarsh",
+                        "count": 1,
+                        "amount": 9730,
+                        "monthlyTransactions": {
+                            "17/04": {
+                                "month": "17/04",
+                                "amount": 9730,
+                                "count": 1,
+                                "transactions": [
+                                    {
+                                        "particular": "CHQ PAID-MICR CTS-NO-S D ADARSH",
+                                        "date": "18/04/17",
+                                        "amount": 9730,
+                                        "balanceAmount": 6699.04
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "summary": "micr sd adarsh",
+                        "count": 2,
+                        "amount": 9400,
+                        "monthlyTransactions": {
+                            "17/01": {
+                                "month": "17/01",
+                                "amount": 5640,
+                                "count": 1,
+                                "transactions": [
+                                    {
+                                        "particular": "CHQ PAID-MICR CTS-NO-SD ADARSH VIDYALAYA",
+                                        "date": "21/01/17",
+                                        "amount": 5640,
+                                        "balanceAmount": 1298.05
+                                    }
+                                ]
+                            },
+                            "17/05": {
+                                "month": "17/05",
+                                "amount": 3760,
+                                "count": 1,
+                                "transactions": [
+                                    {
+                                        "particular": "CHQ PAID-MICR CTS-NO-SD ADARSH VIDYALAYA",
+                                        "date": "19/05/17",
+                                        "amount": 3760,
+                                        "balanceAmount": 5128.98
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "summary": "krishna communication",
+                        "count": 2,
+                        "amount": 9300,
+                        "monthlyTransactions": {
+                            "17/05": {
+                                "month": "17/05",
+                                "amount": 9300,
+                                "count": 2,
+                                "transactions": [
+                                    {
+                                        "particular": "IMPS-712912173445-KRISHNA COMMUNICATION-ANDB-XXXXXXXXXXX0520-PEROSNAL",
+                                        "date": "09/05/17",
+                                        "amount": 6000,
+                                        "balanceAmount": 712.98
+                                    },
+                                    {
+                                        "particular": "IMPS-712916138399-KRISHNA COMMUNICATION-ANDB-XXXXXXXXXXX0520-PERSONAL",
+                                        "date": "09/05/17",
+                                        "amount": 3300,
+                                        "balanceAmount": 1626.98
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "summary": "vidya devi",
+                        "count": 4,
+                        "amount": 7500,
+                        "monthlyTransactions": {
+                            "17/01": {
+                                "month": "17/01",
+                                "amount": 2500,
+                                "count": 1,
+                                "transactions": [
+                                    {
+                                        "particular": "NEFT DR-STBP0001117-VIDYA DEVI-NETBANK,MUM-N025170237107852",
+                                        "date": "25/01/17",
+                                        "amount": 2500,
+                                        "balanceAmount": 2263.17
+                                    }
+                                ]
+                            },
+                            "17/02": {
+                                "month": "17/02",
+                                "amount": 3000,
+                                "count": 2,
+                                "transactions": [
+                                    {
+                                        "particular": "NEFT DR-STBP0001117-VIDYA DEVI-NETBANK,MUM-N035170242040146",
+                                        "date": "04/02/17",
+                                        "amount": 1000,
+                                        "balanceAmount": 9429.66
+                                    },
+                                    {
+                                        "particular": "IMPS-703914329495-VIDYA DEVI-STBP-XXXXXXX1761-PERSONAL",
+                                        "date": "08/02/17",
+                                        "amount": 2000,
+                                        "balanceAmount": 3131.32
+                                    }
+                                ]
+                            },
+                            "17/06": {
+                                "month": "17/06",
+                                "amount": 2000,
+                                "count": 1,
+                                "transactions": [
+                                    {
+                                        "particular": "NEFT DR-STBP0001117-VIDYA DEVI-NETBANK,MUM-N166170313506800",
+                                        "date": "15/06/17",
+                                        "amount": 2000,
+                                        "balanceAmount": 6071.23
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "summary": "payuolacabscom",
+                        "count": 15,
+                        "amount": 5168,
+                        "monthlyTransactions": {
+                            "17/03": {
+                                "month": "17/03",
+                                "amount": 2896,
+                                "count": 5,
+                                "transactions": [
+                                    {
+                                        "particular": "6039491118/PAYUOLACABSCOM",
+                                        "date": "05/03/17",
+                                        "amount": 100,
+                                        "balanceAmount": 3889.9
+                                    },
+                                    {
+                                        "particular": "6050512581/PAYUOLACABSCOM",
+                                        "date": "18/03/17",
+                                        "amount": 599,
+                                        "balanceAmount": 8325.28
+                                    },
+                                    {
+                                        "particular": "6053647722/PAYUOLACABSCOM",
+                                        "date": "21/03/17",
+                                        "amount": 999,
+                                        "balanceAmount": 9861.28
+                                    },
+                                    {
+                                        "particular": "6054447191/PAYUOLACABSCOM",
+                                        "date": "22/03/17",
+                                        "amount": 599,
+                                        "balanceAmount": 14368.53
+                                    },
+                                    {
+                                        "particular": "6062339690/PAYUOLACABSCOM",
+                                        "date": "29/03/17",
+                                        "amount": 599,
+                                        "balanceAmount": 12884.03
+                                    }
+                                ]
+                            },
+                            "17/04": {
+                                "month": "17/04",
+                                "amount": 1400,
+                                "count": 5,
+                                "transactions": [
+                                    {
+                                        "particular": "6079185444/PAYUOLACABSCOM",
+                                        "date": "07/04/17",
+                                        "amount": 200,
+                                        "balanceAmount": 8668.8
+                                    },
+                                    {
+                                        "particular": "6085805830/PAYUOLACABSCOM",
+                                        "date": "10/04/17",
+                                        "amount": 300,
+                                        "balanceAmount": 318.97
+                                    },
+                                    {
+                                        "particular": "6089601712/PAYUOLACABSCOM",
+                                        "date": "12/04/17",
+                                        "amount": 400,
+                                        "balanceAmount": 10128.54
+                                    },
+                                    {
+                                        "particular": "6091924718/PAYUOLACABSCOM",
+                                        "date": "14/04/17",
+                                        "amount": 200,
+                                        "balanceAmount": 14165.54
+                                    },
+                                    {
+                                        "particular": "6121693326/PAYUOLACABSCOM",
+                                        "date": "29/04/17",
+                                        "amount": 300,
+                                        "balanceAmount": 4094.96
+                                    }
+                                ]
+                            },
+                            "17/05": {
+                                "month": "17/05",
+                                "amount": 672,
+                                "count": 4,
+                                "transactions": [
+                                    {
+                                        "particular": "6135370620/PAYUOLACABSCOM",
+                                        "date": "06/05/17",
+                                        "amount": 72,
+                                        "balanceAmount": 7139.21
+                                    },
+                                    {
+                                        "particular": "6138910074/PAYUOLACABSCOM",
+                                        "date": "08/05/17",
+                                        "amount": 200,
+                                        "balanceAmount": 5399.19
+                                    },
+                                    {
+                                        "particular": "6156317854/PAYUOLACABSCOM",
+                                        "date": "16/05/17",
+                                        "amount": 200,
+                                        "balanceAmount": 6862.48
+                                    },
+                                    {
+                                        "particular": "6164860348/PAYUOLACABSCOM",
+                                        "date": "20/05/17",
+                                        "amount": 200,
+                                        "balanceAmount": 3590.48
+                                    }
+                                ]
+                            },
+                            "17/06": {
+                                "month": "17/06",
+                                "amount": 200,
+                                "count": 1,
+                                "transactions": [
+                                    {
+                                        "particular": "6212894082/PAYUOLACABSCOM",
+                                        "date": "13/06/17",
+                                        "amount": 200,
+                                        "balanceAmount": 4423.23
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "summary": "krishna communicati",
+                        "count": 1,
+                        "amount": 5000,
+                        "monthlyTransactions": {
+                            "17/01": {
+                                "month": "17/01",
+                                "amount": 5000,
+                                "count": 1,
+                                "transactions": [
+                                    {
+                                        "particular": "CHQ PAID-MICR CTS-NO-KRISHNA COMMUNICATI",
+                                        "date": "07/01/17",
+                                        "amount": 5000,
+                                        "balanceAmount": 9512.11
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "summary": "bajajfinemi bf",
+                        "count": 1,
+                        "amount": 4500,
+                        "monthlyTransactions": {
+                            "17/03": {
+                                "month": "17/03",
+                                "amount": 4500,
+                                "count": 1,
+                                "transactions": [
+                                    {
+                                        "particular": "BAJAJFINEMI-BF-1189499-7230",
+                                        "date": "07/03/17",
+                                        "amount": 4500,
+                                        "balanceAmount": 1784.9
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "summary": "kumar automobile",
+                        "count": 1,
+                        "amount": 4398,
+                        "monthlyTransactions": {
+                            "17/01": {
+                                "month": "17/01",
+                                "amount": 4398,
+                                "count": 1,
+                                "transactions": [
+                                    {
+                                        "particular": "POS 436303XXXXXX1688 KUMAR AUTOMOBILE POS DEBIT",
+                                        "date": "15/01/17",
+                                        "amount": 4398,
+                                        "balanceAmount": 17008.44
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "summary": "s1cn3496",
+                        "count": 2,
+                        "amount": 4000,
+                        "monthlyTransactions": {
+                            "17/02": {
+                                "month": "17/02",
+                                "amount": 2000,
+                                "count": 1,
+                                "transactions": [
+                                    {
+                                        "particular": "NWD-436303XXXXXX1688-S1CN3496-GURGAON",
+                                        "date": "02/02/17",
+                                        "amount": 2000,
+                                        "balanceAmount": 5575.66
+                                    }
+                                ]
+                            },
+                            "17/05": {
+                                "month": "17/05",
+                                "amount": 2000,
+                                "count": 1,
+                                "transactions": [
+                                    {
+                                        "particular": "NWD-436303XXXXXX1688-S1CN3496-GURGAON",
+                                        "date": "20/05/17",
+                                        "amount": 2000,
+                                        "balanceAmount": 3549.48
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "summary": "n2895001",
+                        "count": 1,
+                        "amount": 3000,
+                        "monthlyTransactions": {
+                            "17/01": {
+                                "month": "17/01",
+                                "amount": 3000,
+                                "count": 1,
+                                "transactions": [
+                                    {
+                                        "particular": "NWD-436303XXXXXX1688-N2895001-GURGAON",
+                                        "date": "27/01/17",
+                                        "amount": 3000,
+                                        "balanceAmount": 584.17
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "summary": "instakart.",
+                        "count": 3,
+                        "amount": 2861,
+                        "monthlyTransactions": {
+                            "17/01": {
+                                "month": "17/01",
+                                "amount": 553,
+                                "count": 1,
+                                "transactions": [
+                                    {
+                                        "particular": "POS 436303XXXXXX1688 INSTAKART. POS DEBIT",
+                                        "date": "17/01/17",
+                                        "amount": 553,
+                                        "balanceAmount": 15612.68
+                                    }
+                                ]
+                            },
+                            "17/04": {
+                                "month": "17/04",
+                                "amount": 2308,
+                                "count": 2,
+                                "transactions": [
+                                    {
+                                        "particular": "POS 436303XXXXXX1688 INSTAKART. POS DEBIT",
+                                        "date": "01/04/17",
+                                        "amount": 531,
+                                        "balanceAmount": 5925.53
+                                    },
+                                    {
+                                        "particular": "POS 436303XXXXXX1688 INSTAKART. POS DEBIT",
+                                        "date": "17/04/17",
+                                        "amount": 1777,
+                                        "balanceAmount": 14934.04
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "summary": "dcsiideacell",
+                        "count": 4,
+                        "amount": 2585.88,
+                        "monthlyTransactions": {
+                            "17/03": {
+                                "month": "17/03",
+                                "amount": 695.5,
+                                "count": 1,
+                                "transactions": [
+                                    {
+                                        "particular": "POS 436303XXXXXX1688 DCSIIDEACELL POS DEBIT",
+                                        "date": "09/03/17",
+                                        "amount": 695.5,
+                                        "balanceAmount": 27629.59
+                                    }
+                                ]
+                            },
+                            "17/04": {
+                                "month": "17/04",
+                                "amount": 699.22,
+                                "count": 1,
+                                "transactions": [
+                                    {
+                                        "particular": "POS 436303XXXXXX1688 DCSIIDEACELL POS DEBIT",
+                                        "date": "10/04/17",
+                                        "amount": 699.22,
+                                        "balanceAmount": 618.97
+                                    }
+                                ]
+                            },
+                            "17/05": {
+                                "month": "17/05",
+                                "amount": 604.21,
+                                "count": 1,
+                                "transactions": [
+                                    {
+                                        "particular": "POS 436303XXXXXX1688 DCSIIDEACELL POS DEBIT",
+                                        "date": "09/05/17",
+                                        "amount": 604.21,
+                                        "balanceAmount": 7860.98
+                                    }
+                                ]
+                            },
+                            "17/06": {
+                                "month": "17/06",
+                                "amount": 586.95,
+                                "count": 1,
+                                "transactions": [
+                                    {
+                                        "particular": "POS 436303XXXXXX1688 DCSIIDEACELL POS DEBIT",
+                                        "date": "09/06/17",
+                                        "amount": 586.95,
+                                        "balanceAmount": 740.23
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "summary": "micr cts mohilidy",
+                        "count": 1,
+                        "amount": 2400,
+                        "monthlyTransactions": {
+                            "17/01": {
+                                "month": "17/01",
+                                "amount": 2400,
+                                "count": 1,
+                                "transactions": [
+                                    {
+                                        "particular": "CHQ PAID-MICR CTS-NO-MOHILIDY",
+                                        "date": "06/01/17",
+                                        "amount": 2400,
+                                        "balanceAmount": 14073.11
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "summary": "nextraworld",
+                        "count": 2,
+                        "amount": 2296,
+                        "monthlyTransactions": {
+                            "17/01": {
+                                "month": "17/01",
+                                "amount": 1148,
+                                "count": 1,
+                                "transactions": [
+                                    {
+                                        "particular": "POS 436303XXXXXX1688 NEXTRAWORLD POS DEBIT",
+                                        "date": "16/01/17",
+                                        "amount": 1148,
+                                        "balanceAmount": 15860.44
+                                    }
+                                ]
+                            },
+                            "17/03": {
+                                "month": "17/03",
+                                "amount": 1148,
+                                "count": 1,
+                                "transactions": [
+                                    {
+                                        "particular": "POS 436303XXXXXX1688 NEXTRAWORLD POS DEBIT",
+                                        "date": "07/03/17",
+                                        "amount": 1148,
+                                        "balanceAmount": 4984.9
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "summary": "nextraworld_payt",
+                        "count": 2,
+                        "amount": 2296,
+                        "monthlyTransactions": {
+                            "17/02": {
+                                "month": "17/02",
+                                "amount": 1148,
+                                "count": 1,
+                                "transactions": [
+                                    {
+                                        "particular": "POS 436303XXXXXX1688 NEXTRAWORLD_PAYT POS DEBIT",
+                                        "date": "16/02/17",
+                                        "amount": 1148,
+                                        "balanceAmount": 8054.79
+                                    }
+                                ]
+                            },
+                            "17/05": {
+                                "month": "17/05",
+                                "amount": 1148,
+                                "count": 1,
+                                "transactions": [
+                                    {
+                                        "particular": "POS 436303XXXXXX1688 NEXTRAWORLD_PAYT POS DEBIT",
+                                        "date": "29/05/17",
+                                        "amount": 1148,
+                                        "balanceAmount": 6890.98
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "summary": "ccapaytmcom",
+                        "count": 2,
+                        "amount": 2296,
+                        "monthlyTransactions": {
+                            "17/04": {
+                                "month": "17/04",
+                                "amount": 1148,
+                                "count": 1,
+                                "transactions": [
+                                    {
+                                        "particular": "106209842001/CCAPAYTMCOM",
+                                        "date": "09/04/17",
+                                        "amount": 1148,
+                                        "balanceAmount": 1318.19
+                                    }
+                                ]
+                            },
+                            "17/05": {
+                                "month": "17/05",
+                                "amount": 1148,
+                                "count": 1,
+                                "transactions": [
+                                    {
+                                        "particular": "106223166638/CCAPAYTMCOM",
+                                        "date": "09/05/17",
+                                        "amount": 1148,
+                                        "balanceAmount": 6712.98
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "summary": "pehnawa siyarams",
+                        "count": 1,
+                        "amount": 2160,
+                        "monthlyTransactions": {
+                            "17/02": {
+                                "month": "17/02",
+                                "amount": 2160,
+                                "count": 1,
+                                "transactions": [
+                                    {
+                                        "particular": "POS 436303XXXXXX1688 PEHNAWA SIYARAMS POS DEBIT",
+                                        "date": "10/02/17",
+                                        "amount": 2160,
+                                        "balanceAmount": 16796.18
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "summary": "ola store,",
+                        "count": 1,
+                        "amount": 2000,
+                        "monthlyTransactions": {
+                            "17/02": {
+                                "month": "17/02",
+                                "amount": 2000,
+                                "count": 1,
+                                "transactions": [
+                                    {
+                                        "particular": "POS 436303XXXXXX1688 OLA STORE, POS DEBIT",
+                                        "date": "08/02/17",
+                                        "amount": 2000,
+                                        "balanceAmount": 5131.32
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "summary": "s1cn5684",
+                        "count": 1,
+                        "amount": 2000,
+                        "monthlyTransactions": {
+                            "17/02": {
+                                "month": "17/02",
+                                "amount": 2000,
+                                "count": 1,
+                                "transactions": [
+                                    {
+                                        "particular": "NWD-436303XXXXXX1688-S1CN5684-GURGAON",
+                                        "date": "27/02/17",
+                                        "amount": 2000,
+                                        "balanceAmount": 422.4
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "summary": "s1ande05",
+                        "count": 1,
+                        "amount": 2000,
+                        "monthlyTransactions": {
+                            "17/05": {
+                                "month": "17/05",
+                                "amount": 2000,
+                                "count": 1,
+                                "transactions": [
+                                    {
+                                        "particular": "ATW-436303XXXXXX1688-S1ANDE05-GURGAON",
+                                        "date": "16/05/17",
+                                        "amount": 2000,
+                                        "balanceAmount": 4862.48
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "summary": "big bazaar",
+                        "count": 1,
+                        "amount": 1999,
+                        "monthlyTransactions": {
+                            "17/01": {
+                                "month": "17/01",
+                                "amount": 1999,
+                                "count": 1,
+                                "transactions": [
+                                    {
+                                        "particular": "POS 436303XXXXXX1688 BIG BAZAAR . POS DEBIT",
+                                        "date": "17/01/17",
+                                        "amount": 1999,
+                                        "balanceAmount": 10378.68
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "summary": "paytm",
+                        "count": 1,
+                        "amount": 1600,
+                        "monthlyTransactions": {
+                            "17/02": {
+                                "month": "17/02",
+                                "amount": 1600,
+                                "count": 1,
+                                "transactions": [
+                                    {
+                                        "particular": "POS 436303XXXXXX1688 PAYTM POS DEBIT",
+                                        "date": "28/02/17",
+                                        "amount": 1600,
+                                        "balanceAmount": 51.4
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "summary": "techbookmyshow",
+                        "count": 2,
+                        "amount": 1216.02,
+                        "monthlyTransactions": {
+                            "17/05": {
+                                "month": "17/05",
+                                "amount": 1216.02,
+                                "count": 2,
+                                "transactions": [
+                                    {
+                                        "particular": "325609046/TECHBOOKMYSHOW",
+                                        "date": "07/05/17",
+                                        "amount": 687.12,
+                                        "balanceAmount": 6128.09
+                                    },
+                                    {
+                                        "particular": "325878499/TECHBOOKMYSHOW",
+                                        "date": "08/05/17",
+                                        "amount": 528.9,
+                                        "balanceAmount": 5599.19
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "summary": "disprency replenishment",
+                        "count": 1,
+                        "amount": 1000,
+                        "monthlyTransactions": {
+                            "17/02": {
+                                "month": "17/02",
+                                "amount": 1000,
+                                "count": 1,
+                                "transactions": [
+                                    {
+                                        "particular": "CASH IN DISPRENCY DR - 05722990000065 -CHEST CASH REPLENISHMENT A/C - GUR",
+                                        "date": "21/02/17",
+                                        "amount": 1000,
+                                        "balanceAmount": 2411.66
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "summary": "tolls llp",
+                        "count": 1,
+                        "amount": 1000,
+                        "monthlyTransactions": {
+                            "17/05": {
+                                "month": "17/05",
+                                "amount": 1000,
+                                "count": 1,
+                                "transactions": [
+                                    {
+                                        "particular": "POS 436303XXXXXX1688 DEP TOLLS LLP POS DEBIT",
+                                        "date": "22/05/17",
+                                        "amount": 1000,
+                                        "balanceAmount": 7051.98
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "summary": "shri ram restaur",
+                        "count": 1,
+                        "amount": 666,
+                        "monthlyTransactions": {
+                            "17/01": {
+                                "month": "17/01",
+                                "amount": 666,
+                                "count": 1,
+                                "transactions": [
+                                    {
+                                        "particular": "POS 436303XXXXXX1688 SHRI RAM RESTAUR POS DEBIT",
+                                        "date": "19/01/17",
+                                        "amount": 666,
+                                        "balanceAmount": 9212.68
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "summary": "golden leaf well",
+                        "count": 1,
+                        "amount": 600,
+                        "monthlyTransactions": {
+                            "17/06": {
+                                "month": "17/06",
+                                "amount": 600,
+                                "count": 1,
+                                "transactions": [
+                                    {
+                                        "particular": "POS 436303XXXXXX1688 GOLDEN LEAF WELL POS DEBIT",
+                                        "date": "14/06/17",
+                                        "amount": 600,
+                                        "balanceAmount": 6837.23
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "summary": "bansal petro",
+                        "count": 1,
+                        "amount": 510,
+                        "monthlyTransactions": {
+                            "17/01": {
+                                "month": "17/01",
+                                "amount": 510,
+                                "count": 1,
+                                "transactions": [
+                                    {
+                                        "particular": "POS 436303XXXXXX1688 BANSAL PETRO POS DEBIT",
+                                        "date": "03/01/17",
+                                        "amount": 510,
+                                        "balanceAmount": 7631.11
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "summary": "bp",
+                        "count": 1,
+                        "amount": 500,
+                        "monthlyTransactions": {
+                            "17/01": {
+                                "month": "17/01",
+                                "amount": 500,
+                                "count": 1,
+                                "transactions": [
+                                    {
+                                        "particular": "POS 436303XXXXXX1688 BP 38 POS DEBIT",
+                                        "date": "19/01/17",
+                                        "amount": 500,
+                                        "balanceAmount": 9878.68
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "summary": "kuldeep wines",
+                        "count": 1,
+                        "amount": 440,
+                        "monthlyTransactions": {
+                            "17/03": {
+                                "month": "17/03",
+                                "amount": 440,
+                                "count": 1,
+                                "transactions": [
+                                    {
+                                        "particular": "POS 436303XXXXXX1688 KULDEEP WINES POS DEBIT",
+                                        "date": "01/03/17",
+                                        "amount": 440,
+                                        "balanceAmount": 2727.4
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "summary": "pepper food",
+                        "count": 1,
+                        "amount": 420,
+                        "monthlyTransactions": {
+                            "17/02": {
+                                "month": "17/02",
+                                "amount": 420,
+                                "count": 1,
+                                "transactions": [
+                                    {
+                                        "particular": "POS 436303XXXXXX1688 PEPPER FOOD POS DEBIT",
+                                        "date": "27/02/17",
+                                        "amount": 420,
+                                        "balanceAmount": 2.4
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "summary": "return charges",
+                        "count": 1,
+                        "amount": 402.5,
+                        "monthlyTransactions": {
+                            "17/03": {
+                                "month": "17/03",
+                                "amount": 402.5,
+                                "count": 1,
+                                "transactions": [
+                                    {
+                                        "particular": "ACH DR RETURN CHARGES 230317",
+                                        "date": "30/03/17",
+                                        "amount": 402.5,
+                                        "balanceAmount": 12481.53
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "summary": "discovery wines",
+                        "count": 1,
+                        "amount": 240,
+                        "monthlyTransactions": {
+                            "17/01": {
+                                "month": "17/01",
+                                "amount": 240,
+                                "count": 1,
+                                "transactions": [
+                                    {
+                                        "particular": "POS 436303XXXXXX1688 DISCOVERY WINES POSDEBIT",
+                                        "date": "06/01/17",
+                                        "amount": 240,
+                                        "balanceAmount": 13833.11
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "summary": "hcg,.",
+                        "count": 1,
+                        "amount": 217,
+                        "monthlyTransactions": {
+                            "17/04": {
+                                "month": "17/04",
+                                "amount": 217,
+                                "count": 1,
+                                "transactions": [
+                                    {
+                                        "particular": "POS 436303XXXXXX1688 HCG,. POS DEBIT",
+                                        "date": "18/04/17",
+                                        "amount": 217,
+                                        "balanceAmount": 6482.04
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "summary": "inc st &",
+                        "count": 1,
+                        "amount": 172.5,
+                        "monthlyTransactions": {
+                            "17/05": {
+                                "month": "17/05",
+                                "amount": 172.5,
+                                "count": 1,
+                                "transactions": [
+                                    {
+                                        "particular": "3RD PARTY CASH TXN INC ST & EC 280417",
+                                        "date": "02/05/17",
+                                        "amount": 172.5,
+                                        "balanceAmount": 7934.46
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "summary": "chgs incl st &",
+                        "count": 21,
+                        "amount": 69.10000000000001,
+                        "monthlyTransactions": {
+                            "17/01": {
+                                "month": "17/01",
+                                "amount": 31.669999999999995,
+                                "count": 9,
+                                "transactions": [
+                                    {
+                                        "particular": "NEFT CHGS INCL ST & CESS 311216",
+                                        "date": "07/01/17",
+                                        "amount": 2.88,
+                                        "balanceAmount": 9509.23
+                                    },
+                                    {
+                                        "particular": "NEFT CHGS INCL ST & CESS 020117",
+                                        "date": "09/01/17",
+                                        "amount": 2.88,
+                                        "balanceAmount": 3213.07
+                                    },
+                                    {
+                                        "particular": "NEFT CHGS INCL ST & CESS 040117",
+                                        "date": "09/01/17",
+                                        "amount": 2.88,
+                                        "balanceAmount": 7210.19
+                                    },
+                                    {
+                                        "particular": "NEFT CHGS INCL ST & CESS 090117",
+                                        "date": "13/01/17",
+                                        "amount": 5.75,
+                                        "balanceAmount": 17196.44
+                                    },
+                                    {
+                                        "particular": "NEFT CHGS INCL ST & CESS 100117",
+                                        "date": "16/01/17",
+                                        "amount": 2.88,
+                                        "balanceAmount": 10857.56
+                                    },
+                                    {
+                                        "particular": "NEFT CHGS INCL ST & CESS 120117",
+                                        "date": "16/01/17",
+                                        "amount": 2.88,
+                                        "balanceAmount": 10854.68
+                                    },
+                                    {
+                                        "particular": "NEFT CHGS INCL ST & CESS 160117",
+                                        "date": "20/01/17",
+                                        "amount": 2.88,
+                                        "balanceAmount": 7991.8
+                                    },
+                                    {
+                                        "particular": "NEFT CHGS INCL ST & CESS 170117",
+                                        "date": "23/01/17",
+                                        "amount": 2.88,
+                                        "balanceAmount": 14705.17
+                                    },
+                                    {
+                                        "particular": "NEFT CHGS INCL ST & CESS 250117",
+                                        "date": "30/01/17",
+                                        "amount": 5.76,
+                                        "balanceAmount": 4034.16
+                                    }
+                                ]
+                            },
+                            "17/02": {
+                                "month": "17/02",
+                                "amount": 23.029999999999998,
+                                "count": 7,
+                                "transactions": [
+                                    {
+                                        "particular": "NEFT CHGS INCL ST & CESS 040217",
+                                        "date": "13/02/17",
+                                        "amount": 2.88,
+                                        "balanceAmount": 14293.3
+                                    },
+                                    {
+                                        "particular": "NEFT CHGS INCL ST & CESS 060217",
+                                        "date": "13/02/17",
+                                        "amount": 2.88,
+                                        "balanceAmount": 14290.42
+                                    },
+                                    {
+                                        "particular": "NEFT CHGS INCL ST & CESS 080217",
+                                        "date": "13/02/17",
+                                        "amount": 5.75,
+                                        "balanceAmount": 14284.67
+                                    },
+                                    {
+                                        "particular": "NEFT CHGS INCL ST & CESS 090217",
+                                        "date": "13/02/17",
+                                        "amount": 2.88,
+                                        "balanceAmount": 14281.79
+                                    },
+                                    {
+                                        "particular": "NEFT CHGS INCL ST & CESS 160217",
+                                        "date": "18/02/17",
+                                        "amount": 2.88,
+                                        "balanceAmount": 7789.41
+                                    },
+                                    {
+                                        "particular": "NEFT CHGS INCL ST & CESS 200217",
+                                        "date": "22/02/17",
+                                        "amount": 2.88,
+                                        "balanceAmount": 3505.78
+                                    },
+                                    {
+                                        "particular": "NEFT CHGS INCL ST & CESS 210217",
+                                        "date": "23/02/17",
+                                        "amount": 2.88,
+                                        "balanceAmount": 15002.9
+                                    }
+                                ]
+                            },
+                            "17/06": {
+                                "month": "17/06",
+                                "amount": 14.399999999999999,
+                                "count": 5,
+                                "transactions": [
+                                    {
+                                        "particular": "NEFT CHGS INCL ST & CESS 290517",
+                                        "date": "01/06/17",
+                                        "amount": 2.88,
+                                        "balanceAmount": 3620.1
+                                    },
+                                    {
+                                        "particular": "NEFT CHGS INCL ST & CESS 300517",
+                                        "date": "01/06/17",
+                                        "amount": 2.88,
+                                        "balanceAmount": 3617.22
+                                    },
+                                    {
+                                        "particular": "NEFT CHGS INCL ST & CESS 150617",
+                                        "date": "21/06/17",
+                                        "amount": 2.88,
+                                        "balanceAmount": 3390.96
+                                    },
+                                    {
+                                        "particular": "NEFT CHGS INCL ST & CESS 160617",
+                                        "date": "22/06/17",
+                                        "amount": 2.88,
+                                        "balanceAmount": 3904.08
+                                    },
+                                    {
+                                        "particular": "NEFT CHGS INCL ST & CESS 170617",
+                                        "date": "23/06/17",
+                                        "amount": 2.88,
+                                        "balanceAmount": 14901.2
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "summary": "inst alert inc st &",
+                        "count": 2,
+                        "amount": 34.5,
+                        "monthlyTransactions": {
+                            "17/01": {
+                                "month": "17/01",
+                                "amount": 17.25,
+                                "count": 1,
+                                "transactions": [
+                                    {
+                                        "particular": "INST-ALERT CHG INC ST & EC OCT-DEC2016",
+                                        "date": "20/01/17",
+                                        "amount": 17.25,
+                                        "balanceAmount": 7974.55
+                                    }
+                                ]
+                            },
+                            "17/05": {
+                                "month": "17/05",
+                                "amount": 17.25,
+                                "count": 1,
+                                "transactions": [
+                                    {
+                                        "particular": "INST-ALERT CHG INC ST & EC JAN-MAR2017",
+                                        "date": "06/05/17",
+                                        "amount": 17.25,
+                                        "balanceAmount": 7211.21
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "summary": "cash(1txn)28",
+                        "count": 1,
+                        "amount": 23,
+                        "monthlyTransactions": {
+                            "17/04": {
+                                "month": "17/04",
+                                "amount": 23,
+                                "count": 1,
+                                "transactions": [
+                                    {
+                                        "particular": "FEE-ATM CASH(1TXN)28/04/17",
+                                        "date": "29/04/17",
+                                        "amount": 23,
+                                        "balanceAmount": 3789.96
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "summary": "fuel surchg 436303******1688",
+                        "count": 1,
+                        "amount": 14.66,
+                        "monthlyTransactions": {
+                            "17/01": {
+                                "month": "17/01",
+                                "amount": 14.66,
+                                "count": 1,
+                                "transactions": [
+                                    {
+                                        "particular": "FUEL SURCHG 436303******1688 DT 03/01/17",
+                                        "date": "07/01/17",
+                                        "amount": 14.66,
+                                        "balanceAmount": 9494.57
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "summary": "703211108906#01",
+                        "count": 1,
+                        "amount": 5.75,
+                        "monthlyTransactions": {
+                            "17/02": {
+                                "month": "17/02",
+                                "amount": 5.75,
+                                "count": 1,
+                                "transactions": [
+                                    {
+                                        "particular": "IMPS P2P 575 703211108906#01/02/ 040217",
+                                        "date": "16/02/17",
+                                        "amount": 5.75,
+                                        "balanceAmount": 2049.04
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "summary": "703914329495#08",
+                        "count": 1,
+                        "amount": 5.75,
+                        "monthlyTransactions": {
+                            "17/02": {
+                                "month": "17/02",
+                                "amount": 5.75,
+                                "count": 1,
+                                "transactions": [
+                                    {
+                                        "particular": "IMPS P2P 575 703914329495#08/02/ 100217",
+                                        "date": "17/02/17",
+                                        "amount": 5.75,
+                                        "balanceAmount": 5527.29
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "summary": "704612304375#15",
+                        "count": 1,
+                        "amount": 5.75,
+                        "monthlyTransactions": {
+                            "17/02": {
+                                "month": "17/02",
+                                "amount": 5.75,
+                                "count": 1,
+                                "transactions": [
+                                    {
+                                        "particular": "IMPS P2P 575 704612304375#15/02/ 160217",
+                                        "date": "20/02/17",
+                                        "amount": 5.75,
+                                        "balanceAmount": 5135.16
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "summary": "707512148089#16",
+                        "count": 1,
+                        "amount": 5.75,
+                        "monthlyTransactions": {
+                            "17/03": {
+                                "month": "17/03",
+                                "amount": 5.75,
+                                "count": 1,
+                                "transactions": [
+                                    {
+                                        "particular": "IMPS P2P 575 707512148089#16/03/ 180317",
+                                        "date": "22/03/17",
+                                        "amount": 5.75,
+                                        "balanceAmount": 9855.53
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "summary": "712912173445#09",
+                        "count": 1,
+                        "amount": 5.75,
+                        "monthlyTransactions": {
+                            "17/05": {
+                                "month": "17/05",
+                                "amount": 5.75,
+                                "count": 1,
+                                "transactions": [
+                                    {
+                                        "particular": "IMPS P2P 575 712912173445#09/05/ 150517",
+                                        "date": "23/05/17",
+                                        "amount": 5.75,
+                                        "balanceAmount": 15244.73
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "summary": "712916138399#09",
+                        "count": 1,
+                        "amount": 5.75,
+                        "monthlyTransactions": {
+                            "17/05": {
+                                "month": "17/05",
+                                "amount": 5.75,
+                                "count": 1,
+                                "transactions": [
+                                    {
+                                        "particular": "IMPS P2P 575 712916138399#09/05/ 150517",
+                                        "date": "23/05/17",
+                                        "amount": 5.75,
+                                        "balanceAmount": 15238.98
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ],
+                "highestAmount": 102000
+            },
+            "monthlyRecurringCredits": {
+                "months": [
+                    "17/06",
+                    "17/05",
+                    "17/04",
+                    "17/03",
+                    "17/02",
+                    "17/01"
+                ],
+                "data": [
+                    {
+                        "summary": "ani technologies private",
+                        "count": 116,
+                        "amount": 209574,
+                        "monthlyTransactions": {
+                            "17/01": {
+                                "month": "17/01",
+                                "amount": 80396,
+                                "count": 28,
+                                "transactions": [
+                                    {
+                                        "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-0P17010247110093",
+                                        "date": "02/01/17",
+                                        "amount": 313,
+                                        "balanceAmount": 8141.11
+                                    },
+                                    {
+                                        "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-0P17010348417669",
+                                        "date": "03/01/17",
+                                        "amount": 9280,
+                                        "balanceAmount": 16911.11
+                                    },
+                                    {
+                                        "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-0P17010549892717",
+                                        "date": "05/01/17",
+                                        "amount": 4879,
+                                        "balanceAmount": 11290.11
+                                    },
+                                    {
+                                        "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-0P17010550345082",
+                                        "date": "05/01/17",
+                                        "amount": 5183,
+                                        "balanceAmount": 16473.11
+                                    },
+                                    {
+                                        "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-0P17010651453793",
+                                        "date": "06/01/17",
+                                        "amount": 679,
+                                        "balanceAmount": 14512.11
+                                    },
+                                    {
+                                        "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-0P17010752406198",
+                                        "date": "07/01/17",
+                                        "amount": 4971,
+                                        "balanceAmount": 14465.57
+                                    },
+                                    {
+                                        "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-0P17010953765743",
+                                        "date": "09/01/17",
+                                        "amount": 6082,
+                                        "balanceAmount": 13292.19
+                                    },
+                                    {
+                                        "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-0P17011054754055",
+                                        "date": "10/01/17",
+                                        "amount": 5062,
+                                        "balanceAmount": 13354.19
+                                    },
+                                    {
+                                        "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-0P17011155755279",
+                                        "date": "11/01/17",
+                                        "amount": 2860,
+                                        "balanceAmount": 21214.19
+                                    },
+                                    {
+                                        "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-0P17011256672733",
+                                        "date": "12/01/17",
+                                        "amount": 1121,
+                                        "balanceAmount": 17202.19
+                                    },
+                                    {
+                                        "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-0P17011357916127",
+                                        "date": "13/01/17",
+                                        "amount": 2710,
+                                        "balanceAmount": 19906.44
+                                    },
+                                    {
+                                        "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-0P17011658971179",
+                                        "date": "16/01/17",
+                                        "amount": 1987,
+                                        "balanceAmount": 15841.68
+                                    },
+                                    {
+                                        "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-0P17011659129732",
+                                        "date": "16/01/17",
+                                        "amount": 5324,
+                                        "balanceAmount": 21165.68
+                                    },
+                                    {
+                                        "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-0P17011760024020",
+                                        "date": "17/01/17",
+                                        "amount": 3765,
+                                        "balanceAmount": 12377.68
+                                    },
+                                    {
+                                        "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-0P17011962047989",
+                                        "date": "19/01/17",
+                                        "amount": 3782,
+                                        "balanceAmount": 7994.68
+                                    },
+                                    {
+                                        "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-0P17012062777614",
+                                        "date": "20/01/17",
+                                        "amount": 1394,
+                                        "balanceAmount": 9368.55
+                                    },
+                                    {
+                                        "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-0P17012163449269",
+                                        "date": "21/01/17",
+                                        "amount": 1410,
+                                        "balanceAmount": 2708.05
+                                    },
+                                    {
+                                        "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-0P17012365118320",
+                                        "date": "23/01/17",
+                                        "amount": 3987,
+                                        "balanceAmount": 4292.17
+                                    },
+                                    {
+                                        "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-0P17012467457083",
+                                        "date": "24/01/17",
+                                        "amount": 471,
+                                        "balanceAmount": 4763.17
+                                    },
+                                    {
+                                        "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-0P17012568474845",
+                                        "date": "25/01/17",
+                                        "amount": 3171,
+                                        "balanceAmount": 3584.17
+                                    },
+                                    {
+                                        "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-0P17012769758573",
+                                        "date": "27/01/17",
+                                        "amount": 306,
+                                        "balanceAmount": 893.92
+                                    },
+                                    {
+                                        "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-0P17012769758565",
+                                        "date": "27/01/17",
+                                        "amount": 746,
+                                        "balanceAmount": 1639.92
+                                    },
+                                    {
+                                        "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-0P17013071005087",
+                                        "date": "30/01/17",
+                                        "amount": 4422,
+                                        "balanceAmount": 8456.16
+                                    },
+                                    {
+                                        "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-0P17013071005071",
+                                        "date": "30/01/17",
+                                        "amount": 274,
+                                        "balanceAmount": 8730.16
+                                    },
+                                    {
+                                        "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-0P17013071179918",
+                                        "date": "30/01/17",
+                                        "amount": 591,
+                                        "balanceAmount": 9321.16
+                                    },
+                                    {
+                                        "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-0P17013071179923",
+                                        "date": "30/01/17",
+                                        "amount": 627,
+                                        "balanceAmount": 9948.16
+                                    },
+                                    {
+                                        "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-0P17013172396852",
+                                        "date": "31/01/17",
+                                        "amount": 3984,
+                                        "balanceAmount": 13165.66
+                                    },
+                                    {
+                                        "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-0P17013172396856",
+                                        "date": "31/01/17",
+                                        "amount": 1015,
+                                        "balanceAmount": 14180.66
+                                    }
+                                ]
+                            },
+                            "17/02": {
+                                "month": "17/02",
+                                "amount": 38731,
+                                "count": 26,
+                                "transactions": [
+                                    {
+                                        "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-0P17020173659913",
+                                        "date": "01/02/17",
+                                        "amount": 2140,
+                                        "balanceAmount": 8320.66
+                                    },
+                                    {
+                                        "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-0P17020173659920",
+                                        "date": "01/02/17",
+                                        "amount": 88,
+                                        "balanceAmount": 8408.66
+                                    },
+                                    {
+                                        "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-0P17020274903533",
+                                        "date": "02/02/17",
+                                        "amount": 817,
+                                        "balanceAmount": 6392.66
+                                    },
+                                    {
+                                        "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-0P17020274903537",
+                                        "date": "02/02/17",
+                                        "amount": 407,
+                                        "balanceAmount": 6799.66
+                                    },
+                                    {
+                                        "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-0P17020376369318",
+                                        "date": "03/02/17",
+                                        "amount": 23,
+                                        "balanceAmount": 6822.66
+                                    },
+                                    {
+                                        "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-0P17020376369315",
+                                        "date": "03/02/17",
+                                        "amount": 3607,
+                                        "balanceAmount": 10429.66
+                                    },
+                                    {
+                                        "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-0P17020477394166",
+                                        "date": "04/02/17",
+                                        "amount": 3049,
+                                        "balanceAmount": 13078.66
+                                    },
+                                    {
+                                        "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-0P17020477394168",
+                                        "date": "04/02/17",
+                                        "amount": 170,
+                                        "balanceAmount": 13248.66
+                                    },
+                                    {
+                                        "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-0P17020678300541",
+                                        "date": "06/02/17",
+                                        "amount": 6209,
+                                        "balanceAmount": 6957.66
+                                    },
+                                    {
+                                        "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-0P17020678300569",
+                                        "date": "06/02/17",
+                                        "amount": 127,
+                                        "balanceAmount": 7084.66
+                                    },
+                                    {
+                                        "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-0P17020779415144",
+                                        "date": "07/02/17",
+                                        "amount": 32,
+                                        "balanceAmount": 7116.66
+                                    },
+                                    {
+                                        "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-0P17020880671847",
+                                        "date": "08/02/17",
+                                        "amount": 1435,
+                                        "balanceAmount": 36679.18
+                                    },
+                                    {
+                                        "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-0P17020981670464",
+                                        "date": "09/02/17",
+                                        "amount": 699,
+                                        "balanceAmount": 28378.18
+                                    },
+                                    {
+                                        "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-0P17021082649270",
+                                        "date": "10/02/17",
+                                        "amount": 578,
+                                        "balanceAmount": 18956.18
+                                    },
+                                    {
+                                        "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-N044170000402513",
+                                        "date": "14/02/17",
+                                        "amount": 555,
+                                        "balanceAmount": 14836.79
+                                    },
+                                    {
+                                        "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-N044170000446617",
+                                        "date": "14/02/17",
+                                        "amount": 2990,
+                                        "balanceAmount": 17826.79
+                                    },
+                                    {
+                                        "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-N046170000935460",
+                                        "date": "15/02/17",
+                                        "amount": 876,
+                                        "balanceAmount": 10202.79
+                                    },
+                                    {
+                                        "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-N047170001131925",
+                                        "date": "16/02/17",
+                                        "amount": 2484,
+                                        "balanceAmount": 4533.04
+                                    },
+                                    {
+                                        "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-N048170001352611",
+                                        "date": "17/02/17",
+                                        "amount": 2265,
+                                        "balanceAmount": 7792.29
+                                    },
+                                    {
+                                        "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-N049170001633323",
+                                        "date": "18/02/17",
+                                        "amount": 3088,
+                                        "balanceAmount": 10877.41
+                                    },
+                                    {
+                                        "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-N051170001860911",
+                                        "date": "20/02/17",
+                                        "amount": 3608,
+                                        "balanceAmount": 8743.16
+                                    },
+                                    {
+                                        "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-N052170002042538",
+                                        "date": "21/02/17",
+                                        "amount": 97,
+                                        "balanceAmount": 2508.66
+                                    },
+                                    {
+                                        "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-N055170002725273",
+                                        "date": "24/02/17",
+                                        "amount": 1481,
+                                        "balanceAmount": 2933.9
+                                    },
+                                    {
+                                        "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-N058170002987907",
+                                        "date": "27/02/17",
+                                        "amount": 1529,
+                                        "balanceAmount": 1531.4
+                                    },
+                                    {
+                                        "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-N058170003031193",
+                                        "date": "27/02/17",
+                                        "amount": 120,
+                                        "balanceAmount": 1651.4
+                                    },
+                                    {
+                                        "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-N059170003431347",
+                                        "date": "28/02/17",
+                                        "amount": 257,
+                                        "balanceAmount": 308.4
+                                    }
+                                ]
+                            },
+                            "17/03": {
+                                "month": "17/03",
+                                "amount": 2648,
+                                "count": 3,
+                                "transactions": [
+                                    {
+                                        "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-N060170003968976",
+                                        "date": "01/03/17",
+                                        "amount": 1025,
+                                        "balanceAmount": 3167.4
+                                    },
+                                    {
+                                        "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-N061170004278791",
+                                        "date": "02/03/17",
+                                        "amount": 1185,
+                                        "balanceAmount": 2078.4
+                                    },
+                                    {
+                                        "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-N090170010839288",
+                                        "date": "31/03/17",
+                                        "amount": 438,
+                                        "balanceAmount": 4520.53
+                                    }
+                                ]
+                            },
+                            "17/04": {
+                                "month": "17/04",
+                                "amount": 27776,
+                                "count": 18,
+                                "transactions": [
+                                    {
+                                        "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-N093170011561294",
+                                        "date": "04/04/17",
+                                        "amount": 1870,
+                                        "balanceAmount": 7962.53
+                                    },
+                                    {
+                                        "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-N094170011763314",
+                                        "date": "04/04/17",
+                                        "amount": 1094,
+                                        "balanceAmount": 14056.53
+                                    },
+                                    {
+                                        "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-N095170012088917",
+                                        "date": "06/04/17",
+                                        "amount": 670,
+                                        "balanceAmount": 8868.8
+                                    },
+                                    {
+                                        "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-N097170012630056",
+                                        "date": "07/04/17",
+                                        "amount": 1236,
+                                        "balanceAmount": 9904.8
+                                    },
+                                    {
+                                        "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-N100170013198880",
+                                        "date": "11/04/17",
+                                        "amount": 4298,
+                                        "balanceAmount": 4616.97
+                                    },
+                                    {
+                                        "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-N101170013492727",
+                                        "date": "12/04/17",
+                                        "amount": 2881,
+                                        "balanceAmount": 7497.97
+                                    },
+                                    {
+                                        "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-N102170013604373",
+                                        "date": "12/04/17",
+                                        "amount": 921,
+                                        "balanceAmount": 10528.54
+                                    },
+                                    {
+                                        "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-N103170013889475",
+                                        "date": "13/04/17",
+                                        "amount": 4237,
+                                        "balanceAmount": 14365.54
+                                    },
+                                    {
+                                        "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-N105170014237139",
+                                        "date": "15/04/17",
+                                        "amount": 2319,
+                                        "balanceAmount": 16484.54
+                                    },
+                                    {
+                                        "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-N107170014489007",
+                                        "date": "17/04/17",
+                                        "amount": 200,
+                                        "balanceAmount": 15134.04
+                                    },
+                                    {
+                                        "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-N109170014962855",
+                                        "date": "19/04/17",
+                                        "amount": 40,
+                                        "balanceAmount": 12113.54
+                                    },
+                                    {
+                                        "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-N111170015372393",
+                                        "date": "21/04/17",
+                                        "amount": 1465,
+                                        "balanceAmount": 14104.46
+                                    },
+                                    {
+                                        "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-N114170015728706",
+                                        "date": "24/04/17",
+                                        "amount": 2026,
+                                        "balanceAmount": 17130.46
+                                    },
+                                    {
+                                        "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-N115170015929032",
+                                        "date": "25/04/17",
+                                        "amount": 1441,
+                                        "balanceAmount": 4171.46
+                                    },
+                                    {
+                                        "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-N116170016143033",
+                                        "date": "26/04/17",
+                                        "amount": 212,
+                                        "balanceAmount": 4383.46
+                                    },
+                                    {
+                                        "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-N117170016341484",
+                                        "date": "27/04/17",
+                                        "amount": 551,
+                                        "balanceAmount": 2934.46
+                                    },
+                                    {
+                                        "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-N118170016541587",
+                                        "date": "28/04/17",
+                                        "amount": 1710,
+                                        "balanceAmount": 4644.46
+                                    },
+                                    {
+                                        "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-N119170017004301",
+                                        "date": "29/04/17",
+                                        "amount": 605,
+                                        "balanceAmount": 4394.96
+                                    }
+                                ]
+                            },
+                            "17/05": {
+                                "month": "17/05",
+                                "amount": 33642,
+                                "count": 22,
+                                "transactions": [
+                                    {
+                                        "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-N122170017532001",
+                                        "date": "02/05/17",
+                                        "amount": 3346,
+                                        "balanceAmount": 8106.96
+                                    },
+                                    {
+                                        "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-N123170017768306",
+                                        "date": "03/05/17",
+                                        "amount": 1742,
+                                        "balanceAmount": 9676.46
+                                    },
+                                    {
+                                        "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-N124170018202778",
+                                        "date": "04/05/17",
+                                        "amount": 1797,
+                                        "balanceAmount": 10473.46
+                                    },
+                                    {
+                                        "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-N125170018450032",
+                                        "date": "05/05/17",
+                                        "amount": 1255,
+                                        "balanceAmount": 7228.46
+                                    },
+                                    {
+                                        "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-N126170018743743",
+                                        "date": "06/05/17",
+                                        "amount": 782,
+                                        "balanceAmount": 7921.21
+                                    },
+                                    {
+                                        "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-N128170019015812",
+                                        "date": "08/05/17",
+                                        "amount": 3066,
+                                        "balanceAmount": 8465.19
+                                    },
+                                    {
+                                        "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-N129170019319625",
+                                        "date": "09/05/17",
+                                        "amount": 1766,
+                                        "balanceAmount": 2478.98
+                                    },
+                                    {
+                                        "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-N130170019515029",
+                                        "date": "10/05/17",
+                                        "amount": 1924,
+                                        "balanceAmount": 3550.98
+                                    },
+                                    {
+                                        "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-N131170019670871",
+                                        "date": "11/05/17",
+                                        "amount": 1803,
+                                        "balanceAmount": 4537.48
+                                    },
+                                    {
+                                        "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-N132170019927217",
+                                        "date": "12/05/17",
+                                        "amount": 1404,
+                                        "balanceAmount": 5941.48
+                                    },
+                                    {
+                                        "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-N135170020354823",
+                                        "date": "15/05/17",
+                                        "amount": 1121,
+                                        "balanceAmount": 7062.48
+                                    },
+                                    {
+                                        "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-N137170020771801",
+                                        "date": "17/05/17",
+                                        "amount": 2100,
+                                        "balanceAmount": 6145.98
+                                    },
+                                    {
+                                        "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-N138170020989411",
+                                        "date": "18/05/17",
+                                        "amount": 598,
+                                        "balanceAmount": 8143.98
+                                    },
+                                    {
+                                        "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-N139170021208598",
+                                        "date": "19/05/17",
+                                        "amount": 888,
+                                        "balanceAmount": 3790.48
+                                    },
+                                    {
+                                        "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-N140170021426663",
+                                        "date": "20/05/17",
+                                        "amount": 1959,
+                                        "balanceAmount": 5549.48
+                                    },
+                                    {
+                                        "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-N142170021578803",
+                                        "date": "22/05/17",
+                                        "amount": 94,
+                                        "balanceAmount": 8051.98
+                                    },
+                                    {
+                                        "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-N143170021833935",
+                                        "date": "23/05/17",
+                                        "amount": 975,
+                                        "balanceAmount": 16213.98
+                                    },
+                                    {
+                                        "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-N144170022153559",
+                                        "date": "24/05/17",
+                                        "amount": 827,
+                                        "balanceAmount": 2640.98
+                                    },
+                                    {
+                                        "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-N145170022304061",
+                                        "date": "25/05/17",
+                                        "amount": 1837,
+                                        "balanceAmount": 5067.98
+                                    },
+                                    {
+                                        "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-N146170022530805",
+                                        "date": "26/05/17",
+                                        "amount": 1702,
+                                        "balanceAmount": 6769.98
+                                    },
+                                    {
+                                        "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-N149170022869237",
+                                        "date": "29/05/17",
+                                        "amount": 2539,
+                                        "balanceAmount": 3038.98
+                                    },
+                                    {
+                                        "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-N151170023335468",
+                                        "date": "31/05/17",
+                                        "amount": 117,
+                                        "balanceAmount": 4727.98
+                                    }
+                                ]
+                            },
+                            "17/06": {
+                                "month": "17/06",
+                                "amount": 26381,
+                                "count": 19,
+                                "transactions": [
+                                    {
+                                        "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-N152170023871007",
+                                        "date": "01/06/17",
+                                        "amount": 195,
+                                        "balanceAmount": 3622.98
+                                    },
+                                    {
+                                        "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-N153170024130727",
+                                        "date": "02/06/17",
+                                        "amount": 88,
+                                        "balanceAmount": 1871.22
+                                    },
+                                    {
+                                        "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-N154170024388264",
+                                        "date": "03/06/17",
+                                        "amount": 1384,
+                                        "balanceAmount": 3255.22
+                                    },
+                                    {
+                                        "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-N157170025107064",
+                                        "date": "06/06/17",
+                                        "amount": 1008,
+                                        "balanceAmount": 1763.22
+                                    },
+                                    {
+                                        "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-N158170025429739",
+                                        "date": "07/06/17",
+                                        "amount": 667,
+                                        "balanceAmount": 7430.22
+                                    },
+                                    {
+                                        "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-N159170025918718",
+                                        "date": "08/06/17",
+                                        "amount": 1508,
+                                        "balanceAmount": 3327.18
+                                    },
+                                    {
+                                        "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-N163170026582541",
+                                        "date": "12/06/17",
+                                        "amount": 3883,
+                                        "balanceAmount": 4623.23
+                                    },
+                                    {
+                                        "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-N164170026890830",
+                                        "date": "13/06/17",
+                                        "amount": 3014,
+                                        "balanceAmount": 7437.23
+                                    },
+                                    {
+                                        "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-N165170027220545",
+                                        "date": "14/06/17",
+                                        "amount": 1234,
+                                        "balanceAmount": 8071.23
+                                    },
+                                    {
+                                        "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-N166170027443753",
+                                        "date": "15/06/17",
+                                        "amount": 2183,
+                                        "balanceAmount": 8254.23
+                                    },
+                                    {
+                                        "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-N167170027661493",
+                                        "date": "16/06/17",
+                                        "amount": 1923,
+                                        "balanceAmount": 10177.23
+                                    },
+                                    {
+                                        "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-N168170027906691",
+                                        "date": "17/06/17",
+                                        "amount": 1609,
+                                        "balanceAmount": 6786.23
+                                    },
+                                    {
+                                        "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-N170170028204596",
+                                        "date": "19/06/17",
+                                        "amount": 1446,
+                                        "balanceAmount": 2646.23
+                                    },
+                                    {
+                                        "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-N171170028446509",
+                                        "date": "20/06/17",
+                                        "amount": 1255,
+                                        "balanceAmount": 3301.23
+                                    },
+                                    {
+                                        "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-N173170028774012",
+                                        "date": "22/06/17",
+                                        "amount": 516,
+                                        "balanceAmount": 3906.96
+                                    },
+                                    {
+                                        "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-N174170029139269",
+                                        "date": "23/06/17",
+                                        "amount": 579,
+                                        "balanceAmount": 15480.2
+                                    },
+                                    {
+                                        "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-N178170029357228",
+                                        "date": "27/06/17",
+                                        "amount": 445,
+                                        "balanceAmount": 3903.2
+                                    },
+                                    {
+                                        "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-N179170029675270",
+                                        "date": "28/06/17",
+                                        "amount": 2279,
+                                        "balanceAmount": 6182.2
+                                    },
+                                    {
+                                        "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES PRIVATE LIMITED-RAHUL YADAV-N180170029954935",
+                                        "date": "29/06/17",
+                                        "amount": 1165,
+                                        "balanceAmount": 7347.2
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "summary": "krishna communicatio",
+                        "count": 8,
+                        "amount": 72500,
+                        "monthlyTransactions": {
+                            "17/03": {
+                                "month": "17/03",
+                                "amount": 61500,
+                                "count": 6,
+                                "transactions": [
+                                    {
+                                        "particular": "IMPS-706618944660-KRISHNA COMMUNICATIO-HDFC--PERSONAL",
+                                        "date": "07/03/17",
+                                        "amount": 2000,
+                                        "balanceAmount": 3784.9
+                                    },
+                                    {
+                                        "particular": "IMPS-706712269452-KRISHNA COMMUNICATIO-HDFC--PERSONAL",
+                                        "date": "08/03/17",
+                                        "amount": 50000,
+                                        "balanceAmount": 53784.9
+                                    },
+                                    {
+                                        "particular": "IMPS-708118187617-KRISHNA COMMUNICATIO-HDFC--PERSONAL",
+                                        "date": "22/03/17",
+                                        "amount": 3000,
+                                        "balanceAmount": 14967.53
+                                    },
+                                    {
+                                        "particular": "IMPS-708121236527-KRISHNA COMMUNICATIO-HDFC--PERSONAL",
+                                        "date": "22/03/17",
+                                        "amount": 500,
+                                        "balanceAmount": 14868.53
+                                    },
+                                    {
+                                        "particular": "IMPS-708216437458-KRISHNA COMMUNICATIO-HDFC--PERONAL",
+                                        "date": "23/03/17",
+                                        "amount": 1000,
+                                        "balanceAmount": 15006.03
+                                    },
+                                    {
+                                        "particular": "IMPS-708411917680-KRISHNA COMMUNICATIO-HDFC--",
+                                        "date": "25/03/17",
+                                        "amount": 5000,
+                                        "balanceAmount": 21847.03
+                                    }
+                                ]
+                            },
+                            "17/04": {
+                                "month": "17/04",
+                                "amount": 11000,
+                                "count": 2,
+                                "transactions": [
+                                    {
+                                        "particular": "IMPS-711016847331-KRISHNA COMMUNICATIO-HDFC--EMI",
+                                        "date": "20/04/17",
+                                        "amount": 10000,
+                                        "balanceAmount": 22113.54
+                                    },
+                                    {
+                                        "particular": "IMPS-711220586245-KRISHNA COMMUNICATIO-HDFC--EMI",
+                                        "date": "22/04/17",
+                                        "amount": 1000,
+                                        "balanceAmount": 15104.46
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "summary": "daya nand rahul",
+                        "count": 1,
+                        "amount": 60000,
+                        "monthlyTransactions": {
+                            "17/02": {
+                                "month": "17/02",
+                                "amount": 60000,
+                                "count": 1,
+                                "transactions": [
+                                    {
+                                        "particular": "NEFT CR-UCBA0001910-DAYA NAND-RAHUL YADAV-SAA90378310",
+                                        "date": "08/02/17",
+                                        "amount": 60000,
+                                        "balanceAmount": 63131.32
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "summary": "rahul",
+                        "count": 19,
+                        "amount": 55733,
+                        "monthlyTransactions": {
+                            "17/01": {
+                                "month": "17/01",
+                                "amount": 12000,
+                                "count": 3,
+                                "transactions": [
+                                    {
+                                        "particular": "IMPS-702215406549-RAHUL-HDFC-XXXXXXXX9798-177233421",
+                                        "date": "22/01/17",
+                                        "amount": 5000,
+                                        "balanceAmount": 7708.05
+                                    },
+                                    {
+                                        "particular": "IMPS-702217552343-RAHUL-HDFC-XXXXXXXX9798-177258964",
+                                        "date": "22/01/17",
+                                        "amount": 5000,
+                                        "balanceAmount": 12708.05
+                                    },
+                                    {
+                                        "particular": "IMPS-702218626937-RAHUL-HDFC-XXXXXXXX9798-177276456",
+                                        "date": "22/01/17",
+                                        "amount": 2000,
+                                        "balanceAmount": 14708.05
+                                    }
+                                ]
+                            },
+                            "17/02": {
+                                "month": "17/02",
+                                "amount": 11500,
+                                "count": 3,
+                                "transactions": [
+                                    {
+                                        "particular": "IMPS-705319767305-RAHUL-HDFC-XXXXXXXX9798-194745835",
+                                        "date": "22/02/17",
+                                        "amount": 5000,
+                                        "balanceAmount": 8505.78
+                                    },
+                                    {
+                                        "particular": "IMPS-705319792110-RAHUL-HDFC-XXXXXXXX9798-194755705",
+                                        "date": "22/02/17",
+                                        "amount": 5000,
+                                        "balanceAmount": 13505.78
+                                    },
+                                    {
+                                        "particular": "IMPS-705319796972-RAHUL-HDFC-XXXXXXXX9798-194757501",
+                                        "date": "22/02/17",
+                                        "amount": 1500,
+                                        "balanceAmount": 15005.78
+                                    }
+                                ]
+                            },
+                            "17/04": {
+                                "month": "17/04",
+                                "amount": 3835,
+                                "count": 3,
+                                "transactions": [
+                                    {
+                                        "particular": "IMPS-709110487656-RAHUL-HDFC-XXXXXXXXSDRR-P2BOTP_7EAC16F6125DC763",
+                                        "date": "01/04/17",
+                                        "amount": 1834,
+                                        "balanceAmount": 6456.53
+                                    },
+                                    {
+                                        "particular": "IMPS-709315771723-RAHUL-HDFC-XXXXXXXX3511-G",
+                                        "date": "03/04/17",
+                                        "amount": 1,
+                                        "balanceAmount": 4092.53
+                                    },
+                                    {
+                                        "particular": "IMPS-709315773865-RAHUL-HDFC-XXXXXXXX3511-RAHUL YADAV",
+                                        "date": "03/04/17",
+                                        "amount": 2000,
+                                        "balanceAmount": 6092.53
+                                    }
+                                ]
+                            },
+                            "17/05": {
+                                "month": "17/05",
+                                "amount": 15398,
+                                "count": 6,
+                                "transactions": [
+                                    {
+                                        "particular": "IMPS-712916379383-RAHUL-HDFC--.",
+                                        "date": "09/05/17",
+                                        "amount": 1148,
+                                        "balanceAmount": 3626.98
+                                    },
+                                    {
+                                        "particular": "IMPS-714214815889-RAHUL-HDFC-XXXXXXXX9798-254105286",
+                                        "date": "22/05/17",
+                                        "amount": 5000,
+                                        "balanceAmount": 7707.98
+                                    },
+                                    {
+                                        "particular": "IMPS-714214819619-RAHUL-HDFC-XXXXXXXX9798-254106800",
+                                        "date": "22/05/17",
+                                        "amount": 250,
+                                        "balanceAmount": 7957.98
+                                    },
+                                    {
+                                        "particular": "IMPS-714309052193-RAHUL-HDFC-XXXXXXXX9798-254636381",
+                                        "date": "23/05/17",
+                                        "amount": 5000,
+                                        "balanceAmount": 12051.98
+                                    },
+                                    {
+                                        "particular": "IMPS-714309053205-RAHUL-HDFC-XXXXXXXX9798-254636886",
+                                        "date": "23/05/17",
+                                        "amount": 3000,
+                                        "balanceAmount": 15051.98
+                                    },
+                                    {
+                                        "particular": "IMPS-714309105747-RAHUL-HDFC-XXXXXXXX9798-254665502",
+                                        "date": "23/05/17",
+                                        "amount": 1000,
+                                        "balanceAmount": 16051.98
+                                    }
+                                ]
+                            },
+                            "17/06": {
+                                "month": "17/06",
+                                "amount": 13000,
+                                "count": 4,
+                                "transactions": [
+                                    {
+                                        "particular": "IMPS-716819288520-RAHUL-HDFC-XXXXXXXX9798-274769970",
+                                        "date": "17/06/17",
+                                        "amount": 2000,
+                                        "balanceAmount": 2674.73
+                                    },
+                                    {
+                                        "particular": "IMPS-717320066251-RAHUL-HDFC-XXXXXXXX9798-278944222",
+                                        "date": "22/06/17",
+                                        "amount": 5000,
+                                        "balanceAmount": 8904.08
+                                    },
+                                    {
+                                        "particular": "IMPS-717321073527-RAHUL-HDFC-XXXXXXXX9798-278948544",
+                                        "date": "22/06/17",
+                                        "amount": 5000,
+                                        "balanceAmount": 13904.08
+                                    },
+                                    {
+                                        "particular": "IMPS-717321074412-RAHUL-HDFC-XXXXXXXX9798-278948945",
+                                        "date": "22/06/17",
+                                        "amount": 1000,
+                                        "balanceAmount": 14904.08
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "summary": "rahul yadav",
+                        "count": 25,
+                        "amount": 52367,
+                        "monthlyTransactions": {
+                            "17/01": {
+                                "month": "17/01",
+                                "amount": 3550,
+                                "count": 2,
+                                "transactions": [
+                                    {
+                                        "particular": "IMPS-702512381887-RAHUL YADAV-HDFC-XXXXXXXXSDRR-P2BOTP_43BB489633E49D0E",
+                                        "date": "25/01/17",
+                                        "amount": 1150,
+                                        "balanceAmount": 3413.17
+                                    },
+                                    {
+                                        "particular": "IMPS-702813953625-RAHUL YADAV-HDFC-XXXXXXXXSDRR-P2BOTP_F9F64FDC23B62AD5",
+                                        "date": "28/01/17",
+                                        "amount": 2400,
+                                        "balanceAmount": 4039.92
+                                    }
+                                ]
+                            },
+                            "17/02": {
+                                "month": "17/02",
+                                "amount": 13950,
+                                "count": 8,
+                                "transactions": [
+                                    {
+                                        "particular": "IMPS-703210347342-RAHUL YADAV-HDFC-XXXXXXXXSDRR-P2BOTP_11FE4082C2B201EE",
+                                        "date": "01/02/17",
+                                        "amount": 2000,
+                                        "balanceAmount": 16180.66
+                                    },
+                                    {
+                                        "particular": "IMPS-703513939703-RAHUL YADAV-HDFC-XXXXXXXXSDRR-P2BOTP_202838D0E3A54F9A",
+                                        "date": "04/02/17",
+                                        "amount": 600,
+                                        "balanceAmount": 10029.66
+                                    },
+                                    {
+                                        "particular": "IMPS-704516103892-RAHUL YADAV-HDFC-XXXXXXXXSDRR-P2BOTP_1EEC6DE4EA94A580",
+                                        "date": "14/02/17",
+                                        "amount": 1500,
+                                        "balanceAmount": 19326.79
+                                    },
+                                    {
+                                        "particular": "IMPS-704917253763-RAHUL YADAV-HDFC-XXXXXXXXSDRR-P2BOTP_092071DFDAB1898A",
+                                        "date": "18/02/17",
+                                        "amount": 5000,
+                                        "balanceAmount": 15877.41
+                                    },
+                                    {
+                                        "particular": "IMPS-705018591043-RAHUL YADAV-HDFC-XXXXXXXXSDRR-P2BOTP_BD7686E308B2E0C0",
+                                        "date": "19/02/17",
+                                        "amount": 2000,
+                                        "balanceAmount": 15140.91
+                                    },
+                                    {
+                                        "particular": "IMPS-705212990528-RAHUL YADAV-HDFC-XXXXXXXXSDRR-P2BOTP_0A6BEE7A46343725",
+                                        "date": "21/02/17",
+                                        "amount": 1100,
+                                        "balanceAmount": 10508.16
+                                    },
+                                    {
+                                        "particular": "IMPS-705310622105-RAHUL YADAV-HDFC-XXXXXXXXSDRR-P2BOTP_E224D0841D3D6458",
+                                        "date": "22/02/17",
+                                        "amount": 1000,
+                                        "balanceAmount": 3508.66
+                                    },
+                                    {
+                                        "particular": "IMPS-705612457299-RAHUL YADAV-HDFC-XXXXXXXXSDRR-P2BOTP_9F674950862E3DF8",
+                                        "date": "25/02/17",
+                                        "amount": 750,
+                                        "balanceAmount": 2422.4
+                                    }
+                                ]
+                            },
+                            "17/03": {
+                                "month": "17/03",
+                                "amount": 1834,
+                                "count": 1,
+                                "transactions": [
+                                    {
+                                        "particular": "IMPS-706016466199-RAHUL YADAV-HDFC-XXXXXXXXSDRR-P2BOTP_342D080799EC6DBE",
+                                        "date": "01/03/17",
+                                        "amount": 1834,
+                                        "balanceAmount": 2142.4
+                                    }
+                                ]
+                            },
+                            "17/04": {
+                                "month": "17/04",
+                                "amount": 12113,
+                                "count": 5,
+                                "transactions": [
+                                    {
+                                        "particular": "IMPS-709412070538-RAHUL YADAV-HDFC-XXXXXXXXSDRR-P2BOTP_78FBF92351D1395C",
+                                        "date": "04/04/17",
+                                        "amount": 5000,
+                                        "balanceAmount": 12962.53
+                                    },
+                                    {
+                                        "particular": "IMPS-710516051132-RAHUL YADAV-HDFC-XXXXXXXX0602-FT170415161034251315",
+                                        "date": "15/04/17",
+                                        "amount": 719,
+                                        "balanceAmount": 17203.54
+                                    },
+                                    {
+                                        "particular": "IMPS-710516050756-RAHUL YADAV-HDFC-XXXXXXXX0602-FT170415161034219799",
+                                        "date": "15/04/17",
+                                        "amount": 599,
+                                        "balanceAmount": 17802.54
+                                    },
+                                    {
+                                        "particular": "IMPS-710718442061-RAHUL YADAV-HDFC-XXXXXXXX0602-FT170417185409831875",
+                                        "date": "17/04/17",
+                                        "amount": 1295,
+                                        "balanceAmount": 16429.04
+                                    },
+                                    {
+                                        "particular": "IMPS-710912309393-RAHUL YADAV-HDFC-XXXXXXXXSDRR-P2BOTP_71133AC497365F33",
+                                        "date": "19/04/17",
+                                        "amount": 4500,
+                                        "balanceAmount": 12073.54
+                                    }
+                                ]
+                            },
+                            "17/05": {
+                                "month": "17/05",
+                                "amount": 13920,
+                                "count": 7,
+                                "transactions": [
+                                    {
+                                        "particular": "IMPS-712118580993-RAHUL YADAV-HDFC-XXXXXXXXSDRR-P2BOTP_A04B319DD1D5F971",
+                                        "date": "01/05/17",
+                                        "amount": 2500,
+                                        "balanceAmount": 6594.96
+                                    },
+                                    {
+                                        "particular": "IMPS-712621949007-RAHUL YADAV-HDFC-XXXXXXXXSDRR-P2BOTP_E489EB9E69EE6BD0",
+                                        "date": "06/05/17",
+                                        "amount": 3000,
+                                        "balanceAmount": 6815.21
+                                    },
+                                    {
+                                        "particular": "IMPS-712916466815-RAHUL YADAV-HDFC-XXXXXXXXSDRR-P2BOTP_C03DF926607D3A44",
+                                        "date": "09/05/17",
+                                        "amount": 1300,
+                                        "balanceAmount": 4926.98
+                                    },
+                                    {
+                                        "particular": "IMPS-713717039402-RAHUL YADAV-HDFC-XXXXXXXXSDRR-P2BOTP_6A2BA42B5D1A6DB1",
+                                        "date": "17/05/17",
+                                        "amount": 1400,
+                                        "balanceAmount": 7545.98
+                                    },
+                                    {
+                                        "particular": "IMPS-714914233305-RAHUL YADAV-HDFC-XXXXXXXXSDRR-P2BOTP_B06C7F9EE0CC9F0A",
+                                        "date": "29/05/17",
+                                        "amount": 5000,
+                                        "balanceAmount": 8038.98
+                                    },
+                                    {
+                                        "particular": "IMPS-715113846314-RAHUL YADAV-HDFC-XXXXXXXXSDRR-P2BOTP_855ABAA195C84CEA",
+                                        "date": "31/05/17",
+                                        "amount": 150,
+                                        "balanceAmount": 4040.98
+                                    },
+                                    {
+                                        "particular": "IMPS-715113853929-RAHUL YADAV-HDFC-XXXXXXXXSDRR-P2BOTP_20E4CABC2E2E4A93",
+                                        "date": "31/05/17",
+                                        "amount": 570,
+                                        "balanceAmount": 4610.98
+                                    }
+                                ]
+                            },
+                            "17/06": {
+                                "month": "17/06",
+                                "amount": 7000,
+                                "count": 2,
+                                "transactions": [
+                                    {
+                                        "particular": "IMPS-715609959811-RAHUL YADAV-HDFC-XXXXXXXXSDRR-P2BOTP_C3140B82EFA55F16",
+                                        "date": "05/06/17",
+                                        "amount": 2000,
+                                        "balanceAmount": 5255.22
+                                    },
+                                    {
+                                        "particular": "IMPS-715719065544-RAHUL YADAV-HDFC-XXXXXXXXSDRR-P2BOTP_DCFF26126D09C545",
+                                        "date": "06/06/17",
+                                        "amount": 5000,
+                                        "balanceAmount": 6763.22
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "summary": "ani technologies rahul",
+                        "count": 21,
+                        "amount": 28504,
+                        "monthlyTransactions": {
+                            "17/03": {
+                                "month": "17/03",
+                                "amount": 28504,
+                                "count": 21,
+                                "transactions": [
+                                    {
+                                        "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES-RAHUL YADAV-N062170004643473",
+                                        "date": "03/03/17",
+                                        "amount": 477,
+                                        "balanceAmount": 2555.4
+                                    },
+                                    {
+                                        "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES-RAHUL YADAV-N063170004911967",
+                                        "date": "04/03/17",
+                                        "amount": 2036,
+                                        "balanceAmount": 4591.4
+                                    },
+                                    {
+                                        "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES-RAHUL YADAV-N065170005187593",
+                                        "date": "06/03/17",
+                                        "amount": 1095,
+                                        "balanceAmount": 4984.9
+                                    },
+                                    {
+                                        "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES-RAHUL YADAV-N066170005496230",
+                                        "date": "07/03/17",
+                                        "amount": 1300,
+                                        "balanceAmount": 6284.9
+                                    },
+                                    {
+                                        "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES-RAHUL YADAV-N067170005930884",
+                                        "date": "08/03/17",
+                                        "amount": 114,
+                                        "balanceAmount": 28325.09
+                                    },
+                                    {
+                                        "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES-RAHUL YADAV-N068170006204725",
+                                        "date": "09/03/17",
+                                        "amount": 1583,
+                                        "balanceAmount": 29212.59
+                                    },
+                                    {
+                                        "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES-RAHUL YADAV-N069170006480256",
+                                        "date": "10/03/17",
+                                        "amount": 309,
+                                        "balanceAmount": 9521.59
+                                    },
+                                    {
+                                        "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES-RAHUL YADAV-N072170006758240",
+                                        "date": "13/03/17",
+                                        "amount": 940,
+                                        "balanceAmount": 10461.59
+                                    },
+                                    {
+                                        "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES-RAHUL YADAV-N074170007277910",
+                                        "date": "15/03/17",
+                                        "amount": 455,
+                                        "balanceAmount": 10116.28
+                                    },
+                                    {
+                                        "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES-RAHUL YADAV-N075170007518924",
+                                        "date": "16/03/17",
+                                        "amount": 1147,
+                                        "balanceAmount": 7263.28
+                                    },
+                                    {
+                                        "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES-RAHUL YADAV-N076170007711587",
+                                        "date": "17/03/17",
+                                        "amount": 1661,
+                                        "balanceAmount": 8924.28
+                                    },
+                                    {
+                                        "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES-RAHUL YADAV-N077170008066325",
+                                        "date": "18/03/17",
+                                        "amount": 464,
+                                        "balanceAmount": 8789.28
+                                    },
+                                    {
+                                        "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES-RAHUL YADAV-N079170008299710",
+                                        "date": "20/03/17",
+                                        "amount": 1674,
+                                        "balanceAmount": 10463.28
+                                    },
+                                    {
+                                        "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES-RAHUL YADAV-N080170008529414",
+                                        "date": "21/03/17",
+                                        "amount": 397,
+                                        "balanceAmount": 10860.28
+                                    },
+                                    {
+                                        "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES-RAHUL YADAV-N081170008741519",
+                                        "date": "22/03/17",
+                                        "amount": 2112,
+                                        "balanceAmount": 11967.53
+                                    },
+                                    {
+                                        "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES-RAHUL YADAV-N082170009030583",
+                                        "date": "23/03/17",
+                                        "amount": 1122,
+                                        "balanceAmount": 16128.03
+                                    },
+                                    {
+                                        "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES-RAHUL YADAV-N083170009304348",
+                                        "date": "24/03/17",
+                                        "amount": 719,
+                                        "balanceAmount": 16847.03
+                                    },
+                                    {
+                                        "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES-RAHUL YADAV-N086170009666108",
+                                        "date": "27/03/17",
+                                        "amount": 3327,
+                                        "balanceAmount": 7512.03
+                                    },
+                                    {
+                                        "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES-RAHUL YADAV-N087170010038439",
+                                        "date": "28/03/17",
+                                        "amount": 5009,
+                                        "balanceAmount": 12521.03
+                                    },
+                                    {
+                                        "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES-RAHUL YADAV-N088170010250782",
+                                        "date": "29/03/17",
+                                        "amount": 962,
+                                        "balanceAmount": 13483.03
+                                    },
+                                    {
+                                        "particular": "NEFT CR-YESB0000001-ANI TECHNOLOGIES-RAHUL YADAV-N089170010476856",
+                                        "date": "30/03/17",
+                                        "amount": 1601,
+                                        "balanceAmount": 14082.53
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "summary": "sohna",
+                        "count": 1,
+                        "amount": 23000,
+                        "monthlyTransactions": {
+                            "17/04": {
+                                "month": "17/04",
+                                "amount": 23000,
+                                "count": 1,
+                                "transactions": [
+                                    {
+                                        "particular": "CASH DEP SOHNA",
+                                        "date": "28/04/17",
+                                        "amount": 23000,
+                                        "balanceAmount": 25934.46
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "summary": "919818921636",
+                        "count": 4,
+                        "amount": 20000,
+                        "monthlyTransactions": {
+                            "17/01": {
+                                "month": "17/01",
+                                "amount": 20000,
+                                "count": 4,
+                                "transactions": [
+                                    {
+                                        "particular": "IMPS-P2A-700916126141-919818921636-170610419",
+                                        "date": "09/01/17",
+                                        "amount": 5000,
+                                        "balanceAmount": 8213.07
+                                    },
+                                    {
+                                        "particular": "IMPS-P2A-700916127733-919818921636-170611002",
+                                        "date": "09/01/17",
+                                        "amount": 5000,
+                                        "balanceAmount": 13213.07
+                                    },
+                                    {
+                                        "particular": "IMPS-P2A-700916127801-919818921636-170611051",
+                                        "date": "09/01/17",
+                                        "amount": 5000,
+                                        "balanceAmount": 18213.07
+                                    },
+                                    {
+                                        "particular": "IMPS-P2A-700916127867-919818921636-170611054",
+                                        "date": "09/01/17",
+                                        "amount": 5000,
+                                        "balanceAmount": 23213.07
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "summary": "918059358308",
+                        "count": 2,
+                        "amount": 6500,
+                        "monthlyTransactions": {
+                            "17/01": {
+                                "month": "17/01",
+                                "amount": 6500,
+                                "count": 2,
+                                "transactions": [
+                                    {
+                                        "particular": "IMPS-P2A-701116840113-918059358308-P2BOTP_CE04B362E1FAB303",
+                                        "date": "11/01/17",
+                                        "amount": 5000,
+                                        "balanceAmount": 18354.19
+                                    },
+                                    {
+                                        "particular": "IMPS-P2A-701510625973-918059358308-P2BOTP_8D573CD2C375E3AE",
+                                        "date": "15/01/17",
+                                        "amount": 1500,
+                                        "balanceAmount": 21406.44
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "summary": "irctc_cris",
+                        "count": 7,
+                        "amount": 4351.5,
+                        "monthlyTransactions": {
+                            "17/02": {
+                                "month": "17/02",
+                                "amount": 665,
+                                "count": 1,
+                                "transactions": [
+                                    {
+                                        "particular": "IRCTC_CRIS REF-19/02/17-100000749518828",
+                                        "date": "20/02/17",
+                                        "amount": 665,
+                                        "balanceAmount": 9408.16
+                                    }
+                                ]
+                            },
+                            "17/03": {
+                                "month": "17/03",
+                                "amount": 530,
+                                "count": 1,
+                                "transactions": [
+                                    {
+                                        "particular": "IRCTC_CRIS REF-05/03/17-100000764874585",
+                                        "date": "08/03/17",
+                                        "amount": 530,
+                                        "balanceAmount": 28211.09
+                                    }
+                                ]
+                            },
+                            "17/04": {
+                                "month": "17/04",
+                                "amount": 1091.5,
+                                "count": 2,
+                                "transactions": [
+                                    {
+                                        "particular": "IRCTC_CRIS REF-17/04/17-100000809967866",
+                                        "date": "18/04/17",
+                                        "amount": 11.5,
+                                        "balanceAmount": 6493.54
+                                    },
+                                    {
+                                        "particular": "IRCTC_CRIS REF-17/04/17-100000809967866",
+                                        "date": "18/04/17",
+                                        "amount": 1080,
+                                        "balanceAmount": 7573.54
+                                    }
+                                ]
+                            },
+                            "17/05": {
+                                "month": "17/05",
+                                "amount": 2065,
+                                "count": 3,
+                                "transactions": [
+                                    {
+                                        "particular": "IRCTC_CRIS REF-17/05/17-100000843023118",
+                                        "date": "18/05/17",
+                                        "amount": 745,
+                                        "balanceAmount": 8888.98
+                                    },
+                                    {
+                                        "particular": "IRCTC_CRIS REF-22/05/17-100000848921380",
+                                        "date": "24/05/17",
+                                        "amount": 590,
+                                        "balanceAmount": 3230.98
+                                    },
+                                    {
+                                        "particular": "IRCTC_CRIS REF-23/05/17-100000849785885",
+                                        "date": "26/05/17",
+                                        "amount": 730,
+                                        "balanceAmount": 7499.98
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "summary": "918901059606",
+                        "count": 1,
+                        "amount": 3000,
+                        "monthlyTransactions": {
+                            "17/01": {
+                                "month": "17/01",
+                                "amount": 3000,
+                                "count": 1,
+                                "transactions": [
+                                    {
+                                        "particular": "IMPS-P2A-701617915637-918901059606-174295482",
+                                        "date": "16/01/17",
+                                        "amount": 3000,
+                                        "balanceAmount": 13854.68
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "summary": "uber india systems",
+                        "count": 3,
+                        "amount": 2844.4500000000003,
+                        "monthlyTransactions": {
+                            "17/04": {
+                                "month": "17/04",
+                                "amount": 2751.84,
+                                "count": 2,
+                                "transactions": [
+                                    {
+                                        "particular": "NEFT CR-DEUT0784BBY-UBER INDIA SYSTEMS PLTD-RAHUL YADAV-170405047GN02782",
+                                        "date": "05/04/17",
+                                        "amount": 642.27,
+                                        "balanceAmount": 12698.8
+                                    },
+                                    {
+                                        "particular": "NEFT CR-DEUT0784BBY-UBER INDIA SYSTEMS PLTD-RAHUL YADAV-170412051GN07679",
+                                        "date": "12/04/17",
+                                        "amount": 2109.57,
+                                        "balanceAmount": 9607.54
+                                    }
+                                ]
+                            },
+                            "17/06": {
+                                "month": "17/06",
+                                "amount": 92.61,
+                                "count": 1,
+                                "transactions": [
+                                    {
+                                        "particular": "NEFT CR-DEUT0784BBY-UBER INDIA SYSTEMS PLTD-RAHUL YADAV-170621041GN01848",
+                                        "date": "21/06/17",
+                                        "amount": 92.61,
+                                        "balanceAmount": 3393.84
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "summary": "ani technologies pri",
+                        "count": 1,
+                        "amount": 2378,
+                        "monthlyTransactions": {
+                            "17/06": {
+                                "month": "17/06",
+                                "amount": 2378,
+                                "count": 1,
+                                "transactions": [
+                                    {
+                                        "particular": "IMPS-717514788772-ANI TECHNOLOGIES PRI-HDFC-XXXXXXXXXXX0554-OLA155367947-2017-06-24-PAYMENT",
+                                        "date": "24/06/17",
+                                        "amount": 2378,
+                                        "balanceAmount": 3458.2
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "summary": "manoj",
+                        "count": 2,
+                        "amount": 2201,
+                        "monthlyTransactions": {
+                            "17/02": {
+                                "month": "17/02",
+                                "amount": 1001,
+                                "count": 1,
+                                "transactions": [
+                                    {
+                                        "particular": "IMPS-703310984800-MANOJ-HDFC-XXXXXXXX9798-182861739",
+                                        "date": "02/02/17",
+                                        "amount": 1001,
+                                        "balanceAmount": 9409.66
+                                    }
+                                ]
+                            },
+                            "17/04": {
+                                "month": "17/04",
+                                "amount": 1200,
+                                "count": 1,
+                                "transactions": [
+                                    {
+                                        "particular": "IMPS-709910104818-MANOJ-HDFC-XXXXXXXX9798-222416045",
+                                        "date": "09/04/17",
+                                        "amount": 1200,
+                                        "balanceAmount": 2466.19
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "summary": "eko india financial",
+                        "count": 1,
+                        "amount": 1148,
+                        "monthlyTransactions": {
+                            "17/03": {
+                                "month": "17/03",
+                                "amount": 1148,
+                                "count": 1,
+                                "transactions": [
+                                    {
+                                        "particular": "IMPS-706610238568-EKO INDIA FINANCIAL-HDFC-XXXXXXXXXXX6981-9818921636",
+                                        "date": "07/03/17",
+                                        "amount": 1148,
+                                        "balanceAmount": 6132.9
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "summary": "mr yudhveer",
+                        "count": 1,
+                        "amount": 850,
+                        "monthlyTransactions": {
+                            "17/02": {
+                                "month": "17/02",
+                                "amount": 850,
+                                "count": 1,
+                                "transactions": [
+                                    {
+                                        "particular": "NEFT CR-SBBJ0010593-MR YUDHVEER S O SHPARTAP SINGH-RAHUL YADAV-SBBJ517055027488",
+                                        "date": "24/02/17",
+                                        "amount": 850,
+                                        "balanceAmount": 1452.9
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "summary": "interest capitalised",
+                        "count": 1,
+                        "amount": 102,
+                        "monthlyTransactions": {
+                            "17/04": {
+                                "month": "17/04",
+                                "amount": 102,
+                                "count": 1,
+                                "transactions": [
+                                    {
+                                        "particular": "CREDIT INTEREST CAPITALISED",
+                                        "date": "01/04/17",
+                                        "amount": 102,
+                                        "balanceAmount": 4622.53
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "summary": "436303******1688 bp",
+                        "count": 1,
+                        "amount": 3.75,
+                        "monthlyTransactions": {
+                            "17/01": {
+                                "month": "17/01",
+                                "amount": 3.75,
+                                "count": 1,
+                                "transactions": [
+                                    {
+                                        "particular": "POS REF 436303******1688-01/21 BP 38",
+                                        "date": "27/01/17",
+                                        "amount": 3.75,
+                                        "balanceAmount": 587.92
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "summary": "paytm",
+                        "count": 1,
+                        "amount": 1.19,
+                        "monthlyTransactions": {
+                            "17/03": {
+                                "month": "17/03",
+                                "amount": 1.19,
+                                "count": 1,
+                                "transactions": [
+                                    {
+                                        "particular": "IMPS-707415751621-PAYTM-HDFC-XXXXXXXX0190-1489571141304_GOLDENGATE_2859903",
+                                        "date": "15/03/17",
+                                        "amount": 1.19,
+                                        "balanceAmount": 9661.28
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "summary": "remname",
+                        "count": 1,
+                        "amount": 1,
+                        "monthlyTransactions": {
+                            "17/01": {
+                                "month": "17/01",
+                                "amount": 1,
+                                "count": 1,
+                                "transactions": [
+                                    {
+                                        "particular": "IMPS-702020819020-REMNAME-HDFC-XXXXXXXX2760-20011764810668",
+                                        "date": "20/01/17",
+                                        "amount": 1,
+                                        "balanceAmount": 6938.05
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ],
+                "highestAmount": 209574
+            },
+            "autoDebits": {
+                "autoDebitsByName": [
+                    {
+                        "name": "CC XXXXXX AUTOPAY SI TAD",
+                        "numberOfSuccessfulPayments": 0,
+                        "totalAmountPaid": 0,
+                        "numberOfDefaults": 1,
+                        "value": 14587.14,
+                        "color": "rgba(21,94,190,1)"
+                    },
+                    {
+                        "name": "ACH D  AUFINANCIERSINDIALTD LVPTU ",
+                        "numberOfSuccessfulPayments": 5,
+                        "totalAmountPaid": 72000,
+                        "numberOfDefaults": 1,
+                        "value": 14400,
+                        "color": "rgba(21,94,190,0.75)"
+                    },
+                    {
+                        "name": "CC XXXXXX AUTOPAY SI TAD",
+                        "numberOfSuccessfulPayments": 0,
+                        "totalAmountPaid": 0,
+                        "numberOfDefaults": 1,
+                        "value": 8557.14,
+                        "color": "rgba(21,94,190,0.67)"
+                    },
+                    {
+                        "name": "BAJAJFINEMI BF  ",
+                        "numberOfSuccessfulPayments": 4,
+                        "totalAmountPaid": 18000,
+                        "numberOfDefaults": 1,
+                        "value": 4500,
+                        "color": "rgba(21,94,190,0.59)"
+                    },
+                    {
+                        "name": "BAJAJ FINEMI BF  ",
+                        "numberOfSuccessfulPayments": 3,
+                        "totalAmountPaid": 5502,
+                        "numberOfDefaults": 0,
+                        "value": 1834,
+                        "color": "rgba(21,94,190,0.51)"
+                    }
+                ],
+                "autoDebitsByMonth": [
+                    {
+                        "14400": 14400,
+                        "month": "17/01"
+                    },
+                    {
+                        "14400": 14400,
+                        "14587.14": 14587.14,
+                        "8557.14": 8557.14,
+                        "month": "17/02"
+                    },
+                    {
+                        "4500": 4500,
+                        "14400": 14400,
+                        "month": "17/03"
+                    },
+                    {
+                        "1834": 1834,
+                        "4500": 4500,
+                        "14400": 14400,
+                        "month": "17/04"
+                    },
+                    {
+                        "1834": 1834,
+                        "4500": 4500,
+                        "14400": 14400,
+                        "month": "17/05"
+                    },
+                    {
+                        "1834": 1834,
+                        "4500": 4500,
+                        "14400": 14400,
+                        "month": "17/06"
+                    }
+                ],
+                "allTransactions": [
+                    {
+                        "date": "23/01/17",
+                        "autoDebitAmount": 14400,
+                        "balanceAmount": 305.17,
+                        "particular": "ACH D- AUFINANCIERSINDIALTD-LVPTU04016-1",
+                        "type": "DEBIT",
+                        "category": [
+                            "Payment",
+                            "Loan"
+                        ]
+                    },
+                    {
+                        "date": "08/02/17",
+                        "autoDebitAmount": 14587.14,
+                        "balanceAmount": -7455.82,
+                        "particular": "CC 000489377XXXXXX2616 AUTOPAY SI-TAD",
+                        "type": "DEFAULT",
+                        "category": [
+                            "Payment",
+                            "Credit Card"
+                        ]
+                    },
+                    {
+                        "date": "08/02/17",
+                        "autoDebitAmount": 8557.14,
+                        "balanceAmount": -3425.82,
+                        "particular": "CC 000489377XXXXXX2616 AUTOPAY SI-TAD",
+                        "type": "DEFAULT",
+                        "category": [
+                            "Payment",
+                            "Credit Card"
+                        ]
+                    },
+                    {
+                        "date": "23/02/17",
+                        "autoDebitAmount": 14400,
+                        "balanceAmount": 602.9,
+                        "particular": "ACH D- AUFINANCIERSINDIALTD-LVPTU04016-1",
+                        "type": "DEBIT",
+                        "category": [
+                            "Payment",
+                            "Loan"
+                        ]
+                    },
+                    {
+                        "date": "06/03/17",
+                        "autoDebitAmount": 4500,
+                        "balanceAmount": -610.1,
+                        "particular": "BAJAJFINEMI-BF-1189499-55990",
+                        "type": "DEFAULT",
+                        "category": [
+                            "Payment",
+                            "Loan"
+                        ]
+                    },
+                    {
+                        "date": "07/03/17",
+                        "autoDebitAmount": 4500,
+                        "balanceAmount": 1784.9,
+                        "particular": "BAJAJFINEMI-BF-1189499-7230",
+                        "type": "DEBIT",
+                        "category": [
+                            "Payment",
+                            "Loan"
+                        ]
+                    },
+                    {
+                        "date": "23/03/17",
+                        "autoDebitAmount": 14400,
+                        "balanceAmount": -393.97,
+                        "particular": "ACH D- AUFINANCIERSINDIALTD-LVPTU04016-1",
+                        "type": "DEFAULT",
+                        "category": [
+                            "Payment",
+                            "Loan"
+                        ]
+                    },
+                    {
+                        "date": "03/04/17",
+                        "autoDebitAmount": 1834,
+                        "balanceAmount": 4091.53,
+                        "particular": "BAJAJ FINEMI-BF-1189499-51163",
+                        "type": "DEBIT",
+                        "category": [
+                            "Payment",
+                            "Loan"
+                        ]
+                    },
+                    {
+                        "date": "05/04/17",
+                        "autoDebitAmount": 4500,
+                        "balanceAmount": 8198.8,
+                        "particular": "BAJAJ FINEMI-BF-1189499-43484",
+                        "type": "DEBIT",
+                        "category": [
+                            "Payment",
+                            "Loan"
+                        ]
+                    },
+                    {
+                        "date": "24/04/17",
+                        "autoDebitAmount": 14400,
+                        "balanceAmount": 2730.46,
+                        "particular": "ACH D- AUFINANCIERSINDIALTD-LVPTU04016-1",
+                        "type": "DEBIT",
+                        "category": [
+                            "Payment",
+                            "Loan"
+                        ]
+                    },
+                    {
+                        "date": "02/05/17",
+                        "autoDebitAmount": 1834,
+                        "balanceAmount": 4760.96,
+                        "particular": "BAJAJ FINEMI-BF-1189499-49939",
+                        "type": "DEBIT",
+                        "category": [
+                            "Payment",
+                            "Loan"
+                        ]
+                    },
+                    {
+                        "date": "05/05/17",
+                        "autoDebitAmount": 4500,
+                        "balanceAmount": 5973.46,
+                        "particular": "BAJAJ FINEMI-BF-1189499-35828",
+                        "type": "DEBIT",
+                        "category": [
+                            "Payment",
+                            "Loan"
+                        ]
+                    },
+                    {
+                        "date": "23/05/17",
+                        "autoDebitAmount": 14400,
+                        "balanceAmount": 1813.98,
+                        "particular": "ACH D- AUFINANCIERS-LVPTU04016-170458917",
+                        "type": "DEBIT",
+                        "category": [
+                            "Payment",
+                            "Loan"
+                        ]
+                    },
+                    {
+                        "date": "02/06/17",
+                        "autoDebitAmount": 1834,
+                        "balanceAmount": 1783.22,
+                        "particular": "BAJAJ FINEMI-BF-1189499-216580",
+                        "type": "DEBIT",
+                        "category": [
+                            "Payment",
+                            "Loan"
+                        ]
+                    },
+                    {
+                        "date": "05/06/17",
+                        "autoDebitAmount": 4500,
+                        "balanceAmount": 755.22,
+                        "particular": "BAJAJ FINEMI-BF-1189499-80864",
+                        "type": "DEBIT",
+                        "category": [
+                            "Payment",
+                            "Loan"
+                        ]
+                    },
+                    {
+                        "date": "23/06/17",
+                        "autoDebitAmount": 14400,
+                        "balanceAmount": 1080.2,
+                        "particular": "ACH D- AUFINANCIERS-9001020101524623",
+                        "type": "DEBIT",
+                        "category": [
+                            "Payment",
+                            "Loan"
+                        ]
+                    }
+                ]
+            },
+            "defaults": {
+                "summary": {
+                    "amount": 42044.28,
+                    "count": 4
+                },
+                "allDefaults": [
+                    {
+                        "balanceAmount": -7455.82,
+                        "date": "08/02/17",
+                        "defaultAmount": 14587.14,
+                        "particular": "CC 000489377XXXXXX2616 AUTOPAY SI-TAD",
+                        "category": [
+                            "Payment",
+                            "Credit Card"
+                        ]
+                    },
+                    {
+                        "balanceAmount": -3425.82,
+                        "date": "08/02/17",
+                        "defaultAmount": 8557.14,
+                        "particular": "CC 000489377XXXXXX2616 AUTOPAY SI-TAD",
+                        "category": [
+                            "Payment",
+                            "Credit Card"
+                        ]
+                    },
+                    {
+                        "balanceAmount": -610.1,
+                        "date": "06/03/17",
+                        "defaultAmount": 4500,
+                        "particular": "BAJAJFINEMI-BF-1189499-55990",
+                        "category": [
+                            "Payment",
+                            "Loan"
+                        ]
+                    },
+                    {
+                        "balanceAmount": -393.97,
+                        "date": "23/03/17",
+                        "defaultAmount": 14400,
+                        "particular": "ACH D- AUFINANCIERSINDIALTD-LVPTU04016-1",
+                        "category": [
+                            "Payment",
+                            "Loan"
+                        ]
+                    }
+                ]
+            },
+            "monthlyAverageBalance": [
+                {
+                    "average": 10553,
+                    "endDate": 31,
+                    "monthKey": "17/01",
+                    "startDate": 2
+                },
+                {
+                    "average": 10463,
+                    "change": {
+                        "amount": -90,
+                        "percent": "-0.85"
+                    },
+                    "endDate": 28,
+                    "monthKey": "17/02",
+                    "startDate": 1
+                },
+                {
+                    "average": 9793,
+                    "change": {
+                        "amount": -670,
+                        "percent": "-6.40"
+                    },
+                    "endDate": 31,
+                    "monthKey": "17/03",
+                    "startDate": 1
+                },
+                {
+                    "average": 8341,
+                    "change": {
+                        "amount": -1452,
+                        "percent": "-14.83"
+                    },
+                    "endDate": 30,
+                    "monthKey": "17/04",
+                    "startDate": 1
+                },
+                {
+                    "average": 5709,
+                    "change": {
+                        "amount": -2632,
+                        "percent": "-31.55"
+                    },
+                    "endDate": 31,
+                    "monthKey": "17/05",
+                    "startDate": 1
+                },
+                {
+                    "average": 3994,
+                    "change": {
+                        "amount": -1715,
+                        "percent": "-30.04"
+                    },
+                    "endDate": 29,
+                    "monthKey": "17/06",
+                    "startDate": 1
+                }
+            ],
+            "monthlyGrossIncome": [
+                {
+                    "month": "17/01",
+                    "credit": 125455,
+                    "debit": 124102,
+                    "autoDebit": 14400
+                },
+                {
+                    "month": "17/02",
+                    "credit": 155856,
+                    "debit": 169728,
+                    "autoDebit": 37544
+                },
+                {
+                    "month": "17/03",
+                    "credit": 115065,
+                    "debit": 110853,
+                    "autoDebit": 23400
+                },
+                {
+                    "month": "17/04",
+                    "credit": 82869,
+                    "debit": 83295,
+                    "autoDebit": 20734
+                },
+                {
+                    "month": "17/05",
+                    "credit": 65025,
+                    "debit": 65692,
+                    "autoDebit": 20734
+                },
+                {
+                    "month": "17/06",
+                    "credit": 48852,
+                    "debit": 44932,
+                    "autoDebit": 20734
+                }
+            ],
+            "checkingSummary": {
+                "beginningBalance": 12828.11,
+                "depositsAndAdditions": {
+                    "instances": 221,
+                    "amount": 551077.37
+                },
+                "checksPaid": {
+                    "instances": 3,
+                    "amount": 17130
+                },
+                "atmWithdrawals": {
+                    "instances": 14,
+                    "amount": 68000
+                },
+                "bankFees": {
+                    "instances": 26,
+                    "amount": 1391.6
+                },
+                "electronicWithdrawals": {
+                    "instances": 154,
+                    "amount": 455072.68
+                },
+                "otherWithdrawals": {
+                    "instances": 6,
+                    "amount": 14964
+                },
+                "endingBalance": {
+                    "instances": 424,
+                    "amount": 7347.2
+                },
+                "endingBalanceFromAllTransactions": 7347.2
+            },
+            "mode": "full"
+        }
+    },
+}
+```
+
+### HTTP Request
+
+`POST <URL>/api/v3/parser/partyHunter/${borrowerId}`
 
 ### Headers
 Name | Value
@@ -35349,22 +50175,17 @@ Content-Type | application/json
 access-id | your_access_id
 access-key | your_access_key
 
+
+### Body
+
+Parameter | Required | Description
+--------- | ------- | -----------
+borrowerId | true | borrower ID
+partyHunter | true | list of objects of `{"accountNumber", "transactionId", "partyName"}`
+
+
 ### Response
-```json
-{
-    "success": true,
-    "message": "Party hunter updated successfully",
-    "componentResult": {
-        "_id": "5e5a3f5b60043205dcf2acb1",
-        "version": 3,
-        "data": "{\"XXXXXXXX2069\":{\"meta\":{\"speed\":{\"external\":{},\"internal\":{\"analysis\":0.753459}}},\"allTransactions\":[{\"balanceAmount\":-5899,\"category\":[\"Transfer\",\"Debit\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Debit\"],\"id\":190200},\"date\":\"30/05/19\",\"party\":null,\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"UPI/915009256153/Ledgers Payment/indiafilings@ax/Axis Bank Ltd./\",\"reference\":\"\",\"type\":\"DEBIT\",\"withdrawalAmount\":5899,\"transactionId\":\"ck73edmhp00k0nqv24q2w5ll5\"},{\"balanceAmount\":-6809,\"category\":[\"Transfer\",\"Debit\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Debit\"],\"id\":190200},\"date\":\"31/05/19\",\"party\":\"paydth5848@payt paytm\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"UPI/915132340980/Oid8380292557ON/paydth5848@payt/Paytm Payments/\",\"reference\":\"\",\"type\":\"DEBIT\",\"withdrawalAmount\":910,\"transactionId\":\"ck73edmhp00k1nqv26bcqd8rq\"},{\"balanceAmount\":-5909,\"category\":[\"Transfer\",\"Earning\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Earning\"],\"id\":190400},\"date\":\"31/05/19\",\"party\":null,\"depositAmount\":900,\"isAutoDebit\":false,\"particular\":\"INF/INFT/20190531201621/NA/Self\",\"reference\":\"NET BANKING\",\"type\":\"CREDIT\",\"withdrawalAmount\":0,\"transactionId\":\"ck73edmhp00k2nqv2fg3f0qfa\"},{\"balanceAmount\":-9314.22,\"category\":[\"Payment\"],\"pandora_category\":{\"hierarchy\":[\"Payment\"],\"id\":160000},\"date\":\"31/05/19\",\"party\":\"abc\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"BIL/BPAY/001719844965/BBPS/Indraprastha Gas/BBPINPGAS_0009673731\",\"reference\":\"\",\"type\":\"DEBIT\",\"withdrawalAmount\":3405.22,\"transactionId\":\"ck73edmhp00k3nqv29ox3df11\"},{\"balanceAmount\":-9349.22,\"category\":[\"Payment\"],\"pandora_category\":{\"hierarchy\":[\"Payment\"],\"id\":160000},\"date\":\"31/05/19\",\"party\":\"imb_gtp icmob0000001513\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"BIL/001719844984/IMB_GTP/ICMOB0000001513\",\"reference\":\"NET BANKING\",\"type\":\"DEBIT\",\"withdrawalAmount\":35,\"transactionId\":\"ck73edmhp00k4nqv2glzf7nwg\"}],\"summary\":{\"credit\":{\"amount\":900,\"count\":1},\"debit\":{\"amount\":10249.22,\"count\":4},\"defaults\":{\"amount\":0,\"count\":0}},\"topCredits\":[{\"amount\":900,\"date\":\"31 May 19\",\"particular\":\"INF/INFT/20190531201621/NA/Self\",\"balanceAmount\":-5909,\"category\":[\"Transfer\",\"Earning\"]}],\"topDebits\":[{\"amount\":5899,\"date\":\"30 May 19\",\"particular\":\"UPI/915009256153/Ledgers Payment/indiafilings@ax/Axis Bank Ltd./\",\"balanceAmount\":-5899,\"category\":[\"Transfer\",\"Debit\"]},{\"amount\":3405,\"date\":\"31 May 19\",\"particular\":\"BIL/BPAY/001719844965/BBPS/Indraprastha Gas/BBPINPGAS_0009673731\",\"balanceAmount\":-9314,\"category\":[\"Payment\"]},{\"amount\":910,\"date\":\"31 May 19\",\"particular\":\"UPI/915132340980/Oid8380292557ON/paydth5848@payt/Paytm Payments/\",\"balanceAmount\":-6809,\"category\":[\"Transfer\",\"Debit\"]},{\"amount\":35,\"date\":\"31 May 19\",\"particular\":\"BIL/001719844984/IMB_GTP/ICMOB0000001513\",\"balanceAmount\":-9349,\"category\":[\"Payment\"]}],\"monthlyRecurringDebits\":{\"months\":[\"19/05\"],\"data\":[{\"summary\":\"abc\",\"count\":1,\"amount\":3405.22,\"monthlyTransactions\":{\"19/05\":{\"month\":\"19/05\",\"amount\":3405.22,\"count\":1,\"transactions\":[{\"particular\":\"BIL/BPAY/001719844965/BBPS/Indraprastha Gas/BBPINPGAS_0009673731\",\"date\":\"31/05/19\",\"amount\":3405.22,\"balanceAmount\":-9314.22}]}}},{\"summary\":\"paydth5848@payt paytm\",\"count\":1,\"amount\":910,\"monthlyTransactions\":{\"19/05\":{\"month\":\"19/05\",\"amount\":910,\"count\":1,\"transactions\":[{\"particular\":\"UPI/915132340980/Oid8380292557ON/paydth5848@payt/Paytm Payments/\",\"date\":\"31/05/19\",\"amount\":910,\"balanceAmount\":-6809}]}}},{\"summary\":\"imb_gtp icmob0000001513\",\"count\":1,\"amount\":35,\"monthlyTransactions\":{\"19/05\":{\"month\":\"19/05\",\"amount\":35,\"count\":1,\"transactions\":[{\"particular\":\"BIL/001719844984/IMB_GTP/ICMOB0000001513\",\"date\":\"31/05/19\",\"amount\":35,\"balanceAmount\":-9349.22}]}}}],\"highestAmount\":3405.22},\"monthlyRecurringCredits\":{\"months\":[],\"data\":[],\"highestAmount\":0},\"monthlyAverageBalance\":[{\"average\":-7624,\"endDate\":31,\"monthKey\":\"19/05\",\"startDate\":30}],\"monthlyGrossIncome\":[{\"month\":\"19/05\",\"credit\":900,\"debit\":10249,\"autoDebit\":0}],\"checkingSummary\":{\"beginningBalance\":0,\"depositsAndAdditions\":{\"instances\":1,\"amount\":900},\"checksPaid\":{\"instances\":0,\"amount\":0},\"atmWithdrawals\":{\"instances\":0,\"amount\":0},\"bankFees\":{\"instances\":0,\"amount\":0},\"electronicWithdrawals\":{\"instances\":4,\"amount\":10249.22},\"otherWithdrawals\":{\"instances\":0,\"amount\":0},\"endingBalance\":{\"instances\":5,\"amount\":-9349.22},\"endingBalanceFromAllTransactions\":-9349.22},\"mode\":\"full\"},\"XXXXXXXX2528\":{\"meta\":{\"speed\":{\"external\":{},\"internal\":{\"analysis\":11.208791}}},\"allTransactions\":[{\"balanceAmount\":6547.02,\"category\":[\"Transfer\",\"Earning\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Earning\"],\"id\":190400},\"date\":\"01/03/19\",\"party\":null,\"depositAmount\":3000,\"isAutoDebit\":false,\"particular\":\"MMT/IMPS/906018011082/IMPS Txn/GUPTA COM /FINO Payment Ba\",\"reference\":\"MOBILE BANKING\",\"type\":\"CREDIT\",\"withdrawalAmount\":0,\"transactionId\":\"ck73edmhq00k7nqv28wpob01h\"},{\"balanceAmount\":4547.02,\"category\":[\"Uncategorized\"],\"pandora_category\":{\"hierarchy\":[\"Uncategorized\"],\"id\":0},\"date\":\"02/03/19\",\"party\":\"water\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"IIN/I-Debit/Water Bill /201903020935/906101006602/\",\"reference\":\"NET BANKING\",\"type\":\"DEBIT\",\"withdrawalAmount\":2000,\"transactionId\":\"ck73edmhq00k8nqv2f5ei4jqt\"},{\"balanceAmount\":3266.53,\"category\":[\"Uncategorized\"],\"pandora_category\":{\"hierarchy\":[\"Uncategorized\"],\"id\":0},\"date\":\"04/03/19\",\"party\":\"train\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"IIN/I-Debit/Book Train /201903041529/906313021848/\",\"reference\":\"NET BANKING\",\"type\":\"DEBIT\",\"withdrawalAmount\":1280.49,\"transactionId\":\"ck73edmhq00k9nqv2176nhl28\"},{\"balanceAmount\":4547.02,\"category\":[\"Uncategorized\"],\"pandora_category\":{\"hierarchy\":[\"Uncategorized\"],\"id\":0},\"date\":\"04/03/19\",\"party\":\"trai\",\"depositAmount\":1280.49,\"isAutoDebit\":false,\"particular\":\"IIN/RFND/I-Debit/Book Trai/20190304153942\",\"reference\":\"NET BANKING\",\"type\":\"CREDIT\",\"withdrawalAmount\":0,\"transactionId\":\"ck73edmhq00kanqv244vc3v6j\"},{\"balanceAmount\":3467.02,\"category\":[\"Travel\",\"Train\"],\"pandora_category\":{\"hierarchy\":[\"Travel\",\"Train\"],\"id\":200200},\"date\":\"04/03/19\",\"party\":\"irctc\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"IIN/IRCTC      /201903041612/906310657879/\",\"reference\":\"NET BANKING\",\"type\":\"DEBIT\",\"withdrawalAmount\":1080,\"transactionId\":\"ck73edmhq00kbnqv23ooe71oq\"},{\"balanceAmount\":8467.02,\"category\":[\"Transfer\",\"Earning\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Earning\"],\"id\":190400},\"date\":\"04/03/19\",\"party\":\"vinod yada\",\"depositAmount\":5000,\"isAutoDebit\":false,\"particular\":\"MMT/IMPS/906317043996/IMPS Txn/Vinod Yada/FINO Payment Ba\",\"reference\":\"MOBILE BANKING\",\"type\":\"CREDIT\",\"withdrawalAmount\":0,\"transactionId\":\"ck73edmhq00kcnqv26uei2rvp\"},{\"balanceAmount\":13467.02,\"category\":[\"Transfer\",\"Earning\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Earning\"],\"id\":190400},\"date\":\"04/03/19\",\"party\":\"vinod yada\",\"depositAmount\":5000,\"isAutoDebit\":false,\"particular\":\"MMT/IMPS/906317044039/IMPS Txn/Vinod Yada/FINO Payment Ba\",\"reference\":\"MOBILE BANKING\",\"type\":\"CREDIT\",\"withdrawalAmount\":0,\"transactionId\":\"ck73edmhq00kdnqv2hses3ab4\"},{\"balanceAmount\":18467.02,\"category\":[\"Transfer\",\"Earning\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Earning\"],\"id\":190400},\"date\":\"04/03/19\",\"party\":\"vinod yada\",\"depositAmount\":5000,\"isAutoDebit\":false,\"particular\":\"MMT/IMPS/906317044069/IMPS Txn/Vinod Yada/FINO Payment Ba\",\"reference\":\"MOBILE BANKING\",\"type\":\"CREDIT\",\"withdrawalAmount\":0,\"transactionId\":\"ck73edmhq00kenqv2f50h1pbf\"},{\"balanceAmount\":23467.02,\"category\":[\"Transfer\",\"Earning\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Earning\"],\"id\":190400},\"date\":\"04/03/19\",\"party\":\"vinod yada\",\"depositAmount\":5000,\"isAutoDebit\":false,\"particular\":\"MMT/IMPS/906317044086/IMPS Txn/Vinod Yada/FINO Payment Ba\",\"reference\":\"MOBILE BANKING\",\"type\":\"CREDIT\",\"withdrawalAmount\":0,\"transactionId\":\"ck73edmhq00kfnqv29uusenlu\"},{\"balanceAmount\":28467.02,\"category\":[\"Transfer\",\"Earning\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Earning\"],\"id\":190400},\"date\":\"04/03/19\",\"party\":\"vinod yada\",\"depositAmount\":5000,\"isAutoDebit\":false,\"particular\":\"MMT/IMPS/906317044109/IMPS Txn/Vinod Yada/FINO Payment Ba\",\"reference\":\"MOBILE BANKING\",\"type\":\"CREDIT\",\"withdrawalAmount\":0,\"transactionId\":\"ck73edmhq00kgnqv20bzj8o8r\"},{\"balanceAmount\":16467.02,\"category\":[\"Transfer\",\"Debit\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Debit\"],\"id\":190200},\"date\":\"04/03/19\",\"party\":\"uday\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"MMT/IMPS/906319926075/Uday/UBIN0559407\",\"reference\":\"MOBILE BANKING\",\"type\":\"DEBIT\",\"withdrawalAmount\":12000,\"transactionId\":\"ck73edmhq00khnqv21nl1blls\"},{\"balanceAmount\":467.02,\"category\":[\"Cash Advance\",\"ATM\"],\"pandora_category\":{\"hierarchy\":[\"Cash Advance\",\"ATM\"],\"id\":110300},\"date\":\"05/03/19\",\"party\":\"s1cpn511\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"ATM/S1CPN511/CASH WDL/05-03-19\",\"reference\":\"ICICI ATM\",\"type\":\"DEBIT\",\"withdrawalAmount\":16000,\"transactionId\":\"ck73edmhq00kinqv26s8k3sbi\"},{\"balanceAmount\":5467.02,\"category\":[\"Transfer\",\"Earning\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Earning\"],\"id\":190400},\"date\":\"05/03/19\",\"party\":\"state\",\"depositAmount\":5000,\"isAutoDebit\":false,\"particular\":\"UPI/906448278936/Payment from Ph/9695233333@ybl/State Bank Of I\",\"reference\":\"\",\"type\":\"CREDIT\",\"withdrawalAmount\":0,\"transactionId\":\"ck73edmhq00kjnqv2ee9g6vr6\"},{\"balanceAmount\":30467.02,\"category\":[\"Transfer\",\"Credit\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Credit\"],\"id\":190100},\"date\":\"05/03/19\",\"party\":\"er.vineet476@ok\",\"depositAmount\":25000,\"isAutoDebit\":false,\"particular\":\"UPI/906417526826/Friends/er.vineet476@ok/HDFC BANKLTD\",\"reference\":\"\",\"type\":\"CREDIT\",\"withdrawalAmount\":0,\"transactionId\":\"ck73edmhq00kknqv2h6qx23u0\"},{\"balanceAmount\":29917.02,\"category\":[\"Bank Fees\"],\"pandora_category\":{\"hierarchy\":[\"Bank Fees\"],\"id\":100000},\"date\":\"05/03/19\",\"party\":null,\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"MMT/IMPS/906419880528/Fee/KRISHI/HDFC0001112\",\"reference\":\"MOBILE BANKING\",\"type\":\"REVERSAL\",\"withdrawalAmount\":550,\"transactionId\":\"ck73edmhq00klnqv241bzh675\"},{\"balanceAmount\":30467.02,\"category\":[\"Transfer\",\"Credit\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Credit\"],\"id\":190100},\"date\":\"05/03/19\",\"party\":null,\"depositAmount\":550,\"isAutoDebit\":false,\"particular\":\"MMT/IMPS/906419880528/Fee/KRISHI/HDFC0001112\",\"reference\":\"MOBILE BANKING\",\"type\":\"REVERSAL\",\"withdrawalAmount\":0,\"transactionId\":\"ck73edmhq00kmnqv2fugn9y6h\"},{\"balanceAmount\":29917.02,\"category\":[\"Bank Fees\"],\"pandora_category\":{\"hierarchy\":[\"Bank Fees\"],\"id\":100000},\"date\":\"05/03/19\",\"party\":null,\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"MMT/IMPS/906419884889/FEE/KRISHI/HDFC0001112\",\"reference\":\"MOBILE BANKING\",\"type\":\"REVERSAL\",\"withdrawalAmount\":550,\"transactionId\":\"ck73edmhq00knnqv2fdri0vv7\"},{\"balanceAmount\":30467.02,\"category\":[\"Transfer\",\"Credit\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Credit\"],\"id\":190100},\"date\":\"05/03/19\",\"party\":null,\"depositAmount\":550,\"isAutoDebit\":false,\"particular\":\"MMT/IMPS/906419884889/FEE/KRISHI/HDFC0001112\",\"reference\":\"MOBILE BANKING\",\"type\":\"REVERSAL\",\"withdrawalAmount\":0,\"transactionId\":\"ck73edmhq00konqv2e3n0c44x\"},{\"balanceAmount\":20467.02,\"category\":[\"Cash Advance\",\"ATM\"],\"pandora_category\":{\"hierarchy\":[\"Cash Advance\",\"ATM\"],\"id\":110300},\"date\":\"05/03/19\",\"party\":\"cpcn7234\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"NFS/CPCN7234/CASH WDL/05-03-19\",\"reference\":\"OTHER ATMS\",\"type\":\"DEBIT\",\"withdrawalAmount\":10000,\"transactionId\":\"ck73edmhq00kpnqv22a3r6f2d\"},{\"balanceAmount\":15467.02,\"category\":[\"Cash Advance\",\"ATM\"],\"pandora_category\":{\"hierarchy\":[\"Cash Advance\",\"ATM\"],\"id\":110300},\"date\":\"05/03/19\",\"party\":\"cpcn7234\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"NFS/CPCN7234/CASH WDL/05-03-19\",\"reference\":\"OTHER ATMS\",\"type\":\"DEBIT\",\"withdrawalAmount\":5000,\"transactionId\":\"ck73edmhq00kqnqv2cfr30d5m\"},{\"balanceAmount\":14756.59,\"category\":[\"Food and Beverages\"],\"pandora_category\":{\"hierarchy\":[\"Food and Beverages\"],\"id\":130000},\"date\":\"05/03/19\",\"party\":\"zomato medi\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"IIN/I-Debit/Zomato Medi/201903052106/906413039760/\",\"reference\":\"NET BANKING\",\"type\":\"DEBIT\",\"withdrawalAmount\":710.43,\"transactionId\":\"ck73edmhq00krnqv2f2859r9k\"},{\"balanceAmount\":14358.59,\"category\":[\"Transfer\",\"Debit\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Debit\"],\"id\":190200},\"date\":\"05/03/19\",\"party\":\"paytm\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"UPI/906445816008/Oid7549334171@O/paybil3066@payt/Paytm Payments/\",\"reference\":\"\",\"type\":\"DEBIT\",\"withdrawalAmount\":398,\"transactionId\":\"ck73edmhq00ksnqv289qrcjgb\"},{\"balanceAmount\":13368.59,\"category\":[\"Uncategorized\"],\"pandora_category\":{\"hierarchy\":[\"Uncategorized\"],\"id\":0},\"date\":\"05/03/19\",\"party\":\"paytm\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"IIN/I-Debit/PayTM      /201903052234/906406044088/\",\"reference\":\"NET BANKING\",\"type\":\"DEBIT\",\"withdrawalAmount\":990,\"transactionId\":\"ck73edmhq00ktnqv2dq06gzs9\"},{\"balanceAmount\":13333.59,\"category\":[\"Payment\"],\"pandora_category\":{\"hierarchy\":[\"Payment\"],\"id\":160000},\"date\":\"06/03/19\",\"party\":\"icrib0000068114\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"BIL/001656741417/ICRIB0000068114/ICRIB0000068114\",\"reference\":\"NET BANKING\",\"type\":\"DEBIT\",\"withdrawalAmount\":35,\"transactionId\":\"ck73edmhq00kunqv2b1m05v2o\"},{\"balanceAmount\":1333.59,\"category\":[\"Transfer\",\"Debit\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Debit\"],\"id\":190200},\"date\":\"06/03/19\",\"party\":\"uday\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"MMT/IMPS/906507458254/Family/Uday/UBIN0559407\",\"reference\":\"MOBILE BANKING\",\"type\":\"DEBIT\",\"withdrawalAmount\":12000,\"transactionId\":\"ck73edmhq00kvnqv27d3j6f6o\"},{\"balanceAmount\":5933.59,\"category\":[\"Transfer\",\"Credit\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Credit\"],\"id\":190100},\"date\":\"07/03/19\",\"party\":\"1a491835\",\"depositAmount\":4600,\"isAutoDebit\":false,\"particular\":\"MMT/IMPS/906611575988/1A491835/EE\",\"reference\":\"MOBILE BANKING\",\"type\":\"CREDIT\",\"withdrawalAmount\":0,\"transactionId\":\"ck73edmhq00kwnqv22filfvdv\"},{\"balanceAmount\":933.59,\"category\":[\"Cash Advance\",\"ATM\"],\"pandora_category\":{\"hierarchy\":[\"Cash Advance\",\"ATM\"],\"id\":110300},\"date\":\"07/03/19\",\"party\":\"s1andh50\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"NFS/S1ANDH50/CASH WDL/07-03-19\",\"reference\":\"OTHER ATMS\",\"type\":\"DEBIT\",\"withdrawalAmount\":5000,\"transactionId\":\"ck73edmhq00kxnqv2h4km4er6\"},{\"balanceAmount\":5933.59,\"category\":[\"Transfer\",\"Credit\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Credit\"],\"id\":190100},\"date\":\"08/03/19\",\"party\":\"1a491835\",\"depositAmount\":5000,\"isAutoDebit\":false,\"particular\":\"MMT/IMPS/906711558609/1A491835/EE\",\"reference\":\"MOBILE BANKING\",\"type\":\"CREDIT\",\"withdrawalAmount\":0,\"transactionId\":\"ck73edmhq00kynqv2cht9dz25\"},{\"balanceAmount\":10933.59,\"category\":[\"Transfer\",\"Earning\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Earning\"],\"id\":190400},\"date\":\"08/03/19\",\"party\":\"paynearby\",\"depositAmount\":5000,\"isAutoDebit\":false,\"particular\":\"MMT/IMPS/906711756501/PayNearby /YES BANK LTD\",\"reference\":\"MOBILE BANKING\",\"type\":\"CREDIT\",\"withdrawalAmount\":0,\"transactionId\":\"ck73edmhq00kznqv268f9d1g9\"},{\"balanceAmount\":13933.59,\"category\":[\"Transfer\",\"Earning\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Earning\"],\"id\":190400},\"date\":\"08/03/19\",\"party\":\"paynearby\",\"depositAmount\":3000,\"isAutoDebit\":false,\"particular\":\"MMT/IMPS/906711749576/PayNearby /YES BANK LTD\",\"reference\":\"MOBILE BANKING\",\"type\":\"CREDIT\",\"withdrawalAmount\":0,\"transactionId\":\"ck73edmhq00l0nqv299bhanef\"},{\"balanceAmount\":15433.59,\"category\":[\"Transfer\",\"Earning\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Earning\"],\"id\":190400},\"date\":\"08/03/19\",\"party\":\"paynearby\",\"depositAmount\":1500,\"isAutoDebit\":false,\"particular\":\"MMT/IMPS/906711379520/PayNearby /YES BANK LTD\",\"reference\":\"MOBILE BANKING\",\"type\":\"CREDIT\",\"withdrawalAmount\":0,\"transactionId\":\"ck73edmhq00l1nqv21gws2jmu\"},{\"balanceAmount\":5433.59,\"category\":[\"Cash Advance\",\"ATM\"],\"pandora_category\":{\"hierarchy\":[\"Cash Advance\",\"ATM\"],\"id\":110300},\"date\":\"08/03/19\",\"party\":\"mn000569\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"NFS/MN000569/CASH WDL/08-03-19\",\"reference\":\"OTHER ATMS\",\"type\":\"REVERSAL\",\"withdrawalAmount\":10000,\"transactionId\":\"ck73edmhq00l2nqv29f2i2gc4\"},{\"balanceAmount\":15433.59,\"category\":[\"Cash Advance\",\"ATM\"],\"pandora_category\":{\"hierarchy\":[\"Cash Advance\",\"ATM\"],\"id\":110300},\"date\":\"08/03/19\",\"party\":\"mn000569\",\"depositAmount\":10000,\"isAutoDebit\":false,\"particular\":\"NFS/MN000569/CASH WDL RVSL/08-03-19\",\"reference\":\"OTHER ATMS\",\"type\":\"REVERSAL\",\"withdrawalAmount\":0,\"transactionId\":\"ck73edmhq00l3nqv2cupjdexz\"},{\"balanceAmount\":5433.59,\"category\":[\"Cash Advance\",\"ATM\"],\"pandora_category\":{\"hierarchy\":[\"Cash Advance\",\"ATM\"],\"id\":110300},\"date\":\"08/03/19\",\"party\":\"mn016892\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"NFS/MN016892/CASH WDL/08-03-19\",\"reference\":\"OTHER ATMS\",\"type\":\"DEBIT\",\"withdrawalAmount\":10000,\"transactionId\":\"ck73edmhq00l4nqv27fdphrti\"},{\"balanceAmount\":433.59,\"category\":[\"Cash Advance\",\"ATM\"],\"pandora_category\":{\"hierarchy\":[\"Cash Advance\",\"ATM\"],\"id\":110300},\"date\":\"08/03/19\",\"party\":\"mn016892\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"NFS/MN016892/CASH WDL/08-03-19\",\"reference\":\"OTHER ATMS\",\"type\":\"DEBIT\",\"withdrawalAmount\":5000,\"transactionId\":\"ck73edmhq00l5nqv2cgv5c5w0\"},{\"balanceAmount\":40433.59,\"category\":[\"Cash Advance\",\"Credit\"],\"pandora_category\":{\"hierarchy\":[\"Cash Advance\",\"Credit\"],\"id\":110100},\"date\":\"08/03/19\",\"party\":\"etah\",\"depositAmount\":40000,\"isAutoDebit\":false,\"particular\":\"BY CASH-ETAH\",\"reference\":\"\",\"type\":\"CREDIT\",\"withdrawalAmount\":0,\"transactionId\":\"ck73edmhq00l6nqv2geenagty\"},{\"balanceAmount\":20433.59,\"category\":[\"Cash Advance\",\"ATM\"],\"pandora_category\":{\"hierarchy\":[\"Cash Advance\",\"ATM\"],\"id\":110300},\"date\":\"08/03/19\",\"party\":\"s1cwk473\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"ATM/S1CWK473/CASH WDL/08-03-19\",\"reference\":\"ICICI ATM\",\"type\":\"DEBIT\",\"withdrawalAmount\":20000,\"transactionId\":\"ck73edmhq00l7nqv2bk1p51ve\"},{\"balanceAmount\":15433.59,\"category\":[\"Cash Advance\",\"ATM\"],\"pandora_category\":{\"hierarchy\":[\"Cash Advance\",\"ATM\"],\"id\":110300},\"date\":\"08/03/19\",\"party\":\"s1cwk473\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"ATM/S1CWK473/CASH WDL/08-03-19\",\"reference\":\"ICICI ATM\",\"type\":\"DEBIT\",\"withdrawalAmount\":5000,\"transactionId\":\"ck73edmhq00l8nqv24gx2e1uq\"},{\"balanceAmount\":25233.59,\"category\":[\"Transfer\",\"Credit\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Credit\"],\"id\":190100},\"date\":\"08/03/19\",\"party\":\"pushpendra\",\"depositAmount\":9800,\"isAutoDebit\":false,\"particular\":\"MMT/IMPS/906715714440/emPowerM/PUSHPENDRA/ALLAHABD BANK\",\"reference\":\"MOBILE BANKING\",\"type\":\"CREDIT\",\"withdrawalAmount\":0,\"transactionId\":\"ck73edmhq00l9nqv227lzb47r\"},{\"balanceAmount\":35233.59,\"category\":[\"Transfer\",\"Credit\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Credit\"],\"id\":190100},\"date\":\"08/03/19\",\"party\":\"lala ram\",\"depositAmount\":10000,\"isAutoDebit\":false,\"particular\":\"NEFT-SDC14867933-LALA RAM-/URGENT/-25722400000257-DCBL0000257\",\"reference\":\"\",\"type\":\"CREDIT\",\"withdrawalAmount\":0,\"transactionId\":\"ck73edmhq00lanqv26mmb6jhr\"},{\"balanceAmount\":28837.59,\"category\":[\"Uncategorized\"],\"pandora_category\":{\"hierarchy\":[\"Uncategorized\"],\"id\":0},\"date\":\"08/03/19\",\"party\":\"aurelia\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"VPS/AURELIA    /201903082007/906714760975/GHAZIABAD\",\"reference\":\"DEBIT CARD\",\"type\":\"DEBIT\",\"withdrawalAmount\":6396,\"transactionId\":\"ck73edmhq00lbnqv29jjagmnu\"},{\"balanceAmount\":8837.59,\"category\":[\"Cash Advance\",\"ATM\"],\"pandora_category\":{\"hierarchy\":[\"Cash Advance\",\"ATM\"],\"id\":110300},\"date\":\"11/03/19\",\"party\":\"s1cpn208\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"ATM/S1CPN208/CASH WDL/09-03-19\",\"reference\":\"ICICI ATM\",\"type\":\"DEBIT\",\"withdrawalAmount\":20000,\"transactionId\":\"ck73edmhq00lcnqv2hvcnc1jl\"},{\"balanceAmount\":8808.09,\"category\":[\"Bank Fees\"],\"pandora_category\":{\"hierarchy\":[\"Bank Fees\"],\"id\":100000},\"date\":\"11/03/19\",\"party\":\"atmdec\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"ATMDEC CHG/28-02-2019/4768+GST\",\"reference\":\"BANK CHARGES\",\"type\":\"DEBIT\",\"withdrawalAmount\":29.5,\"transactionId\":\"ck73edmhr00ldnqv2eplb9qql\"},{\"balanceAmount\":4808.09,\"category\":[\"Transfer\",\"Debit\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Debit\"],\"id\":190200},\"date\":\"11/03/19\",\"party\":\"jamuna\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"MMT/IMPS/906914759825/NA/JAMUNA/UTIB0001550\",\"reference\":\"MOBILE BANKING\",\"type\":\"DEBIT\",\"withdrawalAmount\":4000,\"transactionId\":\"ck73edmhr00lenqv2hk1r5yqb\"},{\"balanceAmount\":1808.09,\"category\":[\"Cash Advance\",\"ATM\"],\"pandora_category\":{\"hierarchy\":[\"Cash Advance\",\"ATM\"],\"id\":110300},\"date\":\"11/03/19\",\"party\":\"s1cpn511\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"ATM/S1CPN511/CASH WDL/11-03-19\",\"reference\":\"ICICI ATM\",\"type\":\"DEBIT\",\"withdrawalAmount\":3000,\"transactionId\":\"ck73edmhr00lfnqv2dibh7gqc\"},{\"balanceAmount\":1236.09,\"category\":[\"Transfer\",\"Debit\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Debit\"],\"id\":190200},\"date\":\"12/03/19\",\"party\":\"paytm\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"UPI/907133462629/Oid7612268367@O/paybil3066@payt/Paytm Payments/\",\"reference\":\"\",\"type\":\"DEBIT\",\"withdrawalAmount\":572,\"transactionId\":\"ck73edmhr00lgnqv2hser45sp\"},{\"balanceAmount\":1107.09,\"category\":[\"Food and Beverages\"],\"pandora_category\":{\"hierarchy\":[\"Food and Beverages\"],\"id\":130000},\"date\":\"12/03/19\",\"party\":\"swiggy\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"VIN/SWIGGY     /201903122141/907116174417/\",\"reference\":\"NET BANKING\",\"type\":\"DEBIT\",\"withdrawalAmount\":129,\"transactionId\":\"ck73edmhr00lhnqv2a61w8599\"},{\"balanceAmount\":6107.09,\"category\":[\"Transfer\",\"Earning\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Earning\"],\"id\":190400},\"date\":\"13/03/19\",\"party\":null,\"depositAmount\":5000,\"isAutoDebit\":false,\"particular\":\"MMT/IMPS/907212070390/IMPS Txn/VINOD     /FINO Payment Ba\",\"reference\":\"MOBILE BANKING\",\"type\":\"CREDIT\",\"withdrawalAmount\":0,\"transactionId\":\"ck73edmhr00linqv26e4c5fqz\"},{\"balanceAmount\":7107.09,\"category\":[\"Transfer\",\"Earning\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Earning\"],\"id\":190400},\"date\":\"13/03/19\",\"party\":null,\"depositAmount\":1000,\"isAutoDebit\":false,\"particular\":\"MMT/IMPS/907212070447/IMPS Txn/VINOD     /FINO Payment Ba\",\"reference\":\"MOBILE BANKING\",\"type\":\"CREDIT\",\"withdrawalAmount\":0,\"transactionId\":\"ck73edmhr00ljnqv29310c5u9\"},{\"balanceAmount\":67107.09,\"category\":[\"Transfer\",\"Earning\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Earning\"],\"id\":190400},\"date\":\"13/03/19\",\"party\":\"arun kumar\",\"depositAmount\":60000,\"isAutoDebit\":false,\"particular\":\"MMT/IMPS/907214440192/ARUN KUMAR/AXIS BANK LTD\",\"reference\":\"MOBILE BANKING\",\"type\":\"CREDIT\",\"withdrawalAmount\":0,\"transactionId\":\"ck73edmhr00lknqv2h64a7nce\"},{\"balanceAmount\":63757.09,\"category\":[\"Uncategorized\"],\"pandora_category\":{\"hierarchy\":[\"Uncategorized\"],\"id\":0},\"date\":\"13/03/19\",\"party\":\"good things\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"VPS/GOOD THINGS/201903131451/907209053356/GHAZIABAD\",\"reference\":\"DEBIT CARD\",\"type\":\"DEBIT\",\"withdrawalAmount\":3350,\"transactionId\":\"ck73edmhr00llnqv2cflpf982\"},{\"balanceAmount\":63253.09,\"category\":[\"Uncategorized\"],\"pandora_category\":{\"hierarchy\":[\"Uncategorized\"],\"id\":0},\"date\":\"13/03/19\",\"party\":\"barista cof\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"VPS/BARISTA COF/201903131505/907209601822/GHAZIABAD\",\"reference\":\"DEBIT CARD\",\"type\":\"DEBIT\",\"withdrawalAmount\":504,\"transactionId\":\"ck73edmhr00lmnqv2ettbg2jx\"},{\"balanceAmount\":43253.09,\"category\":[\"Cash Advance\",\"ATM\"],\"pandora_category\":{\"hierarchy\":[\"Cash Advance\",\"ATM\"],\"id\":110300},\"date\":\"13/03/19\",\"party\":\"s1cw6304\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"ATM/S1CW6304/CASH WDL/13-03-19\",\"reference\":\"ICICI ATM\",\"type\":\"DEBIT\",\"withdrawalAmount\":20000,\"transactionId\":\"ck73edmhr00lnnqv24z62betl\"},{\"balanceAmount\":23253.09,\"category\":[\"Cash Advance\",\"ATM\"],\"pandora_category\":{\"hierarchy\":[\"Cash Advance\",\"ATM\"],\"id\":110300},\"date\":\"13/03/19\",\"party\":\"s1cw6304\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"ATM/S1CW6304/CASH WDL/13-03-19\",\"reference\":\"ICICI ATM\",\"type\":\"DEBIT\",\"withdrawalAmount\":20000,\"transactionId\":\"ck73edmhr00lonqv27ya01llc\"},{\"balanceAmount\":21253.09,\"category\":[\"Cash Advance\",\"ATM\"],\"pandora_category\":{\"hierarchy\":[\"Cash Advance\",\"ATM\"],\"id\":110300},\"date\":\"13/03/19\",\"party\":\"s1cw6304\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"ATM/S1CW6304/CASH WDL/13-03-19\",\"reference\":\"ICICI ATM\",\"type\":\"DEBIT\",\"withdrawalAmount\":2000,\"transactionId\":\"ck73edmhr00lpnqv2bouubyi5\"},{\"balanceAmount\":19753.09,\"category\":[\"Uncategorized\"],\"pandora_category\":{\"hierarchy\":[\"Uncategorized\"],\"id\":0},\"date\":\"14/03/19\",\"party\":\"paytm\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"VIN/PAYTM      /201903140906/907303463766/\",\"reference\":\"NET BANKING\",\"type\":\"DEBIT\",\"withdrawalAmount\":1500,\"transactionId\":\"ck73edmhr00lqnqv20ycs0236\"},{\"balanceAmount\":253.09,\"category\":[\"Cash Advance\",\"ATM\"],\"pandora_category\":{\"hierarchy\":[\"Cash Advance\",\"ATM\"],\"id\":110300},\"date\":\"14/03/19\",\"party\":\"s1cwk473\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"ATM/S1CWK473/CASH WDL/14-03-19\",\"reference\":\"ICICI ATM\",\"type\":\"DEBIT\",\"withdrawalAmount\":19500,\"transactionId\":\"ck73edmhr00lrnqv25n9t3dwt\"},{\"balanceAmount\":23253.09,\"category\":[\"Cash Advance\",\"Credit\"],\"pandora_category\":{\"hierarchy\":[\"Cash Advance\",\"Credit\"],\"id\":110100},\"date\":\"14/03/19\",\"party\":\"rajajipuram\",\"depositAmount\":23000,\"isAutoDebit\":false,\"particular\":\"BY CASH-LUCKNOW RAJAJIPURAM\",\"reference\":\"\",\"type\":\"CREDIT\",\"withdrawalAmount\":0,\"transactionId\":\"ck73edmhr00lsnqv29thchog7\"},{\"balanceAmount\":13253.09,\"category\":[\"Transfer\",\"Debit\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Debit\"],\"id\":190200},\"date\":\"14/03/19\",\"party\":\"anuj\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"MMT/IMPS/907314739183/Anuj katiy/SBIN0012998\",\"reference\":\"MOBILE BANKING\",\"type\":\"DEBIT\",\"withdrawalAmount\":10000,\"transactionId\":\"ck73edmhr00ltnqv2bq43abei\"},{\"balanceAmount\":8253.09,\"category\":[\"Transfer\",\"Debit\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Debit\"],\"id\":190200},\"date\":\"14/03/19\",\"party\":\"uday\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"MMT/IMPS/907314750472/Uday/UBIN0559407\",\"reference\":\"MOBILE BANKING\",\"type\":\"DEBIT\",\"withdrawalAmount\":5000,\"transactionId\":\"ck73edmhr00lunqv28sd3byhr\"},{\"balanceAmount\":5253.09,\"category\":[\"Cash Advance\",\"ATM\"],\"pandora_category\":{\"hierarchy\":[\"Cash Advance\",\"ATM\"],\"id\":110300},\"date\":\"14/03/19\",\"party\":\"spcnk825\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"ATM/SPCNK825/CASH WDL/14-03-19\",\"reference\":\"ICICI ATM\",\"type\":\"DEBIT\",\"withdrawalAmount\":3000,\"transactionId\":\"ck73edmhr00lvnqv20xifflzi\"},{\"balanceAmount\":253.09,\"category\":[\"Cash Advance\",\"ATM\"],\"pandora_category\":{\"hierarchy\":[\"Cash Advance\",\"ATM\"],\"id\":110300},\"date\":\"15/03/19\",\"party\":\"s1cpn208\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"ATM/S1CPN208/CASH WDL/15-03-19\",\"reference\":\"ICICI ATM\",\"type\":\"DEBIT\",\"withdrawalAmount\":5000,\"transactionId\":\"ck73edmhr00lwnqv2cbbkckfs\"},{\"balanceAmount\":48.09,\"category\":[\"Uncategorized\"],\"pandora_category\":{\"hierarchy\":[\"Uncategorized\"],\"id\":0},\"date\":\"16/03/19\",\"party\":\"amazon\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"IIN/I-Debit/Amazon     /201903160833/907514003878/\",\"reference\":\"NET BANKING\",\"type\":\"DEBIT\",\"withdrawalAmount\":205,\"transactionId\":\"ck73edmhr00lxnqv2hm6p3eux\"},{\"balanceAmount\":1048.09,\"category\":[\"Transfer\",\"Earning\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Earning\"],\"id\":190400},\"date\":\"16/03/19\",\"party\":\"state\",\"depositAmount\":1000,\"isAutoDebit\":false,\"particular\":\"UPI/907519919282/Payment from Ph/9696689032@ybl/State Bank Of I\",\"reference\":\"\",\"type\":\"CREDIT\",\"withdrawalAmount\":0,\"transactionId\":\"ck73edmhr00lynqv2a9pz7cr4\"},{\"balanceAmount\":6048.09,\"category\":[\"Transfer\",\"Earning\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Earning\"],\"id\":190400},\"date\":\"18/03/19\",\"party\":null,\"depositAmount\":5000,\"isAutoDebit\":false,\"particular\":\"MMT/IMPS/907616057659/IMPS Txn/Khaleel   /FINO Payment Ba\",\"reference\":\"MOBILE BANKING\",\"type\":\"CREDIT\",\"withdrawalAmount\":0,\"transactionId\":\"ck73edmhr00lznqv277iv3bs2\"},{\"balanceAmount\":3048.09,\"category\":[\"Cash Advance\",\"ATM\"],\"pandora_category\":{\"hierarchy\":[\"Cash Advance\",\"ATM\"],\"id\":110300},\"date\":\"18/03/19\",\"party\":\"rb204002\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"NFS/RB204002/CASH WDL/18-03-19\",\"reference\":\"OTHER ATMS\",\"type\":\"DEBIT\",\"withdrawalAmount\":3000,\"transactionId\":\"ck73edmhr00m0nqv2bjei9gae\"},{\"balanceAmount\":63048.09,\"category\":[\"Transfer\",\"Credit\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Credit\"],\"id\":190100},\"date\":\"19/03/19\",\"party\":\"lala ram\",\"depositAmount\":60000,\"isAutoDebit\":false,\"particular\":\"NEFT-BARBX19078665769-LALA RAM--39590200000237-BARB0GREENP\",\"reference\":\"\",\"type\":\"CREDIT\",\"withdrawalAmount\":0,\"transactionId\":\"ck73edmhr00m1nqv268wuclb6\"},{\"balanceAmount\":43048.09,\"category\":[\"Cash Advance\",\"ATM\"],\"pandora_category\":{\"hierarchy\":[\"Cash Advance\",\"ATM\"],\"id\":110300},\"date\":\"19/03/19\",\"party\":\"s1cpn511\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"ATM/S1CPN511/CASH WDL/19-03-19\",\"reference\":\"ICICI ATM\",\"type\":\"DEBIT\",\"withdrawalAmount\":20000,\"transactionId\":\"ck73edmhr00m2nqv28lqk0ipg\"},{\"balanceAmount\":23048.09,\"category\":[\"Cash Advance\",\"ATM\"],\"pandora_category\":{\"hierarchy\":[\"Cash Advance\",\"ATM\"],\"id\":110300},\"date\":\"19/03/19\",\"party\":\"s1cpn511\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"ATM/S1CPN511/CASH WDL/19-03-19\",\"reference\":\"ICICI ATM\",\"type\":\"DEBIT\",\"withdrawalAmount\":20000,\"transactionId\":\"ck73edmhr00m3nqv2hm3k7spr\"},{\"balanceAmount\":13048.09,\"category\":[\"Cash Advance\",\"ATM\"],\"pandora_category\":{\"hierarchy\":[\"Cash Advance\",\"ATM\"],\"id\":110300},\"date\":\"19/03/19\",\"party\":\"s1cpn511\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"ATM/S1CPN511/CASH WDL/19-03-19\",\"reference\":\"ICICI ATM\",\"type\":\"DEBIT\",\"withdrawalAmount\":10000,\"transactionId\":\"ck73edmhr00m4nqv25y3nfgtw\"},{\"balanceAmount\":12644.09,\"category\":[\"Uncategorized\"],\"pandora_category\":{\"hierarchy\":[\"Uncategorized\"],\"id\":0},\"date\":\"19/03/19\",\"party\":\"jubilant\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"VIN/JUBILANT FO/201903191948/907819806231/\",\"reference\":\"NET BANKING\",\"type\":\"DEBIT\",\"withdrawalAmount\":404,\"transactionId\":\"ck73edmhr00m5nqv2ddeshh8f\"},{\"balanceAmount\":12318.09,\"category\":[\"Uncategorized\"],\"pandora_category\":{\"hierarchy\":[\"Uncategorized\"],\"id\":0},\"date\":\"19/03/19\",\"party\":\"bundl techn\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"VIN/BUNDL TECHN/201903192140/907903257867/\",\"reference\":\"NET BANKING\",\"type\":\"DEBIT\",\"withdrawalAmount\":326,\"transactionId\":\"ck73edmhr00m6nqv2bgqr34a1\"},{\"balanceAmount\":2318.09,\"category\":[\"Cash Advance\",\"ATM\"],\"pandora_category\":{\"hierarchy\":[\"Cash Advance\",\"ATM\"],\"id\":110300},\"date\":\"20/03/19\",\"party\":\"s1cpn208\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"ATM/S1CPN208/CASH WDL/20-03-19\",\"reference\":\"ICICI ATM\",\"type\":\"DEBIT\",\"withdrawalAmount\":10000,\"transactionId\":\"ck73edmhr00m7nqv20r7cfn8h\"},{\"balanceAmount\":7318.09,\"category\":[\"Transfer\",\"Earning\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Earning\"],\"id\":190400},\"date\":\"20/03/19\",\"party\":\"state\",\"depositAmount\":5000,\"isAutoDebit\":false,\"particular\":\"UPI/907920944885/Payment from Ph/9695233333@ybl/State Bank Of I\",\"reference\":\"\",\"type\":\"CREDIT\",\"withdrawalAmount\":0,\"transactionId\":\"ck73edmhr00m8nqv2cupvd7wj\"},{\"balanceAmount\":17318.09,\"category\":[\"Transfer\",\"Credit\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Credit\"],\"id\":190100},\"date\":\"20/03/19\",\"party\":\"ashwani state bankof\",\"depositAmount\":10000,\"isAutoDebit\":false,\"particular\":\"UPI/907920148186/ashwani/8958576004@sbi/State BankOf I\",\"reference\":\"\",\"type\":\"CREDIT\",\"withdrawalAmount\":0,\"transactionId\":\"ck73edmhr00m9nqv2ci8c636o\"},{\"balanceAmount\":17308.09,\"category\":[\"Uncategorized\"],\"pandora_category\":{\"hierarchy\":[\"Uncategorized\"],\"id\":0},\"date\":\"22/03/19\",\"party\":\"paytm\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"IIN/I-Debit/PayTM      /201903221359/908109015808/\",\"reference\":\"NET BANKING\",\"type\":\"DEBIT\",\"withdrawalAmount\":10,\"transactionId\":\"ck73edmhr00manqv244tef72t\"},{\"balanceAmount\":15308.09,\"category\":[\"Uncategorized\"],\"pandora_category\":{\"hierarchy\":[\"Uncategorized\"],\"id\":0},\"date\":\"22/03/19\",\"party\":\"paytm\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"VIN/PAYTM      /201903222208/908116458226/\",\"reference\":\"NET BANKING\",\"type\":\"DEBIT\",\"withdrawalAmount\":2000,\"transactionId\":\"ck73edmhr00mbnqv24zihep57\"},{\"balanceAmount\":5308.09,\"category\":[\"Payment\"],\"pandora_category\":{\"hierarchy\":[\"Payment\"],\"id\":160000},\"date\":\"25/03/19\",\"party\":\"rahul pandey\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"BIL/INFT/001669551663/Friends/RAHUL PANDEY\",\"reference\":\"\",\"type\":\"DEBIT\",\"withdrawalAmount\":10000,\"transactionId\":\"ck73edmhr00mcnqv23ji29faa\"},{\"balanceAmount\":4308.09,\"category\":[\"Payment\"],\"pandora_category\":{\"hierarchy\":[\"Payment\"],\"id\":160000},\"date\":\"25/03/19\",\"party\":\"adamya yadav\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"BIL/INFT/001669552312/Family/ADAMYA  YADAV (\",\"reference\":\"\",\"type\":\"DEBIT\",\"withdrawalAmount\":1000,\"transactionId\":\"ck73edmhr00mdnqv22masb1zu\"},{\"balanceAmount\":1669.09,\"category\":[\"Uncategorized\"],\"pandora_category\":{\"hierarchy\":[\"Uncategorized\"],\"id\":0},\"date\":\"25/03/19\",\"party\":\"beauty kafe\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"VPS/BEAUTY KAFE/201903241530/908310002298/GHAZIABAD\",\"reference\":\"DEBIT CARD\",\"type\":\"DEBIT\",\"withdrawalAmount\":2639,\"transactionId\":\"ck73edmhr00menqv203b3ckl0\"},{\"balanceAmount\":669.09,\"category\":[\"Uncategorized\"],\"pandora_category\":{\"hierarchy\":[\"Uncategorized\"],\"id\":0},\"date\":\"25/03/19\",\"party\":\"bharat petr\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"VPS/BHARAT PETR/201903241629/908310253816/GHAZIABAD\",\"reference\":\"DEBIT CARD\",\"type\":\"DEBIT\",\"withdrawalAmount\":1000,\"transactionId\":\"ck73edmhr00mfnqv2ht1725dg\"},{\"balanceAmount\":5669.09,\"category\":[\"Transfer\",\"Credit\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Credit\"],\"id\":190100},\"date\":\"25/03/19\",\"party\":null,\"depositAmount\":5000,\"isAutoDebit\":false,\"particular\":\"MMT/IMPS/908420004283/IMPS Txn/Satendra  /FINO Payment Ba\",\"reference\":\"MOBILE BANKING\",\"type\":\"CREDIT\",\"withdrawalAmount\":0,\"transactionId\":\"ck73edmhr00mgnqv25fjkfbhu\"},{\"balanceAmount\":4869.09,\"category\":[\"Uncategorized\"],\"pandora_category\":{\"hierarchy\":[\"Uncategorized\"],\"id\":0},\"date\":\"26/03/19\",\"party\":\"netflix\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"RPI/Netflix  PG/201903262305/908517913131/\",\"reference\":\"\",\"type\":\"DEBIT\",\"withdrawalAmount\":800,\"transactionId\":\"ck73edmhr00mhnqv2b4aycyj3\"},{\"balanceAmount\":869.09,\"category\":[\"Cash Advance\",\"ATM\"],\"pandora_category\":{\"hierarchy\":[\"Cash Advance\",\"ATM\"],\"id\":110300},\"date\":\"27/03/19\",\"party\":\"mn000569\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"NFS/MN000569/CASH WDL/27-03-19\",\"reference\":\"OTHER ATMS\",\"type\":\"DEBIT\",\"withdrawalAmount\":4000,\"transactionId\":\"ck73edmhr00minqv2axjrhr27\"},{\"balanceAmount\":369.09,\"category\":[\"Transfer\",\"Debit\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Debit\"],\"id\":190200},\"date\":\"27/03/19\",\"party\":\"family\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"MMT/IMPS/908618282142/Family/NEERU/SBIN0RRPUGB\",\"reference\":\"MOBILE BANKING\",\"type\":\"REVERSAL\",\"withdrawalAmount\":500,\"transactionId\":\"ck73edmhr00mjnqv25frufyzq\"},{\"balanceAmount\":869.09,\"category\":[\"Transfer\",\"Credit\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Credit\"],\"id\":190100},\"date\":\"27/03/19\",\"party\":\"family\",\"depositAmount\":500,\"isAutoDebit\":false,\"particular\":\"MMT/IMPS/908618282142/Family/NEERU/SBIN0RRPUGB\",\"reference\":\"MOBILE BANKING\",\"type\":\"REVERSAL\",\"withdrawalAmount\":0,\"transactionId\":\"ck73edmhr00mknqv27tj3bkzv\"},{\"balanceAmount\":900869.09,\"category\":[\"Transfer\",\"Credit\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Credit\"],\"id\":190100},\"date\":\"28/03/19\",\"party\":\"sarika yadav\",\"depositAmount\":900000,\"isAutoDebit\":false,\"particular\":\"TRFR FROM: SARIKA YADAV\",\"reference\":\"\",\"type\":\"CREDIT\",\"withdrawalAmount\":0,\"transactionId\":\"ck73edmhr00mlnqv2c5e51rq0\"},{\"balanceAmount\":880869.09,\"category\":[\"Cash Advance\",\"ATM\"],\"pandora_category\":{\"hierarchy\":[\"Cash Advance\",\"ATM\"],\"id\":110300},\"date\":\"28/03/19\",\"party\":\"s1cpn213\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"ATM/S1CPN213/CASH WDL/28-03-19\",\"reference\":\"ICICI ATM\",\"type\":\"DEBIT\",\"withdrawalAmount\":20000,\"transactionId\":\"ck73edmhr00mmnqv2ci2a2dy5\"},{\"balanceAmount\":860869.09,\"category\":[\"Cash Advance\",\"ATM\"],\"pandora_category\":{\"hierarchy\":[\"Cash Advance\",\"ATM\"],\"id\":110300},\"date\":\"28/03/19\",\"party\":\"s1cpn213\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"ATM/S1CPN213/CASH WDL/28-03-19\",\"reference\":\"ICICI ATM\",\"type\":\"DEBIT\",\"withdrawalAmount\":20000,\"transactionId\":\"ck73edmhr00mnnqv2d8wrdtcw\"},{\"balanceAmount\":850869.09,\"category\":[\"Cash Advance\",\"ATM\"],\"pandora_category\":{\"hierarchy\":[\"Cash Advance\",\"ATM\"],\"id\":110300},\"date\":\"28/03/19\",\"party\":\"s1cpn213\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"ATM/S1CPN213/CASH WDL/28-03-19\",\"reference\":\"ICICI ATM\",\"type\":\"DEBIT\",\"withdrawalAmount\":10000,\"transactionId\":\"ck73edmhs00monqv2d18ubp27\"},{\"balanceAmount\":800869.09,\"category\":[\"Transfer\",\"Debit\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Debit\"],\"id\":190200},\"date\":\"28/03/19\",\"party\":null,\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"MMT/IMPS/908713912772/Friends/JAMUNA/UTIB0001550\",\"reference\":\"MOBILE BANKING\",\"type\":\"DEBIT\",\"withdrawalAmount\":50000,\"transactionId\":\"ck73edmhs00mpnqv2hj0d94f2\"},{\"balanceAmount\":785869.09,\"category\":[\"Transfer\",\"Debit\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Debit\"],\"id\":190200},\"date\":\"28/03/19\",\"party\":\"ashish\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"MMT/IMPS/908713102873/Ghhff/Ashish cha/UTIB0000723\",\"reference\":\"MOBILE BANKING\",\"type\":\"DEBIT\",\"withdrawalAmount\":15000,\"transactionId\":\"ck73edmhs00mqnqv28m86gu9g\"},{\"balanceAmount\":764869.09,\"category\":[\"Transfer\",\"Refund\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Refund\"],\"id\":190300},\"date\":\"28/03/19\",\"party\":\"return arun\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"MMT/IMPS/908713169183/Return/Arun/UTIB0000854\",\"reference\":\"MOBILE BANKING\",\"type\":\"DEBIT\",\"withdrawalAmount\":21000,\"transactionId\":\"ck73edmhs00mrnqv23lu1735n\"},{\"balanceAmount\":744869.09,\"category\":[\"Transfer\",\"Refund\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Refund\"],\"id\":190300},\"date\":\"28/03/19\",\"party\":\"return\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"MMT/IMPS/908713189037/Return/Priya/UTBI0ETHL51\",\"reference\":\"MOBILE BANKING\",\"type\":\"DEBIT\",\"withdrawalAmount\":20000,\"transactionId\":\"ck73edmhs00msnqv2hk8675ep\"},{\"balanceAmount\":694869.09,\"category\":[\"Transfer\",\"Debit\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Debit\"],\"id\":190200},\"date\":\"28/03/19\",\"party\":\"uday\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"MMT/IMPS/908713207121/Family/Uday/UBIN0559407\",\"reference\":\"MOBILE BANKING\",\"type\":\"DEBIT\",\"withdrawalAmount\":50000,\"transactionId\":\"ck73edmhs00mtnqv22hbugstn\"},{\"balanceAmount\":594869.09,\"category\":[\"Cash Advance\",\"Debit\"],\"pandora_category\":{\"hierarchy\":[\"Cash Advance\",\"Debit\"],\"id\":110200},\"date\":\"28/03/19\",\"party\":\"indirapuramchq,000311\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"CASH PAID:SELF 0718 GHAZIABAD-INDIRAPURAMCHQ,000311\",\"reference\":\"CHEQUE 311\",\"type\":\"DEBIT\",\"withdrawalAmount\":100000,\"transactionId\":\"ck73edmhs00munqv2b0fyfhxo\"},{\"balanceAmount\":593828.11,\"category\":[\"Uncategorized\"],\"pandora_category\":{\"hierarchy\":[\"Uncategorized\"],\"id\":0},\"date\":\"28/03/19\",\"party\":\"train\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"IIN/I-Debit/Book Train /201903281626/908714019686/\",\"reference\":\"NET BANKING\",\"type\":\"DEBIT\",\"withdrawalAmount\":1040.98,\"transactionId\":\"ck73edmhs00mvnqv2bk3s15x1\"},{\"balanceAmount\":593835.61,\"category\":[\"Travel\",\"Gas Station\"],\"pandora_category\":{\"hierarchy\":[\"Travel\",\"Gas Station\"],\"id\":200100},\"date\":\"28/03/19\",\"party\":\"bharat petroleum corpo\",\"depositAmount\":7.5,\"isAutoDebit\":false,\"particular\":\"VISA REF BHARAT PETROLEUM CORPO\",\"reference\":\"\",\"type\":\"CREDIT\",\"withdrawalAmount\":0,\"transactionId\":\"ck73edmhs00mwnqv23yxy1ujj\"},{\"balanceAmount\":584268.61,\"category\":[\"Uncategorized\"],\"pandora_category\":{\"hierarchy\":[\"Uncategorized\"],\"id\":0},\"date\":\"28/03/19\",\"party\":\"new uma mah\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"VPS/NEW UMA MAH/201903281933/908714014648/GHAZIABAD\",\"reference\":\"DEBIT CARD\",\"type\":\"DEBIT\",\"withdrawalAmount\":9567,\"transactionId\":\"ck73edmhs00mxnqv2hw985l6h\"},{\"balanceAmount\":564268.61,\"category\":[\"Transfer\",\"Debit\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Debit\"],\"id\":190200},\"date\":\"29/03/19\",\"party\":null,\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"MMT/IMPS/908810300791/Friends/DURVESH/ORBC0101350\",\"reference\":\"MOBILE BANKING\",\"type\":\"DEBIT\",\"withdrawalAmount\":20000,\"transactionId\":\"ck73edmhs00mynqv2dj9k5qal\"},{\"balanceAmount\":544268.61,\"category\":[\"Cash Advance\",\"ATM\"],\"pandora_category\":{\"hierarchy\":[\"Cash Advance\",\"ATM\"],\"id\":110300},\"date\":\"29/03/19\",\"party\":\"s1cw6304\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"ATM/S1CW6304/CASH WDL/29-03-19\",\"reference\":\"ICICI ATM\",\"type\":\"DEBIT\",\"withdrawalAmount\":20000,\"transactionId\":\"ck73edmhs00mznqv2gird60xw\"},{\"balanceAmount\":524268.61,\"category\":[\"Cash Advance\",\"ATM\"],\"pandora_category\":{\"hierarchy\":[\"Cash Advance\",\"ATM\"],\"id\":110300},\"date\":\"29/03/19\",\"party\":\"s1cw6304\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"ATM/S1CW6304/CASH WDL/29-03-19\",\"reference\":\"ICICI ATM\",\"type\":\"DEBIT\",\"withdrawalAmount\":20000,\"transactionId\":\"ck73edmhs00n0nqv2eecb39zu\"},{\"balanceAmount\":514268.61,\"category\":[\"Cash Advance\",\"ATM\"],\"pandora_category\":{\"hierarchy\":[\"Cash Advance\",\"ATM\"],\"id\":110300},\"date\":\"29/03/19\",\"party\":\"s1cw6304\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"ATM/S1CW6304/CASH WDL/29-03-19\",\"reference\":\"ICICI ATM\",\"type\":\"DEBIT\",\"withdrawalAmount\":10000,\"transactionId\":\"ck73edmhs00n1nqv2bfnufgr5\"},{\"balanceAmount\":414268.61,\"category\":[\"Cash Advance\",\"Debit\"],\"pandora_category\":{\"hierarchy\":[\"Cash Advance\",\"Debit\"],\"id\":110200},\"date\":\"29/03/19\",\"party\":\"indirapuramchq,000313\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"CASH PAID:SELF 0718 GHAZIABAD-INDIRAPURAMCHQ,000313\",\"reference\":\"CHEQUE 313\",\"type\":\"DEBIT\",\"withdrawalAmount\":100000,\"transactionId\":\"ck73edmhs00n2nqv2gh0a5e3f\"},{\"balanceAmount\":407174.61,\"category\":[\"Uncategorized\"],\"pandora_category\":{\"hierarchy\":[\"Uncategorized\"],\"id\":0},\"date\":\"29/03/19\",\"party\":\"madura garm\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"VPS/MADURA GARM/201903291356/908808968817/GHAZIABAD\",\"reference\":\"DEBIT CARD\",\"type\":\"DEBIT\",\"withdrawalAmount\":7094,\"transactionId\":\"ck73edmhs00n3nqv28g5sg6zh\"},{\"balanceAmount\":382294.61,\"category\":[\"Uncategorized\"],\"pandora_category\":{\"hierarchy\":[\"Uncategorized\"],\"id\":0},\"date\":\"29/03/19\",\"party\":\"koncept\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"VPS/KONCEPT    /201903291656/908811067028/NOIDA\",\"reference\":\"DEBIT CARD\",\"type\":\"DEBIT\",\"withdrawalAmount\":24880,\"transactionId\":\"ck73edmhs00n4nqv2evnng491\"},{\"balanceAmount\":377294.61,\"category\":[\"Transfer\",\"Debit\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Debit\"],\"id\":190200},\"date\":\"29/03/19\",\"party\":null,\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"MMT/IMPS/908817912351/Friends/JAMUNA/UTIB0001550\",\"reference\":\"MOBILE BANKING\",\"type\":\"DEBIT\",\"withdrawalAmount\":5000,\"transactionId\":\"ck73edmhs00n5nqv2calpbkv1\"},{\"balanceAmount\":347294.61,\"category\":[\"Transfer\",\"Debit\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Debit\"],\"id\":190200},\"date\":\"30/03/19\",\"party\":null,\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"MMT/IMPS/908909922267/Friends/JAMUNA/UTIB0001550\",\"reference\":\"MOBILE BANKING\",\"type\":\"DEBIT\",\"withdrawalAmount\":30000,\"transactionId\":\"ck73edmhs00n6nqv27geafflz\"},{\"balanceAmount\":297294.61,\"category\":[\"Transfer\",\"Debit\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Debit\"],\"id\":190200},\"date\":\"30/03/19\",\"party\":\"uday\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"MMT/IMPS/908909926277/Family/Uday/UBIN0559407\",\"reference\":\"MOBILE BANKING\",\"type\":\"DEBIT\",\"withdrawalAmount\":50000,\"transactionId\":\"ck73edmhs00n7nqv2aizydepc\"},{\"balanceAmount\":247294.61,\"category\":[\"Payment\"],\"pandora_category\":{\"hierarchy\":[\"Payment\"],\"id\":160000},\"date\":\"30/03/19\",\"party\":\"sanjeev kumar\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"BIL/INFT/001673841782/NA/SANJEEV KUMAR/A\",\"reference\":\"\",\"type\":\"DEBIT\",\"withdrawalAmount\":50000,\"transactionId\":\"ck73edmhs00n8nqv24e1ue9dq\"},{\"balanceAmount\":197294.61,\"category\":[\"Transfer\",\"Debit\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Debit\"],\"id\":190200},\"date\":\"30/03/19\",\"party\":\"family\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"MMT/IMPS/908909933530/Family/Priya/UTBI0ETHL51\",\"reference\":\"MOBILE BANKING\",\"type\":\"DEBIT\",\"withdrawalAmount\":50000,\"transactionId\":\"ck73edmhs00n9nqv27fpc77lt\"},{\"balanceAmount\":177294.61,\"category\":[\"Cash Advance\",\"ATM\"],\"pandora_category\":{\"hierarchy\":[\"Cash Advance\",\"ATM\"],\"id\":110300},\"date\":\"30/03/19\",\"party\":\"s1cwk473\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"ATM/S1CWK473/CASH WDL/30-03-19\",\"reference\":\"ICICI ATM\",\"type\":\"DEBIT\",\"withdrawalAmount\":20000,\"transactionId\":\"ck73edmhs00nanqv2fbu893k2\"},{\"balanceAmount\":157294.61,\"category\":[\"Cash Advance\",\"ATM\"],\"pandora_category\":{\"hierarchy\":[\"Cash Advance\",\"ATM\"],\"id\":110300},\"date\":\"30/03/19\",\"party\":\"s1cwk473\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"ATM/S1CWK473/CASH WDL/30-03-19\",\"reference\":\"ICICI ATM\",\"type\":\"DEBIT\",\"withdrawalAmount\":20000,\"transactionId\":\"ck73edmhs00nbnqv2dq3ecl1h\"},{\"balanceAmount\":107294.61,\"category\":[\"Payment\"],\"pandora_category\":{\"hierarchy\":[\"Payment\"],\"id\":160000},\"date\":\"30/03/19\",\"party\":null,\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"BIL/SPCNK825/001674173526/30-03-19VIPLAV  KUMAR\",\"reference\":\"\",\"type\":\"DEBIT\",\"withdrawalAmount\":50000,\"transactionId\":\"ck73edmhs00ncnqv2b5qs4z5d\"},{\"balanceAmount\":107540.61,\"category\":[\"Interest\",\"Earned\"],\"pandora_category\":{\"hierarchy\":[\"Interest\",\"Earned\"],\"id\":150100},\"date\":\"31/03/19\",\"party\":\"int.pd\",\"depositAmount\":246,\"isAutoDebit\":false,\"particular\":\"071801512528:Int.Pd:31-12-2018 to 30-03-2019\",\"reference\":\"\",\"type\":\"CREDIT\",\"withdrawalAmount\":0,\"transactionId\":\"ck73edmhs00ndnqv25yn893aj\"},{\"balanceAmount\":94540.61,\"category\":[\"Transfer\",\"Debit\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Debit\"],\"id\":190200},\"date\":\"31/03/19\",\"party\":\"uday\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"MMT/IMPS/909009044221/Family/Uday/UBIN0559407\",\"reference\":\"MOBILE BANKING\",\"type\":\"DEBIT\",\"withdrawalAmount\":13000,\"transactionId\":\"ck73edmhs00nenqv2gg472acw\"},{\"balanceAmount\":94378.61,\"category\":[\"Food and Beverages\"],\"pandora_category\":{\"hierarchy\":[\"Food and Beverages\"],\"id\":130000},\"date\":\"31/03/19\",\"party\":\"swiggy\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"VIN/SWIGGY     /201903311008/909004115688/\",\"reference\":\"NET BANKING\",\"type\":\"DEBIT\",\"withdrawalAmount\":162,\"transactionId\":\"ck73edmhs00nfnqv2bo6ddy5e\"},{\"balanceAmount\":87378.61,\"category\":[\"Cash Advance\",\"ATM\"],\"pandora_category\":{\"hierarchy\":[\"Cash Advance\",\"ATM\"],\"id\":110300},\"date\":\"31/03/19\",\"party\":\"spcnk825\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"ATM/SPCNK825/CASH WDL/31-03-19\",\"reference\":\"ICICI ATM\",\"type\":\"DEBIT\",\"withdrawalAmount\":7000,\"transactionId\":\"ck73edmhs00ngnqv235t202z7\"},{\"balanceAmount\":84378.61,\"category\":[\"Payment\"],\"pandora_category\":{\"hierarchy\":[\"Payment\"],\"id\":160000},\"date\":\"31/03/19\",\"party\":null,\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"BIL/SPCNK825/001674887381/31-03-19RAHUL PANDEY\",\"reference\":\"\",\"type\":\"DEBIT\",\"withdrawalAmount\":3000,\"transactionId\":\"ck73edmhs00nhnqv2bx5rcrk4\"},{\"balanceAmount\":83980.61,\"category\":[\"Uncategorized\"],\"pandora_category\":{\"hierarchy\":[\"Uncategorized\"],\"id\":0},\"date\":\"31/03/19\",\"party\":\"paytm\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"IIN/I-Debit/PayTM      /201903312010/909009036382/\",\"reference\":\"NET BANKING\",\"type\":\"DEBIT\",\"withdrawalAmount\":398,\"transactionId\":\"ck73edmhs00ninqv2fvp89ggd\"},{\"balanceAmount\":63980.61,\"category\":[\"Cash Advance\",\"ATM\"],\"pandora_category\":{\"hierarchy\":[\"Cash Advance\",\"ATM\"],\"id\":110300},\"date\":\"02/04/19\",\"party\":\"spcnk830\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"ATM/SPCNK830/CASH WDL/01-04-19\",\"reference\":\"ICICI ATM\",\"type\":\"DEBIT\",\"withdrawalAmount\":20000,\"transactionId\":\"ck73edmhs00njnqv2g7204qly\"},{\"balanceAmount\":53980.61,\"category\":[\"Cash Advance\",\"ATM\"],\"pandora_category\":{\"hierarchy\":[\"Cash Advance\",\"ATM\"],\"id\":110300},\"date\":\"02/04/19\",\"party\":\"spcnk830\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"ATM/SPCNK830/CASH WDL/01-04-19\",\"reference\":\"ICICI ATM\",\"type\":\"DEBIT\",\"withdrawalAmount\":10000,\"transactionId\":\"ck73edmhs00nknqv2chh04sp3\"},{\"balanceAmount\":43980.61,\"category\":[\"Transfer\",\"Debit\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Debit\"],\"id\":190200},\"date\":\"02/04/19\",\"party\":\"mohit\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"MMT/IMPS/909206148731/Family/Mohit ram/IDIB000I016\",\"reference\":\"MOBILE BANKING\",\"type\":\"DEBIT\",\"withdrawalAmount\":10000,\"transactionId\":\"ck73edmhs00nlnqv2fhvd8cgf\"},{\"balanceAmount\":33980.61,\"category\":[\"Cash Advance\",\"ATM\"],\"pandora_category\":{\"hierarchy\":[\"Cash Advance\",\"ATM\"],\"id\":110300},\"date\":\"02/04/19\",\"party\":\"s1cpn511\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"ATM/S1CPN511/CASH WDL/02-04-19\",\"reference\":\"ICICI ATM\",\"type\":\"DEBIT\",\"withdrawalAmount\":10000,\"transactionId\":\"ck73edmhs00nmnqv27xyy0jr5\"},{\"balanceAmount\":30980.61,\"category\":[\"Cash Advance\",\"ATM\"],\"pandora_category\":{\"hierarchy\":[\"Cash Advance\",\"ATM\"],\"id\":110300},\"date\":\"02/04/19\",\"party\":\"cpcn7234\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"NFS/CPCN7234/CASH WDL/02-04-19\",\"reference\":\"OTHER ATMS\",\"type\":\"DEBIT\",\"withdrawalAmount\":3000,\"transactionId\":\"ck73edmhs00nnnqv2grqie39h\"},{\"balanceAmount\":5980.61,\"category\":[\"Payment\"],\"pandora_category\":{\"hierarchy\":[\"Payment\"],\"id\":160000},\"date\":\"02/04/19\",\"party\":\"mib viplav\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"BIL/INFT/001677022815/MIB-/VIPLAV  KUMAR\",\"reference\":\"\",\"type\":\"DEBIT\",\"withdrawalAmount\":25000,\"transactionId\":\"ck73edmhs00nonqv2agvj63rs\"},{\"balanceAmount\":4980.61,\"category\":[\"Uncategorized\"],\"pandora_category\":{\"hierarchy\":[\"Uncategorized\"],\"id\":0},\"date\":\"04/04/19\",\"party\":\"paytm\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"IIN/PAYTM      /201904040936/909404440095/\",\"reference\":\"NET BANKING\",\"type\":\"DEBIT\",\"withdrawalAmount\":1000,\"transactionId\":\"ck73edmhs00npnqv2bwjm4fwy\"},{\"balanceAmount\":3990.61,\"category\":[\"Uncategorized\"],\"pandora_category\":{\"hierarchy\":[\"Uncategorized\"],\"id\":0},\"date\":\"04/04/19\",\"party\":\"paytm\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"IIN/I-Debit/PayTM      /201904041218/909414014620/\",\"reference\":\"NET BANKING\",\"type\":\"DEBIT\",\"withdrawalAmount\":990,\"transactionId\":\"ck73edmhs00nqnqv21kg0f3xb\"},{\"balanceAmount\":83990.61,\"category\":[\"Transfer\",\"Credit\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Credit\"],\"id\":190100},\"date\":\"05/04/19\",\"party\":\"er.vineet476@ok\",\"depositAmount\":80000,\"isAutoDebit\":false,\"particular\":\"UPI/909507848651/UPI/er.vineet476@ok/HDFC BANK LTD\",\"reference\":\"\",\"type\":\"CREDIT\",\"withdrawalAmount\":0,\"transactionId\":\"ck73edmhs00nrnqv2hb7rf6uq\"},{\"balanceAmount\":43990.61,\"category\":[\"Transfer\",\"Debit\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Debit\"],\"id\":190200},\"date\":\"05/04/19\",\"party\":\"mohit\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"MMT/IMPS/909508025499/Family/Mohit ram/IDIB000I016\",\"reference\":\"MOBILE BANKING\",\"type\":\"DEBIT\",\"withdrawalAmount\":40000,\"transactionId\":\"ck73edmhs00nsnqv28muf96xv\"},{\"balanceAmount\":28990.61,\"category\":[\"Payment\"],\"pandora_category\":{\"hierarchy\":[\"Payment\"],\"id\":160000},\"date\":\"05/04/19\",\"party\":\"viplav kumar\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"BIL/INFT/001679941329/NA/VIPLAV  KUMAR\",\"reference\":\"\",\"type\":\"DEBIT\",\"withdrawalAmount\":15000,\"transactionId\":\"ck73edmhs00ntnqv2745e7vsm\"},{\"balanceAmount\":23990.61,\"category\":[\"Cash Advance\",\"ATM\"],\"pandora_category\":{\"hierarchy\":[\"Cash Advance\",\"ATM\"],\"id\":110300},\"date\":\"05/04/19\",\"party\":\"p3enfb01\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"NFS/P3ENFB01/CASH WDL/05-04-19\",\"reference\":\"OTHER ATMS\",\"type\":\"DEBIT\",\"withdrawalAmount\":5000,\"transactionId\":\"ck73edmhs00nunqv21rvyag8c\"},{\"balanceAmount\":23955.61,\"category\":[\"Payment\"],\"pandora_category\":{\"hierarchy\":[\"Payment\"],\"id\":160000},\"date\":\"06/04/19\",\"party\":\"icrib0000068114\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"BIL/001680200284/ICRIB0000068114/ICRIB0000068114\",\"reference\":\"NET BANKING\",\"type\":\"DEBIT\",\"withdrawalAmount\":35,\"transactionId\":\"ck73edmhs00nvnqv2cwln0jm8\"},{\"balanceAmount\":22385.12,\"category\":[\"Uncategorized\"],\"pandora_category\":{\"hierarchy\":[\"Uncategorized\"],\"id\":0},\"date\":\"06/04/19\",\"party\":\"train\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"IIN/I-Debit/Book Train /201904061051/909605009298/\",\"reference\":\"NET BANKING\",\"type\":\"DEBIT\",\"withdrawalAmount\":1570.49,\"transactionId\":\"ck73edmhs00nwnqv24252g8fy\"},{\"balanceAmount\":12385.12,\"category\":[\"Cash Advance\",\"ATM\"],\"pandora_category\":{\"hierarchy\":[\"Cash Advance\",\"ATM\"],\"id\":110300},\"date\":\"06/04/19\",\"party\":\"bn087301\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"NFS/BN087301/CASH WDL/06-04-19\",\"reference\":\"OTHER ATMS\",\"type\":\"DEBIT\",\"withdrawalAmount\":10000,\"transactionId\":\"ck73edmht00nxnqv247jl4nlb\"},{\"balanceAmount\":11923.12,\"category\":[\"Uncategorized\"],\"pandora_category\":{\"hierarchy\":[\"Uncategorized\"],\"id\":0},\"date\":\"06/04/19\",\"party\":\"bikanerwala\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"VPS/BIKANERWALA/201904061445/909609069497/GHAZIABAD\",\"reference\":\"DEBIT CARD\",\"type\":\"DEBIT\",\"withdrawalAmount\":462,\"transactionId\":\"ck73edmht00nynqv23g0u2539\"},{\"balanceAmount\":423.12,\"category\":[\"Cash Advance\",\"ATM\"],\"pandora_category\":{\"hierarchy\":[\"Cash Advance\",\"ATM\"],\"id\":110300},\"date\":\"08/04/19\",\"party\":\"spcnk830\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"ATM/SPCNK830/CASH WDL/07-04-19\",\"reference\":\"ICICI ATM\",\"type\":\"DEBIT\",\"withdrawalAmount\":11500,\"transactionId\":\"ck73edmht00nznqv2etnl5zn2\"},{\"balanceAmount\":5423.12,\"category\":[\"Transfer\",\"Earning\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Earning\"],\"id\":190400},\"date\":\"08/04/19\",\"party\":null,\"depositAmount\":5000,\"isAutoDebit\":false,\"particular\":\"MMT/IMPS/909717056267/IMPS Txn/Khaleel   /FINO Payment Ba\",\"reference\":\"MOBILE BANKING\",\"type\":\"CREDIT\",\"withdrawalAmount\":0,\"transactionId\":\"ck73edmht00o0nqv20c3b1mnj\"},{\"balanceAmount\":10423.12,\"category\":[\"Transfer\",\"Earning\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Earning\"],\"id\":190400},\"date\":\"08/04/19\",\"party\":null,\"depositAmount\":5000,\"isAutoDebit\":false,\"particular\":\"MMT/IMPS/909717056298/IMPS Txn/Khaleel   /FINO Payment Ba\",\"reference\":\"MOBILE BANKING\",\"type\":\"CREDIT\",\"withdrawalAmount\":0,\"transactionId\":\"ck73edmht00o1nqv239wn8cnf\"},{\"balanceAmount\":15423.12,\"category\":[\"Transfer\",\"Earning\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Earning\"],\"id\":190400},\"date\":\"08/04/19\",\"party\":null,\"depositAmount\":5000,\"isAutoDebit\":false,\"particular\":\"MMT/IMPS/909717056353/IMPS Txn/Khaleel   /FINO Payment Ba\",\"reference\":\"MOBILE BANKING\",\"type\":\"CREDIT\",\"withdrawalAmount\":0,\"transactionId\":\"ck73edmht00o2nqv26x7d0gds\"},{\"balanceAmount\":20423.12,\"category\":[\"Transfer\",\"Earning\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Earning\"],\"id\":190400},\"date\":\"08/04/19\",\"party\":null,\"depositAmount\":5000,\"isAutoDebit\":false,\"particular\":\"MMT/IMPS/909718050853/IMPS Txn/Khaleel   /FINO Payment Ba\",\"reference\":\"MOBILE BANKING\",\"type\":\"CREDIT\",\"withdrawalAmount\":0,\"transactionId\":\"ck73edmht00o3nqv254ey6sqp\"},{\"balanceAmount\":25423.12,\"category\":[\"Transfer\",\"Earning\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Earning\"],\"id\":190400},\"date\":\"08/04/19\",\"party\":null,\"depositAmount\":5000,\"isAutoDebit\":false,\"particular\":\"MMT/IMPS/909718050880/IMPS Txn/Khaleel   /FINO Payment Ba\",\"reference\":\"MOBILE BANKING\",\"type\":\"CREDIT\",\"withdrawalAmount\":0,\"transactionId\":\"ck73edmht00o4nqv286ckbf0n\"},{\"balanceAmount\":30423.12,\"category\":[\"Transfer\",\"Earning\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Earning\"],\"id\":190400},\"date\":\"08/04/19\",\"party\":null,\"depositAmount\":5000,\"isAutoDebit\":false,\"particular\":\"MMT/IMPS/909718052065/IMPS Txn/GUPTA COM /FINO Payment Ba\",\"reference\":\"MOBILE BANKING\",\"type\":\"CREDIT\",\"withdrawalAmount\":0,\"transactionId\":\"ck73edmht00o5nqv27aiafu4f\"},{\"balanceAmount\":35423.12,\"category\":[\"Transfer\",\"Earning\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Earning\"],\"id\":190400},\"date\":\"08/04/19\",\"party\":null,\"depositAmount\":5000,\"isAutoDebit\":false,\"particular\":\"MMT/IMPS/909718052085/IMPS Txn/GUPTA COM /FINO Payment Ba\",\"reference\":\"MOBILE BANKING\",\"type\":\"CREDIT\",\"withdrawalAmount\":0,\"transactionId\":\"ck73edmht00o6nqv2dr8g4q1u\"},{\"balanceAmount\":33909.12,\"category\":[\"Uncategorized\"],\"pandora_category\":{\"hierarchy\":[\"Uncategorized\"],\"id\":0},\"date\":\"08/04/19\",\"party\":\"p\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"VPS/HOTEL P S  /201904080738/909802284315/LUCKNOW\",\"reference\":\"DEBIT CARD\",\"type\":\"DEBIT\",\"withdrawalAmount\":1514,\"transactionId\":\"ck73edmht00o7nqv27kdb8xpx\"},{\"balanceAmount\":38909.12,\"category\":[\"Transfer\",\"Earning\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Earning\"],\"id\":190400},\"date\":\"08/04/19\",\"party\":\"eko\",\"depositAmount\":5000,\"isAutoDebit\":false,\"particular\":\"MMT/IMPS/909816080668/IMPS to Account/EKO INDIA /Airtel Payments\",\"reference\":\"MOBILE BANKING\",\"type\":\"CREDIT\",\"withdrawalAmount\":0,\"transactionId\":\"ck73edmht00o8nqv282al8hcw\"},{\"balanceAmount\":35589.12,\"category\":[\"Uncategorized\"],\"pandora_category\":{\"hierarchy\":[\"Uncategorized\"],\"id\":0},\"date\":\"08/04/19\",\"party\":\"flight\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"IIN/I-Debit/Book Flight/201904081654/909814025244/\",\"reference\":\"NET BANKING\",\"type\":\"DEBIT\",\"withdrawalAmount\":3320,\"transactionId\":\"ck73edmht00o9nqv28qum2hyk\"},{\"balanceAmount\":34089.12,\"category\":[\"Uncategorized\"],\"pandora_category\":{\"hierarchy\":[\"Uncategorized\"],\"id\":0},\"date\":\"08/04/19\",\"party\":\"paytm\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"IIN/PAYTM      /201904081657/909811053855/\",\"reference\":\"NET BANKING\",\"type\":\"DEBIT\",\"withdrawalAmount\":1500,\"transactionId\":\"ck73edmht00oanqv25i5lfqg3\"},{\"balanceAmount\":33489.12,\"category\":[\"Transfer\",\"Debit\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Debit\"],\"id\":190200},\"date\":\"09/04/19\",\"party\":\"paytm\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"UPI/909931884177/Oid7904957785@O/paybil3066@payt/Paytm Payments/\",\"reference\":\"\",\"type\":\"DEBIT\",\"withdrawalAmount\":600,\"transactionId\":\"ck73edmht00obnqv2eg2856u6\"},{\"balanceAmount\":38489.12,\"category\":[\"Transfer\",\"Earning\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Earning\"],\"id\":190400},\"date\":\"09/04/19\",\"party\":null,\"depositAmount\":5000,\"isAutoDebit\":false,\"particular\":\"MMT/IMPS/909918035292/IMPS Txn/VINOD     /FINO Payment Ba\",\"reference\":\"MOBILE BANKING\",\"type\":\"CREDIT\",\"withdrawalAmount\":0,\"transactionId\":\"ck73edmht00ocnqv285dma2y5\"},{\"balanceAmount\":36809.12,\"category\":[\"Transfer\",\"Debit\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Debit\"],\"id\":190200},\"date\":\"09/04/19\",\"party\":\"paytm\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"UPI/909943285969/Oid7912156940@O/paytra1599@payt/Paytm Payments/\",\"reference\":\"\",\"type\":\"DEBIT\",\"withdrawalAmount\":1680,\"transactionId\":\"ck73edmht00odnqv2ftjx81vd\"},{\"balanceAmount\":5529.12,\"category\":[\"Community\",\"Education\"],\"pandora_category\":{\"hierarchy\":[\"Community\",\"Education\"],\"id\":120100},\"date\":\"09/04/19\",\"party\":\"public school indirapuram\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"TRF/DELHI PUBLIC SCHOOL INDIRAPURAM/ICICI\",\"reference\":\"CHEQUE 316\",\"type\":\"DEBIT\",\"withdrawalAmount\":31280,\"transactionId\":\"ck73edmht00oenqv2aclr0fc6\"},{\"balanceAmount\":3529.12,\"category\":[\"Cash Advance\",\"ATM\"],\"pandora_category\":{\"hierarchy\":[\"Cash Advance\",\"ATM\"],\"id\":110300},\"date\":\"09/04/19\",\"party\":\"secnf550\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"ATM/SECNF550/CASH WDL/09-04-19\",\"reference\":\"ICICI ATM\",\"type\":\"DEBIT\",\"withdrawalAmount\":2000,\"transactionId\":\"ck73edmht00ofnqv2d2r10mp0\"},{\"balanceAmount\":8529.12,\"category\":[\"Transfer\",\"Earning\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Earning\"],\"id\":190400},\"date\":\"10/04/19\",\"party\":\"eko\",\"depositAmount\":5000,\"isAutoDebit\":false,\"particular\":\"MMT/IMPS/910018988373/IMPS to Account/EKO INDIA /Airtel Payments\",\"reference\":\"MOBILE BANKING\",\"type\":\"CREDIT\",\"withdrawalAmount\":0,\"transactionId\":\"ck73edmht00ognqv29yvi3jf6\"},{\"balanceAmount\":6630.12,\"category\":[\"Uncategorized\"],\"pandora_category\":{\"hierarchy\":[\"Uncategorized\"],\"id\":0},\"date\":\"10/04/19\",\"party\":\"mufti\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"VPS/MUFTI      /201904101950/910014822839/LUCKNOW\",\"reference\":\"DEBIT CARD\",\"type\":\"DEBIT\",\"withdrawalAmount\":1899,\"transactionId\":\"ck73edmht00ohnqv22fmw3ab0\"},{\"balanceAmount\":3630.12,\"category\":[\"Cash Advance\",\"ATM\"],\"pandora_category\":{\"hierarchy\":[\"Cash Advance\",\"ATM\"],\"id\":110300},\"date\":\"10/04/19\",\"party\":\"d41d0139\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"NFS/D41D0139/CASH WDL/10-04-19\",\"reference\":\"OTHER ATMS\",\"type\":\"DEBIT\",\"withdrawalAmount\":3000,\"transactionId\":\"ck73edmht00oinqv29vzj7rly\"},{\"balanceAmount\":627.12,\"category\":[\"Uncategorized\"],\"pandora_category\":{\"hierarchy\":[\"Uncategorized\"],\"id\":0},\"date\":\"11/04/19\",\"party\":\"flight\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"IIN/I-Debit/Book Flight/201904111203/910110012388/\",\"reference\":\"NET BANKING\",\"type\":\"DEBIT\",\"withdrawalAmount\":3003,\"transactionId\":\"ck73edmht00ojnqv2bh751xle\"},{\"balanceAmount\":5627.12,\"category\":[\"Transfer\",\"Earning\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Earning\"],\"id\":190400},\"date\":\"11/04/19\",\"party\":\"state\",\"depositAmount\":5000,\"isAutoDebit\":false,\"particular\":\"UPI/910160092409/Payment from Ph/9695233333@ybl/State Bank Of I\",\"reference\":\"\",\"type\":\"CREDIT\",\"withdrawalAmount\":0,\"transactionId\":\"ck73edmht00oknqv29a5v56w8\"},{\"balanceAmount\":627.12,\"category\":[\"Transfer\",\"Debit\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Debit\"],\"id\":190200},\"date\":\"11/04/19\",\"party\":\"anuj\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"MMT/IMPS/910115079192/NA/Anuj katiy/SBIN0012998\",\"reference\":\"MOBILE BANKING\",\"type\":\"DEBIT\",\"withdrawalAmount\":5000,\"transactionId\":\"ck73edmht00olnqv22qk3fxgt\"},{\"balanceAmount\":60627.12,\"category\":[\"Transfer\",\"Earning\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Earning\"],\"id\":190400},\"date\":\"12/04/19\",\"party\":\"manoj kuma\",\"depositAmount\":60000,\"isAutoDebit\":false,\"particular\":\"MMT/IMPS/910214142515/MANOJ KUMA/AXIS BANK LTD\",\"reference\":\"MOBILE BANKING\",\"type\":\"CREDIT\",\"withdrawalAmount\":0,\"transactionId\":\"ck73edmht00omnqv2hu275rrg\"},{\"balanceAmount\":40627.12,\"category\":[\"Cash Advance\",\"ATM\"],\"pandora_category\":{\"hierarchy\":[\"Cash Advance\",\"ATM\"],\"id\":110300},\"date\":\"12/04/19\",\"party\":\"spcnk830\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"ATM/SPCNK830/CASH WDL/12-04-19\",\"reference\":\"ICICI ATM\",\"type\":\"DEBIT\",\"withdrawalAmount\":20000,\"transactionId\":\"ck73edmht00onnqv206to8v53\"},{\"balanceAmount\":20627.12,\"category\":[\"Cash Advance\",\"ATM\"],\"pandora_category\":{\"hierarchy\":[\"Cash Advance\",\"ATM\"],\"id\":110300},\"date\":\"12/04/19\",\"party\":\"spcnk830\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"ATM/SPCNK830/CASH WDL/12-04-19\",\"reference\":\"ICICI ATM\",\"type\":\"DEBIT\",\"withdrawalAmount\":20000,\"transactionId\":\"ck73edmht00oonqv2bdqx34yx\"},{\"balanceAmount\":3127.12,\"category\":[\"Transfer\",\"Debit\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Debit\"],\"id\":190200},\"date\":\"12/04/19\",\"party\":\"mohit\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"MMT/IMPS/910218052877/Family/Mohit ram/IDIB000I016\",\"reference\":\"MOBILE BANKING\",\"type\":\"DEBIT\",\"withdrawalAmount\":17500,\"transactionId\":\"ck73edmht00opnqv27pi5g271\"},{\"balanceAmount\":3128.12,\"category\":[\"Transfer\",\"Credit\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Credit\"],\"id\":190100},\"date\":\"15/04/19\",\"party\":null,\"depositAmount\":1,\"isAutoDebit\":false,\"particular\":\"MMT/IMPS/910410719546/AccVerify KB190/FINNOVATIO/YES BANK LTD\",\"reference\":\"MOBILE BANKING\",\"type\":\"CREDIT\",\"withdrawalAmount\":0,\"transactionId\":\"ck73edmht00oqnqv2d7ed12cv\"},{\"balanceAmount\":7638.12,\"category\":[\"Transfer\",\"Earning\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Earning\"],\"id\":190400},\"date\":\"15/04/19\",\"party\":null,\"depositAmount\":4510,\"isAutoDebit\":false,\"particular\":\"MMT/IMPS/910410720119/Disbursal KB190/FINNOVATIO/YES BANK LTD\",\"reference\":\"MOBILE BANKING\",\"type\":\"CREDIT\",\"withdrawalAmount\":0,\"transactionId\":\"ck73edmht00ornqv26ot79d2b\"},{\"balanceAmount\":638.12,\"category\":[\"Cash Advance\",\"ATM\"],\"pandora_category\":{\"hierarchy\":[\"Cash Advance\",\"ATM\"],\"id\":110300},\"date\":\"15/04/19\",\"party\":\"spcnk830\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"ATM/SPCNK830/CASH WDL/14-04-19\",\"reference\":\"ICICI ATM\",\"type\":\"DEBIT\",\"withdrawalAmount\":7000,\"transactionId\":\"ck73edmht00osnqv26kgaaczl\"},{\"balanceAmount\":4638.12,\"category\":[\"Transfer\",\"Earning\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Earning\"],\"id\":190400},\"date\":\"15/04/19\",\"party\":null,\"depositAmount\":4000,\"isAutoDebit\":false,\"particular\":\"MMT/IMPS/910418075866/IMPS Txn/Monu      /FINO Payment Ba\",\"reference\":\"MOBILE BANKING\",\"type\":\"CREDIT\",\"withdrawalAmount\":0,\"transactionId\":\"ck73edmht00otnqv2d3sobykg\"},{\"balanceAmount\":9638.12,\"category\":[\"Transfer\",\"Earning\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Earning\"],\"id\":190400},\"date\":\"15/04/19\",\"party\":\"eko\",\"depositAmount\":5000,\"isAutoDebit\":false,\"particular\":\"MMT/IMPS/910418407112/IMPS to Account/EKO INDIA /Airtel Payments\",\"reference\":\"MOBILE BANKING\",\"type\":\"CREDIT\",\"withdrawalAmount\":0,\"transactionId\":\"ck73edmht00ounqv2bo5ef24m\"},{\"balanceAmount\":14638.12,\"category\":[\"Transfer\",\"Earning\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Earning\"],\"id\":190400},\"date\":\"15/04/19\",\"party\":\"eko\",\"depositAmount\":5000,\"isAutoDebit\":false,\"particular\":\"MMT/IMPS/910418407130/IMPS to Account/EKO INDIA /Airtel Payments\",\"reference\":\"MOBILE BANKING\",\"type\":\"CREDIT\",\"withdrawalAmount\":0,\"transactionId\":\"ck73edmht00ovnqv21hqlgj8v\"},{\"balanceAmount\":15638.12,\"category\":[\"Transfer\",\"Earning\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Earning\"],\"id\":190400},\"date\":\"15/04/19\",\"party\":\"eko\",\"depositAmount\":1000,\"isAutoDebit\":false,\"particular\":\"MMT/IMPS/910418407521/IMPS to Account/EKO INDIA /Airtel Payments\",\"reference\":\"MOBILE BANKING\",\"type\":\"CREDIT\",\"withdrawalAmount\":0,\"transactionId\":\"ck73edmht00ownqv219zd9o6a\"},{\"balanceAmount\":14638.12,\"category\":[\"Uncategorized\"],\"pandora_category\":{\"hierarchy\":[\"Uncategorized\"],\"id\":0},\"date\":\"15/04/19\",\"party\":\"paytm app\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"VIN/PAYTM APP  /201904150926/910503113723/\",\"reference\":\"NET BANKING\",\"type\":\"DEBIT\",\"withdrawalAmount\":1000,\"transactionId\":\"ck73edmhu00oxnqv27ezo8zab\"},{\"balanceAmount\":638.12,\"category\":[\"Transfer\",\"Debit\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Debit\"],\"id\":190200},\"date\":\"15/04/19\",\"party\":\"mohit\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"MMT/IMPS/910510810982/Family/Mohit ram/IDIB000I016\",\"reference\":\"MOBILE BANKING\",\"type\":\"DEBIT\",\"withdrawalAmount\":14000,\"transactionId\":\"ck73edmhu00oynqv22a1jfsv9\"},{\"balanceAmount\":200638.12,\"category\":[\"Transfer\",\"Credit\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Credit\"],\"id\":190100},\"date\":\"16/04/19\",\"party\":\"madhav rastogi\",\"depositAmount\":200000,\"isAutoDebit\":false,\"particular\":\"TRFR FROM: MADHAV RASTOGI\",\"reference\":\"\",\"type\":\"CREDIT\",\"withdrawalAmount\":0,\"transactionId\":\"ck73edmhu00oznqv234kq1vp0\"},{\"balanceAmount\":192638.12,\"category\":[\"Cash Advance\",\"ATM\"],\"pandora_category\":{\"hierarchy\":[\"Cash Advance\",\"ATM\"],\"id\":110300},\"date\":\"16/04/19\",\"party\":\"s1cpn208\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"ATM/S1CPN208/CASH WDL/16-04-19\",\"reference\":\"ICICI ATM\",\"type\":\"DEBIT\",\"withdrawalAmount\":8000,\"transactionId\":\"ck73edmhu00p0nqv26vif1696\"},{\"balanceAmount\":184638.12,\"category\":[\"Cash Advance\",\"ATM\"],\"pandora_category\":{\"hierarchy\":[\"Cash Advance\",\"ATM\"],\"id\":110300},\"date\":\"16/04/19\",\"party\":\"s1cpn208\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"ATM/S1CPN208/CASH WDL/16-04-19\",\"reference\":\"ICICI ATM\",\"type\":\"DEBIT\",\"withdrawalAmount\":8000,\"transactionId\":\"ck73edmhu00p1nqv26ly5dnsf\"},{\"balanceAmount\":180638.12,\"category\":[\"Cash Advance\",\"ATM\"],\"pandora_category\":{\"hierarchy\":[\"Cash Advance\",\"ATM\"],\"id\":110300},\"date\":\"16/04/19\",\"party\":\"s1cpn208\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"ATM/S1CPN208/CASH WDL/16-04-19\",\"reference\":\"ICICI ATM\",\"type\":\"DEBIT\",\"withdrawalAmount\":4000,\"transactionId\":\"ck73edmhu00p2nqv29oim1lln\"},{\"balanceAmount\":130638.12,\"category\":[\"Transfer\",\"Debit\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Debit\"],\"id\":190200},\"date\":\"16/04/19\",\"party\":\"susheela\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"MMT/IMPS/910612728410/NA/susheela/UTBI0ETHL51\",\"reference\":\"MOBILE BANKING\",\"type\":\"DEBIT\",\"withdrawalAmount\":50000,\"transactionId\":\"ck73edmhu00p3nqv2hn1e556n\"},{\"balanceAmount\":115638.12,\"category\":[\"Cash Advance\",\"ATM\"],\"pandora_category\":{\"hierarchy\":[\"Cash Advance\",\"ATM\"],\"id\":110300},\"date\":\"16/04/19\",\"party\":\"spcnk825\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"ATM/SPCNK825/CASH WDL/16-04-19\",\"reference\":\"ICICI ATM\",\"type\":\"DEBIT\",\"withdrawalAmount\":15000,\"transactionId\":\"ck73edmhu00p4nqv2cl9dddkf\"},{\"balanceAmount\":100638.12,\"category\":[\"Cash Advance\",\"ATM\"],\"pandora_category\":{\"hierarchy\":[\"Cash Advance\",\"ATM\"],\"id\":110300},\"date\":\"16/04/19\",\"party\":\"spcnk825\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"ATM/SPCNK825/CASH WDL/16-04-19\",\"reference\":\"ICICI ATM\",\"type\":\"DEBIT\",\"withdrawalAmount\":15000,\"transactionId\":\"ck73edmhu00p5nqv27abn40c9\"},{\"balanceAmount\":85638.12,\"category\":[\"Payment\"],\"pandora_category\":{\"hierarchy\":[\"Payment\"],\"id\":160000},\"date\":\"16/04/19\",\"party\":\"mib ramvir\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"BIL/INFT/001687796256/MIB-/RAMVIR SINGH\",\"reference\":\"\",\"type\":\"DEBIT\",\"withdrawalAmount\":15000,\"transactionId\":\"ck73edmhu00p6nqv2gcy92klb\"},{\"balanceAmount\":70638.12,\"category\":[\"Payment\"],\"pandora_category\":{\"hierarchy\":[\"Payment\"],\"id\":160000},\"date\":\"16/04/19\",\"party\":\"mib viplav\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"BIL/INFT/001687796922/MIB-/VIPLAV  KUMAR\",\"reference\":\"\",\"type\":\"DEBIT\",\"withdrawalAmount\":15000,\"transactionId\":\"ck73edmhu00p7nqv2ai509yvm\"},{\"balanceAmount\":67899.12,\"category\":[\"Uncategorized\"],\"pandora_category\":{\"hierarchy\":[\"Uncategorized\"],\"id\":0},\"date\":\"16/04/19\",\"party\":\"beauty kafe\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"VPS/BEAUTY KAFE/201904161732/910612006706/GHAZIABAD\",\"reference\":\"DEBIT CARD\",\"type\":\"DEBIT\",\"withdrawalAmount\":2739,\"transactionId\":\"ck73edmhu00p8nqv2846lgncu\"},{\"balanceAmount\":64899.12,\"category\":[\"Transfer\",\"Debit\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Debit\"],\"id\":190200},\"date\":\"16/04/19\",\"party\":\"mohit\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"MMT/IMPS/910617162161/Family/Mohit ram/IDIB000I016\",\"reference\":\"MOBILE BANKING\",\"type\":\"DEBIT\",\"withdrawalAmount\":3000,\"transactionId\":\"ck73edmhu00p9nqv2aynbehac\"},{\"balanceAmount\":54899.12,\"category\":[\"Transfer\",\"Debit\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Debit\"],\"id\":190200},\"date\":\"16/04/19\",\"party\":null,\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"MMT/IMPS/910623643940/friend/vinay/SBIN0016268\",\"reference\":\"MOBILE BANKING\",\"type\":\"DEBIT\",\"withdrawalAmount\":10000,\"transactionId\":\"ck73edmhu00panqv28gyye1l0\"},{\"balanceAmount\":29899.12,\"category\":[\"Transfer\",\"Debit\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Debit\"],\"id\":190200},\"date\":\"16/04/19\",\"party\":null,\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"MMT/IMPS/910623646979/Friends/vinay/SBIN0016268\",\"reference\":\"MOBILE BANKING\",\"type\":\"DEBIT\",\"withdrawalAmount\":25000,\"transactionId\":\"ck73edmhu00pbnqv27tdd9ia0\"},{\"balanceAmount\":21899.12,\"category\":[\"Transfer\",\"Debit\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Debit\"],\"id\":190200},\"date\":\"17/04/19\",\"party\":\"anuj\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"MMT/IMPS/910710896368/NA/Anuj katiy/SBIN0012998\",\"reference\":\"MOBILE BANKING\",\"type\":\"DEBIT\",\"withdrawalAmount\":8000,\"transactionId\":\"ck73edmhu00pcnqv22m6v40jo\"},{\"balanceAmount\":11899.12,\"category\":[\"Cash Advance\",\"ATM\"],\"pandora_category\":{\"hierarchy\":[\"Cash Advance\",\"ATM\"],\"id\":110300},\"date\":\"17/04/19\",\"party\":\"cd215001\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"NFS/CD215001/CASH WDL/17-04-19\",\"reference\":\"OTHER ATMS\",\"type\":\"DEBIT\",\"withdrawalAmount\":10000,\"transactionId\":\"ck73edmhu00pdnqv270ij1tz1\"},{\"balanceAmount\":6899.12,\"category\":[\"Cash Advance\",\"ATM\"],\"pandora_category\":{\"hierarchy\":[\"Cash Advance\",\"ATM\"],\"id\":110300},\"date\":\"17/04/19\",\"party\":\"cd215001\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"NFS/CD215001/CASH WDL/17-04-19\",\"reference\":\"OTHER ATMS\",\"type\":\"DEBIT\",\"withdrawalAmount\":5000,\"transactionId\":\"ck73edmhu00penqv2h2jzg1xq\"},{\"balanceAmount\":399.12,\"category\":[\"Cash Advance\",\"ATM\"],\"pandora_category\":{\"hierarchy\":[\"Cash Advance\",\"ATM\"],\"id\":110300},\"date\":\"18/04/19\",\"party\":\"s1cpn213\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"ATM/S1CPN213/CASH WDL/18-04-19\",\"reference\":\"ICICI ATM\",\"type\":\"DEBIT\",\"withdrawalAmount\":6500,\"transactionId\":\"ck73edmhu00pfnqv2abof1iru\"},{\"balanceAmount\":10399.12,\"category\":[\"Transfer\",\"Credit\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Credit\"],\"id\":190100},\"date\":\"18/04/19\",\"party\":\"nishant\",\"depositAmount\":10000,\"isAutoDebit\":false,\"particular\":\"MMT/IMPS/910813457016/comments/NISHANT SH/Paytm Pa\",\"reference\":\"MOBILE BANKING\",\"type\":\"CREDIT\",\"withdrawalAmount\":0,\"transactionId\":\"ck73edmhu00pgnqv2ch4gepbn\"},{\"balanceAmount\":12399.12,\"category\":[\"Transfer\",\"Credit\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Credit\"],\"id\":190100},\"date\":\"18/04/19\",\"party\":\"nishant\",\"depositAmount\":2000,\"isAutoDebit\":false,\"particular\":\"MMT/IMPS/910813457761/comments/NISHANT SH/Paytm Payments\",\"reference\":\"MOBILE BANKING\",\"type\":\"CREDIT\",\"withdrawalAmount\":0,\"transactionId\":\"ck73edmhu00phnqv2ahd2g1iz\"},{\"balanceAmount\":399.12,\"category\":[\"Cash Advance\",\"ATM\"],\"pandora_category\":{\"hierarchy\":[\"Cash Advance\",\"ATM\"],\"id\":110300},\"date\":\"18/04/19\",\"party\":\"spcnk825\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"ATM/SPCNK825/CASH WDL/18-04-19\",\"reference\":\"ICICI ATM\",\"type\":\"DEBIT\",\"withdrawalAmount\":12000,\"transactionId\":\"ck73edmhu00pinqv2epnr2hg1\"},{\"balanceAmount\":200399.12,\"category\":[\"Payment\",\"Cheque\"],\"pandora_category\":{\"hierarchy\":[\"Payment\",\"Cheque\"],\"id\":160200},\"date\":\"18/04/19\",\"party\":\"pratibha rastogi\",\"depositAmount\":200000,\"isAutoDebit\":false,\"particular\":\"CLG/PRATIBHA RASTOGI/400022/IND/16.04.2019\",\"reference\":\"\",\"type\":\"CREDIT\",\"withdrawalAmount\":0,\"transactionId\":\"ck73edmhu00pjnqv2hqwc5sao\"},{\"balanceAmount\":300399.12,\"category\":[\"Transfer\",\"Earning\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Earning\"],\"id\":190400},\"date\":\"18/04/19\",\"party\":\"arun kumar\",\"depositAmount\":100000,\"isAutoDebit\":false,\"particular\":\"MMT/IMPS/910815059992/ARUN KUMAR/AXIS BANK LTD\",\"reference\":\"MOBILE BANKING\",\"type\":\"CREDIT\",\"withdrawalAmount\":0,\"transactionId\":\"ck73edmhu00pknqv207ts4kzj\"},{\"balanceAmount\":250399.12,\"category\":[\"Cash Advance\",\"Debit\"],\"pandora_category\":{\"hierarchy\":[\"Cash Advance\",\"Debit\"],\"id\":110200},\"date\":\"18/04/19\",\"party\":\"indirapuram\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"CASH PAID:Self 0718 GHAZIABAD-INDIRAPURAM\",\"reference\":\"CHEQUE 320\",\"type\":\"DEBIT\",\"withdrawalAmount\":50000,\"transactionId\":\"ck73edmhu00plnqv2d7ra5xp5\"},{\"balanceAmount\":235399.12,\"category\":[\"Cash Advance\",\"ATM\"],\"pandora_category\":{\"hierarchy\":[\"Cash Advance\",\"ATM\"],\"id\":110300},\"date\":\"18/04/19\",\"party\":\"s1cpn208\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"ATM/S1CPN208/CASH WDL/18-04-19\",\"reference\":\"ICICI ATM\",\"type\":\"DEBIT\",\"withdrawalAmount\":15000,\"transactionId\":\"ck73edmhu00pmnqv28rrqhzso\"},{\"balanceAmount\":225399.12,\"category\":[\"Cash Advance\",\"ATM\"],\"pandora_category\":{\"hierarchy\":[\"Cash Advance\",\"ATM\"],\"id\":110300},\"date\":\"18/04/19\",\"party\":\"s1cpn208\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"ATM/S1CPN208/CASH WDL/18-04-19\",\"reference\":\"ICICI ATM\",\"type\":\"DEBIT\",\"withdrawalAmount\":10000,\"transactionId\":\"ck73edmhu00pnnqv2d20c0xgp\"},{\"balanceAmount\":224399.12,\"category\":[\"Payment\"],\"pandora_category\":{\"hierarchy\":[\"Payment\"],\"id\":160000},\"date\":\"18/04/19\",\"party\":\"adamya yadav\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"BIL/INFT/001689083255/Family/ADAMYA  YADAV (\",\"reference\":\"\",\"type\":\"DEBIT\",\"withdrawalAmount\":1000,\"transactionId\":\"ck73edmhu00ponqv2httce39y\"},{\"balanceAmount\":189399.12,\"category\":[\"Payment\",\"Loan\"],\"pandora_category\":{\"hierarchy\":[\"Payment\",\"Loan\"],\"id\":160400},\"date\":\"19/04/19\",\"party\":\"return sanjeev\",\"depositAmount\":0,\"isAutoDebit\":true,\"particular\":\"BIL/INFT/001689418802/loan return/SANJEEV KUMAR/A\",\"reference\":\"\",\"type\":\"DEBIT\",\"withdrawalAmount\":35000,\"transactionId\":\"ck73edmhu00ppnqv2gs9ven4o\"},{\"balanceAmount\":174399.12,\"category\":[\"Transfer\",\"Debit\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Debit\"],\"id\":190200},\"date\":\"19/04/19\",\"party\":\"uday\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"MMT/IMPS/910911587771/Family/Uday/UBIN0559407\",\"reference\":\"MOBILE BANKING\",\"type\":\"DEBIT\",\"withdrawalAmount\":15000,\"transactionId\":\"ck73edmhu00pqnqv23ulj5lr5\"},{\"balanceAmount\":156399.12,\"category\":[\"Cash Advance\",\"ATM\"],\"pandora_category\":{\"hierarchy\":[\"Cash Advance\",\"ATM\"],\"id\":110300},\"date\":\"19/04/19\",\"party\":\"spcnk825\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"ATM/SPCNK825/CASH WDL/19-04-19\",\"reference\":\"ICICI ATM\",\"type\":\"DEBIT\",\"withdrawalAmount\":18000,\"transactionId\":\"ck73edmhu00prnqv2hhyganz1\"},{\"balanceAmount\":138399.12,\"category\":[\"Cash Advance\",\"ATM\"],\"pandora_category\":{\"hierarchy\":[\"Cash Advance\",\"ATM\"],\"id\":110300},\"date\":\"19/04/19\",\"party\":\"spcnk825\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"ATM/SPCNK825/CASH WDL/19-04-19\",\"reference\":\"ICICI ATM\",\"type\":\"DEBIT\",\"withdrawalAmount\":18000,\"transactionId\":\"ck73edmhu00psnqv25gqo50rx\"},{\"balanceAmount\":118399.12,\"category\":[\"Cash Advance\",\"ATM\"],\"pandora_category\":{\"hierarchy\":[\"Cash Advance\",\"ATM\"],\"id\":110300},\"date\":\"20/04/19\",\"party\":\"s1cpn213\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"ATM/S1CPN213/CASH WDL/20-04-19\",\"reference\":\"ICICI ATM\",\"type\":\"DEBIT\",\"withdrawalAmount\":20000,\"transactionId\":\"ck73edmhu00ptnqv290j95nzm\"},{\"balanceAmount\":98399.12,\"category\":[\"Cash Advance\",\"ATM\"],\"pandora_category\":{\"hierarchy\":[\"Cash Advance\",\"ATM\"],\"id\":110300},\"date\":\"20/04/19\",\"party\":\"s1cpn213\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"ATM/S1CPN213/CASH WDL/20-04-19\",\"reference\":\"ICICI ATM\",\"type\":\"DEBIT\",\"withdrawalAmount\":20000,\"transactionId\":\"ck73edmhv00punqv2dt9h0pyr\"},{\"balanceAmount\":58399.12,\"category\":[\"Payment\"],\"pandora_category\":{\"hierarchy\":[\"Payment\"],\"id\":160000},\"date\":\"20/04/19\",\"party\":\"mib\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"BIL/INFT/001690087327/MIB-/CHANDRAKESH\",\"reference\":\"\",\"type\":\"DEBIT\",\"withdrawalAmount\":40000,\"transactionId\":\"ck73edmhv00pvnqv2aka19ti1\"},{\"balanceAmount\":23399.12,\"category\":[\"Payment\"],\"pandora_category\":{\"hierarchy\":[\"Payment\"],\"id\":160000},\"date\":\"20/04/19\",\"party\":\"mib\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"BIL/INFT/001690087438/MIB-/CHANDRAKESH\",\"reference\":\"\",\"type\":\"DEBIT\",\"withdrawalAmount\":35000,\"transactionId\":\"ck73edmhv00pwnqv2cb2w29n2\"},{\"balanceAmount\":3399.12,\"category\":[\"Transfer\",\"Debit\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Debit\"],\"id\":190200},\"date\":\"20/04/19\",\"party\":\"alok yadav\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"MMT/IMPS/911013553228/Alok yadav/BKID0007260\",\"reference\":\"MOBILE BANKING\",\"type\":\"DEBIT\",\"withdrawalAmount\":20000,\"transactionId\":\"ck73edmhv00pxnqv214mubtz9\"},{\"balanceAmount\":75899.12,\"category\":[\"Transfer\",\"Earning\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Earning\"],\"id\":190400},\"date\":\"20/04/19\",\"party\":\"sysacs technology private\",\"depositAmount\":72500,\"isAutoDebit\":false,\"particular\":\"INF/021164646561/Salary feb125605000084/SYSACS TECHNOLOGY PRIVATE LIMI\",\"reference\":\"NET BANKING\",\"type\":\"CREDIT\",\"withdrawalAmount\":0,\"transactionId\":\"ck73edmhv00pynqv29e8q8s5d\"},{\"balanceAmount\":67899.12,\"category\":[\"Cash Advance\",\"ATM\"],\"pandora_category\":{\"hierarchy\":[\"Cash Advance\",\"ATM\"],\"id\":110300},\"date\":\"20/04/19\",\"party\":null,\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"NFS/00008235/CASH WDL/20-04-19\",\"reference\":\"OTHER ATMS\",\"type\":\"DEBIT\",\"withdrawalAmount\":8000,\"transactionId\":\"ck73edmhv00pznqv2c4c4a85r\"},{\"balanceAmount\":32899.12,\"category\":[\"Payment\"],\"pandora_category\":{\"hierarchy\":[\"Payment\"],\"id\":160000},\"date\":\"20/04/19\",\"party\":\"mib viplav\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"BIL/INFT/001690295899/MIB-/VIPLAV  KUMAR\",\"reference\":\"\",\"type\":\"DEBIT\",\"withdrawalAmount\":35000,\"transactionId\":\"ck73edmhv00q0nqv2acyu1foe\"},{\"balanceAmount\":29899.12,\"category\":[\"Payment\"],\"pandora_category\":{\"hierarchy\":[\"Payment\"],\"id\":160000},\"date\":\"22/04/19\",\"party\":\"viplav kumar\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"BIL/INFT/001690502364/NA/VIPLAV  KUMAR\",\"reference\":\"\",\"type\":\"DEBIT\",\"withdrawalAmount\":3000,\"transactionId\":\"ck73edmhv00q1nqv25eafbryo\"},{\"balanceAmount\":24741.68,\"category\":[\"Payment\"],\"pandora_category\":{\"hierarchy\":[\"Payment\"],\"id\":160000},\"date\":\"22/04/19\",\"party\":\"finnovatio\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"BIL/ONL/001690532925/Finnovatio/KRAZYBEE_QICI74\",\"reference\":\"\",\"type\":\"DEBIT\",\"withdrawalAmount\":5157.44,\"transactionId\":\"ck73edmhv00q2nqv27ady7za4\"},{\"balanceAmount\":14741.68,\"category\":[\"Cash Advance\",\"ATM\"],\"pandora_category\":{\"hierarchy\":[\"Cash Advance\",\"ATM\"],\"id\":110300},\"date\":\"22/04/19\",\"party\":\"cprh6360\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"NFS/CPRH6360/CASH WDL/21-04-19\",\"reference\":\"OTHER ATMS\",\"type\":\"DEBIT\",\"withdrawalAmount\":10000,\"transactionId\":\"ck73edmhv00q3nqv26vt27i5y\"},{\"balanceAmount\":13741.68,\"category\":[\"Uncategorized\"],\"pandora_category\":{\"hierarchy\":[\"Uncategorized\"],\"id\":0},\"date\":\"22/04/19\",\"party\":\"paytm app\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"VIN/PAYTM APP  /201904220945/911204590789/\",\"reference\":\"NET BANKING\",\"type\":\"DEBIT\",\"withdrawalAmount\":1000,\"transactionId\":\"ck73edmhv00q4nqv249rcbyrd\"},{\"balanceAmount\":8741.68,\"category\":[\"Cash Advance\",\"ATM\"],\"pandora_category\":{\"hierarchy\":[\"Cash Advance\",\"ATM\"],\"id\":110300},\"date\":\"22/04/19\",\"party\":null,\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"NFS/00008235/CASH WDL/22-04-19\",\"reference\":\"OTHER ATMS\",\"type\":\"DEBIT\",\"withdrawalAmount\":5000,\"transactionId\":\"ck73edmhv00q5nqv212kt75j0\"},{\"balanceAmount\":4741.68,\"category\":[\"Cash Advance\",\"ATM\"],\"pandora_category\":{\"hierarchy\":[\"Cash Advance\",\"ATM\"],\"id\":110300},\"date\":\"22/04/19\",\"party\":\"mn000569\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"NFS/MN000569/CASH WDL/22-04-19\",\"reference\":\"OTHER ATMS\",\"type\":\"DEBIT\",\"withdrawalAmount\":4000,\"transactionId\":\"ck73edmhv00q6nqv26q110hft\"},{\"balanceAmount\":9369.68,\"category\":[\"Transfer\",\"Earning\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Earning\"],\"id\":190400},\"date\":\"22/04/19\",\"party\":null,\"depositAmount\":4628,\"isAutoDebit\":false,\"particular\":\"MMT/IMPS/911218653263/Disbursal KB190/FINNOVATIO/YES BANK LTD\",\"reference\":\"MOBILE BANKING\",\"type\":\"CREDIT\",\"withdrawalAmount\":0,\"transactionId\":\"ck73edmhv00q7nqv24qvm8pfx\"},{\"balanceAmount\":8369.68,\"category\":[\"Uncategorized\"],\"pandora_category\":{\"hierarchy\":[\"Uncategorized\"],\"id\":0},\"date\":\"22/04/19\",\"party\":\"bharat petr\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"VPS/BHARAT PETR/201904222303/911217459640/GHAZIABAD\",\"reference\":\"DEBIT CARD\",\"type\":\"DEBIT\",\"withdrawalAmount\":1000,\"transactionId\":\"ck73edmhv00q8nqv24s8r9jmf\"},{\"balanceAmount\":369.68,\"category\":[\"Cash Advance\",\"ATM\"],\"pandora_category\":{\"hierarchy\":[\"Cash Advance\",\"ATM\"],\"id\":110300},\"date\":\"23/04/19\",\"party\":\"spcnk825\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"ATM/SPCNK825/CASH WDL/23-04-19\",\"reference\":\"ICICI ATM\",\"type\":\"DEBIT\",\"withdrawalAmount\":8000,\"transactionId\":\"ck73edmhv00q9nqv2f3g000rx\"},{\"balanceAmount\":1369.68,\"category\":[\"Transfer\",\"Earning\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Earning\"],\"id\":190400},\"date\":\"25/04/19\",\"party\":\"eko\",\"depositAmount\":1000,\"isAutoDebit\":false,\"particular\":\"MMT/IMPS/911514883954/IMPS to Account/EKO INDIA /Airtel Payments\",\"reference\":\"MOBILE BANKING\",\"type\":\"CREDIT\",\"withdrawalAmount\":0,\"transactionId\":\"ck73edmhv00qanqv25copg85k\"},{\"balanceAmount\":369.68,\"category\":[\"Uncategorized\"],\"pandora_category\":{\"hierarchy\":[\"Uncategorized\"],\"id\":0},\"date\":\"25/04/19\",\"party\":\"paytm app\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"VIN/PAYTM APP  /201904251408/911508678356/\",\"reference\":\"NET BANKING\",\"type\":\"DEBIT\",\"withdrawalAmount\":1000,\"transactionId\":\"ck73edmhv00qbnqv2a3hzdsuk\"},{\"balanceAmount\":1369.68,\"category\":[\"Transfer\",\"Earning\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Earning\"],\"id\":190400},\"date\":\"25/04/19\",\"party\":\"state\",\"depositAmount\":1000,\"isAutoDebit\":false,\"particular\":\"UPI/911517756990/Payment from Ph/9696689032@ybl/State Bank Of I\",\"reference\":\"\",\"type\":\"CREDIT\",\"withdrawalAmount\":0,\"transactionId\":\"ck73edmhv00qcnqv2101phn1j\"},{\"balanceAmount\":6369.68,\"category\":[\"Transfer\",\"Earning\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Earning\"],\"id\":190400},\"date\":\"26/04/19\",\"party\":\"pankaj kum paytm\",\"depositAmount\":5000,\"isAutoDebit\":false,\"particular\":\"MMT/IMPS/911611754429/pankaj kum/Paytm Payments\",\"reference\":\"MOBILE BANKING\",\"type\":\"CREDIT\",\"withdrawalAmount\":0,\"transactionId\":\"ck73edmhv00qdnqv22nehcti5\"},{\"balanceAmount\":11369.68,\"category\":[\"Transfer\",\"Earning\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Earning\"],\"id\":190400},\"date\":\"26/04/19\",\"party\":\"pankaj kum paytm\",\"depositAmount\":5000,\"isAutoDebit\":false,\"particular\":\"MMT/IMPS/911611752824/pankaj kum/Paytm Payments\",\"reference\":\"MOBILE BANKING\",\"type\":\"CREDIT\",\"withdrawalAmount\":0,\"transactionId\":\"ck73edmhv00qenqv246zm178q\"},{\"balanceAmount\":16369.68,\"category\":[\"Transfer\",\"Earning\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Earning\"],\"id\":190400},\"date\":\"26/04/19\",\"party\":\"pankaj kum paytm\",\"depositAmount\":5000,\"isAutoDebit\":false,\"particular\":\"MMT/IMPS/911611752841/pankaj kum/Paytm Payments\",\"reference\":\"MOBILE BANKING\",\"type\":\"CREDIT\",\"withdrawalAmount\":0,\"transactionId\":\"ck73edmhv00qfnqv28jizbqzr\"},{\"balanceAmount\":21369.68,\"category\":[\"Transfer\",\"Earning\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Earning\"],\"id\":190400},\"date\":\"26/04/19\",\"party\":\"pankaj kum paytm\",\"depositAmount\":5000,\"isAutoDebit\":false,\"particular\":\"MMT/IMPS/911611752884/pankaj kum/Paytm Payments\",\"reference\":\"MOBILE BANKING\",\"type\":\"CREDIT\",\"withdrawalAmount\":0,\"transactionId\":\"ck73edmhv00qgnqv2cj8gfm2e\"},{\"balanceAmount\":25869.68,\"category\":[\"Transfer\",\"Earning\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Earning\"],\"id\":190400},\"date\":\"26/04/19\",\"party\":\"pankaj kum paytm\",\"depositAmount\":4500,\"isAutoDebit\":false,\"particular\":\"MMT/IMPS/911611752919/pankaj kum/Paytm Payments\",\"reference\":\"MOBILE BANKING\",\"type\":\"CREDIT\",\"withdrawalAmount\":0,\"transactionId\":\"ck73edmhv00qhnqv24qbe57rw\"},{\"balanceAmount\":10869.68,\"category\":[\"Cash Advance\",\"ATM\"],\"pandora_category\":{\"hierarchy\":[\"Cash Advance\",\"ATM\"],\"id\":110300},\"date\":\"26/04/19\",\"party\":\"s1cpn511\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"ATM/S1CPN511/CASH WDL/26-04-19\",\"reference\":\"ICICI ATM\",\"type\":\"DEBIT\",\"withdrawalAmount\":15000,\"transactionId\":\"ck73edmhv00qinqv2cklodb94\"},{\"balanceAmount\":369.68,\"category\":[\"Cash Advance\",\"ATM\"],\"pandora_category\":{\"hierarchy\":[\"Cash Advance\",\"ATM\"],\"id\":110300},\"date\":\"26/04/19\",\"party\":\"s1cpn511\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"ATM/S1CPN511/CASH WDL/26-04-19\",\"reference\":\"ICICI ATM\",\"type\":\"DEBIT\",\"withdrawalAmount\":10500,\"transactionId\":\"ck73edmhv00qjnqv24ljradne\"},{\"balanceAmount\":4369.68,\"category\":[\"Transfer\",\"Earning\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Earning\"],\"id\":190400},\"date\":\"26/04/19\",\"party\":\"vinod yada\",\"depositAmount\":4000,\"isAutoDebit\":false,\"particular\":\"MMT/IMPS/911619000596/IMPS Txn/Vinod Yada/FINO Payment Ba\",\"reference\":\"MOBILE BANKING\",\"type\":\"CREDIT\",\"withdrawalAmount\":0,\"transactionId\":\"ck73edmhv00qknqv2cn5bbtxb\"},{\"balanceAmount\":2869.68,\"category\":[\"Cash Advance\",\"ATM\"],\"pandora_category\":{\"hierarchy\":[\"Cash Advance\",\"ATM\"],\"id\":110300},\"date\":\"26/04/19\",\"party\":\"spcnk825\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"ATM/SPCNK825/CASH WDL/26-04-19\",\"reference\":\"ICICI ATM\",\"type\":\"DEBIT\",\"withdrawalAmount\":1500,\"transactionId\":\"ck73edmhv00qlnqv2faipde4z\"},{\"balanceAmount\":2069.68,\"category\":[\"Uncategorized\"],\"pandora_category\":{\"hierarchy\":[\"Uncategorized\"],\"id\":0},\"date\":\"26/04/19\",\"party\":\"netflix\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"RPI/Netflix  PG/201904262330/911618508831/\",\"reference\":\"\",\"type\":\"DEBIT\",\"withdrawalAmount\":800,\"transactionId\":\"ck73edmhv00qmnqv2b1hk84s4\"},{\"balanceAmount\":7069.68,\"category\":[\"Transfer\",\"Credit\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Credit\"],\"id\":190100},\"date\":\"29/04/19\",\"party\":\"neeraj yadav indian\",\"depositAmount\":5000,\"isAutoDebit\":false,\"particular\":\"UPI/911713954358/neeraj Yadav/indiawatch12lko/Indian Overseas\",\"reference\":\"\",\"type\":\"CREDIT\",\"withdrawalAmount\":0,\"transactionId\":\"ck73edmhv00qnnqv2ejs8fbw1\"},{\"balanceAmount\":5069.68,\"category\":[\"Cash Advance\",\"ATM\"],\"pandora_category\":{\"hierarchy\":[\"Cash Advance\",\"ATM\"],\"id\":110300},\"date\":\"29/04/19\",\"party\":\"mn000569\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"NFS/MN000569/CASH WDL/27-04-19\",\"reference\":\"OTHER ATMS\",\"type\":\"DEBIT\",\"withdrawalAmount\":2000,\"transactionId\":\"ck73edmhv00qonqv24yw6f4ms\"},{\"balanceAmount\":1069.68,\"category\":[\"Cash Advance\",\"ATM\"],\"pandora_category\":{\"hierarchy\":[\"Cash Advance\",\"ATM\"],\"id\":110300},\"date\":\"29/04/19\",\"party\":\"mn016892\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"NFS/MN016892/CASH WDL/27-04-19\",\"reference\":\"OTHER ATMS\",\"type\":\"DEBIT\",\"withdrawalAmount\":4000,\"transactionId\":\"ck73edmhv00qpnqv2euk1aoix\"},{\"balanceAmount\":69.68,\"category\":[\"Uncategorized\"],\"pandora_category\":{\"hierarchy\":[\"Uncategorized\"],\"id\":0},\"date\":\"29/04/19\",\"party\":\"paytm\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"VIN/PAYTM      /201904280936/911804012056/\",\"reference\":\"NET BANKING\",\"type\":\"DEBIT\",\"withdrawalAmount\":1000,\"transactionId\":\"ck73edmhv00qqnqv24pav10l3\"},{\"balanceAmount\":70.68,\"category\":[\"Transfer\",\"Earning\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Earning\"],\"id\":190400},\"date\":\"29/04/19\",\"party\":\"pankaj kum paytm\",\"depositAmount\":1,\"isAutoDebit\":false,\"particular\":\"MMT/IMPS/911812758009/pankaj kum/Paytm Payments\",\"reference\":\"MOBILE BANKING\",\"type\":\"CREDIT\",\"withdrawalAmount\":0,\"transactionId\":\"ck73edmhv00qrnqv209qf2l9b\"},{\"balanceAmount\":4870.68,\"category\":[\"Transfer\",\"Earning\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Earning\"],\"id\":190400},\"date\":\"29/04/19\",\"party\":\"pankaj kum paytm\",\"depositAmount\":4800,\"isAutoDebit\":false,\"particular\":\"MMT/IMPS/911812759686/pankaj kum/Paytm Payments\",\"reference\":\"MOBILE BANKING\",\"type\":\"CREDIT\",\"withdrawalAmount\":0,\"transactionId\":\"ck73edmhw00qsnqv25ok332hk\"},{\"balanceAmount\":370.68,\"category\":[\"Cash Advance\",\"ATM\"],\"pandora_category\":{\"hierarchy\":[\"Cash Advance\",\"ATM\"],\"id\":110300},\"date\":\"29/04/19\",\"party\":\"spcnk830\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"ATM/SPCNK830/CASH WDL/28-04-19\",\"reference\":\"ICICI ATM\",\"type\":\"DEBIT\",\"withdrawalAmount\":4500,\"transactionId\":\"ck73edmhw00qtnqv279fp8duu\"},{\"balanceAmount\":371.68,\"category\":[\"Transfer\",\"Credit\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Credit\"],\"id\":190100},\"date\":\"29/04/19\",\"party\":\"pushpendra\",\"depositAmount\":1,\"isAutoDebit\":false,\"particular\":\"MMT/IMPS/911912415492/emPowerM/PUSHPENDRA/ALLAHABD BANK\",\"reference\":\"MOBILE BANKING\",\"type\":\"CREDIT\",\"withdrawalAmount\":0,\"transactionId\":\"ck73edmhw00qunqv28qpdb6be\"},{\"balanceAmount\":372.68,\"category\":[\"Transfer\",\"Credit\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Credit\"],\"id\":190100},\"date\":\"29/04/19\",\"party\":\"allahabad\",\"depositAmount\":1,\"isAutoDebit\":false,\"particular\":\"MMT/IMPS/911912416979/No Remarks/ALLAHABAD /ALLAHABAD BANK\",\"reference\":\"MOBILE BANKING\",\"type\":\"CREDIT\",\"withdrawalAmount\":0,\"transactionId\":\"ck73edmhw00qvnqv2brso17vy\"},{\"balanceAmount\":20172.68,\"category\":[\"Transfer\",\"Credit\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Credit\"],\"id\":190100},\"date\":\"29/04/19\",\"party\":\"allahabad\",\"depositAmount\":19800,\"isAutoDebit\":false,\"particular\":\"MMT/IMPS/911913417610/No Remarks/ALLAHABAD /ALLAHABAD BANK\",\"reference\":\"MOBILE BANKING\",\"type\":\"CREDIT\",\"withdrawalAmount\":0,\"transactionId\":\"ck73edmhw00qwnqv2a5yf58gt\"},{\"balanceAmount\":10172.68,\"category\":[\"Cash Advance\",\"ATM\"],\"pandora_category\":{\"hierarchy\":[\"Cash Advance\",\"ATM\"],\"id\":110300},\"date\":\"29/04/19\",\"party\":\"cecn6361\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"NFS/CECN6361/CASH WDL/29-04-19\",\"reference\":\"OTHER ATMS\",\"type\":\"DEBIT\",\"withdrawalAmount\":10000,\"transactionId\":\"ck73edmhw00qxnqv2b4ste4br\"},{\"balanceAmount\":172.68,\"category\":[\"Cash Advance\",\"ATM\"],\"pandora_category\":{\"hierarchy\":[\"Cash Advance\",\"ATM\"],\"id\":110300},\"date\":\"29/04/19\",\"party\":\"cecn6361\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"NFS/CECN6361/CASH WDL/29-04-19\",\"reference\":\"OTHER ATMS\",\"type\":\"DEBIT\",\"withdrawalAmount\":10000,\"transactionId\":\"ck73edmhw00qynqv2esem8j8t\"},{\"balanceAmount\":12772.68,\"category\":[\"Transfer\",\"Credit\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Credit\"],\"id\":190100},\"date\":\"29/04/19\",\"party\":\"paytm\",\"depositAmount\":12600,\"isAutoDebit\":false,\"particular\":\"UPI/911941711819/NA/8077084338@payt/Paytm Payments\",\"reference\":\"\",\"type\":\"CREDIT\",\"withdrawalAmount\":0,\"transactionId\":\"ck73edmhw00qznqv2aqs71fpg\"},{\"balanceAmount\":772.68,\"category\":[\"Cash Advance\",\"ATM\"],\"pandora_category\":{\"hierarchy\":[\"Cash Advance\",\"ATM\"],\"id\":110300},\"date\":\"29/04/19\",\"party\":\"sacwj202\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"ATM/SACWJ202/CASH WDL/29-04-19\",\"reference\":\"ICICI ATM\",\"type\":\"DEBIT\",\"withdrawalAmount\":12000,\"transactionId\":\"ck73edmhw00r0nqv26f0e7m01\"},{\"balanceAmount\":252.58,\"category\":[\"Uncategorized\"],\"pandora_category\":{\"hierarchy\":[\"Uncategorized\"],\"id\":0},\"date\":\"29/04/19\",\"party\":\"halycard co\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"VIN/HALYCARD CO/201904292159/911916752015/\",\"reference\":\"NET BANKING\",\"type\":\"DEBIT\",\"withdrawalAmount\":520.1,\"transactionId\":\"ck73edmhw00r1nqv2604ff2f3\"},{\"balanceAmount\":25252.58,\"category\":[\"Payment\",\"Credit\"],\"pandora_category\":{\"hierarchy\":[\"Payment\",\"Credit\"],\"id\":160800},\"date\":\"30/04/19\",\"party\":\"arun kumar\",\"depositAmount\":25000,\"isAutoDebit\":false,\"particular\":\"BIL/INFT/001696514024/anilyadav/ARUN KUMAR GUPT\",\"reference\":\"\",\"type\":\"CREDIT\",\"withdrawalAmount\":0,\"transactionId\":\"ck73edmhw00r2nqv23gve0xmp\"},{\"balanceAmount\":7252.58,\"category\":[\"Cash Advance\",\"ATM\"],\"pandora_category\":{\"hierarchy\":[\"Cash Advance\",\"ATM\"],\"id\":110300},\"date\":\"30/04/19\",\"party\":\"s1cwk473\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"ATM/S1CWK473/CASH WDL/30-04-19\",\"reference\":\"ICICI ATM\",\"type\":\"DEBIT\",\"withdrawalAmount\":18000,\"transactionId\":\"ck73edmhw00r3nqv2fbzmf57v\"},{\"balanceAmount\":252.58,\"category\":[\"Cash Advance\",\"ATM\"],\"pandora_category\":{\"hierarchy\":[\"Cash Advance\",\"ATM\"],\"id\":110300},\"date\":\"30/04/19\",\"party\":\"s1cwk473\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"ATM/S1CWK473/CASH WDL/30-04-19\",\"reference\":\"ICICI ATM\",\"type\":\"DEBIT\",\"withdrawalAmount\":7000,\"transactionId\":\"ck73edmhw00r4nqv29sg701zj\"},{\"balanceAmount\":8752.58,\"category\":[\"Transfer\",\"Credit\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Credit\"],\"id\":190100},\"date\":\"30/04/19\",\"party\":\"indian\",\"depositAmount\":8500,\"isAutoDebit\":false,\"particular\":\"UPI/912026527469/Payment from Ph/9958136158@ybl/Indian Bank\",\"reference\":\"\",\"type\":\"CREDIT\",\"withdrawalAmount\":0,\"transactionId\":\"ck73edmhw00r5nqv23sffgd14\"},{\"balanceAmount\":752.58,\"category\":[\"Cash Advance\",\"ATM\"],\"pandora_category\":{\"hierarchy\":[\"Cash Advance\",\"ATM\"],\"id\":110300},\"date\":\"30/04/19\",\"party\":\"sacwj202\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"ATM/SACWJ202/CASH WDL/30-04-19\",\"reference\":\"ICICI ATM\",\"type\":\"DEBIT\",\"withdrawalAmount\":8000,\"transactionId\":\"ck73edmhw00r6nqv26kyz2l1t\"},{\"balanceAmount\":760.08,\"category\":[\"Travel\",\"Gas Station\"],\"pandora_category\":{\"hierarchy\":[\"Travel\",\"Gas Station\"],\"id\":200100},\"date\":\"30/04/19\",\"party\":\"bharat petroleum corpo\",\"depositAmount\":7.5,\"isAutoDebit\":false,\"particular\":\"VISA REF BHARAT PETROLEUM CORPO\",\"reference\":\"\",\"type\":\"CREDIT\",\"withdrawalAmount\":0,\"transactionId\":\"ck73edmhw00r7nqv2f5hn2qic\"},{\"balanceAmount\":260.08,\"category\":[\"Cash Advance\",\"ATM\"],\"pandora_category\":{\"hierarchy\":[\"Cash Advance\",\"ATM\"],\"id\":110300},\"date\":\"30/04/19\",\"party\":\"spcnk825\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"ATM/SPCNK825/CASH WDL/30-04-19\",\"reference\":\"ICICI ATM\",\"type\":\"DEBIT\",\"withdrawalAmount\":500,\"transactionId\":\"ck73edmhw00r8nqv2ffb0hucd\"},{\"balanceAmount\":40260.08,\"category\":[\"Transfer\",\"Credit\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Credit\"],\"id\":190100},\"date\":\"01/05/19\",\"party\":\"uday veer singh\",\"depositAmount\":40000,\"isAutoDebit\":false,\"particular\":\"NEFT-P19050136821887-UDAY VEER SINGH--86742010002534-SYNB0008674\",\"reference\":\"\",\"type\":\"CREDIT\",\"withdrawalAmount\":0,\"transactionId\":\"ck73edmhw00r9nqv205dy4szv\"},{\"balanceAmount\":36260.08,\"category\":[\"Cash Advance\",\"ATM\"],\"pandora_category\":{\"hierarchy\":[\"Cash Advance\",\"ATM\"],\"id\":110300},\"date\":\"01/05/19\",\"party\":\"spcnk825\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"ATM/SPCNK825/CASH WDL/01-05-19\",\"reference\":\"ICICI ATM\",\"type\":\"DEBIT\",\"withdrawalAmount\":4000,\"transactionId\":\"ck73edmhw00ranqv25bb6cmxc\"},{\"balanceAmount\":16260.08,\"category\":[\"Cash Advance\",\"ATM\"],\"pandora_category\":{\"hierarchy\":[\"Cash Advance\",\"ATM\"],\"id\":110300},\"date\":\"01/05/19\",\"party\":\"spcnk825\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"ATM/SPCNK825/CASH WDL/01-05-19\",\"reference\":\"ICICI ATM\",\"type\":\"DEBIT\",\"withdrawalAmount\":20000,\"transactionId\":\"ck73edmhw00rbnqv29wijbd17\"},{\"balanceAmount\":260.08,\"category\":[\"Cash Advance\",\"ATM\"],\"pandora_category\":{\"hierarchy\":[\"Cash Advance\",\"ATM\"],\"id\":110300},\"date\":\"01/05/19\",\"party\":\"spcnk825\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"ATM/SPCNK825/CASH WDL/01-05-19\",\"reference\":\"ICICI ATM\",\"type\":\"DEBIT\",\"withdrawalAmount\":16000,\"transactionId\":\"ck73edmhw00rcnqv2a33rf2vo\"},{\"balanceAmount\":15260.08,\"category\":[\"Transfer\",\"Credit\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Credit\"],\"id\":190100},\"date\":\"01/05/19\",\"party\":\"idbibank limit\",\"depositAmount\":15000,\"isAutoDebit\":false,\"particular\":\"UPI/912172875709/Payment from Ph/anil8778@ybl/IDBIBank Limit\",\"reference\":\"\",\"type\":\"CREDIT\",\"withdrawalAmount\":0,\"transactionId\":\"ck73edmhw00rdnqv28i7f7t6f\"},{\"balanceAmount\":29260.08,\"category\":[\"Payment\",\"Credit\"],\"pandora_category\":{\"hierarchy\":[\"Payment\",\"Credit\"],\"id\":160800},\"date\":\"01/05/19\",\"party\":\"ashu mayur yadav\",\"depositAmount\":14000,\"isAutoDebit\":false,\"particular\":\"BIL/INFT/001698082753/ashu/MAYUR YADAV\",\"reference\":\"\",\"type\":\"CREDIT\",\"withdrawalAmount\":0,\"transactionId\":\"ck73edmhw00renqv27vs8av85\"},{\"balanceAmount\":9260.08,\"category\":[\"Transfer\",\"Debit\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Debit\"],\"id\":190200},\"date\":\"01/05/19\",\"party\":\"family\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"MMT/IMPS/912119532713/Family/Anil/IDIB000A158\",\"reference\":\"MOBILE BANKING\",\"type\":\"DEBIT\",\"withdrawalAmount\":20000,\"transactionId\":\"ck73edmhw00rfnqv2cgs56ooq\"},{\"balanceAmount\":260.08,\"category\":[\"Cash Advance\",\"ATM\"],\"pandora_category\":{\"hierarchy\":[\"Cash Advance\",\"ATM\"],\"id\":110300},\"date\":\"01/05/19\",\"party\":\"spcnk825\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"ATM/SPCNK825/CASH WDL/01-05-19\",\"reference\":\"ICICI ATM\",\"type\":\"DEBIT\",\"withdrawalAmount\":9000,\"transactionId\":\"ck73edmhw00rgnqv256kr6bed\"},{\"balanceAmount\":20260.08,\"category\":[\"Payment\",\"Credit\"],\"pandora_category\":{\"hierarchy\":[\"Payment\",\"Credit\"],\"id\":160800},\"date\":\"02/05/19\",\"party\":\"ashu ke\",\"depositAmount\":20000,\"isAutoDebit\":false,\"particular\":\"BIL/INFT/001699057711/ashu ke paisa/MAYUR YADAV\",\"reference\":\"\",\"type\":\"CREDIT\",\"withdrawalAmount\":0,\"transactionId\":\"ck73edmhw00rhnqv28vi63t4t\"},{\"balanceAmount\":10260.08,\"category\":[\"Cash Advance\",\"ATM\"],\"pandora_category\":{\"hierarchy\":[\"Cash Advance\",\"ATM\"],\"id\":110300},\"date\":\"02/05/19\",\"party\":null,\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"NFS/05226002/CASH WDL/02-05-19\",\"reference\":\"OTHER ATMS\",\"type\":\"DEBIT\",\"withdrawalAmount\":10000,\"transactionId\":\"ck73edmhw00rinqv2gpvl99iw\"},{\"balanceAmount\":260.08,\"category\":[\"Cash Advance\",\"ATM\"],\"pandora_category\":{\"hierarchy\":[\"Cash Advance\",\"ATM\"],\"id\":110300},\"date\":\"02/05/19\",\"party\":null,\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"NFS/05226002/CASH WDL/02-05-19\",\"reference\":\"OTHER ATMS\",\"type\":\"DEBIT\",\"withdrawalAmount\":10000,\"transactionId\":\"ck73edmhw00rjnqv2d7yrfva3\"},{\"balanceAmount\":5260.08,\"category\":[\"Transfer\",\"Earning\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Earning\"],\"id\":190400},\"date\":\"02/05/19\",\"party\":null,\"depositAmount\":5000,\"isAutoDebit\":false,\"particular\":\"MMT/IMPS/912219022695/IMPS Txn/GUPTA COM /FINO Payment Ba\",\"reference\":\"MOBILE BANKING\",\"type\":\"CREDIT\",\"withdrawalAmount\":0,\"transactionId\":\"ck73edmhw00rknqv27sgt88aw\"},{\"balanceAmount\":10260.08,\"category\":[\"Transfer\",\"Earning\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Earning\"],\"id\":190400},\"date\":\"02/05/19\",\"party\":null,\"depositAmount\":5000,\"isAutoDebit\":false,\"particular\":\"MMT/IMPS/912219022783/IMPS Txn/GUPTA COM /FINO Payment Ba\",\"reference\":\"MOBILE BANKING\",\"type\":\"CREDIT\",\"withdrawalAmount\":0,\"transactionId\":\"ck73edmhw00rlnqv20jn54jo8\"},{\"balanceAmount\":15260.08,\"category\":[\"Transfer\",\"Earning\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Earning\"],\"id\":190400},\"date\":\"02/05/19\",\"party\":null,\"depositAmount\":5000,\"isAutoDebit\":false,\"particular\":\"MMT/IMPS/912219022808/IMPS Txn/GUPTA COM /FINO Payment Ba\",\"reference\":\"MOBILE BANKING\",\"type\":\"CREDIT\",\"withdrawalAmount\":0,\"transactionId\":\"ck73edmhw00rmnqv2ge99ba6q\"},{\"balanceAmount\":1260.08,\"category\":[\"Cash Advance\",\"ATM\"],\"pandora_category\":{\"hierarchy\":[\"Cash Advance\",\"ATM\"],\"id\":110300},\"date\":\"02/05/19\",\"party\":\"s1cpn208\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"ATM/S1CPN208/CASH WDL/02-05-19\",\"reference\":\"ICICI ATM\",\"type\":\"DEBIT\",\"withdrawalAmount\":14000,\"transactionId\":\"ck73edmhw00rnnqv2hhz5ej3p\"},{\"balanceAmount\":21260.08,\"category\":[\"Payment\",\"Credit\"],\"pandora_category\":{\"hierarchy\":[\"Payment\",\"Credit\"],\"id\":160800},\"date\":\"03/05/19\",\"party\":null,\"depositAmount\":20000,\"isAutoDebit\":false,\"particular\":\"BIL/INFT/001700118353/50000-2000/MAYUR YADAV\",\"reference\":\"\",\"type\":\"CREDIT\",\"withdrawalAmount\":0,\"transactionId\":\"ck73edmhx00ronqv2fxei3u7l\"},{\"balanceAmount\":20560.59,\"category\":[\"Uncategorized\"],\"pandora_category\":{\"hierarchy\":[\"Uncategorized\"],\"id\":0},\"date\":\"03/05/19\",\"party\":\"train\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"IIN/I-Debit/Book Train /201905031855/912314029398/\",\"reference\":\"NET BANKING\",\"type\":\"DEBIT\",\"withdrawalAmount\":699.49,\"transactionId\":\"ck73edmhx00rpnqv2glwha13s\"},{\"balanceAmount\":15560.59,\"category\":[\"Cash Advance\",\"ATM\"],\"pandora_category\":{\"hierarchy\":[\"Cash Advance\",\"ATM\"],\"id\":110300},\"date\":\"03/05/19\",\"party\":\"spcnk825\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"ATM/SPCNK825/CASH WDL/03-05-19\",\"reference\":\"ICICI ATM\",\"type\":\"DEBIT\",\"withdrawalAmount\":5000,\"transactionId\":\"ck73edmhx00rqnqv213l4g9cr\"},{\"balanceAmount\":3560.59,\"category\":[\"Transfer\",\"Debit\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Debit\"],\"id\":190200},\"date\":\"03/05/19\",\"party\":\"arun\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"MMT/IMPS/912319182520/Arun/UTIB0000854\",\"reference\":\"MOBILE BANKING\",\"type\":\"DEBIT\",\"withdrawalAmount\":12000,\"transactionId\":\"ck73edmhx00rrnqv25jdwan08\"},{\"balanceAmount\":3042.31,\"category\":[\"Uncategorized\"],\"pandora_category\":{\"hierarchy\":[\"Uncategorized\"],\"id\":0},\"date\":\"03/05/19\",\"party\":\"halycard co\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"VIN/HALYCARD CO/201905032142/912316156613/\",\"reference\":\"NET BANKING\",\"type\":\"DEBIT\",\"withdrawalAmount\":518.28,\"transactionId\":\"ck73edmhx00rsnqv2bn1u63s0\"},{\"balanceAmount\":2176.82,\"category\":[\"Travel\",\"Train\"],\"pandora_category\":{\"hierarchy\":[\"Travel\",\"Train\"],\"id\":200200},\"date\":\"04/05/19\",\"party\":\"irctc\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"VIN/IRCTC      /201905041012/912404795816/\",\"reference\":\"NET BANKING\",\"type\":\"DEBIT\",\"withdrawalAmount\":865.49,\"transactionId\":\"ck73edmhx00rtnqv27qr60zi4\"},{\"balanceAmount\":77176.82,\"category\":[\"Transfer\",\"Earning\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Earning\"],\"id\":190400},\"date\":\"04/05/19\",\"party\":\"sysacs technology private\",\"depositAmount\":75000,\"isAutoDebit\":false,\"particular\":\"INF/021196627851/March salry125605000084/SYSACS TECHNOLOGY PRIVATE LIMI\",\"reference\":\"NET BANKING\",\"type\":\"CREDIT\",\"withdrawalAmount\":0,\"transactionId\":\"ck73edmhx00runqv2a41t2u1t\"},{\"balanceAmount\":107176.82,\"category\":[\"Payment\",\"Credit\"],\"pandora_category\":{\"hierarchy\":[\"Payment\",\"Credit\"],\"id\":160800},\"date\":\"04/05/19\",\"party\":\"ashu ke mayur\",\"depositAmount\":30000,\"isAutoDebit\":false,\"particular\":\"BIL/INFT/001700832059/ashu ke/MAYUR YADAV\",\"reference\":\"\",\"type\":\"CREDIT\",\"withdrawalAmount\":0,\"transactionId\":\"ck73edmhx00rvnqv20hced98s\"},{\"balanceAmount\":87176.82,\"category\":[\"Cash Advance\",\"ATM\"],\"pandora_category\":{\"hierarchy\":[\"Cash Advance\",\"ATM\"],\"id\":110300},\"date\":\"04/05/19\",\"party\":\"spcnk825\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"ATM/SPCNK825/CASH WDL/04-05-19\",\"reference\":\"ICICI ATM\",\"type\":\"REVERSAL\",\"withdrawalAmount\":20000,\"transactionId\":\"ck73edmhx00rwnqv2d36k7454\"},{\"balanceAmount\":107176.82,\"category\":[\"Cash Advance\",\"ATM\"],\"pandora_category\":{\"hierarchy\":[\"Cash Advance\",\"ATM\"],\"id\":110300},\"date\":\"04/05/19\",\"party\":\"spcnk825\",\"depositAmount\":20000,\"isAutoDebit\":false,\"particular\":\"ATM/SPCNK825/CASH WDL RVSL/04-05-19\",\"reference\":\"ICICI ATM\",\"type\":\"REVERSAL\",\"withdrawalAmount\":0,\"transactionId\":\"ck73edmhx00rxnqv2d6nncc92\"},{\"balanceAmount\":99176.82,\"category\":[\"Cash Advance\",\"ATM\"],\"pandora_category\":{\"hierarchy\":[\"Cash Advance\",\"ATM\"],\"id\":110300},\"date\":\"04/05/19\",\"party\":\"s1cpn214\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"ATM/S1CPN214/CASH WDL/04-05-19\",\"reference\":\"ICICI ATM\",\"type\":\"DEBIT\",\"withdrawalAmount\":8000,\"transactionId\":\"ck73edmhx00rynqv22f4lb6sc\"},{\"balanceAmount\":79176.82,\"category\":[\"Cash Advance\",\"ATM\"],\"pandora_category\":{\"hierarchy\":[\"Cash Advance\",\"ATM\"],\"id\":110300},\"date\":\"04/05/19\",\"party\":\"s1cpn213\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"ATM/S1CPN213/CASH WDL/04-05-19\",\"reference\":\"ICICI ATM\",\"type\":\"DEBIT\",\"withdrawalAmount\":20000,\"transactionId\":\"ck73edmhx00rznqv26r092azg\"},{\"balanceAmount\":59176.82,\"category\":[\"Cash Advance\",\"ATM\"],\"pandora_category\":{\"hierarchy\":[\"Cash Advance\",\"ATM\"],\"id\":110300},\"date\":\"04/05/19\",\"party\":\"s1cpn213\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"ATM/S1CPN213/CASH WDL/04-05-19\",\"reference\":\"ICICI ATM\",\"type\":\"DEBIT\",\"withdrawalAmount\":20000,\"transactionId\":\"ck73edmhx00s0nqv27dxpafly\"},{\"balanceAmount\":57176.82,\"category\":[\"Cash Advance\",\"ATM\"],\"pandora_category\":{\"hierarchy\":[\"Cash Advance\",\"ATM\"],\"id\":110300},\"date\":\"04/05/19\",\"party\":\"s1cpn213\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"ATM/S1CPN213/CASH WDL/04-05-19\",\"reference\":\"ICICI ATM\",\"type\":\"DEBIT\",\"withdrawalAmount\":2000,\"transactionId\":\"ck73edmhx00s1nqv275d57rqz\"},{\"balanceAmount\":27176.82,\"category\":[\"Transfer\",\"Debit\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Debit\"],\"id\":190200},\"date\":\"04/05/19\",\"party\":\"family\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"MMT/IMPS/912417869676/Family/Anil/IDIB000A158\",\"reference\":\"MOBILE BANKING\",\"type\":\"DEBIT\",\"withdrawalAmount\":30000,\"transactionId\":\"ck73edmhx00s2nqv2bw8wccng\"},{\"balanceAmount\":12176.82,\"category\":[\"Cash Advance\",\"ATM\"],\"pandora_category\":{\"hierarchy\":[\"Cash Advance\",\"ATM\"],\"id\":110300},\"date\":\"06/05/19\",\"party\":\"spcnk825\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"ATM/SPCNK825/CASH WDL/05-05-19\",\"reference\":\"ICICI ATM\",\"type\":\"DEBIT\",\"withdrawalAmount\":15000,\"transactionId\":\"ck73edmhx00s3nqv2elv87prq\"},{\"balanceAmount\":4176.82,\"category\":[\"Cash Advance\",\"ATM\"],\"pandora_category\":{\"hierarchy\":[\"Cash Advance\",\"ATM\"],\"id\":110300},\"date\":\"06/05/19\",\"party\":\"spcnk825\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"ATM/SPCNK825/CASH WDL/05-05-19\",\"reference\":\"ICICI ATM\",\"type\":\"DEBIT\",\"withdrawalAmount\":8000,\"transactionId\":\"ck73edmhx00s4nqv2hyry61bh\"},{\"balanceAmount\":7176.82,\"category\":[\"Transfer\",\"Earning\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Earning\"],\"id\":190400},\"date\":\"06/05/19\",\"party\":\"state\",\"depositAmount\":3000,\"isAutoDebit\":false,\"particular\":\"UPI/912538266363/Payment from Ph/9696689032@ybl/State Bank Of I\",\"reference\":\"\",\"type\":\"CREDIT\",\"withdrawalAmount\":0,\"transactionId\":\"ck73edmhx00s5nqv2ev836md2\"},{\"balanceAmount\":176.82,\"category\":[\"Payment\"],\"pandora_category\":{\"hierarchy\":[\"Payment\"],\"id\":160000},\"date\":\"06/05/19\",\"party\":\"sukhbir singh\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"BIL/INFT/001701688097/NA/SUKHBIR SINGH\",\"reference\":\"\",\"type\":\"DEBIT\",\"withdrawalAmount\":7000,\"transactionId\":\"ck73edmhx00s6nqv2ee6i60s6\"},{\"balanceAmount\":5176.82,\"category\":[\"Transfer\",\"Earning\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Earning\"],\"id\":190400},\"date\":\"06/05/19\",\"party\":\"eko\",\"depositAmount\":5000,\"isAutoDebit\":false,\"particular\":\"MMT/IMPS/912521743049/IMPS to Account/EKO INDIA /Airtel Payments\",\"reference\":\"MOBILE BANKING\",\"type\":\"CREDIT\",\"withdrawalAmount\":0,\"transactionId\":\"ck73edmhx00s7nqv2bykz6u8i\"},{\"balanceAmount\":10176.82,\"category\":[\"Transfer\",\"Earning\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Earning\"],\"id\":190400},\"date\":\"06/05/19\",\"party\":\"eko\",\"depositAmount\":5000,\"isAutoDebit\":false,\"particular\":\"MMT/IMPS/912521743057/IMPS to Account/EKO INDIA /Airtel Payments\",\"reference\":\"MOBILE BANKING\",\"type\":\"CREDIT\",\"withdrawalAmount\":0,\"transactionId\":\"ck73edmhx00s8nqv29jttb7q5\"},{\"balanceAmount\":15176.82,\"category\":[\"Transfer\",\"Earning\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Earning\"],\"id\":190400},\"date\":\"06/05/19\",\"party\":\"eko\",\"depositAmount\":5000,\"isAutoDebit\":false,\"particular\":\"MMT/IMPS/912521742992/IMPS to Account/EKO INDIA /Airtel Payments\",\"reference\":\"MOBILE BANKING\",\"type\":\"CREDIT\",\"withdrawalAmount\":0,\"transactionId\":\"ck73edmhx00s9nqv26aen1k4i\"},{\"balanceAmount\":17176.82,\"category\":[\"Transfer\",\"Earning\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Earning\"],\"id\":190400},\"date\":\"06/05/19\",\"party\":\"eko\",\"depositAmount\":2000,\"isAutoDebit\":false,\"particular\":\"MMT/IMPS/912521743503/IMPS to Account/EKO INDIA /Airtel Payments\",\"reference\":\"MOBILE BANKING\",\"type\":\"CREDIT\",\"withdrawalAmount\":0,\"transactionId\":\"ck73edmhx00sanqv247ju658g\"},{\"balanceAmount\":7176.82,\"category\":[\"Cash Advance\",\"ATM\"],\"pandora_category\":{\"hierarchy\":[\"Cash Advance\",\"ATM\"],\"id\":110300},\"date\":\"06/05/19\",\"party\":\"mn016854\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"NFS/MN016854/CASH WDL/05-05-19\",\"reference\":\"OTHER ATMS\",\"type\":\"DEBIT\",\"withdrawalAmount\":10000,\"transactionId\":\"ck73edmhx00sbnqv251zahd6t\"},{\"balanceAmount\":1176.82,\"category\":[\"Cash Advance\",\"ATM\"],\"pandora_category\":{\"hierarchy\":[\"Cash Advance\",\"ATM\"],\"id\":110300},\"date\":\"06/05/19\",\"party\":\"mn016854\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"NFS/MN016854/CASH WDL/05-05-19\",\"reference\":\"OTHER ATMS\",\"type\":\"DEBIT\",\"withdrawalAmount\":6000,\"transactionId\":\"ck73edmhx00scnqv28q3186g1\"},{\"balanceAmount\":176.82,\"category\":[\"Uncategorized\"],\"pandora_category\":{\"hierarchy\":[\"Uncategorized\"],\"id\":0},\"date\":\"06/05/19\",\"party\":\"paytm\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"IIN/PAYTM      /201905052242/912517889089/\",\"reference\":\"NET BANKING\",\"type\":\"DEBIT\",\"withdrawalAmount\":1000,\"transactionId\":\"ck73edmhx00sdnqv24qcad2fd\"},{\"balanceAmount\":141.82,\"category\":[\"Payment\"],\"pandora_category\":{\"hierarchy\":[\"Payment\"],\"id\":160000},\"date\":\"06/05/19\",\"party\":\"icrib0000068114\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"BIL/001701830709/ICRIB0000068114/ICRIB0000068114\",\"reference\":\"NET BANKING\",\"type\":\"DEBIT\",\"withdrawalAmount\":35,\"transactionId\":\"ck73edmhx00senqv21s2ic78e\"},{\"balanceAmount\":5141.82,\"category\":[\"Transfer\",\"Earning\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Earning\"],\"id\":190400},\"date\":\"06/05/19\",\"party\":\"state\",\"depositAmount\":5000,\"isAutoDebit\":false,\"particular\":\"UPI/912633494167/Payment from Ph/9695233333@ybl/State Bank Of I\",\"reference\":\"\",\"type\":\"CREDIT\",\"withdrawalAmount\":0,\"transactionId\":\"ck73edmhx00sfnqv2a9t96ez0\"},{\"balanceAmount\":141.82,\"category\":[\"Cash Advance\",\"ATM\"],\"pandora_category\":{\"hierarchy\":[\"Cash Advance\",\"ATM\"],\"id\":110300},\"date\":\"06/05/19\",\"party\":\"s1cpn208\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"ATM/S1CPN208/CASH WDL/06-05-19\",\"reference\":\"ICICI ATM\",\"type\":\"DEBIT\",\"withdrawalAmount\":5000,\"transactionId\":\"ck73edmhx00sgnqv2btvf9jx0\"},{\"balanceAmount\":20141.82,\"category\":[\"Payment\",\"Credit\"],\"pandora_category\":{\"hierarchy\":[\"Payment\",\"Credit\"],\"id\":160800},\"date\":\"06/05/19\",\"party\":\"1 lakh\",\"depositAmount\":20000,\"isAutoDebit\":false,\"particular\":\"BIL/INFT/001702321758/1 lakh-20000/MAYUR YADAV\",\"reference\":\"\",\"type\":\"CREDIT\",\"withdrawalAmount\":0,\"transactionId\":\"ck73edmhx00shnqv2bt2t4t7s\"},{\"balanceAmount\":5141.82,\"category\":[\"Cash Advance\",\"ATM\"],\"pandora_category\":{\"hierarchy\":[\"Cash Advance\",\"ATM\"],\"id\":110300},\"date\":\"06/05/19\",\"party\":\"s1cpn208\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"ATM/S1CPN208/CASH WDL/06-05-19\",\"reference\":\"ICICI ATM\",\"type\":\"DEBIT\",\"withdrawalAmount\":15000,\"transactionId\":\"ck73edmhx00sinqv23uowd7xs\"},{\"balanceAmount\":141.82,\"category\":[\"Cash Advance\",\"ATM\"],\"pandora_category\":{\"hierarchy\":[\"Cash Advance\",\"ATM\"],\"id\":110300},\"date\":\"06/05/19\",\"party\":\"s1cpn208\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"ATM/S1CPN208/CASH WDL/06-05-19\",\"reference\":\"ICICI ATM\",\"type\":\"DEBIT\",\"withdrawalAmount\":5000,\"transactionId\":\"ck73edmhx00sjnqv2b92dahuo\"},{\"balanceAmount\":20141.82,\"category\":[\"Transfer\",\"Credit\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Credit\"],\"id\":190100},\"date\":\"06/05/19\",\"party\":\"sanjeev ku\",\"depositAmount\":20000,\"isAutoDebit\":false,\"particular\":\"MMT/IMPS/912615188488/fund/SANJEEV KU/HDFC BANK LTD\",\"reference\":\"MOBILE BANKING\",\"type\":\"CREDIT\",\"withdrawalAmount\":0,\"transactionId\":\"ck73edmhx00sknqv2asosf1ko\"},{\"balanceAmount\":10141.82,\"category\":[\"Transfer\",\"Debit\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Debit\"],\"id\":190200},\"date\":\"06/05/19\",\"party\":\"ranjeet\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"MMT/IMPS/912615039738/NA/Ranjeet si/PUNB0100100\",\"reference\":\"MOBILE BANKING\",\"type\":\"DEBIT\",\"withdrawalAmount\":10000,\"transactionId\":\"ck73edmhx00slnqv2cybvez5p\"},{\"balanceAmount\":141.82,\"category\":[\"Cash Advance\",\"ATM\"],\"pandora_category\":{\"hierarchy\":[\"Cash Advance\",\"ATM\"],\"id\":110300},\"date\":\"06/05/19\",\"party\":\"spcnk825\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"ATM/SPCNK825/CASH WDL/06-05-19\",\"reference\":\"ICICI ATM\",\"type\":\"DEBIT\",\"withdrawalAmount\":10000,\"transactionId\":\"ck73edmhx00smnqv25p2ka31j\"},{\"balanceAmount\":50141.82,\"category\":[\"Transfer\",\"Credit\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Credit\"],\"id\":190100},\"date\":\"07/05/19\",\"party\":\"sanjeev kumar\",\"depositAmount\":50000,\"isAutoDebit\":false,\"particular\":\"NEFT-N127190819238919-SANJEEV KUMAR-FUND-00261050021166-HDFC0000001\",\"reference\":\"\",\"type\":\"CREDIT\",\"withdrawalAmount\":0,\"transactionId\":\"ck73edmhx00snnqv2e4nr5rb6\"},{\"balanceAmount\":35141.82,\"category\":[\"Cash Advance\",\"ATM\"],\"pandora_category\":{\"hierarchy\":[\"Cash Advance\",\"ATM\"],\"id\":110300},\"date\":\"07/05/19\",\"party\":\"spcnk825\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"ATM/SPCNK825/CASH WDL/07-05-19\",\"reference\":\"ICICI ATM\",\"type\":\"DEBIT\",\"withdrawalAmount\":15000,\"transactionId\":\"ck73edmhx00sonqv2eycb7tr7\"},{\"balanceAmount\":21141.82,\"category\":[\"Cash Advance\",\"ATM\"],\"pandora_category\":{\"hierarchy\":[\"Cash Advance\",\"ATM\"],\"id\":110300},\"date\":\"07/05/19\",\"party\":\"spcnk825\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"ATM/SPCNK825/CASH WDL/07-05-19\",\"reference\":\"ICICI ATM\",\"type\":\"DEBIT\",\"withdrawalAmount\":14000,\"transactionId\":\"ck73edmhx00spnqv2drztbxuq\"},{\"balanceAmount\":51141.82,\"category\":[\"Transfer\",\"Credit\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Credit\"],\"id\":190100},\"date\":\"07/05/19\",\"party\":\"sanjeev kumar\",\"depositAmount\":30000,\"isAutoDebit\":false,\"particular\":\"NEFT-N127190819243542-SANJEEV KUMAR HUF-FUND-50100048117530-HDFC0000001\",\"reference\":\"\",\"type\":\"CREDIT\",\"withdrawalAmount\":0,\"transactionId\":\"ck73edmhx00sqnqv27ifwcf6n\"},{\"balanceAmount\":11141.82,\"category\":[\"Transfer\",\"Debit\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Debit\"],\"id\":190200},\"date\":\"07/05/19\",\"party\":\"arun\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"MMT/IMPS/912711201835/NA/Arun/UTIB0000854\",\"reference\":\"MOBILE BANKING\",\"type\":\"DEBIT\",\"withdrawalAmount\":40000,\"transactionId\":\"ck73edmhx00srnqv25o44bhle\"},{\"balanceAmount\":1141.82,\"category\":[\"Cash Advance\",\"ATM\"],\"pandora_category\":{\"hierarchy\":[\"Cash Advance\",\"ATM\"],\"id\":110300},\"date\":\"07/05/19\",\"party\":\"spcnk825\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"ATM/SPCNK825/CASH WDL/07-05-19\",\"reference\":\"ICICI ATM\",\"type\":\"DEBIT\",\"withdrawalAmount\":10000,\"transactionId\":\"ck73edmhx00ssnqv2000h6trg\"},{\"balanceAmount\":46141.82,\"category\":[\"Payment\",\"Credit\"],\"pandora_category\":{\"hierarchy\":[\"Payment\",\"Credit\"],\"id\":160800},\"date\":\"07/05/19\",\"party\":null,\"depositAmount\":45000,\"isAutoDebit\":false,\"particular\":\"BIL/INFT/001703256410/80000-45000/MAYUR YADAV\",\"reference\":\"\",\"type\":\"CREDIT\",\"withdrawalAmount\":0,\"transactionId\":\"ck73edmhx00stnqv2cfzz0m5h\"},{\"balanceAmount\":81141.82,\"category\":[\"Payment\",\"Credit\"],\"pandora_category\":{\"hierarchy\":[\"Payment\",\"Credit\"],\"id\":160800},\"date\":\"07/05/19\",\"party\":\"lakh\",\"depositAmount\":35000,\"isAutoDebit\":false,\"particular\":\"BIL/INFT/001703258563/1 lakh full/MAYUR YADAV\",\"reference\":\"\",\"type\":\"CREDIT\",\"withdrawalAmount\":0,\"transactionId\":\"ck73edmhx00sunqv2fp6c2mj2\"},{\"balanceAmount\":46141.82,\"category\":[\"Payment\"],\"pandora_category\":{\"hierarchy\":[\"Payment\"],\"id\":160000},\"date\":\"07/05/19\",\"party\":\"mib sarika yadav\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"BIL/INFT/001703261538/MIB-/SARIKA YADAV\",\"reference\":\"\",\"type\":\"DEBIT\",\"withdrawalAmount\":35000,\"transactionId\":\"ck73edmhy00svnqv2f4gr2n3p\"},{\"balanceAmount\":36141.82,\"category\":[\"Cash Advance\",\"ATM\"],\"pandora_category\":{\"hierarchy\":[\"Cash Advance\",\"ATM\"],\"id\":110300},\"date\":\"07/05/19\",\"party\":\"spcnk825\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"ATM/SPCNK825/CASH WDL/07-05-19\",\"reference\":\"ICICI ATM\",\"type\":\"DEBIT\",\"withdrawalAmount\":10000,\"transactionId\":\"ck73edmhy00swnqv2470j6qax\"},{\"balanceAmount\":31141.82,\"category\":[\"Transfer\",\"Debit\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Debit\"],\"id\":190200},\"date\":\"07/05/19\",\"party\":\"uday\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"MMT/IMPS/912716780702/Uday/UBIN0559407\",\"reference\":\"MOBILE BANKING\",\"type\":\"DEBIT\",\"withdrawalAmount\":5000,\"transactionId\":\"ck73edmhy00sxnqv262olccul\"},{\"balanceAmount\":26141.82,\"category\":[\"Transfer\",\"Debit\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Debit\"],\"id\":190200},\"date\":\"07/05/19\",\"party\":\"anuj\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"MMT/IMPS/912716956537/NA/Anuj katiy/SBIN0012998\",\"reference\":\"MOBILE BANKING\",\"type\":\"DEBIT\",\"withdrawalAmount\":5000,\"transactionId\":\"ck73edmhy00synqv2340o63sn\"},{\"balanceAmount\":9141.82,\"category\":[\"Transfer\",\"Debit\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Debit\"],\"id\":190200},\"date\":\"07/05/19\",\"party\":\"anil\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"MMT/IMPS/912716962018/NA/Anil/IDIB000A158\",\"reference\":\"MOBILE BANKING\",\"type\":\"DEBIT\",\"withdrawalAmount\":17000,\"transactionId\":\"ck73edmhy00sznqv21fw2fl22\"},{\"balanceAmount\":8100.65,\"category\":[\"Uncategorized\"],\"pandora_category\":{\"hierarchy\":[\"Uncategorized\"],\"id\":0},\"date\":\"07/05/19\",\"party\":\"halycard co\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"VIN/HALYCARD CO/201905071937/912714398164/\",\"reference\":\"NET BANKING\",\"type\":\"DEBIT\",\"withdrawalAmount\":1041.17,\"transactionId\":\"ck73edmhy00t0nqv287d22v3z\"},{\"balanceAmount\":7100.65,\"category\":[\"Cash Advance\",\"ATM\"],\"pandora_category\":{\"hierarchy\":[\"Cash Advance\",\"ATM\"],\"id\":110300},\"date\":\"07/05/19\",\"party\":\"pa133201\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"NFS/PA133201/CASH WDL/07-05-19\",\"reference\":\"OTHER ATMS\",\"type\":\"DEBIT\",\"withdrawalAmount\":1000,\"transactionId\":\"ck73edmhy00t1nqv2goswaic0\"},{\"balanceAmount\":37100.65,\"category\":[\"Transfer\",\"Credit\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Credit\"],\"id\":190100},\"date\":\"08/05/19\",\"party\":\"sanjeev ku\",\"depositAmount\":30000,\"isAutoDebit\":false,\"particular\":\"MMT/IMPS/912811129901/fund/SANJEEV KU/HDFC BANK LTD\",\"reference\":\"MOBILE BANKING\",\"type\":\"CREDIT\",\"withdrawalAmount\":0,\"transactionId\":\"ck73edmhy00t2nqv222ja9mfx\"},{\"balanceAmount\":17100.65,\"category\":[\"Transfer\",\"Debit\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Debit\"],\"id\":190200},\"date\":\"08/05/19\",\"party\":\"family\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"MMT/IMPS/912811393337/Family/Anil/IDIB000A158\",\"reference\":\"MOBILE BANKING\",\"type\":\"DEBIT\",\"withdrawalAmount\":20000,\"transactionId\":\"ck73edmhy00t3nqv2bag85kl3\"},{\"balanceAmount\":4100.65,\"category\":[\"Payment\"],\"pandora_category\":{\"hierarchy\":[\"Payment\"],\"id\":160000},\"date\":\"08/05/19\",\"party\":\"mib sukhbir\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"BIL/INFT/001703998094/MIB-/SUKHBIR SINGH\",\"reference\":\"\",\"type\":\"DEBIT\",\"withdrawalAmount\":13000,\"transactionId\":\"ck73edmhy00t4nqv21d2j77fz\"},{\"balanceAmount\":100.65,\"category\":[\"Cash Advance\",\"ATM\"],\"pandora_category\":{\"hierarchy\":[\"Cash Advance\",\"ATM\"],\"id\":110300},\"date\":\"09/05/19\",\"party\":\"p1ewdl36\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"NFS/P1EWDL36/CASH WDL/09-05-19\",\"reference\":\"OTHER ATMS\",\"type\":\"DEBIT\",\"withdrawalAmount\":4000,\"transactionId\":\"ck73edmhy00t5nqv2eaphctld\"},{\"balanceAmount\":10100.65,\"category\":[\"Transfer\",\"Credit\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Credit\"],\"id\":190100},\"date\":\"09/05/19\",\"party\":null,\"depositAmount\":10000,\"isAutoDebit\":false,\"particular\":\"UPI/912936483404/Payment from Ph/9598385220@ybl/Bank of India\",\"reference\":\"\",\"type\":\"CREDIT\",\"withdrawalAmount\":0,\"transactionId\":\"ck73edmhy00t6nqv2gu4qa246\"},{\"balanceAmount\":100.65,\"category\":[\"Cash Advance\",\"ATM\"],\"pandora_category\":{\"hierarchy\":[\"Cash Advance\",\"ATM\"],\"id\":110300},\"date\":\"09/05/19\",\"party\":\"sacwb683\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"ATM/SACWB683/CASH WDL/09-05-19\",\"reference\":\"ICICI ATM\",\"type\":\"DEBIT\",\"withdrawalAmount\":10000,\"transactionId\":\"ck73edmhy00t7nqv21nlz21df\"},{\"balanceAmount\":6100.65,\"category\":[\"Transfer\",\"Credit\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Credit\"],\"id\":190100},\"date\":\"09/05/19\",\"party\":\"sanjay bai\",\"depositAmount\":6000,\"isAutoDebit\":false,\"particular\":\"MMT/IMPS/912916590491/SANJAY BAI/AXIS BANK LTD\",\"reference\":\"MOBILE BANKING\",\"type\":\"CREDIT\",\"withdrawalAmount\":0,\"transactionId\":\"ck73edmhy00t8nqv20cmy61ar\"},{\"balanceAmount\":6101.65,\"category\":[\"Transfer\",\"Credit\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Credit\"],\"id\":190100},\"date\":\"09/05/19\",\"party\":\"pasfar\",\"depositAmount\":1,\"isAutoDebit\":false,\"particular\":\"MMT/IMPS/912918432932/Bank details va/PASFAR TEC/YES BANK LTD\",\"reference\":\"MOBILE BANKING\",\"type\":\"CREDIT\",\"withdrawalAmount\":0,\"transactionId\":\"ck73edmhy00t9nqv21umhf1mj\"},{\"balanceAmount\":5101.65,\"category\":[\"Uncategorized\"],\"pandora_category\":{\"hierarchy\":[\"Uncategorized\"],\"id\":0},\"date\":\"09/05/19\",\"party\":\"paytm\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"IIN/PAYTM      /201905091857/912913195259/\",\"reference\":\"NET BANKING\",\"type\":\"DEBIT\",\"withdrawalAmount\":1000,\"transactionId\":\"ck73edmhy00tanqv2hscn0yaz\"},{\"balanceAmount\":1101.65,\"category\":[\"Cash Advance\",\"ATM\"],\"pandora_category\":{\"hierarchy\":[\"Cash Advance\",\"ATM\"],\"id\":110300},\"date\":\"09/05/19\",\"party\":\"9r120701\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"NFS/9R120701/CASH WDL/09-05-19\",\"reference\":\"OTHER ATMS\",\"type\":\"DEBIT\",\"withdrawalAmount\":4000,\"transactionId\":\"ck73edmhy00tbnqv25nylgre2\"},{\"balanceAmount\":76101.65,\"category\":[\"Transfer\",\"Earning\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Earning\"],\"id\":190400},\"date\":\"10/05/19\",\"party\":\"sysacs technology private\",\"depositAmount\":75000,\"isAutoDebit\":false,\"particular\":\"INF/021211688401/Slry125605000084/SYSACS TECHNOLOGY PRIVATE LIMI\",\"reference\":\"NET BANKING\",\"type\":\"CREDIT\",\"withdrawalAmount\":0,\"transactionId\":\"ck73edmhy00tcnqv2hzoxfbtx\"},{\"balanceAmount\":61101.65,\"category\":[\"Payment\"],\"pandora_category\":{\"hierarchy\":[\"Payment\"],\"id\":160000},\"date\":\"10/05/19\",\"party\":\"mib sarika yadav\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"BIL/INFT/001705616992/MIB-/SARIKA YADAV\",\"reference\":\"\",\"type\":\"DEBIT\",\"withdrawalAmount\":15000,\"transactionId\":\"ck73edmhy00tdnqv2e722f7v2\"},{\"balanceAmount\":51101.65,\"category\":[\"Transfer\",\"Debit\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Debit\"],\"id\":190200},\"date\":\"10/05/19\",\"party\":\"dhirendra\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"MMT/IMPS/913011905464/NA/Dhirendra /CBIN0284018\",\"reference\":\"MOBILE BANKING\",\"type\":\"DEBIT\",\"withdrawalAmount\":10000,\"transactionId\":\"ck73edmhy00tenqv2alubbxme\"},{\"balanceAmount\":36101.65,\"category\":[\"Cash Advance\",\"ATM\"],\"pandora_category\":{\"hierarchy\":[\"Cash Advance\",\"ATM\"],\"id\":110300},\"date\":\"10/05/19\",\"party\":\"s1cpn208\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"ATM/S1CPN208/CASH WDL/10-05-19\",\"reference\":\"ICICI ATM\",\"type\":\"DEBIT\",\"withdrawalAmount\":15000,\"transactionId\":\"ck73edmhy00tfnqv225duay29\"},{\"balanceAmount\":22101.65,\"category\":[\"Cash Advance\",\"ATM\"],\"pandora_category\":{\"hierarchy\":[\"Cash Advance\",\"ATM\"],\"id\":110300},\"date\":\"10/05/19\",\"party\":\"s1cpn208\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"ATM/S1CPN208/CASH WDL/10-05-19\",\"reference\":\"ICICI ATM\",\"type\":\"DEBIT\",\"withdrawalAmount\":14000,\"transactionId\":\"ck73edmhy00tgnqv20plsglvr\"},{\"balanceAmount\":18998.42,\"category\":[\"Uncategorized\"],\"pandora_category\":{\"hierarchy\":[\"Uncategorized\"],\"id\":0},\"date\":\"10/05/19\",\"party\":\"halycard co\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"VIN/HALYCARD CO/201905101328/913007655478/\",\"reference\":\"NET BANKING\",\"type\":\"DEBIT\",\"withdrawalAmount\":3103.23,\"transactionId\":\"ck73edmhy00thnqv241xk1y8x\"},{\"balanceAmount\":39728.42,\"category\":[\"Transfer\",\"Loan\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Loan\"],\"id\":190500},\"date\":\"10/05/19\",\"party\":null,\"depositAmount\":20730,\"isAutoDebit\":false,\"particular\":\"MMT/IMPS/913017228376/IMPS-CMS-from B/BHANIX FIN/KOTAK MAHINDRA\",\"reference\":\"MOBILE BANKING\",\"type\":\"CREDIT\",\"withdrawalAmount\":0,\"transactionId\":\"ck73edmhy00tinqv20n8p2wux\"},{\"balanceAmount\":41228.42,\"category\":[\"Transfer\",\"Credit\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Credit\"],\"id\":190100},\"date\":\"10/05/19\",\"party\":\"pc financial\",\"depositAmount\":1500,\"isAutoDebit\":false,\"particular\":\"MMT/IMPS/913019846064/PC FINANCIAL SE/RAZORPAY S/YES BANK LTD\",\"reference\":\"MOBILE BANKING\",\"type\":\"CREDIT\",\"withdrawalAmount\":0,\"transactionId\":\"ck73edmhy00tjnqv231z97w7e\"},{\"balanceAmount\":31228.42,\"category\":[\"Transfer\",\"Debit\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Debit\"],\"id\":190200},\"date\":\"10/05/19\",\"party\":\"c2\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"MMT/IMPS/913019782014/NA/c2/HDFC0000868\",\"reference\":\"MOBILE BANKING\",\"type\":\"DEBIT\",\"withdrawalAmount\":10000,\"transactionId\":\"ck73edmhy00tknqv2abiwgzwn\"},{\"balanceAmount\":28110.94,\"category\":[\"Uncategorized\"],\"pandora_category\":{\"hierarchy\":[\"Uncategorized\"],\"id\":0},\"date\":\"10/05/19\",\"party\":\"halycard co\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"VIN/HALYCARD CO/201905102010/913014762746/\",\"reference\":\"NET BANKING\",\"type\":\"DEBIT\",\"withdrawalAmount\":3117.48,\"transactionId\":\"ck73edmhy00tlnqv27ta96she\"},{\"balanceAmount\":13110.94,\"category\":[\"Cash Advance\",\"ATM\"],\"pandora_category\":{\"hierarchy\":[\"Cash Advance\",\"ATM\"],\"id\":110300},\"date\":\"11/05/19\",\"party\":\"sacwb683\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"ATM/SACWB683/CASH WDL/11-05-19\",\"reference\":\"ICICI ATM\",\"type\":\"DEBIT\",\"withdrawalAmount\":15000,\"transactionId\":\"ck73edmhy00tmnqv2eo4le2mi\"},{\"balanceAmount\":3110.94,\"category\":[\"Cash Advance\",\"ATM\"],\"pandora_category\":{\"hierarchy\":[\"Cash Advance\",\"ATM\"],\"id\":110300},\"date\":\"11/05/19\",\"party\":\"sacwb683\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"ATM/SACWB683/CASH WDL/11-05-19\",\"reference\":\"ICICI ATM\",\"type\":\"DEBIT\",\"withdrawalAmount\":10000,\"transactionId\":\"ck73edmhy00tnnqv22u5mad9p\"},{\"balanceAmount\":28110.94,\"category\":[\"Payment\",\"Credit\"],\"pandora_category\":{\"hierarchy\":[\"Payment\",\"Credit\"],\"id\":160800},\"date\":\"11/05/19\",\"party\":\"mayur yadav\",\"depositAmount\":25000,\"isAutoDebit\":false,\"particular\":\"BIL/INFT/001706494292/1lkh+25000/MAYUR YADAV\",\"reference\":\"\",\"type\":\"CREDIT\",\"withdrawalAmount\":0,\"transactionId\":\"ck73edmhy00tonqv23djxbeph\"},{\"balanceAmount\":13110.94,\"category\":[\"Cash Advance\",\"ATM\"],\"pandora_category\":{\"hierarchy\":[\"Cash Advance\",\"ATM\"],\"id\":110300},\"date\":\"11/05/19\",\"party\":\"s1cpn208\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"ATM/S1CPN208/CASH WDL/11-05-19\",\"reference\":\"ICICI ATM\",\"type\":\"DEBIT\",\"withdrawalAmount\":15000,\"transactionId\":\"ck73edmhy00tpnqv28darbn9p\"},{\"balanceAmount\":3110.94,\"category\":[\"Cash Advance\",\"ATM\"],\"pandora_category\":{\"hierarchy\":[\"Cash Advance\",\"ATM\"],\"id\":110300},\"date\":\"11/05/19\",\"party\":\"s1cpn208\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"ATM/S1CPN208/CASH WDL/11-05-19\",\"reference\":\"ICICI ATM\",\"type\":\"DEBIT\",\"withdrawalAmount\":10000,\"transactionId\":\"ck73edmhy00tqnqv23xmne3w9\"},{\"balanceAmount\":3081.44,\"category\":[\"Bank Fees\"],\"pandora_category\":{\"hierarchy\":[\"Bank Fees\"],\"id\":100000},\"date\":\"11/05/19\",\"party\":\"atmdec\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"ATMDEC CHG/01-05-2019/4768+GST\",\"reference\":\"BANK CHARGES\",\"type\":\"DEBIT\",\"withdrawalAmount\":29.5,\"transactionId\":\"ck73edmhy00trnqv2084u4kiv\"},{\"balanceAmount\":81.44,\"category\":[\"Cash Advance\",\"ATM\"],\"pandora_category\":{\"hierarchy\":[\"Cash Advance\",\"ATM\"],\"id\":110300},\"date\":\"13/05/19\",\"party\":null,\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"NFS/00009237/CASH WDL/12-05-19\",\"reference\":\"OTHER ATMS\",\"type\":\"DEBIT\",\"withdrawalAmount\":3000,\"transactionId\":\"ck73edmhy00tsnqv21j4t28p7\"},{\"balanceAmount\":3081.44,\"category\":[\"Transfer\",\"Earning\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Earning\"],\"id\":190400},\"date\":\"13/05/19\",\"party\":\"eko\",\"depositAmount\":3000,\"isAutoDebit\":false,\"particular\":\"MMT/IMPS/913214873235/IMPS to Account/EKO INDIA /Airtel Payments\",\"reference\":\"MOBILE BANKING\",\"type\":\"CREDIT\",\"withdrawalAmount\":0,\"transactionId\":\"ck73edmhy00ttnqv24c9zep4v\"},{\"balanceAmount\":2668.44,\"category\":[\"Bank Fees\"],\"pandora_category\":{\"hierarchy\":[\"Bank Fees\"],\"id\":100000},\"date\":\"13/05/19\",\"party\":\"insufficient 13.05.19\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"RTN CHG-308/FUNDS INSUFFICIENT/13.05.19\",\"reference\":\"\",\"type\":\"REVERSAL\",\"withdrawalAmount\":413,\"transactionId\":\"ck73edmhy00tunqv22w175mn3\"},{\"balanceAmount\":6668.44,\"category\":[\"Transfer\",\"Earning\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Earning\"],\"id\":190400},\"date\":\"13/05/19\",\"party\":\"state\",\"depositAmount\":4000,\"isAutoDebit\":false,\"particular\":\"UPI/913351628688/Payment from Ph/9696689032@ybl/State Bank Of I\",\"reference\":\"\",\"type\":\"CREDIT\",\"withdrawalAmount\":0,\"transactionId\":\"ck73edmhy00tvnqv2bzksdzqg\"},{\"balanceAmount\":1668.44,\"category\":[\"Cash Advance\",\"ATM\"],\"pandora_category\":{\"hierarchy\":[\"Cash Advance\",\"ATM\"],\"id\":110300},\"date\":\"13/05/19\",\"party\":\"spcnk825\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"ATM/SPCNK825/CASH WDL/13-05-19\",\"reference\":\"ICICI ATM\",\"type\":\"DEBIT\",\"withdrawalAmount\":5000,\"transactionId\":\"ck73edmhy00twnqv23ynv27c8\"},{\"balanceAmount\":3668.44,\"category\":[\"Transfer\",\"Earning\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Earning\"],\"id\":190400},\"date\":\"13/05/19\",\"party\":\"eko\",\"depositAmount\":2000,\"isAutoDebit\":false,\"particular\":\"MMT/IMPS/913320401623/IMPS to Account/EKO INDIA /Airtel Payments\",\"reference\":\"MOBILE BANKING\",\"type\":\"CREDIT\",\"withdrawalAmount\":0,\"transactionId\":\"ck73edmhy00txnqv2hiiod23b\"},{\"balanceAmount\":2668.44,\"category\":[\"Uncategorized\"],\"pandora_category\":{\"hierarchy\":[\"Uncategorized\"],\"id\":0},\"date\":\"13/05/19\",\"party\":\"paytm\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"IIN/PAYTM      /201905132005/913314358333/\",\"reference\":\"NET BANKING\",\"type\":\"DEBIT\",\"withdrawalAmount\":1000,\"transactionId\":\"ck73edmhz00tynqv2dpmjcxcu\"},{\"balanceAmount\":7668.44,\"category\":[\"Payment\",\"Credit\"],\"pandora_category\":{\"hierarchy\":[\"Payment\",\"Credit\"],\"id\":160800},\"date\":\"14/05/19\",\"party\":\"chandrakesh\",\"depositAmount\":5000,\"isAutoDebit\":false,\"particular\":\"BIL/INFT/001708353335/NA/CHANDRAKESH\",\"reference\":\"\",\"type\":\"CREDIT\",\"withdrawalAmount\":0,\"transactionId\":\"ck73edmhz00tznqv28ca64xyo\"},{\"balanceAmount\":2668.44,\"category\":[\"Cash Advance\",\"ATM\"],\"pandora_category\":{\"hierarchy\":[\"Cash Advance\",\"ATM\"],\"id\":110300},\"date\":\"14/05/19\",\"party\":\"cecn6361\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"NFS/CECN6361/CASH WDL/14-05-19\",\"reference\":\"OTHER ATMS\",\"type\":\"DEBIT\",\"withdrawalAmount\":5000,\"transactionId\":\"ck73edmhz00u0nqv26flvd8qp\"},{\"balanceAmount\":2270.44,\"category\":[\"Transfer\",\"Debit\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Debit\"],\"id\":190200},\"date\":\"14/05/19\",\"party\":\"paytm\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"UPI/913446719232/Oid8250165704@O/paybil3066@payt/Paytm Payments/\",\"reference\":\"\",\"type\":\"DEBIT\",\"withdrawalAmount\":398,\"transactionId\":\"ck73edmhz00u1nqv2b9o0dq6o\"},{\"balanceAmount\":7270.44,\"category\":[\"Payment\",\"Credit\"],\"pandora_category\":{\"hierarchy\":[\"Payment\",\"Credit\"],\"id\":160800},\"date\":\"15/05/19\",\"party\":\"chandrakesh\",\"depositAmount\":5000,\"isAutoDebit\":false,\"particular\":\"BIL/INFT/001709381684/NA/CHANDRAKESH\",\"reference\":\"\",\"type\":\"CREDIT\",\"withdrawalAmount\":0,\"transactionId\":\"ck73edmhz00u2nqv2gzhx8dep\"},{\"balanceAmount\":270.44,\"category\":[\"Cash Advance\",\"ATM\"],\"pandora_category\":{\"hierarchy\":[\"Cash Advance\",\"ATM\"],\"id\":110300},\"date\":\"16/05/19\",\"party\":\"sacwb683\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"ATM/SACWB683/CASH WDL/16-05-19\",\"reference\":\"ICICI ATM\",\"type\":\"DEBIT\",\"withdrawalAmount\":7000,\"transactionId\":\"ck73edmhz00u3nqv2dr0yf1oc\"},{\"balanceAmount\":8270.44,\"category\":[\"Payment\",\"Credit\"],\"pandora_category\":{\"hierarchy\":[\"Payment\",\"Credit\"],\"id\":160800},\"date\":\"20/05/19\",\"party\":\"chandrakesh\",\"depositAmount\":8000,\"isAutoDebit\":false,\"particular\":\"BIL/INFT/001711472786/NA/CHANDRAKESH\",\"reference\":\"\",\"type\":\"CREDIT\",\"withdrawalAmount\":0,\"transactionId\":\"ck73edmhz00u4nqv22p6m8hb9\"},{\"balanceAmount\":3115.36,\"category\":[\"Payment\"],\"pandora_category\":{\"hierarchy\":[\"Payment\"],\"id\":160000},\"date\":\"20/05/19\",\"party\":\"finnovatio\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"BIL/ONL/001711473487/Finnovatio/108587115823-10\",\"reference\":\"\",\"type\":\"DEBIT\",\"withdrawalAmount\":5155.08,\"transactionId\":\"ck73edmhz00u5nqv25hr88ci4\"},{\"balanceAmount\":10348.36,\"category\":[\"Transfer\",\"Earning\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Earning\"],\"id\":190400},\"date\":\"20/05/19\",\"party\":null,\"depositAmount\":7233,\"isAutoDebit\":false,\"particular\":\"MMT/IMPS/913909167248/Disbursal KB190/FINNOVATIO/YES BANK LTD\",\"reference\":\"MOBILE BANKING\",\"type\":\"CREDIT\",\"withdrawalAmount\":0,\"transactionId\":\"ck73edmhz00u6nqv2ejtlbmp2\"},{\"balanceAmount\":8619.36,\"category\":[\"Payment\",\"Loan\"],\"pandora_category\":{\"hierarchy\":[\"Payment\",\"Loan\"],\"id\":160400},\"date\":\"20/05/19\",\"party\":null,\"depositAmount\":0,\"isAutoDebit\":true,\"particular\":\"MMT/IMPS/913909053976/loan payment/cash/YESB0CMSNOC\",\"reference\":\"MOBILE BANKING\",\"type\":\"DEBIT\",\"withdrawalAmount\":1729,\"transactionId\":\"ck73edmhz00u7nqv21ecx0f7z\"},{\"balanceAmount\":13619.36,\"category\":[\"Transfer\",\"Credit\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Credit\"],\"id\":190100},\"date\":\"20/05/19\",\"party\":null,\"depositAmount\":5000,\"isAutoDebit\":false,\"particular\":\"MMT/IMPS/913913419089/comments/ANMOL VARS/Paytm Payments\",\"reference\":\"MOBILE BANKING\",\"type\":\"CREDIT\",\"withdrawalAmount\":0,\"transactionId\":\"ck73edmhz00u8nqv28pe4frt8\"},{\"balanceAmount\":3619.36,\"category\":[\"Cash Advance\",\"ATM\"],\"pandora_category\":{\"hierarchy\":[\"Cash Advance\",\"ATM\"],\"id\":110300},\"date\":\"20/05/19\",\"party\":\"spcnk825\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"ATM/SPCNK825/CASH WDL/19-05-19\",\"reference\":\"ICICI ATM\",\"type\":\"DEBIT\",\"withdrawalAmount\":10000,\"transactionId\":\"ck73edmhz00u9nqv28w0j119s\"},{\"balanceAmount\":119.36,\"category\":[\"Cash Advance\",\"ATM\"],\"pandora_category\":{\"hierarchy\":[\"Cash Advance\",\"ATM\"],\"id\":110300},\"date\":\"20/05/19\",\"party\":\"spcnk825\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"ATM/SPCNK825/CASH WDL/19-05-19\",\"reference\":\"ICICI ATM\",\"type\":\"DEBIT\",\"withdrawalAmount\":3500,\"transactionId\":\"ck73edmhz00uanqv26s7xf483\"},{\"balanceAmount\":1848.36,\"category\":[\"Transfer\",\"Refund\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Refund\"],\"id\":190300},\"date\":\"22/05/19\",\"party\":null,\"depositAmount\":1729,\"isAutoDebit\":false,\"particular\":\"REV MMT/913909053976\",\"reference\":\"\",\"type\":\"REVERSAL\",\"withdrawalAmount\":0,\"transactionId\":\"ck73edmhz00ubnqv2glpf5m5y\"},{\"balanceAmount\":1048.36,\"category\":[\"Uncategorized\"],\"pandora_category\":{\"hierarchy\":[\"Uncategorized\"],\"id\":0},\"date\":\"27/05/19\",\"party\":\"netflix ent\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"VSI/NETFLIX ENT/201905262356/914618448421/\",\"reference\":\"\",\"type\":\"DEBIT\",\"withdrawalAmount\":800,\"transactionId\":\"ck73edmhz00ucnqv27ejd5sfg\"},{\"balanceAmount\":548.36,\"category\":[\"Uncategorized\"],\"pandora_category\":{\"hierarchy\":[\"Uncategorized\"],\"id\":0},\"date\":\"27/05/19\",\"party\":\"paytm\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"IIN/PAYTM      /201905270942/914704737633/\",\"reference\":\"NET BANKING\",\"type\":\"DEBIT\",\"withdrawalAmount\":500,\"transactionId\":\"ck73edmhz00udnqv2bh3ydeu5\"},{\"balanceAmount\":22548.36,\"category\":[\"Cash Advance\",\"Credit\"],\"pandora_category\":{\"hierarchy\":[\"Cash Advance\",\"Credit\"],\"id\":110100},\"date\":\"27/05/19\",\"party\":\"indirapuram\",\"depositAmount\":22000,\"isAutoDebit\":false,\"particular\":\"BY CASH  - GHAZIABAD-INDIRAPURAM\",\"reference\":\"\",\"type\":\"CREDIT\",\"withdrawalAmount\":0,\"transactionId\":\"ck73edmhz00uenqv2433p2885\"},{\"balanceAmount\":548.36,\"category\":[\"Payment\",\"Loan\"],\"pandora_category\":{\"hierarchy\":[\"Payment\",\"Loan\"],\"id\":160400},\"date\":\"27/05/19\",\"party\":\"repayment bhanix\",\"depositAmount\":0,\"isAutoDebit\":true,\"particular\":\"BIL/NEFT/001716638817/loan repayment /bhanix    /KKBK0000958\",\"reference\":\"\",\"type\":\"DEBIT\",\"withdrawalAmount\":22000,\"transactionId\":\"ck73edmhz00ufnqv2f8pwaajx\"},{\"balanceAmount\":64909.36,\"category\":[\"Transfer\",\"Loan\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Loan\"],\"id\":190500},\"date\":\"28/05/19\",\"party\":null,\"depositAmount\":64361,\"isAutoDebit\":false,\"particular\":\"MMT/IMPS/914723378722/IMPS-CMS-from B/BHANIX FIN/KOTAK MAHINDRA\",\"reference\":\"MOBILE BANKING\",\"type\":\"CREDIT\",\"withdrawalAmount\":0,\"transactionId\":\"ck73edmhz00ugnqv22ozp2ccg\"},{\"balanceAmount\":60909.36,\"category\":[\"Transfer\",\"Debit\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Debit\"],\"id\":190200},\"date\":\"28/05/19\",\"party\":\"uday\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"MMT/IMPS/914808062011/Family/Uday/UBIN0559407\",\"reference\":\"MOBILE BANKING\",\"type\":\"DEBIT\",\"withdrawalAmount\":4000,\"transactionId\":\"ck73edmhz00uhnqv25eem0tz6\"},{\"balanceAmount\":50909.36,\"category\":[\"Transfer\",\"Debit\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Debit\"],\"id\":190200},\"date\":\"28/05/19\",\"party\":null,\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"MMT/IMPS/914809293856/Bill Payment/fauji/BKID0ARYAGB\",\"reference\":\"MOBILE BANKING\",\"type\":\"REVERSAL\",\"withdrawalAmount\":10000,\"transactionId\":\"ck73edmhz00uinqv2ggai75fd\"},{\"balanceAmount\":60909.36,\"category\":[\"Transfer\",\"Credit\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Credit\"],\"id\":190100},\"date\":\"28/05/19\",\"party\":null,\"depositAmount\":10000,\"isAutoDebit\":false,\"particular\":\"MMT/IMPS/914809293856/Bill Payment/fauji/BKID0ARYAGB\",\"reference\":\"MOBILE BANKING\",\"type\":\"REVERSAL\",\"withdrawalAmount\":0,\"transactionId\":\"ck73edmhz00ujnqv2d4tm4wwh\"},{\"balanceAmount\":40909.36,\"category\":[\"Cash Advance\",\"ATM\"],\"pandora_category\":{\"hierarchy\":[\"Cash Advance\",\"ATM\"],\"id\":110300},\"date\":\"28/05/19\",\"party\":\"spcnk830\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"ATM/SPCNK830/CASH WDL/28-05-19\",\"reference\":\"ICICI ATM\",\"type\":\"DEBIT\",\"withdrawalAmount\":20000,\"transactionId\":\"ck73edmhz00uknqv23tzb1b5q\"},{\"balanceAmount\":20909.36,\"category\":[\"Cash Advance\",\"ATM\"],\"pandora_category\":{\"hierarchy\":[\"Cash Advance\",\"ATM\"],\"id\":110300},\"date\":\"28/05/19\",\"party\":\"spcnk830\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"ATM/SPCNK830/CASH WDL/28-05-19\",\"reference\":\"ICICI ATM\",\"type\":\"DEBIT\",\"withdrawalAmount\":20000,\"transactionId\":\"ck73edmhz00ulnqv2dsju3ws8\"},{\"balanceAmount\":10909.36,\"category\":[\"Cash Advance\",\"ATM\"],\"pandora_category\":{\"hierarchy\":[\"Cash Advance\",\"ATM\"],\"id\":110300},\"date\":\"28/05/19\",\"party\":\"spcnk830\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"ATM/SPCNK830/CASH WDL/28-05-19\",\"reference\":\"ICICI ATM\",\"type\":\"DEBIT\",\"withdrawalAmount\":10000,\"transactionId\":\"ck73edmhz00umnqv20j3tg5k6\"},{\"balanceAmount\":4909.36,\"category\":[\"Payment\",\"Loan\"],\"pandora_category\":{\"hierarchy\":[\"Payment\",\"Loan\"],\"id\":160400},\"date\":\"28/05/19\",\"party\":\"return\",\"depositAmount\":0,\"isAutoDebit\":true,\"particular\":\"BIL/INFT/001717515757/return loan/SANJAY BAILWAL\",\"reference\":\"\",\"type\":\"DEBIT\",\"withdrawalAmount\":6000,\"transactionId\":\"ck73edmhz00unnqv25vpnduj4\"},{\"balanceAmount\":2976.36,\"category\":[\"Payment\"],\"pandora_category\":{\"hierarchy\":[\"Payment\"],\"id\":160000},\"date\":\"30/05/19\",\"party\":\"one97 comm\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"BIL/ONL/001718671956/One97 Comm/201905300482506\",\"reference\":\"\",\"type\":\"DEBIT\",\"withdrawalAmount\":1933,\"transactionId\":\"ck73edmhz00uonqv28nu05l3s\"},{\"balanceAmount\":1976.36,\"category\":[\"Uncategorized\"],\"pandora_category\":{\"hierarchy\":[\"Uncategorized\"],\"id\":0},\"date\":\"30/05/19\",\"party\":\"paytm\",\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"IIN/PAYTM      /201905302321/915017794227/\",\"reference\":\"NET BANKING\",\"type\":\"DEBIT\",\"withdrawalAmount\":1000,\"transactionId\":\"ck73edmhz00upnqv28sbgednl\"},{\"balanceAmount\":1076.36,\"category\":[\"Transfer\",\"Debit\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Debit\"],\"id\":190200},\"date\":\"31/05/19\",\"party\":null,\"depositAmount\":0,\"isAutoDebit\":false,\"particular\":\"INF/INFT/20190531201621/NA/Self\",\"reference\":\"NET BANKING\",\"type\":\"DEBIT\",\"withdrawalAmount\":900,\"transactionId\":\"ck73edmhz00uqnqv2hw8nh81l\"},{\"balanceAmount\":1077.36,\"category\":[\"Transfer\",\"Loan\"],\"pandora_category\":{\"hierarchy\":[\"Transfer\",\"Loan\"],\"id\":190500},\"date\":\"31/05/19\",\"party\":\"zestmoney\",\"depositAmount\":1,\"isAutoDebit\":false,\"particular\":\"MMT/IMPS/915121189590/ZestMoney Bank /CAMDEN TOW/YES BANK LTD\",\"reference\":\"MOBILE BANKING\",\"type\":\"CREDIT\",\"withdrawalAmount\":0,\"transactionId\":\"ck73edmhz00urnqv22ucu0oyj\"}],\"summary\":{\"credit\":{\"amount\":2871109.49,\"count\":115},\"debit\":{\"amount\":2874895.15,\"count\":252},\"defaults\":{\"amount\":0,\"count\":0}},\"topCredits\":[{\"amount\":900000,\"date\":\"28 Mar 19\",\"particular\":\"TRFR FROM: SARIKA YADAV\",\"balanceAmount\":900869,\"category\":[\"Transfer\",\"Credit\"]},{\"amount\":200000,\"date\":\"18 Apr 19\",\"particular\":\"CLG/PRATIBHA RASTOGI/400022/IND/16.04.2019\",\"balanceAmount\":200399,\"category\":[\"Payment\",\"Cheque\"]},{\"amount\":200000,\"date\":\"16 Apr 19\",\"particular\":\"TRFR FROM: MADHAV RASTOGI\",\"balanceAmount\":200638,\"category\":[\"Transfer\",\"Credit\"]},{\"amount\":100000,\"date\":\"18 Apr 19\",\"particular\":\"MMT/IMPS/910815059992/ARUN KUMAR/AXIS BANK LTD\",\"balanceAmount\":300399,\"category\":[\"Transfer\",\"Earning\"]},{\"amount\":80000,\"date\":\"05 Apr 19\",\"particular\":\"UPI/909507848651/UPI/er.vineet476@ok/HDFC BANK LTD\",\"balanceAmount\":83991,\"category\":[\"Transfer\",\"Credit\"]},{\"amount\":75000,\"date\":\"10 May 19\",\"particular\":\"INF/021211688401/Slry125605000084/SYSACS TECHNOLOGY PRIVATE LIMI\",\"balanceAmount\":76102,\"category\":[\"Transfer\",\"Earning\"]},{\"amount\":75000,\"date\":\"04 May 19\",\"particular\":\"INF/021196627851/March salry125605000084/SYSACS TECHNOLOGY PRIVATE LIMI\",\"balanceAmount\":77177,\"category\":[\"Transfer\",\"Earning\"]},{\"amount\":72500,\"date\":\"20 Apr 19\",\"particular\":\"INF/021164646561/Salary feb125605000084/SYSACS TECHNOLOGY PRIVATE LIMI\",\"balanceAmount\":75899,\"category\":[\"Transfer\",\"Earning\"]},{\"amount\":64361,\"date\":\"28 May 19\",\"particular\":\"MMT/IMPS/914723378722/IMPS-CMS-from B/BHANIX FIN/KOTAK MAHINDRA\",\"balanceAmount\":64909,\"category\":[\"Transfer\",\"Loan\"]},{\"amount\":60000,\"date\":\"12 Apr 19\",\"particular\":\"MMT/IMPS/910214142515/MANOJ KUMA/AXIS BANK LTD\",\"balanceAmount\":60627,\"category\":[\"Transfer\",\"Earning\"]},{\"amount\":60000,\"date\":\"19 Mar 19\",\"particular\":\"NEFT-BARBX19078665769-LALA RAM--39590200000237-BARB0GREENP\",\"balanceAmount\":63048,\"category\":[\"Transfer\",\"Credit\"]},{\"amount\":60000,\"date\":\"13 Mar 19\",\"particular\":\"MMT/IMPS/907214440192/ARUN KUMAR/AXIS BANK LTD\",\"balanceAmount\":67107,\"category\":[\"Transfer\",\"Earning\"]},{\"amount\":50000,\"date\":\"07 May 19\",\"particular\":\"NEFT-N127190819238919-SANJEEV KUMAR-FUND-00261050021166-HDFC0000001\",\"balanceAmount\":50142,\"category\":[\"Transfer\",\"Credit\"]},{\"amount\":45000,\"date\":\"07 May 19\",\"particular\":\"BIL/INFT/001703256410/80000-45000/MAYUR YADAV\",\"balanceAmount\":46142,\"category\":[\"Payment\",\"Credit\"]},{\"amount\":40000,\"date\":\"01 May 19\",\"particular\":\"NEFT-P19050136821887-UDAY VEER SINGH--86742010002534-SYNB0008674\",\"balanceAmount\":40260,\"category\":[\"Transfer\",\"Credit\"]},{\"amount\":40000,\"date\":\"08 Mar 19\",\"particular\":\"BY CASH-ETAH\",\"balanceAmount\":40434,\"category\":[\"Cash Advance\",\"Credit\"]},{\"amount\":35000,\"date\":\"07 May 19\",\"particular\":\"BIL/INFT/001703258563/1 lakh full/MAYUR YADAV\",\"balanceAmount\":81142,\"category\":[\"Payment\",\"Credit\"]},{\"amount\":30000,\"date\":\"08 May 19\",\"particular\":\"MMT/IMPS/912811129901/fund/SANJEEV KU/HDFC BANK LTD\",\"balanceAmount\":37101,\"category\":[\"Transfer\",\"Credit\"]},{\"amount\":30000,\"date\":\"07 May 19\",\"particular\":\"NEFT-N127190819243542-SANJEEV KUMAR HUF-FUND-50100048117530-HDFC0000001\",\"balanceAmount\":51142,\"category\":[\"Transfer\",\"Credit\"]},{\"amount\":30000,\"date\":\"04 May 19\",\"particular\":\"BIL/INFT/001700832059/ashu ke/MAYUR YADAV\",\"balanceAmount\":107177,\"category\":[\"Payment\",\"Credit\"]}],\"topDebits\":[{\"amount\":100000,\"date\":\"29 Mar 19\",\"particular\":\"CASH PAID:SELF 0718 GHAZIABAD-INDIRAPURAMCHQ,000313\",\"balanceAmount\":414269,\"category\":[\"Cash Advance\",\"Debit\"]},{\"amount\":100000,\"date\":\"28 Mar 19\",\"particular\":\"CASH PAID:SELF 0718 GHAZIABAD-INDIRAPURAMCHQ,000311\",\"balanceAmount\":594869,\"category\":[\"Cash Advance\",\"Debit\"]},{\"amount\":50000,\"date\":\"18 Apr 19\",\"particular\":\"CASH PAID:Self 0718 GHAZIABAD-INDIRAPURAM\",\"balanceAmount\":250399,\"category\":[\"Cash Advance\",\"Debit\"]},{\"amount\":50000,\"date\":\"16 Apr 19\",\"particular\":\"MMT/IMPS/910612728410/NA/susheela/UTBI0ETHL51\",\"balanceAmount\":130638,\"category\":[\"Transfer\",\"Debit\"]},{\"amount\":50000,\"date\":\"30 Mar 19\",\"particular\":\"BIL/SPCNK825/001674173526/30-03-19VIPLAV  KUMAR\",\"balanceAmount\":107295,\"category\":[\"Payment\"]},{\"amount\":50000,\"date\":\"30 Mar 19\",\"particular\":\"MMT/IMPS/908909933530/Family/Priya/UTBI0ETHL51\",\"balanceAmount\":197295,\"category\":[\"Transfer\",\"Debit\"]},{\"amount\":50000,\"date\":\"30 Mar 19\",\"particular\":\"BIL/INFT/001673841782/NA/SANJEEV KUMAR/A\",\"balanceAmount\":247295,\"category\":[\"Payment\"]},{\"amount\":50000,\"date\":\"30 Mar 19\",\"particular\":\"MMT/IMPS/908909926277/Family/Uday/UBIN0559407\",\"balanceAmount\":297295,\"category\":[\"Transfer\",\"Debit\"]},{\"amount\":50000,\"date\":\"28 Mar 19\",\"particular\":\"MMT/IMPS/908713207121/Family/Uday/UBIN0559407\",\"balanceAmount\":694869,\"category\":[\"Transfer\",\"Debit\"]},{\"amount\":50000,\"date\":\"28 Mar 19\",\"particular\":\"MMT/IMPS/908713912772/Friends/JAMUNA/UTIB0001550\",\"balanceAmount\":800869,\"category\":[\"Transfer\",\"Debit\"]},{\"amount\":40000,\"date\":\"07 May 19\",\"particular\":\"MMT/IMPS/912711201835/NA/Arun/UTIB0000854\",\"balanceAmount\":11142,\"category\":[\"Transfer\",\"Debit\"]},{\"amount\":40000,\"date\":\"20 Apr 19\",\"particular\":\"BIL/INFT/001690087327/MIB-/CHANDRAKESH\",\"balanceAmount\":58399,\"category\":[\"Payment\"]},{\"amount\":40000,\"date\":\"05 Apr 19\",\"particular\":\"MMT/IMPS/909508025499/Family/Mohit ram/IDIB000I016\",\"balanceAmount\":43991,\"category\":[\"Transfer\",\"Debit\"]},{\"amount\":35000,\"date\":\"07 May 19\",\"particular\":\"BIL/INFT/001703261538/MIB-/SARIKA YADAV\",\"balanceAmount\":46142,\"category\":[\"Payment\"]},{\"amount\":35000,\"date\":\"20 Apr 19\",\"particular\":\"BIL/INFT/001690295899/MIB-/VIPLAV  KUMAR\",\"balanceAmount\":32899,\"category\":[\"Payment\"]},{\"amount\":35000,\"date\":\"20 Apr 19\",\"particular\":\"BIL/INFT/001690087438/MIB-/CHANDRAKESH\",\"balanceAmount\":23399,\"category\":[\"Payment\"]},{\"amount\":35000,\"date\":\"19 Apr 19\",\"particular\":\"BIL/INFT/001689418802/loan return/SANJEEV KUMAR/A\",\"balanceAmount\":189399,\"category\":[\"Payment\",\"Loan\"]},{\"amount\":31280,\"date\":\"09 Apr 19\",\"particular\":\"TRF/DELHI PUBLIC SCHOOL INDIRAPURAM/ICICI\",\"balanceAmount\":5529,\"category\":[\"Community\",\"Education\"]},{\"amount\":30000,\"date\":\"04 May 19\",\"particular\":\"MMT/IMPS/912417869676/Family/Anil/IDIB000A158\",\"balanceAmount\":27177,\"category\":[\"Transfer\",\"Debit\"]},{\"amount\":30000,\"date\":\"30 Mar 19\",\"particular\":\"MMT/IMPS/908909922267/Friends/JAMUNA/UTIB0001550\",\"balanceAmount\":347295,\"category\":[\"Transfer\",\"Debit\"]}],\"monthlyRecurringDebits\":{\"months\":[\"19/05\",\"19/04\",\"19/03\"],\"data\":[{\"summary\":\"spcnk825\",\"count\":25,\"amount\":252500,\"monthlyTransactions\":{\"19/03\":{\"month\":\"19/03\",\"amount\":10000,\"count\":2,\"transactions\":[{\"particular\":\"ATM/SPCNK825/CASH WDL/14-03-19\",\"date\":\"14/03/19\",\"amount\":3000,\"balanceAmount\":5253.09},{\"particular\":\"ATM/SPCNK825/CASH WDL/31-03-19\",\"date\":\"31/03/19\",\"amount\":7000,\"balanceAmount\":87378.61}]},\"19/04\":{\"month\":\"19/04\",\"amount\":88000,\"count\":8,\"transactions\":[{\"particular\":\"ATM/SPCNK825/CASH WDL/16-04-19\",\"date\":\"16/04/19\",\"amount\":15000,\"balanceAmount\":115638.12},{\"particular\":\"ATM/SPCNK825/CASH WDL/16-04-19\",\"date\":\"16/04/19\",\"amount\":15000,\"balanceAmount\":100638.12},{\"particular\":\"ATM/SPCNK825/CASH WDL/18-04-19\",\"date\":\"18/04/19\",\"amount\":12000,\"balanceAmount\":399.12},{\"particular\":\"ATM/SPCNK825/CASH WDL/19-04-19\",\"date\":\"19/04/19\",\"amount\":18000,\"balanceAmount\":156399.12},{\"particular\":\"ATM/SPCNK825/CASH WDL/19-04-19\",\"date\":\"19/04/19\",\"amount\":18000,\"balanceAmount\":138399.12},{\"particular\":\"ATM/SPCNK825/CASH WDL/23-04-19\",\"date\":\"23/04/19\",\"amount\":8000,\"balanceAmount\":369.68},{\"particular\":\"ATM/SPCNK825/CASH WDL/26-04-19\",\"date\":\"26/04/19\",\"amount\":1500,\"balanceAmount\":2869.68},{\"particular\":\"ATM/SPCNK825/CASH WDL/30-04-19\",\"date\":\"30/04/19\",\"amount\":500,\"balanceAmount\":260.08}]},\"19/05\":{\"month\":\"19/05\",\"amount\":154500,\"count\":15,\"transactions\":[{\"particular\":\"ATM/SPCNK825/CASH WDL/01-05-19\",\"date\":\"01/05/19\",\"amount\":4000,\"balanceAmount\":36260.08},{\"particular\":\"ATM/SPCNK825/CASH WDL/01-05-19\",\"date\":\"01/05/19\",\"amount\":20000,\"balanceAmount\":16260.08},{\"particular\":\"ATM/SPCNK825/CASH WDL/01-05-19\",\"date\":\"01/05/19\",\"amount\":16000,\"balanceAmount\":260.08},{\"particular\":\"ATM/SPCNK825/CASH WDL/01-05-19\",\"date\":\"01/05/19\",\"amount\":9000,\"balanceAmount\":260.08},{\"particular\":\"ATM/SPCNK825/CASH WDL/03-05-19\",\"date\":\"03/05/19\",\"amount\":5000,\"balanceAmount\":15560.59},{\"particular\":\"ATM/SPCNK825/CASH WDL/05-05-19\",\"date\":\"06/05/19\",\"amount\":15000,\"balanceAmount\":12176.82},{\"particular\":\"ATM/SPCNK825/CASH WDL/05-05-19\",\"date\":\"06/05/19\",\"amount\":8000,\"balanceAmount\":4176.82},{\"particular\":\"ATM/SPCNK825/CASH WDL/06-05-19\",\"date\":\"06/05/19\",\"amount\":10000,\"balanceAmount\":141.82},{\"particular\":\"ATM/SPCNK825/CASH WDL/07-05-19\",\"date\":\"07/05/19\",\"amount\":15000,\"balanceAmount\":35141.82},{\"particular\":\"ATM/SPCNK825/CASH WDL/07-05-19\",\"date\":\"07/05/19\",\"amount\":14000,\"balanceAmount\":21141.82},{\"particular\":\"ATM/SPCNK825/CASH WDL/07-05-19\",\"date\":\"07/05/19\",\"amount\":10000,\"balanceAmount\":1141.82},{\"particular\":\"ATM/SPCNK825/CASH WDL/07-05-19\",\"date\":\"07/05/19\",\"amount\":10000,\"balanceAmount\":36141.82},{\"particular\":\"ATM/SPCNK825/CASH WDL/13-05-19\",\"date\":\"13/05/19\",\"amount\":5000,\"balanceAmount\":1668.44},{\"particular\":\"ATM/SPCNK825/CASH WDL/19-05-19\",\"date\":\"20/05/19\",\"amount\":10000,\"balanceAmount\":3619.36},{\"particular\":\"ATM/SPCNK825/CASH WDL/19-05-19\",\"date\":\"20/05/19\",\"amount\":3500,\"balanceAmount\":119.36}]}}},{\"summary\":\"s1cpn208\",\"count\":16,\"amount\":173000,\"monthlyTransactions\":{\"19/03\":{\"month\":\"19/03\",\"amount\":35000,\"count\":3,\"transactions\":[{\"particular\":\"ATM/S1CPN208/CASH WDL/09-03-19\",\"date\":\"11/03/19\",\"amount\":20000,\"balanceAmount\":8837.59},{\"particular\":\"ATM/S1CPN208/CASH WDL/15-03-19\",\"date\":\"15/03/19\",\"amount\":5000,\"balanceAmount\":253.09},{\"particular\":\"ATM/S1CPN208/CASH WDL/20-03-19\",\"date\":\"20/03/19\",\"amount\":10000,\"balanceAmount\":2318.09}]},\"19/04\":{\"month\":\"19/04\",\"amount\":45000,\"count\":5,\"transactions\":[{\"particular\":\"ATM/S1CPN208/CASH WDL/16-04-19\",\"date\":\"16/04/19\",\"amount\":8000,\"balanceAmount\":192638.12},{\"particular\":\"ATM/S1CPN208/CASH WDL/16-04-19\",\"date\":\"16/04/19\",\"amount\":8000,\"balanceAmount\":184638.12},{\"particular\":\"ATM/S1CPN208/CASH WDL/16-04-19\",\"date\":\"16/04/19\",\"amount\":4000,\"balanceAmount\":180638.12},{\"particular\":\"ATM/S1CPN208/CASH WDL/18-04-19\",\"date\":\"18/04/19\",\"amount\":15000,\"balanceAmount\":235399.12},{\"particular\":\"ATM/S1CPN208/CASH WDL/18-04-19\",\"date\":\"18/04/19\",\"amount\":10000,\"balanceAmount\":225399.12}]},\"19/05\":{\"month\":\"19/05\",\"amount\":93000,\"count\":8,\"transactions\":[{\"particular\":\"ATM/S1CPN208/CASH WDL/02-05-19\",\"date\":\"02/05/19\",\"amount\":14000,\"balanceAmount\":1260.08},{\"particular\":\"ATM/S1CPN208/CASH WDL/06-05-19\",\"date\":\"06/05/19\",\"amount\":5000,\"balanceAmount\":141.82},{\"particular\":\"ATM/S1CPN208/CASH WDL/06-05-19\",\"date\":\"06/05/19\",\"amount\":15000,\"balanceAmount\":5141.82},{\"particular\":\"ATM/S1CPN208/CASH WDL/06-05-19\",\"date\":\"06/05/19\",\"amount\":5000,\"balanceAmount\":141.82},{\"particular\":\"ATM/S1CPN208/CASH WDL/10-05-19\",\"date\":\"10/05/19\",\"amount\":15000,\"balanceAmount\":36101.65},{\"particular\":\"ATM/S1CPN208/CASH WDL/10-05-19\",\"date\":\"10/05/19\",\"amount\":14000,\"balanceAmount\":22101.65},{\"particular\":\"ATM/S1CPN208/CASH WDL/11-05-19\",\"date\":\"11/05/19\",\"amount\":15000,\"balanceAmount\":13110.94},{\"particular\":\"ATM/S1CPN208/CASH WDL/11-05-19\",\"date\":\"11/05/19\",\"amount\":10000,\"balanceAmount\":3110.94}]}}},{\"summary\":\"uday\",\"count\":9,\"amount\":166000,\"monthlyTransactions\":{\"19/03\":{\"month\":\"19/03\",\"amount\":142000,\"count\":6,\"transactions\":[{\"particular\":\"MMT/IMPS/906319926075/Uday/UBIN0559407\",\"date\":\"04/03/19\",\"amount\":12000,\"balanceAmount\":16467.02},{\"particular\":\"MMT/IMPS/906507458254/Family/Uday/UBIN0559407\",\"date\":\"06/03/19\",\"amount\":12000,\"balanceAmount\":1333.59},{\"particular\":\"MMT/IMPS/907314750472/Uday/UBIN0559407\",\"date\":\"14/03/19\",\"amount\":5000,\"balanceAmount\":8253.09},{\"particular\":\"MMT/IMPS/908713207121/Family/Uday/UBIN0559407\",\"date\":\"28/03/19\",\"amount\":50000,\"balanceAmount\":694869.09},{\"particular\":\"MMT/IMPS/908909926277/Family/Uday/UBIN0559407\",\"date\":\"30/03/19\",\"amount\":50000,\"balanceAmount\":297294.61},{\"particular\":\"MMT/IMPS/909009044221/Family/Uday/UBIN0559407\",\"date\":\"31/03/19\",\"amount\":13000,\"balanceAmount\":94540.61}]},\"19/04\":{\"month\":\"19/04\",\"amount\":15000,\"count\":1,\"transactions\":[{\"particular\":\"MMT/IMPS/910911587771/Family/Uday/UBIN0559407\",\"date\":\"19/04/19\",\"amount\":15000,\"balanceAmount\":174399.12}]},\"19/05\":{\"month\":\"19/05\",\"amount\":9000,\"count\":2,\"transactions\":[{\"particular\":\"MMT/IMPS/912716780702/Uday/UBIN0559407\",\"date\":\"07/05/19\",\"amount\":5000,\"balanceAmount\":31141.82},{\"particular\":\"MMT/IMPS/914808062011/Family/Uday/UBIN0559407\",\"date\":\"28/05/19\",\"amount\":4000,\"balanceAmount\":60909.36}]}}},{\"summary\":\"spcnk830\",\"count\":10,\"amount\":143000,\"monthlyTransactions\":{\"19/04\":{\"month\":\"19/04\",\"amount\":93000,\"count\":7,\"transactions\":[{\"particular\":\"ATM/SPCNK830/CASH WDL/01-04-19\",\"date\":\"02/04/19\",\"amount\":20000,\"balanceAmount\":63980.61},{\"particular\":\"ATM/SPCNK830/CASH WDL/01-04-19\",\"date\":\"02/04/19\",\"amount\":10000,\"balanceAmount\":53980.61},{\"particular\":\"ATM/SPCNK830/CASH WDL/07-04-19\",\"date\":\"08/04/19\",\"amount\":11500,\"balanceAmount\":423.12},{\"particular\":\"ATM/SPCNK830/CASH WDL/12-04-19\",\"date\":\"12/04/19\",\"amount\":20000,\"balanceAmount\":40627.12},{\"particular\":\"ATM/SPCNK830/CASH WDL/12-04-19\",\"date\":\"12/04/19\",\"amount\":20000,\"balanceAmount\":20627.12},{\"particular\":\"ATM/SPCNK830/CASH WDL/14-04-19\",\"date\":\"15/04/19\",\"amount\":7000,\"balanceAmount\":638.12},{\"particular\":\"ATM/SPCNK830/CASH WDL/28-04-19\",\"date\":\"29/04/19\",\"amount\":4500,\"balanceAmount\":370.68}]},\"19/05\":{\"month\":\"19/05\",\"amount\":50000,\"count\":3,\"transactions\":[{\"particular\":\"ATM/SPCNK830/CASH WDL/28-05-19\",\"date\":\"28/05/19\",\"amount\":20000,\"balanceAmount\":40909.36},{\"particular\":\"ATM/SPCNK830/CASH WDL/28-05-19\",\"date\":\"28/05/19\",\"amount\":20000,\"balanceAmount\":20909.36},{\"particular\":\"ATM/SPCNK830/CASH WDL/28-05-19\",\"date\":\"28/05/19\",\"amount\":10000,\"balanceAmount\":10909.36}]}}},{\"summary\":\"s1cpn213\",\"count\":9,\"amount\":138500,\"monthlyTransactions\":{\"19/03\":{\"month\":\"19/03\",\"amount\":50000,\"count\":3,\"transactions\":[{\"particular\":\"ATM/S1CPN213/CASH WDL/28-03-19\",\"date\":\"28/03/19\",\"amount\":20000,\"balanceAmount\":880869.09},{\"particular\":\"ATM/S1CPN213/CASH WDL/28-03-19\",\"date\":\"28/03/19\",\"amount\":20000,\"balanceAmount\":860869.09},{\"particular\":\"ATM/S1CPN213/CASH WDL/28-03-19\",\"date\":\"28/03/19\",\"amount\":10000,\"balanceAmount\":850869.09}]},\"19/04\":{\"month\":\"19/04\",\"amount\":46500,\"count\":3,\"transactions\":[{\"particular\":\"ATM/S1CPN213/CASH WDL/18-04-19\",\"date\":\"18/04/19\",\"amount\":6500,\"balanceAmount\":399.12},{\"particular\":\"ATM/S1CPN213/CASH WDL/20-04-19\",\"date\":\"20/04/19\",\"amount\":20000,\"balanceAmount\":118399.12},{\"particular\":\"ATM/S1CPN213/CASH WDL/20-04-19\",\"date\":\"20/04/19\",\"amount\":20000,\"balanceAmount\":98399.12}]},\"19/05\":{\"month\":\"19/05\",\"amount\":42000,\"count\":3,\"transactions\":[{\"particular\":\"ATM/S1CPN213/CASH WDL/04-05-19\",\"date\":\"04/05/19\",\"amount\":20000,\"balanceAmount\":79176.82},{\"particular\":\"ATM/S1CPN213/CASH WDL/04-05-19\",\"date\":\"04/05/19\",\"amount\":20000,\"balanceAmount\":59176.82},{\"particular\":\"ATM/S1CPN213/CASH WDL/04-05-19\",\"date\":\"04/05/19\",\"amount\":2000,\"balanceAmount\":57176.82}]}}},{\"summary\":\"family\",\"count\":4,\"amount\":120000,\"monthlyTransactions\":{\"19/03\":{\"month\":\"19/03\",\"amount\":50000,\"count\":1,\"transactions\":[{\"particular\":\"MMT/IMPS/908909933530/Family/Priya/UTBI0ETHL51\",\"date\":\"30/03/19\",\"amount\":50000,\"balanceAmount\":197294.61}]},\"19/05\":{\"month\":\"19/05\",\"amount\":70000,\"count\":3,\"transactions\":[{\"particular\":\"MMT/IMPS/912119532713/Family/Anil/IDIB000A158\",\"date\":\"01/05/19\",\"amount\":20000,\"balanceAmount\":9260.08},{\"particular\":\"MMT/IMPS/912417869676/Family/Anil/IDIB000A158\",\"date\":\"04/05/19\",\"amount\":30000,\"balanceAmount\":27176.82},{\"particular\":\"MMT/IMPS/912811393337/Family/Anil/IDIB000A158\",\"date\":\"08/05/19\",\"amount\":20000,\"balanceAmount\":17100.65}]}}},{\"summary\":\"s1cwk473\",\"count\":7,\"amount\":109500,\"monthlyTransactions\":{\"19/03\":{\"month\":\"19/03\",\"amount\":84500,\"count\":5,\"transactions\":[{\"particular\":\"ATM/S1CWK473/CASH WDL/08-03-19\",\"date\":\"08/03/19\",\"amount\":20000,\"balanceAmount\":20433.59},{\"particular\":\"ATM/S1CWK473/CASH WDL/08-03-19\",\"date\":\"08/03/19\",\"amount\":5000,\"balanceAmount\":15433.59},{\"particular\":\"ATM/S1CWK473/CASH WDL/14-03-19\",\"date\":\"14/03/19\",\"amount\":19500,\"balanceAmount\":253.09},{\"particular\":\"ATM/S1CWK473/CASH WDL/30-03-19\",\"date\":\"30/03/19\",\"amount\":20000,\"balanceAmount\":177294.61},{\"particular\":\"ATM/S1CWK473/CASH WDL/30-03-19\",\"date\":\"30/03/19\",\"amount\":20000,\"balanceAmount\":157294.61}]},\"19/04\":{\"month\":\"19/04\",\"amount\":25000,\"count\":2,\"transactions\":[{\"particular\":\"ATM/S1CWK473/CASH WDL/30-04-19\",\"date\":\"30/04/19\",\"amount\":18000,\"balanceAmount\":7252.58},{\"particular\":\"ATM/S1CWK473/CASH WDL/30-04-19\",\"date\":\"30/04/19\",\"amount\":7000,\"balanceAmount\":252.58}]}}},{\"summary\":\"s1cpn511\",\"count\":8,\"amount\":104500,\"monthlyTransactions\":{\"19/03\":{\"month\":\"19/03\",\"amount\":69000,\"count\":5,\"transactions\":[{\"particular\":\"ATM/S1CPN511/CASH WDL/05-03-19\",\"date\":\"05/03/19\",\"amount\":16000,\"balanceAmount\":467.02},{\"particular\":\"ATM/S1CPN511/CASH WDL/11-03-19\",\"date\":\"11/03/19\",\"amount\":3000,\"balanceAmount\":1808.09},{\"particular\":\"ATM/S1CPN511/CASH WDL/19-03-19\",\"date\":\"19/03/19\",\"amount\":20000,\"balanceAmount\":43048.09},{\"particular\":\"ATM/S1CPN511/CASH WDL/19-03-19\",\"date\":\"19/03/19\",\"amount\":20000,\"balanceAmount\":23048.09},{\"particular\":\"ATM/S1CPN511/CASH WDL/19-03-19\",\"date\":\"19/03/19\",\"amount\":10000,\"balanceAmount\":13048.09}]},\"19/04\":{\"month\":\"19/04\",\"amount\":35500,\"count\":3,\"transactions\":[{\"particular\":\"ATM/S1CPN511/CASH WDL/02-04-19\",\"date\":\"02/04/19\",\"amount\":10000,\"balanceAmount\":33980.61},{\"particular\":\"ATM/S1CPN511/CASH WDL/26-04-19\",\"date\":\"26/04/19\",\"amount\":15000,\"balanceAmount\":10869.68},{\"particular\":\"ATM/S1CPN511/CASH WDL/26-04-19\",\"date\":\"26/04/19\",\"amount\":10500,\"balanceAmount\":369.68}]}}},{\"summary\":\"indirapuramchq,000311\",\"count\":1,\"amount\":100000,\"monthlyTransactions\":{\"19/03\":{\"month\":\"19/03\",\"amount\":100000,\"count\":1,\"transactions\":[{\"particular\":\"CASH PAID:SELF 0718 GHAZIABAD-INDIRAPURAMCHQ,000311\",\"date\":\"28/03/19\",\"amount\":100000,\"balanceAmount\":594869.09}]}}},{\"summary\":\"indirapuramchq,000313\",\"count\":1,\"amount\":100000,\"monthlyTransactions\":{\"19/03\":{\"month\":\"19/03\",\"amount\":100000,\"count\":1,\"transactions\":[{\"particular\":\"CASH PAID:SELF 0718 GHAZIABAD-INDIRAPURAMCHQ,000313\",\"date\":\"29/03/19\",\"amount\":100000,\"balanceAmount\":414268.61}]}}},{\"summary\":\"s1cw6304\",\"count\":6,\"amount\":92000,\"monthlyTransactions\":{\"19/03\":{\"month\":\"19/03\",\"amount\":92000,\"count\":6,\"transactions\":[{\"particular\":\"ATM/S1CW6304/CASH WDL/13-03-19\",\"date\":\"13/03/19\",\"amount\":20000,\"balanceAmount\":43253.09},{\"particular\":\"ATM/S1CW6304/CASH WDL/13-03-19\",\"date\":\"13/03/19\",\"amount\":20000,\"balanceAmount\":23253.09},{\"particular\":\"ATM/S1CW6304/CASH WDL/13-03-19\",\"date\":\"13/03/19\",\"amount\":2000,\"balanceAmount\":21253.09},{\"particular\":\"ATM/S1CW6304/CASH WDL/29-03-19\",\"date\":\"29/03/19\",\"amount\":20000,\"balanceAmount\":544268.61},{\"particular\":\"ATM/S1CW6304/CASH WDL/29-03-19\",\"date\":\"29/03/19\",\"amount\":20000,\"balanceAmount\":524268.61},{\"particular\":\"ATM/S1CW6304/CASH WDL/29-03-19\",\"date\":\"29/03/19\",\"amount\":10000,\"balanceAmount\":514268.61}]}}},{\"summary\":\"mohit\",\"count\":5,\"amount\":84500,\"monthlyTransactions\":{\"19/04\":{\"month\":\"19/04\",\"amount\":84500,\"count\":5,\"transactions\":[{\"particular\":\"MMT/IMPS/909206148731/Family/Mohit ram/IDIB000I016\",\"date\":\"02/04/19\",\"amount\":10000,\"balanceAmount\":43980.61},{\"particular\":\"MMT/IMPS/909508025499/Family/Mohit ram/IDIB000I016\",\"date\":\"05/04/19\",\"amount\":40000,\"balanceAmount\":43990.61},{\"particular\":\"MMT/IMPS/910218052877/Family/Mohit ram/IDIB000I016\",\"date\":\"12/04/19\",\"amount\":17500,\"balanceAmount\":3127.12},{\"particular\":\"MMT/IMPS/910510810982/Family/Mohit ram/IDIB000I016\",\"date\":\"15/04/19\",\"amount\":14000,\"balanceAmount\":638.12},{\"particular\":\"MMT/IMPS/910617162161/Family/Mohit ram/IDIB000I016\",\"date\":\"16/04/19\",\"amount\":3000,\"balanceAmount\":64899.12}]}}},{\"summary\":\"mib viplav\",\"count\":3,\"amount\":75000,\"monthlyTransactions\":{\"19/04\":{\"month\":\"19/04\",\"amount\":75000,\"count\":3,\"transactions\":[{\"particular\":\"BIL/INFT/001677022815/MIB-/VIPLAV  KUMAR\",\"date\":\"02/04/19\",\"amount\":25000,\"balanceAmount\":5980.61},{\"particular\":\"BIL/INFT/001687796922/MIB-/VIPLAV  KUMAR\",\"date\":\"16/04/19\",\"amount\":15000,\"balanceAmount\":70638.12},{\"particular\":\"BIL/INFT/001690295899/MIB-/VIPLAV  KUMAR\",\"date\":\"20/04/19\",\"amount\":35000,\"balanceAmount\":32899.12}]}}},{\"summary\":\"mib\",\"count\":2,\"amount\":75000,\"monthlyTransactions\":{\"19/04\":{\"month\":\"19/04\",\"amount\":75000,\"count\":2,\"transactions\":[{\"particular\":\"BIL/INFT/001690087327/MIB-/CHANDRAKESH\",\"date\":\"20/04/19\",\"amount\":40000,\"balanceAmount\":58399.12},{\"particular\":\"BIL/INFT/001690087438/MIB-/CHANDRAKESH\",\"date\":\"20/04/19\",\"amount\":35000,\"balanceAmount\":23399.12}]}}},{\"summary\":\"arun\",\"count\":2,\"amount\":52000,\"monthlyTransactions\":{\"19/05\":{\"month\":\"19/05\",\"amount\":52000,\"count\":2,\"transactions\":[{\"particular\":\"MMT/IMPS/912319182520/Arun/UTIB0000854\",\"date\":\"03/05/19\",\"amount\":12000,\"balanceAmount\":3560.59},{\"particular\":\"MMT/IMPS/912711201835/NA/Arun/UTIB0000854\",\"date\":\"07/05/19\",\"amount\":40000,\"balanceAmount\":11141.82}]}}},{\"summary\":\"sanjeev kumar\",\"count\":1,\"amount\":50000,\"monthlyTransactions\":{\"19/03\":{\"month\":\"19/03\",\"amount\":50000,\"count\":1,\"transactions\":[{\"particular\":\"BIL/INFT/001673841782/NA/SANJEEV KUMAR/A\",\"date\":\"30/03/19\",\"amount\":50000,\"balanceAmount\":247294.61}]}}},{\"summary\":\"susheela\",\"count\":1,\"amount\":50000,\"monthlyTransactions\":{\"19/04\":{\"month\":\"19/04\",\"amount\":50000,\"count\":1,\"transactions\":[{\"particular\":\"MMT/IMPS/910612728410/NA/susheela/UTBI0ETHL51\",\"date\":\"16/04/19\",\"amount\":50000,\"balanceAmount\":130638.12}]}}},{\"summary\":\"indirapuram\",\"count\":1,\"amount\":50000,\"monthlyTransactions\":{\"19/04\":{\"month\":\"19/04\",\"amount\":50000,\"count\":1,\"transactions\":[{\"particular\":\"CASH PAID:Self 0718 GHAZIABAD-INDIRAPURAM\",\"date\":\"18/04/19\",\"amount\":50000,\"balanceAmount\":250399.12}]}}},{\"summary\":\"mib sarika yadav\",\"count\":2,\"amount\":50000,\"monthlyTransactions\":{\"19/05\":{\"month\":\"19/05\",\"amount\":50000,\"count\":2,\"transactions\":[{\"particular\":\"BIL/INFT/001703261538/MIB-/SARIKA YADAV\",\"date\":\"07/05/19\",\"amount\":35000,\"balanceAmount\":46141.82},{\"particular\":\"BIL/INFT/001705616992/MIB-/SARIKA YADAV\",\"date\":\"10/05/19\",\"amount\":15000,\"balanceAmount\":61101.65}]}}},{\"summary\":\"sacwb683\",\"count\":4,\"amount\":42000,\"monthlyTransactions\":{\"19/05\":{\"month\":\"19/05\",\"amount\":42000,\"count\":4,\"transactions\":[{\"particular\":\"ATM/SACWB683/CASH WDL/09-05-19\",\"date\":\"09/05/19\",\"amount\":10000,\"balanceAmount\":100.65},{\"particular\":\"ATM/SACWB683/CASH WDL/11-05-19\",\"date\":\"11/05/19\",\"amount\":15000,\"balanceAmount\":13110.94},{\"particular\":\"ATM/SACWB683/CASH WDL/11-05-19\",\"date\":\"11/05/19\",\"amount\":10000,\"balanceAmount\":3110.94},{\"particular\":\"ATM/SACWB683/CASH WDL/16-05-19\",\"date\":\"16/05/19\",\"amount\":7000,\"balanceAmount\":270.44}]}}},{\"summary\":\"return sanjeev\",\"count\":1,\"amount\":35000,\"monthlyTransactions\":{\"19/04\":{\"month\":\"19/04\",\"amount\":35000,\"count\":1,\"transactions\":[{\"particular\":\"BIL/INFT/001689418802/loan return/SANJEEV KUMAR/A\",\"date\":\"19/04/19\",\"amount\":35000,\"balanceAmount\":189399.12}]}}},{\"summary\":\"public school indirapuram\",\"count\":1,\"amount\":31280,\"monthlyTransactions\":{\"19/04\":{\"month\":\"19/04\",\"amount\":31280,\"count\":1,\"transactions\":[{\"particular\":\"TRF/DELHI PUBLIC SCHOOL INDIRAPURAM/ICICI\",\"date\":\"09/04/19\",\"amount\":31280,\"balanceAmount\":5529.12}]}}},{\"summary\":\"anuj\",\"count\":4,\"amount\":28000,\"monthlyTransactions\":{\"19/03\":{\"month\":\"19/03\",\"amount\":10000,\"count\":1,\"transactions\":[{\"particular\":\"MMT/IMPS/907314739183/Anuj katiy/SBIN0012998\",\"date\":\"14/03/19\",\"amount\":10000,\"balanceAmount\":13253.09}]},\"19/04\":{\"month\":\"19/04\",\"amount\":13000,\"count\":2,\"transactions\":[{\"particular\":\"MMT/IMPS/910115079192/NA/Anuj katiy/SBIN0012998\",\"date\":\"11/04/19\",\"amount\":5000,\"balanceAmount\":627.12},{\"particular\":\"MMT/IMPS/910710896368/NA/Anuj katiy/SBIN0012998\",\"date\":\"17/04/19\",\"amount\":8000,\"balanceAmount\":21899.12}]},\"19/05\":{\"month\":\"19/05\",\"amount\":5000,\"count\":1,\"transactions\":[{\"particular\":\"MMT/IMPS/912716956537/NA/Anuj katiy/SBIN0012998\",\"date\":\"07/05/19\",\"amount\":5000,\"balanceAmount\":26141.82}]}}},{\"summary\":\"return\",\"count\":2,\"amount\":26000,\"monthlyTransactions\":{\"19/03\":{\"month\":\"19/03\",\"amount\":20000,\"count\":1,\"transactions\":[{\"particular\":\"MMT/IMPS/908713189037/Return/Priya/UTBI0ETHL51\",\"date\":\"28/03/19\",\"amount\":20000,\"balanceAmount\":744869.09}]},\"19/05\":{\"month\":\"19/05\",\"amount\":6000,\"count\":1,\"transactions\":[{\"particular\":\"BIL/INFT/001717515757/return loan/SANJAY BAILWAL\",\"date\":\"28/05/19\",\"amount\":6000,\"balanceAmount\":4909.36}]}}},{\"summary\":\"cecn6361\",\"count\":3,\"amount\":25000,\"monthlyTransactions\":{\"19/04\":{\"month\":\"19/04\",\"amount\":20000,\"count\":2,\"transactions\":[{\"particular\":\"NFS/CECN6361/CASH WDL/29-04-19\",\"date\":\"29/04/19\",\"amount\":10000,\"balanceAmount\":10172.68},{\"particular\":\"NFS/CECN6361/CASH WDL/29-04-19\",\"date\":\"29/04/19\",\"amount\":10000,\"balanceAmount\":172.68}]},\"19/05\":{\"month\":\"19/05\",\"amount\":5000,\"count\":1,\"transactions\":[{\"particular\":\"NFS/CECN6361/CASH WDL/14-05-19\",\"date\":\"14/05/19\",\"amount\":5000,\"balanceAmount\":2668.44}]}}},{\"summary\":\"koncept\",\"count\":1,\"amount\":24880,\"monthlyTransactions\":{\"19/03\":{\"month\":\"19/03\",\"amount\":24880,\"count\":1,\"transactions\":[{\"particular\":\"VPS/KONCEPT    /201903291656/908811067028/NOIDA\",\"date\":\"29/03/19\",\"amount\":24880,\"balanceAmount\":382294.61}]}}},{\"summary\":\"repayment bhanix\",\"count\":1,\"amount\":22000,\"monthlyTransactions\":{\"19/05\":{\"month\":\"19/05\",\"amount\":22000,\"count\":1,\"transactions\":[{\"particular\":\"BIL/NEFT/001716638817/loan repayment /bhanix    /KKBK0000958\",\"date\":\"27/05/19\",\"amount\":22000,\"balanceAmount\":548.36}]}}},{\"summary\":\"return arun\",\"count\":1,\"amount\":21000,\"monthlyTransactions\":{\"19/03\":{\"month\":\"19/03\",\"amount\":21000,\"count\":1,\"transactions\":[{\"particular\":\"MMT/IMPS/908713169183/Return/Arun/UTIB0000854\",\"date\":\"28/03/19\",\"amount\":21000,\"balanceAmount\":764869.09}]}}},{\"summary\":\"alok yadav\",\"count\":1,\"amount\":20000,\"monthlyTransactions\":{\"19/04\":{\"month\":\"19/04\",\"amount\":20000,\"count\":1,\"transactions\":[{\"particular\":\"MMT/IMPS/911013553228/Alok yadav/BKID0007260\",\"date\":\"20/04/19\",\"amount\":20000,\"balanceAmount\":3399.12}]}}},{\"summary\":\"sacwj202\",\"count\":2,\"amount\":20000,\"monthlyTransactions\":{\"19/04\":{\"month\":\"19/04\",\"amount\":20000,\"count\":2,\"transactions\":[{\"particular\":\"ATM/SACWJ202/CASH WDL/29-04-19\",\"date\":\"29/04/19\",\"amount\":12000,\"balanceAmount\":772.68},{\"particular\":\"ATM/SACWJ202/CASH WDL/30-04-19\",\"date\":\"30/04/19\",\"amount\":8000,\"balanceAmount\":752.58}]}}},{\"summary\":\"mn016892\",\"count\":3,\"amount\":19000,\"monthlyTransactions\":{\"19/03\":{\"month\":\"19/03\",\"amount\":15000,\"count\":2,\"transactions\":[{\"particular\":\"NFS/MN016892/CASH WDL/08-03-19\",\"date\":\"08/03/19\",\"amount\":10000,\"balanceAmount\":5433.59},{\"particular\":\"NFS/MN016892/CASH WDL/08-03-19\",\"date\":\"08/03/19\",\"amount\":5000,\"balanceAmount\":433.59}]},\"19/04\":{\"month\":\"19/04\",\"amount\":4000,\"count\":1,\"transactions\":[{\"particular\":\"NFS/MN016892/CASH WDL/27-04-19\",\"date\":\"29/04/19\",\"amount\":4000,\"balanceAmount\":1069.68}]}}},{\"summary\":\"cpcn7234\",\"count\":3,\"amount\":18000,\"monthlyTransactions\":{\"19/03\":{\"month\":\"19/03\",\"amount\":15000,\"count\":2,\"transactions\":[{\"particular\":\"NFS/CPCN7234/CASH WDL/05-03-19\",\"date\":\"05/03/19\",\"amount\":10000,\"balanceAmount\":20467.02},{\"particular\":\"NFS/CPCN7234/CASH WDL/05-03-19\",\"date\":\"05/03/19\",\"amount\":5000,\"balanceAmount\":15467.02}]},\"19/04\":{\"month\":\"19/04\",\"amount\":3000,\"count\":1,\"transactions\":[{\"particular\":\"NFS/CPCN7234/CASH WDL/02-04-19\",\"date\":\"02/04/19\",\"amount\":3000,\"balanceAmount\":30980.61}]}}},{\"summary\":\"viplav kumar\",\"count\":2,\"amount\":18000,\"monthlyTransactions\":{\"19/04\":{\"month\":\"19/04\",\"amount\":18000,\"count\":2,\"transactions\":[{\"particular\":\"BIL/INFT/001679941329/NA/VIPLAV  KUMAR\",\"date\":\"05/04/19\",\"amount\":15000,\"balanceAmount\":28990.61},{\"particular\":\"BIL/INFT/001690502364/NA/VIPLAV  KUMAR\",\"date\":\"22/04/19\",\"amount\":3000,\"balanceAmount\":29899.12}]}}},{\"summary\":\"paytm\",\"count\":19,\"amount\":17536,\"monthlyTransactions\":{\"19/03\":{\"month\":\"19/03\",\"amount\":5868,\"count\":7,\"transactions\":[{\"particular\":\"UPI/906445816008/Oid7549334171@O/paybil3066@payt/Paytm Payments/\",\"date\":\"05/03/19\",\"amount\":398,\"balanceAmount\":14358.59},{\"particular\":\"IIN/I-Debit/PayTM      /201903052234/906406044088/\",\"date\":\"05/03/19\",\"amount\":990,\"balanceAmount\":13368.59},{\"particular\":\"UPI/907133462629/Oid7612268367@O/paybil3066@payt/Paytm Payments/\",\"date\":\"12/03/19\",\"amount\":572,\"balanceAmount\":1236.09},{\"particular\":\"VIN/PAYTM      /201903140906/907303463766/\",\"date\":\"14/03/19\",\"amount\":1500,\"balanceAmount\":19753.09},{\"particular\":\"IIN/I-Debit/PayTM      /201903221359/908109015808/\",\"date\":\"22/03/19\",\"amount\":10,\"balanceAmount\":17308.09},{\"particular\":\"VIN/PAYTM      /201903222208/908116458226/\",\"date\":\"22/03/19\",\"amount\":2000,\"balanceAmount\":15308.09},{\"particular\":\"IIN/I-Debit/PayTM      /201903312010/909009036382/\",\"date\":\"31/03/19\",\"amount\":398,\"balanceAmount\":83980.61}]},\"19/04\":{\"month\":\"19/04\",\"amount\":6770,\"count\":6,\"transactions\":[{\"particular\":\"IIN/PAYTM      /201904040936/909404440095/\",\"date\":\"04/04/19\",\"amount\":1000,\"balanceAmount\":4980.61},{\"particular\":\"IIN/I-Debit/PayTM      /201904041218/909414014620/\",\"date\":\"04/04/19\",\"amount\":990,\"balanceAmount\":3990.61},{\"particular\":\"IIN/PAYTM      /201904081657/909811053855/\",\"date\":\"08/04/19\",\"amount\":1500,\"balanceAmount\":34089.12},{\"particular\":\"UPI/909931884177/Oid7904957785@O/paybil3066@payt/Paytm Payments/\",\"date\":\"09/04/19\",\"amount\":600,\"balanceAmount\":33489.12},{\"particular\":\"UPI/909943285969/Oid7912156940@O/paytra1599@payt/Paytm Payments/\",\"date\":\"09/04/19\",\"amount\":1680,\"balanceAmount\":36809.12},{\"particular\":\"VIN/PAYTM      /201904280936/911804012056/\",\"date\":\"29/04/19\",\"amount\":1000,\"balanceAmount\":69.68}]},\"19/05\":{\"month\":\"19/05\",\"amount\":4898,\"count\":6,\"transactions\":[{\"particular\":\"IIN/PAYTM      /201905052242/912517889089/\",\"date\":\"06/05/19\",\"amount\":1000,\"balanceAmount\":176.82},{\"particular\":\"IIN/PAYTM      /201905091857/912913195259/\",\"date\":\"09/05/19\",\"amount\":1000,\"balanceAmount\":5101.65},{\"particular\":\"IIN/PAYTM      /201905132005/913314358333/\",\"date\":\"13/05/19\",\"amount\":1000,\"balanceAmount\":2668.44},{\"particular\":\"UPI/913446719232/Oid8250165704@O/paybil3066@payt/Paytm Payments/\",\"date\":\"14/05/19\",\"amount\":398,\"balanceAmount\":2270.44},{\"particular\":\"IIN/PAYTM      /201905270942/914704737633/\",\"date\":\"27/05/19\",\"amount\":500,\"balanceAmount\":548.36},{\"particular\":\"IIN/PAYTM      /201905302321/915017794227/\",\"date\":\"30/05/19\",\"amount\":1000,\"balanceAmount\":1976.36}]}}},{\"summary\":\"anil\",\"count\":1,\"amount\":17000,\"monthlyTransactions\":{\"19/05\":{\"month\":\"19/05\",\"amount\":17000,\"count\":1,\"transactions\":[{\"particular\":\"MMT/IMPS/912716962018/NA/Anil/IDIB000A158\",\"date\":\"07/05/19\",\"amount\":17000,\"balanceAmount\":9141.82}]}}},{\"summary\":\"mn016854\",\"count\":2,\"amount\":16000,\"monthlyTransactions\":{\"19/05\":{\"month\":\"19/05\",\"amount\":16000,\"count\":2,\"transactions\":[{\"particular\":\"NFS/MN016854/CASH WDL/05-05-19\",\"date\":\"06/05/19\",\"amount\":10000,\"balanceAmount\":7176.82},{\"particular\":\"NFS/MN016854/CASH WDL/05-05-19\",\"date\":\"06/05/19\",\"amount\":6000,\"balanceAmount\":1176.82}]}}},{\"summary\":\"ashish\",\"count\":1,\"amount\":15000,\"monthlyTransactions\":{\"19/03\":{\"month\":\"19/03\",\"amount\":15000,\"count\":1,\"transactions\":[{\"particular\":\"MMT/IMPS/908713102873/Ghhff/Ashish cha/UTIB0000723\",\"date\":\"28/03/19\",\"amount\":15000,\"balanceAmount\":785869.09}]}}},{\"summary\":\"mib ramvir\",\"count\":1,\"amount\":15000,\"monthlyTransactions\":{\"19/04\":{\"month\":\"19/04\",\"amount\":15000,\"count\":1,\"transactions\":[{\"particular\":\"BIL/INFT/001687796256/MIB-/RAMVIR SINGH\",\"date\":\"16/04/19\",\"amount\":15000,\"balanceAmount\":85638.12}]}}},{\"summary\":\"cd215001\",\"count\":2,\"amount\":15000,\"monthlyTransactions\":{\"19/04\":{\"month\":\"19/04\",\"amount\":15000,\"count\":2,\"transactions\":[{\"particular\":\"NFS/CD215001/CASH WDL/17-04-19\",\"date\":\"17/04/19\",\"amount\":10000,\"balanceAmount\":11899.12},{\"particular\":\"NFS/CD215001/CASH WDL/17-04-19\",\"date\":\"17/04/19\",\"amount\":5000,\"balanceAmount\":6899.12}]}}},{\"summary\":\"mib sukhbir\",\"count\":1,\"amount\":13000,\"monthlyTransactions\":{\"19/05\":{\"month\":\"19/05\",\"amount\":13000,\"count\":1,\"transactions\":[{\"particular\":\"BIL/INFT/001703998094/MIB-/SUKHBIR SINGH\",\"date\":\"08/05/19\",\"amount\":13000,\"balanceAmount\":4100.65}]}}},{\"summary\":\"finnovatio\",\"count\":2,\"amount\":10312.52,\"monthlyTransactions\":{\"19/04\":{\"month\":\"19/04\",\"amount\":5157.44,\"count\":1,\"transactions\":[{\"particular\":\"BIL/ONL/001690532925/Finnovatio/KRAZYBEE_QICI74\",\"date\":\"22/04/19\",\"amount\":5157.44,\"balanceAmount\":24741.68}]},\"19/05\":{\"month\":\"19/05\",\"amount\":5155.08,\"count\":1,\"transactions\":[{\"particular\":\"BIL/ONL/001711473487/Finnovatio/108587115823-10\",\"date\":\"20/05/19\",\"amount\":5155.08,\"balanceAmount\":3115.36}]}}},{\"summary\":\"mn000569\",\"count\":3,\"amount\":10000,\"monthlyTransactions\":{\"19/03\":{\"month\":\"19/03\",\"amount\":4000,\"count\":1,\"transactions\":[{\"particular\":\"NFS/MN000569/CASH WDL/27-03-19\",\"date\":\"27/03/19\",\"amount\":4000,\"balanceAmount\":869.09}]},\"19/04\":{\"month\":\"19/04\",\"amount\":6000,\"count\":2,\"transactions\":[{\"particular\":\"NFS/MN000569/CASH WDL/22-04-19\",\"date\":\"22/04/19\",\"amount\":4000,\"balanceAmount\":4741.68},{\"particular\":\"NFS/MN000569/CASH WDL/27-04-19\",\"date\":\"29/04/19\",\"amount\":2000,\"balanceAmount\":5069.68}]}}},{\"summary\":\"rahul pandey\",\"count\":1,\"amount\":10000,\"monthlyTransactions\":{\"19/03\":{\"month\":\"19/03\",\"amount\":10000,\"count\":1,\"transactions\":[{\"particular\":\"BIL/INFT/001669551663/Friends/RAHUL PANDEY\",\"date\":\"25/03/19\",\"amount\":10000,\"balanceAmount\":5308.09}]}}},{\"summary\":\"bn087301\",\"count\":1,\"amount\":10000,\"monthlyTransactions\":{\"19/04\":{\"month\":\"19/04\",\"amount\":10000,\"count\":1,\"transactions\":[{\"particular\":\"NFS/BN087301/CASH WDL/06-04-19\",\"date\":\"06/04/19\",\"amount\":10000,\"balanceAmount\":12385.12}]}}},{\"summary\":\"cprh6360\",\"count\":1,\"amount\":10000,\"monthlyTransactions\":{\"19/04\":{\"month\":\"19/04\",\"amount\":10000,\"count\":1,\"transactions\":[{\"particular\":\"NFS/CPRH6360/CASH WDL/21-04-19\",\"date\":\"22/04/19\",\"amount\":10000,\"balanceAmount\":14741.68}]}}},{\"summary\":\"ranjeet\",\"count\":1,\"amount\":10000,\"monthlyTransactions\":{\"19/05\":{\"month\":\"19/05\",\"amount\":10000,\"count\":1,\"transactions\":[{\"particular\":\"MMT/IMPS/912615039738/NA/Ranjeet si/PUNB0100100\",\"date\":\"06/05/19\",\"amount\":10000,\"balanceAmount\":10141.82}]}}},{\"summary\":\"dhirendra\",\"count\":1,\"amount\":10000,\"monthlyTransactions\":{\"19/05\":{\"month\":\"19/05\",\"amount\":10000,\"count\":1,\"transactions\":[{\"particular\":\"MMT/IMPS/913011905464/NA/Dhirendra /CBIN0284018\",\"date\":\"10/05/19\",\"amount\":10000,\"balanceAmount\":51101.65}]}}},{\"summary\":\"c2\",\"count\":1,\"amount\":10000,\"monthlyTransactions\":{\"19/05\":{\"month\":\"19/05\",\"amount\":10000,\"count\":1,\"transactions\":[{\"particular\":\"MMT/IMPS/913019782014/NA/c2/HDFC0000868\",\"date\":\"10/05/19\",\"amount\":10000,\"balanceAmount\":31228.42}]}}},{\"summary\":\"new uma mah\",\"count\":1,\"amount\":9567,\"monthlyTransactions\":{\"19/03\":{\"month\":\"19/03\",\"amount\":9567,\"count\":1,\"transactions\":[{\"particular\":\"VPS/NEW UMA MAH/201903281933/908714014648/GHAZIABAD\",\"date\":\"28/03/19\",\"amount\":9567,\"balanceAmount\":584268.61}]}}},{\"summary\":\"halycard co\",\"count\":5,\"amount\":8300.26,\"monthlyTransactions\":{\"19/04\":{\"month\":\"19/04\",\"amount\":520.1,\"count\":1,\"transactions\":[{\"particular\":\"VIN/HALYCARD CO/201904292159/911916752015/\",\"date\":\"29/04/19\",\"amount\":520.1,\"balanceAmount\":252.58}]},\"19/05\":{\"month\":\"19/05\",\"amount\":7780.16,\"count\":4,\"transactions\":[{\"particular\":\"VIN/HALYCARD CO/201905032142/912316156613/\",\"date\":\"03/05/19\",\"amount\":518.28,\"balanceAmount\":3042.31},{\"particular\":\"VIN/HALYCARD CO/201905071937/912714398164/\",\"date\":\"07/05/19\",\"amount\":1041.17,\"balanceAmount\":8100.65},{\"particular\":\"VIN/HALYCARD CO/201905101328/913007655478/\",\"date\":\"10/05/19\",\"amount\":3103.23,\"balanceAmount\":18998.42},{\"particular\":\"VIN/HALYCARD CO/201905102010/913014762746/\",\"date\":\"10/05/19\",\"amount\":3117.48,\"balanceAmount\":28110.94}]}}},{\"summary\":\"s1cpn214\",\"count\":1,\"amount\":8000,\"monthlyTransactions\":{\"19/05\":{\"month\":\"19/05\",\"amount\":8000,\"count\":1,\"transactions\":[{\"particular\":\"ATM/S1CPN214/CASH WDL/04-05-19\",\"date\":\"04/05/19\",\"amount\":8000,\"balanceAmount\":99176.82}]}}},{\"summary\":\"madura garm\",\"count\":1,\"amount\":7094,\"monthlyTransactions\":{\"19/03\":{\"month\":\"19/03\",\"amount\":7094,\"count\":1,\"transactions\":[{\"particular\":\"VPS/MADURA GARM/201903291356/908808968817/GHAZIABAD\",\"date\":\"29/03/19\",\"amount\":7094,\"balanceAmount\":407174.61}]}}},{\"summary\":\"sukhbir singh\",\"count\":1,\"amount\":7000,\"monthlyTransactions\":{\"19/05\":{\"month\":\"19/05\",\"amount\":7000,\"count\":1,\"transactions\":[{\"particular\":\"BIL/INFT/001701688097/NA/SUKHBIR SINGH\",\"date\":\"06/05/19\",\"amount\":7000,\"balanceAmount\":176.82}]}}},{\"summary\":\"aurelia\",\"count\":1,\"amount\":6396,\"monthlyTransactions\":{\"19/03\":{\"month\":\"19/03\",\"amount\":6396,\"count\":1,\"transactions\":[{\"particular\":\"VPS/AURELIA    /201903082007/906714760975/GHAZIABAD\",\"date\":\"08/03/19\",\"amount\":6396,\"balanceAmount\":28837.59}]}}},{\"summary\":\"flight\",\"count\":2,\"amount\":6323,\"monthlyTransactions\":{\"19/04\":{\"month\":\"19/04\",\"amount\":6323,\"count\":2,\"transactions\":[{\"particular\":\"IIN/I-Debit/Book Flight/201904081654/909814025244/\",\"date\":\"08/04/19\",\"amount\":3320,\"balanceAmount\":35589.12},{\"particular\":\"IIN/I-Debit/Book Flight/201904111203/910110012388/\",\"date\":\"11/04/19\",\"amount\":3003,\"balanceAmount\":627.12}]}}},{\"summary\":\"beauty kafe\",\"count\":2,\"amount\":5378,\"monthlyTransactions\":{\"19/03\":{\"month\":\"19/03\",\"amount\":2639,\"count\":1,\"transactions\":[{\"particular\":\"VPS/BEAUTY KAFE/201903241530/908310002298/GHAZIABAD\",\"date\":\"25/03/19\",\"amount\":2639,\"balanceAmount\":1669.09}]},\"19/04\":{\"month\":\"19/04\",\"amount\":2739,\"count\":1,\"transactions\":[{\"particular\":\"VPS/BEAUTY KAFE/201904161732/910612006706/GHAZIABAD\",\"date\":\"16/04/19\",\"amount\":2739,\"balanceAmount\":67899.12}]}}},{\"summary\":\"s1andh50\",\"count\":1,\"amount\":5000,\"monthlyTransactions\":{\"19/03\":{\"month\":\"19/03\",\"amount\":5000,\"count\":1,\"transactions\":[{\"particular\":\"NFS/S1ANDH50/CASH WDL/07-03-19\",\"date\":\"07/03/19\",\"amount\":5000,\"balanceAmount\":933.59}]}}},{\"summary\":\"p3enfb01\",\"count\":1,\"amount\":5000,\"monthlyTransactions\":{\"19/04\":{\"month\":\"19/04\",\"amount\":5000,\"count\":1,\"transactions\":[{\"particular\":\"NFS/P3ENFB01/CASH WDL/05-04-19\",\"date\":\"05/04/19\",\"amount\":5000,\"balanceAmount\":23990.61}]}}},{\"summary\":\"train\",\"count\":4,\"amount\":4591.45,\"monthlyTransactions\":{\"19/03\":{\"month\":\"19/03\",\"amount\":2321.4700000000003,\"count\":2,\"transactions\":[{\"particular\":\"IIN/I-Debit/Book Train /201903041529/906313021848/\",\"date\":\"04/03/19\",\"amount\":1280.49,\"balanceAmount\":3266.53},{\"particular\":\"IIN/I-Debit/Book Train /201903281626/908714019686/\",\"date\":\"28/03/19\",\"amount\":1040.98,\"balanceAmount\":593828.11}]},\"19/04\":{\"month\":\"19/04\",\"amount\":1570.49,\"count\":1,\"transactions\":[{\"particular\":\"IIN/I-Debit/Book Train /201904061051/909605009298/\",\"date\":\"06/04/19\",\"amount\":1570.49,\"balanceAmount\":22385.12}]},\"19/05\":{\"month\":\"19/05\",\"amount\":699.49,\"count\":1,\"transactions\":[{\"particular\":\"IIN/I-Debit/Book Train /201905031855/912314029398/\",\"date\":\"03/05/19\",\"amount\":699.49,\"balanceAmount\":20560.59}]}}},{\"summary\":\"jamuna\",\"count\":1,\"amount\":4000,\"monthlyTransactions\":{\"19/03\":{\"month\":\"19/03\",\"amount\":4000,\"count\":1,\"transactions\":[{\"particular\":\"MMT/IMPS/906914759825/NA/JAMUNA/UTIB0001550\",\"date\":\"11/03/19\",\"amount\":4000,\"balanceAmount\":4808.09}]}}},{\"summary\":\"p1ewdl36\",\"count\":1,\"amount\":4000,\"monthlyTransactions\":{\"19/05\":{\"month\":\"19/05\",\"amount\":4000,\"count\":1,\"transactions\":[{\"particular\":\"NFS/P1EWDL36/CASH WDL/09-05-19\",\"date\":\"09/05/19\",\"amount\":4000,\"balanceAmount\":100.65}]}}},{\"summary\":\"9r120701\",\"count\":1,\"amount\":4000,\"monthlyTransactions\":{\"19/05\":{\"month\":\"19/05\",\"amount\":4000,\"count\":1,\"transactions\":[{\"particular\":\"NFS/9R120701/CASH WDL/09-05-19\",\"date\":\"09/05/19\",\"amount\":4000,\"balanceAmount\":1101.65}]}}},{\"summary\":\"good things\",\"count\":1,\"amount\":3350,\"monthlyTransactions\":{\"19/03\":{\"month\":\"19/03\",\"amount\":3350,\"count\":1,\"transactions\":[{\"particular\":\"VPS/GOOD THINGS/201903131451/907209053356/GHAZIABAD\",\"date\":\"13/03/19\",\"amount\":3350,\"balanceAmount\":63757.09}]}}},{\"summary\":\"rb204002\",\"count\":1,\"amount\":3000,\"monthlyTransactions\":{\"19/03\":{\"month\":\"19/03\",\"amount\":3000,\"count\":1,\"transactions\":[{\"particular\":\"NFS/RB204002/CASH WDL/18-03-19\",\"date\":\"18/03/19\",\"amount\":3000,\"balanceAmount\":3048.09}]}}},{\"summary\":\"d41d0139\",\"count\":1,\"amount\":3000,\"monthlyTransactions\":{\"19/04\":{\"month\":\"19/04\",\"amount\":3000,\"count\":1,\"transactions\":[{\"particular\":\"NFS/D41D0139/CASH WDL/10-04-19\",\"date\":\"10/04/19\",\"amount\":3000,\"balanceAmount\":3630.12}]}}},{\"summary\":\"paytm app\",\"count\":3,\"amount\":3000,\"monthlyTransactions\":{\"19/04\":{\"month\":\"19/04\",\"amount\":3000,\"count\":3,\"transactions\":[{\"particular\":\"VIN/PAYTM APP  /201904150926/910503113723/\",\"date\":\"15/04/19\",\"amount\":1000,\"balanceAmount\":14638.12},{\"particular\":\"VIN/PAYTM APP  /201904220945/911204590789/\",\"date\":\"22/04/19\",\"amount\":1000,\"balanceAmount\":13741.68},{\"particular\":\"VIN/PAYTM APP  /201904251408/911508678356/\",\"date\":\"25/04/19\",\"amount\":1000,\"balanceAmount\":369.68}]}}},{\"summary\":\"water\",\"count\":1,\"amount\":2000,\"monthlyTransactions\":{\"19/03\":{\"month\":\"19/03\",\"amount\":2000,\"count\":1,\"transactions\":[{\"particular\":\"IIN/I-Debit/Water Bill /201903020935/906101006602/\",\"date\":\"02/03/19\",\"amount\":2000,\"balanceAmount\":4547.02}]}}},{\"summary\":\"adamya yadav\",\"count\":2,\"amount\":2000,\"monthlyTransactions\":{\"19/03\":{\"month\":\"19/03\",\"amount\":1000,\"count\":1,\"transactions\":[{\"particular\":\"BIL/INFT/001669552312/Family/ADAMYA  YADAV (\",\"date\":\"25/03/19\",\"amount\":1000,\"balanceAmount\":4308.09}]},\"19/04\":{\"month\":\"19/04\",\"amount\":1000,\"count\":1,\"transactions\":[{\"particular\":\"BIL/INFT/001689083255/Family/ADAMYA  YADAV (\",\"date\":\"18/04/19\",\"amount\":1000,\"balanceAmount\":224399.12}]}}},{\"summary\":\"bharat petr\",\"count\":2,\"amount\":2000,\"monthlyTransactions\":{\"19/03\":{\"month\":\"19/03\",\"amount\":1000,\"count\":1,\"transactions\":[{\"particular\":\"VPS/BHARAT PETR/201903241629/908310253816/GHAZIABAD\",\"date\":\"25/03/19\",\"amount\":1000,\"balanceAmount\":669.09}]},\"19/04\":{\"month\":\"19/04\",\"amount\":1000,\"count\":1,\"transactions\":[{\"particular\":\"VPS/BHARAT PETR/201904222303/911217459640/GHAZIABAD\",\"date\":\"22/04/19\",\"amount\":1000,\"balanceAmount\":8369.68}]}}},{\"summary\":\"secnf550\",\"count\":1,\"amount\":2000,\"monthlyTransactions\":{\"19/04\":{\"month\":\"19/04\",\"amount\":2000,\"count\":1,\"transactions\":[{\"particular\":\"ATM/SECNF550/CASH WDL/09-04-19\",\"date\":\"09/04/19\",\"amount\":2000,\"balanceAmount\":3529.12}]}}},{\"summary\":\"irctc\",\"count\":2,\"amount\":1945.49,\"monthlyTransactions\":{\"19/03\":{\"month\":\"19/03\",\"amount\":1080,\"count\":1,\"transactions\":[{\"particular\":\"IIN/IRCTC      /201903041612/906310657879/\",\"date\":\"04/03/19\",\"amount\":1080,\"balanceAmount\":3467.02}]},\"19/05\":{\"month\":\"19/05\",\"amount\":865.49,\"count\":1,\"transactions\":[{\"particular\":\"VIN/IRCTC      /201905041012/912404795816/\",\"date\":\"04/05/19\",\"amount\":865.49,\"balanceAmount\":2176.82}]}}},{\"summary\":\"one97 comm\",\"count\":1,\"amount\":1933,\"monthlyTransactions\":{\"19/05\":{\"month\":\"19/05\",\"amount\":1933,\"count\":1,\"transactions\":[{\"particular\":\"BIL/ONL/001718671956/One97 Comm/201905300482506\",\"date\":\"30/05/19\",\"amount\":1933,\"balanceAmount\":2976.36}]}}},{\"summary\":\"mufti\",\"count\":1,\"amount\":1899,\"monthlyTransactions\":{\"19/04\":{\"month\":\"19/04\",\"amount\":1899,\"count\":1,\"transactions\":[{\"particular\":\"VPS/MUFTI      /201904101950/910014822839/LUCKNOW\",\"date\":\"10/04/19\",\"amount\":1899,\"balanceAmount\":6630.12}]}}},{\"summary\":\"netflix\",\"count\":2,\"amount\":1600,\"monthlyTransactions\":{\"19/03\":{\"month\":\"19/03\",\"amount\":800,\"count\":1,\"transactions\":[{\"particular\":\"RPI/Netflix  PG/201903262305/908517913131/\",\"date\":\"26/03/19\",\"amount\":800,\"balanceAmount\":4869.09}]},\"19/04\":{\"month\":\"19/04\",\"amount\":800,\"count\":1,\"transactions\":[{\"particular\":\"RPI/Netflix  PG/201904262330/911618508831/\",\"date\":\"26/04/19\",\"amount\":800,\"balanceAmount\":2069.68}]}}},{\"summary\":\"p\",\"count\":1,\"amount\":1514,\"monthlyTransactions\":{\"19/04\":{\"month\":\"19/04\",\"amount\":1514,\"count\":1,\"transactions\":[{\"particular\":\"VPS/HOTEL P S  /201904080738/909802284315/LUCKNOW\",\"date\":\"08/04/19\",\"amount\":1514,\"balanceAmount\":33909.12}]}}},{\"summary\":\"pa133201\",\"count\":1,\"amount\":1000,\"monthlyTransactions\":{\"19/05\":{\"month\":\"19/05\",\"amount\":1000,\"count\":1,\"transactions\":[{\"particular\":\"NFS/PA133201/CASH WDL/07-05-19\",\"date\":\"07/05/19\",\"amount\":1000,\"balanceAmount\":7100.65}]}}},{\"summary\":\"netflix ent\",\"count\":1,\"amount\":800,\"monthlyTransactions\":{\"19/05\":{\"month\":\"19/05\",\"amount\":800,\"count\":1,\"transactions\":[{\"particular\":\"VSI/NETFLIX ENT/201905262356/914618448421/\",\"date\":\"27/05/19\",\"amount\":800,\"balanceAmount\":1048.36}]}}},{\"summary\":\"zomato medi\",\"count\":1,\"amount\":710.43,\"monthlyTransactions\":{\"19/03\":{\"month\":\"19/03\",\"amount\":710.43,\"count\":1,\"transactions\":[{\"particular\":\"IIN/I-Debit/Zomato Medi/201903052106/906413039760/\",\"date\":\"05/03/19\",\"amount\":710.43,\"balanceAmount\":14756.59}]}}},{\"summary\":\"barista cof\",\"count\":1,\"amount\":504,\"monthlyTransactions\":{\"19/03\":{\"month\":\"19/03\",\"amount\":504,\"count\":1,\"transactions\":[{\"particular\":\"VPS/BARISTA COF/201903131505/907209601822/GHAZIABAD\",\"date\":\"13/03/19\",\"amount\":504,\"balanceAmount\":63253.09}]}}},{\"summary\":\"bikanerwala\",\"count\":1,\"amount\":462,\"monthlyTransactions\":{\"19/04\":{\"month\":\"19/04\",\"amount\":462,\"count\":1,\"transactions\":[{\"particular\":\"VPS/BIKANERWALA/201904061445/909609069497/GHAZIABAD\",\"date\":\"06/04/19\",\"amount\":462,\"balanceAmount\":11923.12}]}}},{\"summary\":\"jubilant\",\"count\":1,\"amount\":404,\"monthlyTransactions\":{\"19/03\":{\"month\":\"19/03\",\"amount\":404,\"count\":1,\"transactions\":[{\"particular\":\"VIN/JUBILANT FO/201903191948/907819806231/\",\"date\":\"19/03/19\",\"amount\":404,\"balanceAmount\":12644.09}]}}},{\"summary\":\"bundl techn\",\"count\":1,\"amount\":326,\"monthlyTransactions\":{\"19/03\":{\"month\":\"19/03\",\"amount\":326,\"count\":1,\"transactions\":[{\"particular\":\"VIN/BUNDL TECHN/201903192140/907903257867/\",\"date\":\"19/03/19\",\"amount\":326,\"balanceAmount\":12318.09}]}}},{\"summary\":\"swiggy\",\"count\":2,\"amount\":291,\"monthlyTransactions\":{\"19/03\":{\"month\":\"19/03\",\"amount\":291,\"count\":2,\"transactions\":[{\"particular\":\"VIN/SWIGGY     /201903122141/907116174417/\",\"date\":\"12/03/19\",\"amount\":129,\"balanceAmount\":1107.09},{\"particular\":\"VIN/SWIGGY     /201903311008/909004115688/\",\"date\":\"31/03/19\",\"amount\":162,\"balanceAmount\":94378.61}]}}},{\"summary\":\"amazon\",\"count\":1,\"amount\":205,\"monthlyTransactions\":{\"19/03\":{\"month\":\"19/03\",\"amount\":205,\"count\":1,\"transactions\":[{\"particular\":\"IIN/I-Debit/Amazon     /201903160833/907514003878/\",\"date\":\"16/03/19\",\"amount\":205,\"balanceAmount\":48.09}]}}},{\"summary\":\"icrib0000068114\",\"count\":3,\"amount\":105,\"monthlyTransactions\":{\"19/03\":{\"month\":\"19/03\",\"amount\":35,\"count\":1,\"transactions\":[{\"particular\":\"BIL/001656741417/ICRIB0000068114/ICRIB0000068114\",\"date\":\"06/03/19\",\"amount\":35,\"balanceAmount\":13333.59}]},\"19/04\":{\"month\":\"19/04\",\"amount\":35,\"count\":1,\"transactions\":[{\"particular\":\"BIL/001680200284/ICRIB0000068114/ICRIB0000068114\",\"date\":\"06/04/19\",\"amount\":35,\"balanceAmount\":23955.61}]},\"19/05\":{\"month\":\"19/05\",\"amount\":35,\"count\":1,\"transactions\":[{\"particular\":\"BIL/001701830709/ICRIB0000068114/ICRIB0000068114\",\"date\":\"06/05/19\",\"amount\":35,\"balanceAmount\":141.82}]}}},{\"summary\":\"atmdec\",\"count\":2,\"amount\":59,\"monthlyTransactions\":{\"19/03\":{\"month\":\"19/03\",\"amount\":29.5,\"count\":1,\"transactions\":[{\"particular\":\"ATMDEC CHG/28-02-2019/4768+GST\",\"date\":\"11/03/19\",\"amount\":29.5,\"balanceAmount\":8808.09}]},\"19/05\":{\"month\":\"19/05\",\"amount\":29.5,\"count\":1,\"transactions\":[{\"particular\":\"ATMDEC CHG/01-05-2019/4768+GST\",\"date\":\"11/05/19\",\"amount\":29.5,\"balanceAmount\":3081.44}]}}}],\"highestAmount\":252500},\"monthlyRecurringCredits\":{\"months\":[\"19/05\",\"19/04\",\"19/03\"],\"data\":[{\"summary\":\"sarika yadav\",\"count\":1,\"amount\":900000,\"monthlyTransactions\":{\"19/03\":{\"month\":\"19/03\",\"amount\":900000,\"count\":1,\"transactions\":[{\"particular\":\"TRFR FROM: SARIKA YADAV\",\"date\":\"28/03/19\",\"amount\":900000,\"balanceAmount\":900869.09}]}}},{\"summary\":\"sysacs technology private\",\"count\":3,\"amount\":222500,\"monthlyTransactions\":{\"19/04\":{\"month\":\"19/04\",\"amount\":72500,\"count\":1,\"transactions\":[{\"particular\":\"INF/021164646561/Salary feb125605000084/SYSACS TECHNOLOGY PRIVATE LIMI\",\"date\":\"20/04/19\",\"amount\":72500,\"balanceAmount\":75899.12}]},\"19/05\":{\"month\":\"19/05\",\"amount\":150000,\"count\":2,\"transactions\":[{\"particular\":\"INF/021196627851/March salry125605000084/SYSACS TECHNOLOGY PRIVATE LIMI\",\"date\":\"04/05/19\",\"amount\":75000,\"balanceAmount\":77176.82},{\"particular\":\"INF/021211688401/Slry125605000084/SYSACS TECHNOLOGY PRIVATE LIMI\",\"date\":\"10/05/19\",\"amount\":75000,\"balanceAmount\":76101.65}]}}},{\"summary\":\"madhav rastogi\",\"count\":1,\"amount\":200000,\"monthlyTransactions\":{\"19/04\":{\"month\":\"19/04\",\"amount\":200000,\"count\":1,\"transactions\":[{\"particular\":\"TRFR FROM: MADHAV RASTOGI\",\"date\":\"16/04/19\",\"amount\":200000,\"balanceAmount\":200638.12}]}}},{\"summary\":\"pratibha rastogi\",\"count\":1,\"amount\":200000,\"monthlyTransactions\":{\"19/04\":{\"month\":\"19/04\",\"amount\":200000,\"count\":1,\"transactions\":[{\"particular\":\"CLG/PRATIBHA RASTOGI/400022/IND/16.04.2019\",\"date\":\"18/04/19\",\"amount\":200000,\"balanceAmount\":200399.12}]}}},{\"summary\":\"arun kumar\",\"count\":3,\"amount\":185000,\"monthlyTransactions\":{\"19/03\":{\"month\":\"19/03\",\"amount\":60000,\"count\":1,\"transactions\":[{\"particular\":\"MMT/IMPS/907214440192/ARUN KUMAR/AXIS BANK LTD\",\"date\":\"13/03/19\",\"amount\":60000,\"balanceAmount\":67107.09}]},\"19/04\":{\"month\":\"19/04\",\"amount\":125000,\"count\":2,\"transactions\":[{\"particular\":\"MMT/IMPS/910815059992/ARUN KUMAR/AXIS BANK LTD\",\"date\":\"18/04/19\",\"amount\":100000,\"balanceAmount\":300399.12},{\"particular\":\"BIL/INFT/001696514024/anilyadav/ARUN KUMAR GUPT\",\"date\":\"30/04/19\",\"amount\":25000,\"balanceAmount\":25252.58}]}}},{\"summary\":\"er.vineet476@ok\",\"count\":2,\"amount\":105000,\"monthlyTransactions\":{\"19/03\":{\"month\":\"19/03\",\"amount\":25000,\"count\":1,\"transactions\":[{\"particular\":\"UPI/906417526826/Friends/er.vineet476@ok/HDFC BANKLTD\",\"date\":\"05/03/19\",\"amount\":25000,\"balanceAmount\":30467.02}]},\"19/04\":{\"month\":\"19/04\",\"amount\":80000,\"count\":1,\"transactions\":[{\"particular\":\"UPI/909507848651/UPI/er.vineet476@ok/HDFC BANK LTD\",\"date\":\"05/04/19\",\"amount\":80000,\"balanceAmount\":83990.61}]}}},{\"summary\":\"sanjeev kumar\",\"count\":2,\"amount\":80000,\"monthlyTransactions\":{\"19/05\":{\"month\":\"19/05\",\"amount\":80000,\"count\":2,\"transactions\":[{\"particular\":\"NEFT-N127190819238919-SANJEEV KUMAR-FUND-00261050021166-HDFC0000001\",\"date\":\"07/05/19\",\"amount\":50000,\"balanceAmount\":50141.82},{\"particular\":\"NEFT-N127190819243542-SANJEEV KUMAR HUF-FUND-50100048117530-HDFC0000001\",\"date\":\"07/05/19\",\"amount\":30000,\"balanceAmount\":51141.82}]}}},{\"summary\":\"lala ram\",\"count\":2,\"amount\":70000,\"monthlyTransactions\":{\"19/03\":{\"month\":\"19/03\",\"amount\":70000,\"count\":2,\"transactions\":[{\"particular\":\"NEFT-SDC14867933-LALA RAM-/URGENT/-25722400000257-DCBL0000257\",\"date\":\"08/03/19\",\"amount\":10000,\"balanceAmount\":35233.59},{\"particular\":\"NEFT-BARBX19078665769-LALA RAM--39590200000237-BARB0GREENP\",\"date\":\"19/03/19\",\"amount\":60000,\"balanceAmount\":63048.09}]}}},{\"summary\":\"manoj kuma\",\"count\":1,\"amount\":60000,\"monthlyTransactions\":{\"19/04\":{\"month\":\"19/04\",\"amount\":60000,\"count\":1,\"transactions\":[{\"particular\":\"MMT/IMPS/910214142515/MANOJ KUMA/AXIS BANK LTD\",\"date\":\"12/04/19\",\"amount\":60000,\"balanceAmount\":60627.12}]}}},{\"summary\":\"sanjeev ku\",\"count\":2,\"amount\":50000,\"monthlyTransactions\":{\"19/05\":{\"month\":\"19/05\",\"amount\":50000,\"count\":2,\"transactions\":[{\"particular\":\"MMT/IMPS/912615188488/fund/SANJEEV KU/HDFC BANK LTD\",\"date\":\"06/05/19\",\"amount\":20000,\"balanceAmount\":20141.82},{\"particular\":\"MMT/IMPS/912811129901/fund/SANJEEV KU/HDFC BANK LTD\",\"date\":\"08/05/19\",\"amount\":30000,\"balanceAmount\":37100.65}]}}},{\"summary\":\"eko\",\"count\":12,\"amount\":44000,\"monthlyTransactions\":{\"19/04\":{\"month\":\"19/04\",\"amount\":22000,\"count\":6,\"transactions\":[{\"particular\":\"MMT/IMPS/909816080668/IMPS to Account/EKO INDIA /Airtel Payments\",\"date\":\"08/04/19\",\"amount\":5000,\"balanceAmount\":38909.12},{\"particular\":\"MMT/IMPS/910018988373/IMPS to Account/EKO INDIA /Airtel Payments\",\"date\":\"10/04/19\",\"amount\":5000,\"balanceAmount\":8529.12},{\"particular\":\"MMT/IMPS/910418407112/IMPS to Account/EKO INDIA /Airtel Payments\",\"date\":\"15/04/19\",\"amount\":5000,\"balanceAmount\":9638.12},{\"particular\":\"MMT/IMPS/910418407130/IMPS to Account/EKO INDIA /Airtel Payments\",\"date\":\"15/04/19\",\"amount\":5000,\"balanceAmount\":14638.12},{\"particular\":\"MMT/IMPS/910418407521/IMPS to Account/EKO INDIA /Airtel Payments\",\"date\":\"15/04/19\",\"amount\":1000,\"balanceAmount\":15638.12},{\"particular\":\"MMT/IMPS/911514883954/IMPS to Account/EKO INDIA /Airtel Payments\",\"date\":\"25/04/19\",\"amount\":1000,\"balanceAmount\":1369.68}]},\"19/05\":{\"month\":\"19/05\",\"amount\":22000,\"count\":6,\"transactions\":[{\"particular\":\"MMT/IMPS/912521743049/IMPS to Account/EKO INDIA /Airtel Payments\",\"date\":\"06/05/19\",\"amount\":5000,\"balanceAmount\":5176.82},{\"particular\":\"MMT/IMPS/912521743057/IMPS to Account/EKO INDIA /Airtel Payments\",\"date\":\"06/05/19\",\"amount\":5000,\"balanceAmount\":10176.82},{\"particular\":\"MMT/IMPS/912521742992/IMPS to Account/EKO INDIA /Airtel Payments\",\"date\":\"06/05/19\",\"amount\":5000,\"balanceAmount\":15176.82},{\"particular\":\"MMT/IMPS/912521743503/IMPS to Account/EKO INDIA /Airtel Payments\",\"date\":\"06/05/19\",\"amount\":2000,\"balanceAmount\":17176.82},{\"particular\":\"MMT/IMPS/913214873235/IMPS to Account/EKO INDIA /Airtel Payments\",\"date\":\"13/05/19\",\"amount\":3000,\"balanceAmount\":3081.44},{\"particular\":\"MMT/IMPS/913320401623/IMPS to Account/EKO INDIA /Airtel Payments\",\"date\":\"13/05/19\",\"amount\":2000,\"balanceAmount\":3668.44}]}}},{\"summary\":\"etah\",\"count\":1,\"amount\":40000,\"monthlyTransactions\":{\"19/03\":{\"month\":\"19/03\",\"amount\":40000,\"count\":1,\"transactions\":[{\"particular\":\"BY CASH-ETAH\",\"date\":\"08/03/19\",\"amount\":40000,\"balanceAmount\":40433.59}]}}},{\"summary\":\"uday veer singh\",\"count\":1,\"amount\":40000,\"monthlyTransactions\":{\"19/05\":{\"month\":\"19/05\",\"amount\":40000,\"count\":1,\"transactions\":[{\"particular\":\"NEFT-P19050136821887-UDAY VEER SINGH--86742010002534-SYNB0008674\",\"date\":\"01/05/19\",\"amount\":40000,\"balanceAmount\":40260.08}]}}},{\"summary\":\"lakh\",\"count\":1,\"amount\":35000,\"monthlyTransactions\":{\"19/05\":{\"month\":\"19/05\",\"amount\":35000,\"count\":1,\"transactions\":[{\"particular\":\"BIL/INFT/001703258563/1 lakh full/MAYUR YADAV\",\"date\":\"07/05/19\",\"amount\":35000,\"balanceAmount\":81141.82}]}}},{\"summary\":\"ashu ke mayur\",\"count\":1,\"amount\":30000,\"monthlyTransactions\":{\"19/05\":{\"month\":\"19/05\",\"amount\":30000,\"count\":1,\"transactions\":[{\"particular\":\"BIL/INFT/001700832059/ashu ke/MAYUR YADAV\",\"date\":\"04/05/19\",\"amount\":30000,\"balanceAmount\":107176.82}]}}},{\"summary\":\"pankaj kum paytm\",\"count\":7,\"amount\":29301,\"monthlyTransactions\":{\"19/04\":{\"month\":\"19/04\",\"amount\":29301,\"count\":7,\"transactions\":[{\"particular\":\"MMT/IMPS/911611754429/pankaj kum/Paytm Payments\",\"date\":\"26/04/19\",\"amount\":5000,\"balanceAmount\":6369.68},{\"particular\":\"MMT/IMPS/911611752824/pankaj kum/Paytm Payments\",\"date\":\"26/04/19\",\"amount\":5000,\"balanceAmount\":11369.68},{\"particular\":\"MMT/IMPS/911611752841/pankaj kum/Paytm Payments\",\"date\":\"26/04/19\",\"amount\":5000,\"balanceAmount\":16369.68},{\"particular\":\"MMT/IMPS/911611752884/pankaj kum/Paytm Payments\",\"date\":\"26/04/19\",\"amount\":5000,\"balanceAmount\":21369.68},{\"particular\":\"MMT/IMPS/911611752919/pankaj kum/Paytm Payments\",\"date\":\"26/04/19\",\"amount\":4500,\"balanceAmount\":25869.68},{\"particular\":\"MMT/IMPS/911812758009/pankaj kum/Paytm Payments\",\"date\":\"29/04/19\",\"amount\":1,\"balanceAmount\":70.68},{\"particular\":\"MMT/IMPS/911812759686/pankaj kum/Paytm Payments\",\"date\":\"29/04/19\",\"amount\":4800,\"balanceAmount\":4870.68}]}}},{\"summary\":\"vinod yada\",\"count\":6,\"amount\":29000,\"monthlyTransactions\":{\"19/03\":{\"month\":\"19/03\",\"amount\":25000,\"count\":5,\"transactions\":[{\"particular\":\"MMT/IMPS/906317043996/IMPS Txn/Vinod Yada/FINO Payment Ba\",\"date\":\"04/03/19\",\"amount\":5000,\"balanceAmount\":8467.02},{\"particular\":\"MMT/IMPS/906317044039/IMPS Txn/Vinod Yada/FINO Payment Ba\",\"date\":\"04/03/19\",\"amount\":5000,\"balanceAmount\":13467.02},{\"particular\":\"MMT/IMPS/906317044069/IMPS Txn/Vinod Yada/FINO Payment Ba\",\"date\":\"04/03/19\",\"amount\":5000,\"balanceAmount\":18467.02},{\"particular\":\"MMT/IMPS/906317044086/IMPS Txn/Vinod Yada/FINO Payment Ba\",\"date\":\"04/03/19\",\"amount\":5000,\"balanceAmount\":23467.02},{\"particular\":\"MMT/IMPS/906317044109/IMPS Txn/Vinod Yada/FINO Payment Ba\",\"date\":\"04/03/19\",\"amount\":5000,\"balanceAmount\":28467.02}]},\"19/04\":{\"month\":\"19/04\",\"amount\":4000,\"count\":1,\"transactions\":[{\"particular\":\"MMT/IMPS/911619000596/IMPS Txn/Vinod Yada/FINO Payment Ba\",\"date\":\"26/04/19\",\"amount\":4000,\"balanceAmount\":4369.68}]}}},{\"summary\":\"state\",\"count\":8,\"amount\":29000,\"monthlyTransactions\":{\"19/03\":{\"month\":\"19/03\",\"amount\":11000,\"count\":3,\"transactions\":[{\"particular\":\"UPI/906448278936/Payment from Ph/9695233333@ybl/State Bank Of I\",\"date\":\"05/03/19\",\"amount\":5000,\"balanceAmount\":5467.02},{\"particular\":\"UPI/907519919282/Payment from Ph/9696689032@ybl/State Bank Of I\",\"date\":\"16/03/19\",\"amount\":1000,\"balanceAmount\":1048.09},{\"particular\":\"UPI/907920944885/Payment from Ph/9695233333@ybl/State Bank Of I\",\"date\":\"20/03/19\",\"amount\":5000,\"balanceAmount\":7318.09}]},\"19/04\":{\"month\":\"19/04\",\"amount\":6000,\"count\":2,\"transactions\":[{\"particular\":\"UPI/910160092409/Payment from Ph/9695233333@ybl/State Bank Of I\",\"date\":\"11/04/19\",\"amount\":5000,\"balanceAmount\":5627.12},{\"particular\":\"UPI/911517756990/Payment from Ph/9696689032@ybl/State Bank Of I\",\"date\":\"25/04/19\",\"amount\":1000,\"balanceAmount\":1369.68}]},\"19/05\":{\"month\":\"19/05\",\"amount\":12000,\"count\":3,\"transactions\":[{\"particular\":\"UPI/912538266363/Payment from Ph/9696689032@ybl/State Bank Of I\",\"date\":\"06/05/19\",\"amount\":3000,\"balanceAmount\":7176.82},{\"particular\":\"UPI/912633494167/Payment from Ph/9695233333@ybl/State Bank Of I\",\"date\":\"06/05/19\",\"amount\":5000,\"balanceAmount\":5141.82},{\"particular\":\"UPI/913351628688/Payment from Ph/9696689032@ybl/State Bank Of I\",\"date\":\"13/05/19\",\"amount\":4000,\"balanceAmount\":6668.44}]}}},{\"summary\":\"mayur yadav\",\"count\":1,\"amount\":25000,\"monthlyTransactions\":{\"19/05\":{\"month\":\"19/05\",\"amount\":25000,\"count\":1,\"transactions\":[{\"particular\":\"BIL/INFT/001706494292/1lkh+25000/MAYUR YADAV\",\"date\":\"11/05/19\",\"amount\":25000,\"balanceAmount\":28110.94}]}}},{\"summary\":\"rajajipuram\",\"count\":1,\"amount\":23000,\"monthlyTransactions\":{\"19/03\":{\"month\":\"19/03\",\"amount\":23000,\"count\":1,\"transactions\":[{\"particular\":\"BY CASH-LUCKNOW RAJAJIPURAM\",\"date\":\"14/03/19\",\"amount\":23000,\"balanceAmount\":23253.09}]}}},{\"summary\":\"indirapuram\",\"count\":1,\"amount\":22000,\"monthlyTransactions\":{\"19/05\":{\"month\":\"19/05\",\"amount\":22000,\"count\":1,\"transactions\":[{\"particular\":\"BY CASH  - GHAZIABAD-INDIRAPURAM\",\"date\":\"27/05/19\",\"amount\":22000,\"balanceAmount\":22548.36}]}}},{\"summary\":\"ashu ke\",\"count\":1,\"amount\":20000,\"monthlyTransactions\":{\"19/05\":{\"month\":\"19/05\",\"amount\":20000,\"count\":1,\"transactions\":[{\"particular\":\"BIL/INFT/001699057711/ashu ke paisa/MAYUR YADAV\",\"date\":\"02/05/19\",\"amount\":20000,\"balanceAmount\":20260.08}]}}},{\"summary\":\"1 lakh\",\"count\":1,\"amount\":20000,\"monthlyTransactions\":{\"19/05\":{\"month\":\"19/05\",\"amount\":20000,\"count\":1,\"transactions\":[{\"particular\":\"BIL/INFT/001702321758/1 lakh-20000/MAYUR YADAV\",\"date\":\"06/05/19\",\"amount\":20000,\"balanceAmount\":20141.82}]}}},{\"summary\":\"allahabad\",\"count\":2,\"amount\":19801,\"monthlyTransactions\":{\"19/04\":{\"month\":\"19/04\",\"amount\":19801,\"count\":2,\"transactions\":[{\"particular\":\"MMT/IMPS/911912416979/No Remarks/ALLAHABAD /ALLAHABAD BANK\",\"date\":\"29/04/19\",\"amount\":1,\"balanceAmount\":372.68},{\"particular\":\"MMT/IMPS/911913417610/No Remarks/ALLAHABAD /ALLAHABAD BANK\",\"date\":\"29/04/19\",\"amount\":19800,\"balanceAmount\":20172.68}]}}},{\"summary\":\"chandrakesh\",\"count\":3,\"amount\":18000,\"monthlyTransactions\":{\"19/05\":{\"month\":\"19/05\",\"amount\":18000,\"count\":3,\"transactions\":[{\"particular\":\"BIL/INFT/001708353335/NA/CHANDRAKESH\",\"date\":\"14/05/19\",\"amount\":5000,\"balanceAmount\":7668.44},{\"particular\":\"BIL/INFT/001709381684/NA/CHANDRAKESH\",\"date\":\"15/05/19\",\"amount\":5000,\"balanceAmount\":7270.44},{\"particular\":\"BIL/INFT/001711472786/NA/CHANDRAKESH\",\"date\":\"20/05/19\",\"amount\":8000,\"balanceAmount\":8270.44}]}}},{\"summary\":\"idbibank limit\",\"count\":1,\"amount\":15000,\"monthlyTransactions\":{\"19/05\":{\"month\":\"19/05\",\"amount\":15000,\"count\":1,\"transactions\":[{\"particular\":\"UPI/912172875709/Payment from Ph/anil8778@ybl/IDBIBank Limit\",\"date\":\"01/05/19\",\"amount\":15000,\"balanceAmount\":15260.08}]}}},{\"summary\":\"ashu mayur yadav\",\"count\":1,\"amount\":14000,\"monthlyTransactions\":{\"19/05\":{\"month\":\"19/05\",\"amount\":14000,\"count\":1,\"transactions\":[{\"particular\":\"BIL/INFT/001698082753/ashu/MAYUR YADAV\",\"date\":\"01/05/19\",\"amount\":14000,\"balanceAmount\":29260.08}]}}},{\"summary\":\"paytm\",\"count\":1,\"amount\":12600,\"monthlyTransactions\":{\"19/04\":{\"month\":\"19/04\",\"amount\":12600,\"count\":1,\"transactions\":[{\"particular\":\"UPI/911941711819/NA/8077084338@payt/Paytm Payments\",\"date\":\"29/04/19\",\"amount\":12600,\"balanceAmount\":12772.68}]}}},{\"summary\":\"nishant\",\"count\":2,\"amount\":12000,\"monthlyTransactions\":{\"19/04\":{\"month\":\"19/04\",\"amount\":12000,\"count\":2,\"transactions\":[{\"particular\":\"MMT/IMPS/910813457016/comments/NISHANT SH/Paytm Pa\",\"date\":\"18/04/19\",\"amount\":10000,\"balanceAmount\":10399.12},{\"particular\":\"MMT/IMPS/910813457761/comments/NISHANT SH/Paytm Payments\",\"date\":\"18/04/19\",\"amount\":2000,\"balanceAmount\":12399.12}]}}},{\"summary\":\"ashwani state bankof\",\"count\":1,\"amount\":10000,\"monthlyTransactions\":{\"19/03\":{\"month\":\"19/03\",\"amount\":10000,\"count\":1,\"transactions\":[{\"particular\":\"UPI/907920148186/ashwani/8958576004@sbi/State BankOf I\",\"date\":\"20/03/19\",\"amount\":10000,\"balanceAmount\":17318.09}]}}},{\"summary\":\"pushpendra\",\"count\":2,\"amount\":9801,\"monthlyTransactions\":{\"19/03\":{\"month\":\"19/03\",\"amount\":9800,\"count\":1,\"transactions\":[{\"particular\":\"MMT/IMPS/906715714440/emPowerM/PUSHPENDRA/ALLAHABD BANK\",\"date\":\"08/03/19\",\"amount\":9800,\"balanceAmount\":25233.59}]},\"19/04\":{\"month\":\"19/04\",\"amount\":1,\"count\":1,\"transactions\":[{\"particular\":\"MMT/IMPS/911912415492/emPowerM/PUSHPENDRA/ALLAHABD BANK\",\"date\":\"29/04/19\",\"amount\":1,\"balanceAmount\":371.68}]}}},{\"summary\":\"1a491835\",\"count\":2,\"amount\":9600,\"monthlyTransactions\":{\"19/03\":{\"month\":\"19/03\",\"amount\":9600,\"count\":2,\"transactions\":[{\"particular\":\"MMT/IMPS/906611575988/1A491835/EE\",\"date\":\"07/03/19\",\"amount\":4600,\"balanceAmount\":5933.59},{\"particular\":\"MMT/IMPS/906711558609/1A491835/EE\",\"date\":\"08/03/19\",\"amount\":5000,\"balanceAmount\":5933.59}]}}},{\"summary\":\"paynearby\",\"count\":3,\"amount\":9500,\"monthlyTransactions\":{\"19/03\":{\"month\":\"19/03\",\"amount\":9500,\"count\":3,\"transactions\":[{\"particular\":\"MMT/IMPS/906711756501/PayNearby /YES BANK LTD\",\"date\":\"08/03/19\",\"amount\":5000,\"balanceAmount\":10933.59},{\"particular\":\"MMT/IMPS/906711749576/PayNearby /YES BANK LTD\",\"date\":\"08/03/19\",\"amount\":3000,\"balanceAmount\":13933.59},{\"particular\":\"MMT/IMPS/906711379520/PayNearby /YES BANK LTD\",\"date\":\"08/03/19\",\"amount\":1500,\"balanceAmount\":15433.59}]}}},{\"summary\":\"indian\",\"count\":1,\"amount\":8500,\"monthlyTransactions\":{\"19/04\":{\"month\":\"19/04\",\"amount\":8500,\"count\":1,\"transactions\":[{\"particular\":\"UPI/912026527469/Payment from Ph/9958136158@ybl/Indian Bank\",\"date\":\"30/04/19\",\"amount\":8500,\"balanceAmount\":8752.58}]}}},{\"summary\":\"sanjay bai\",\"count\":1,\"amount\":6000,\"monthlyTransactions\":{\"19/05\":{\"month\":\"19/05\",\"amount\":6000,\"count\":1,\"transactions\":[{\"particular\":\"MMT/IMPS/912916590491/SANJAY BAI/AXIS BANK LTD\",\"date\":\"09/05/19\",\"amount\":6000,\"balanceAmount\":6100.65}]}}},{\"summary\":\"neeraj yadav indian\",\"count\":1,\"amount\":5000,\"monthlyTransactions\":{\"19/04\":{\"month\":\"19/04\",\"amount\":5000,\"count\":1,\"transactions\":[{\"particular\":\"UPI/911713954358/neeraj Yadav/indiawatch12lko/Indian Overseas\",\"date\":\"29/04/19\",\"amount\":5000,\"balanceAmount\":7069.68}]}}},{\"summary\":\"pc financial\",\"count\":1,\"amount\":1500,\"monthlyTransactions\":{\"19/05\":{\"month\":\"19/05\",\"amount\":1500,\"count\":1,\"transactions\":[{\"particular\":\"MMT/IMPS/913019846064/PC FINANCIAL SE/RAZORPAY S/YES BANK LTD\",\"date\":\"10/05/19\",\"amount\":1500,\"balanceAmount\":41228.42}]}}},{\"summary\":\"trai\",\"count\":1,\"amount\":1280.49,\"monthlyTransactions\":{\"19/03\":{\"month\":\"19/03\",\"amount\":1280.49,\"count\":1,\"transactions\":[{\"particular\":\"IIN/RFND/I-Debit/Book Trai/20190304153942\",\"date\":\"04/03/19\",\"amount\":1280.49,\"balanceAmount\":4547.02}]}}},{\"summary\":\"int.pd\",\"count\":1,\"amount\":246,\"monthlyTransactions\":{\"19/03\":{\"month\":\"19/03\",\"amount\":246,\"count\":1,\"transactions\":[{\"particular\":\"071801512528:Int.Pd:31-12-2018 to 30-03-2019\",\"date\":\"31/03/19\",\"amount\":246,\"balanceAmount\":107540.61}]}}},{\"summary\":\"bharat petroleum corpo\",\"count\":2,\"amount\":15,\"monthlyTransactions\":{\"19/03\":{\"month\":\"19/03\",\"amount\":7.5,\"count\":1,\"transactions\":[{\"particular\":\"VISA REF BHARAT PETROLEUM CORPO\",\"date\":\"28/03/19\",\"amount\":7.5,\"balanceAmount\":593835.61}]},\"19/04\":{\"month\":\"19/04\",\"amount\":7.5,\"count\":1,\"transactions\":[{\"particular\":\"VISA REF BHARAT PETROLEUM CORPO\",\"date\":\"30/04/19\",\"amount\":7.5,\"balanceAmount\":760.08}]}}},{\"summary\":\"pasfar\",\"count\":1,\"amount\":1,\"monthlyTransactions\":{\"19/05\":{\"month\":\"19/05\",\"amount\":1,\"count\":1,\"transactions\":[{\"particular\":\"MMT/IMPS/912918432932/Bank details va/PASFAR TEC/YES BANK LTD\",\"date\":\"09/05/19\",\"amount\":1,\"balanceAmount\":6101.65}]}}},{\"summary\":\"zestmoney\",\"count\":1,\"amount\":1,\"monthlyTransactions\":{\"19/05\":{\"month\":\"19/05\",\"amount\":1,\"count\":1,\"transactions\":[{\"particular\":\"MMT/IMPS/915121189590/ZestMoney Bank /CAMDEN TOW/YES BANK LTD\",\"date\":\"31/05/19\",\"amount\":1,\"balanceAmount\":1077.36}]}}}],\"highestAmount\":900000},\"autoDebits\":{\"autoDebitsByName\":[{\"name\":\"BIL/INFT//loan return/SANJEEV KUMAR/A\",\"numberOfSuccessfulPayments\":1,\"totalAmountPaid\":35000,\"numberOfDefaults\":0,\"value\":35000,\"color\":\"rgba(21,94,190,1)\"},{\"name\":\"BIL/NEFT//loan repayment /bhanix    /KKBK\",\"numberOfSuccessfulPayments\":1,\"totalAmountPaid\":22000,\"numberOfDefaults\":0,\"value\":22000,\"color\":\"rgba(21,94,190,0.73)\"},{\"name\":\"BIL/INFT//return loan/SANJAY BAILWAL\",\"numberOfSuccessfulPayments\":1,\"totalAmountPaid\":6000,\"numberOfDefaults\":0,\"value\":6000,\"color\":\"rgba(21,94,190,0.63)\"},{\"name\":\"MMT/IMPS//loan payment/cash/YESBCMSNOC\",\"numberOfSuccessfulPayments\":1,\"totalAmountPaid\":1729,\"numberOfDefaults\":0,\"value\":1729,\"color\":\"rgba(21,94,190,0.53)\"}],\"autoDebitsByMonth\":[{\"35000\":35000,\"month\":\"19/04\"},{\"1729\":1729,\"6000\":6000,\"22000\":22000,\"month\":\"19/05\"}],\"allTransactions\":[{\"date\":\"19/04/19\",\"autoDebitAmount\":35000,\"balanceAmount\":189399.12,\"particular\":\"BIL/INFT/001689418802/loan return/SANJEEV KUMAR/A\",\"type\":\"DEBIT\",\"category\":[\"Payment\",\"Loan\"]},{\"date\":\"20/05/19\",\"autoDebitAmount\":1729,\"balanceAmount\":8619.36,\"particular\":\"MMT/IMPS/913909053976/loan payment/cash/YESB0CMSNOC\",\"type\":\"DEBIT\",\"category\":[\"Payment\",\"Loan\"]},{\"date\":\"27/05/19\",\"autoDebitAmount\":22000,\"balanceAmount\":548.36,\"particular\":\"BIL/NEFT/001716638817/loan repayment /bhanix    /KKBK0000958\",\"type\":\"DEBIT\",\"category\":[\"Payment\",\"Loan\"]},{\"date\":\"28/05/19\",\"autoDebitAmount\":6000,\"balanceAmount\":4909.36,\"particular\":\"BIL/INFT/001717515757/return loan/SANJAY BAILWAL\",\"type\":\"DEBIT\",\"category\":[\"Payment\",\"Loan\"]}]},\"monthlyAverageBalance\":[{\"average\":46006,\"endDate\":31,\"monthKey\":\"19/03\",\"startDate\":1},{\"average\":19943,\"change\":{\"amount\":-26063,\"percent\":\"-56.65\"},\"endDate\":30,\"monthKey\":\"19/04\",\"startDate\":1},{\"average\":4575,\"change\":{\"amount\":-15368,\"percent\":\"-77.06\"},\"endDate\":31,\"monthKey\":\"19/05\",\"startDate\":1}],\"monthlyGrossIncome\":[{\"month\":\"19/03\",\"credit\":1225034,\"debit\":1144600,\"autoDebit\":0},{\"month\":\"19/04\",\"credit\":909850,\"debit\":993570,\"autoDebit\":35000},{\"month\":\"19/05\",\"credit\":779555,\"debit\":778738,\"autoDebit\":29729}],\"checkingSummary\":{\"beginningBalance\":3547.02,\"depositsAndAdditions\":{\"instances\":122,\"amount\":2914438.49},\"checksPaid\":{\"instances\":0,\"amount\":0},\"atmWithdrawals\":{\"instances\":121,\"amount\":1299000},\"bankFees\":{\"instances\":5,\"amount\":1572},\"electronicWithdrawals\":{\"instances\":85,\"amount\":1511854.44},\"otherWithdrawals\":{\"instances\":48,\"amount\":104481.71},\"endingBalance\":{\"instances\":381,\"amount\":1077.36},\"endingBalanceFromAllTransactions\":1077.36},\"mode\":\"full\"}}",
-        "borrower": "5e2e72bedc74f402286c491d",
-        "createdAt": "2020-02-29T10:39:23.896Z",
-        "updatedAt": "2020-02-29T10:39:23.896Z",
-        "__v": 0
-    }
-}
-```
+same as the parser api
 
 
 
@@ -35377,7 +50198,7 @@ curl -X POST \
   -H 'access-id: your_access_id' \
   -H 'access-key: your_access_key' \
   -d '{
-	"borrowerId":"5c6a5cbe8e4b510b60e7633a"
+	"borrowerId":"borrower id"
 }'
 ```
 
